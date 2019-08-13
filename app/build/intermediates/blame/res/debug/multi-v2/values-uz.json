@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\AF\\Documents\\Projeversion02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\71df5d82e409c31997a8772bf35015fc\\res\\values-uz\\values-uz.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,314,428,514,614,730,810,889,973,1082,1189,1290,1398,1503,1610,1771,1870",
+                        "endColumns": "104,103,113,85,99,115,79,78,83,108,106,100,107,104,106,160,98,83",
+                        "endOffsets": "205,309,423,509,609,725,805,884,968,1077,1184,1285,1393,1498,1605,1766,1865,1949"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\4bf46946bf92589af57e3c47936c1cde\\res\\values-uz\\values-uz.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1954",
+                        "endColumns": "100",
+                        "endOffsets": "2050"
+                    }
+                }
+            ]
+        }
+    ]
+}

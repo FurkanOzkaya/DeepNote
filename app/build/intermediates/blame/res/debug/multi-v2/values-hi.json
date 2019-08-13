@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\AF\\Documents\\Projeversion02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hi\\values-hi.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\4bf46946bf92589af57e3c47936c1cde\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1953",
+                        "endColumns": "100",
+                        "endOffsets": "2049"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\71df5d82e409c31997a8772bf35015fc\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,211,308,418,504,606,728,805,883,973,1082,1185,1287,1397,1498,1610,1772,1873",
+                        "endColumns": "105,96,109,85,101,121,76,77,89,108,102,101,109,100,111,161,100,79",
+                        "endOffsets": "206,303,413,499,601,723,800,878,968,1077,1180,1282,1392,1493,1605,1767,1868,1948"
+                    }
+                }
+            ]
+        }
+    ]
+}

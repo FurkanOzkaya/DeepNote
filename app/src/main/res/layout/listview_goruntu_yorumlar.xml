@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/yorumlar_listview_profil_fotosu"
+            android:visibility="visible"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:civ_border="false"
+            android:src="@drawable/main_activity_profil"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/yorumlar_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="13dp"/>
+            <TextView
+                android:id="@+id/yorumlar_tarih"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="10dp"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/yorumlar_yorum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:textSize="13dp"
+            android:layout_weight="3"/>
+        <ImageButton
+            android:id="@+id/yorumlar_yorumsil"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/yorumsil"
+            android:backgroundTint="@color/white"
+            android:visibility="gone"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

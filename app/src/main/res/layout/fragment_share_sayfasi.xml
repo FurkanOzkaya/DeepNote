@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    tools:context=".Fragments.share_sayfasi">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DeepNote"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:layout_marginBottom="6.2dp"
+            android:layout_marginTop="6.2dp"
+            android:layout_gravity="center"/>
+    </android.support.v7.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
+
+        <EditText
+            android:id="@+id/ders_adi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ders"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:visibility="invisible"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/share_sayfası_ders_uyarı"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/share_sayfası_ders_uyarı"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            />
+
+        <Spinner
+            android:id="@+id/bolum_adi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bölüm"
+            android:inputType="text"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/share_sayfası_bolum_uyarı"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:visibility="invisible"
+            android:layout_marginTop="5dp"
+            android:text="@string/share_sayfası_bolum_uyarı"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/acıklama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Açıklama Giriniz"
+            android:visibility="invisible"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/share_sayfası_acıklama_uyarı"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/share_sayfası_acıklama_uyarı"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            />
+        <ProgressBar
+            android:id="@+id/share_sayafası_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/yukleme_butonu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:text="YÜKLE"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#b02336"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="right"
+        android:orientation="vertical">
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/resim_buton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/resim_ikonu"
+            android:visibility="invisible"
+            app:backgroundTint="#fff" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/pdf_buton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible"
+            android:src="@drawable/pdf_ikonu"
+            app:backgroundTint="#fff"
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/ana_buton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="#ab1313"
+            android:src="@drawable/paylas_butonu2" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

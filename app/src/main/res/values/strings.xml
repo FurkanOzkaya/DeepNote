@@ -1,0 +1,60 @@
+<resources>
+    <string name="site_adresi">"https://sandystreamtr.com/"</string>
+    <string name="jsongüvenlikkod">"Abms"</string>
+
+
+    <string name="app_name">My Application</string>
+    <string name="sifre_unutma">Şifremi unuttum !!</string>
+    <string name="giris_uyarı">E-posta veya  Sifre Yanlıs Lütfen Kontrol Ediniz</string>
+    <string name="uye_olmak">Hesap Açmak için Tıklayınız</string>
+    <string name="hesap_acma_sayfası_bilgi">Yazacağınız bilgilerin doğru olmasına özen gösteriniz</string>
+    <string name="hesap_olustur">Hesap oluştur</string>
+    <string name="hesap_acma_sayfası_ad_soyad_kısmı_uyarı">Ad bilgisi gereklidir</string>
+    <string name="hesap_acma_sayfası_dogum_tarihi_kısmı">Doğum Tarihi bilgisi gereklidir</string>
+    <string name="hesap_acma_sayfası_e_posta_kısmı">E-posta bilgisi gereklidir</string>
+    <string name="hesap_acma_sayfası_e_posta_kısmı_aynı_olması_durumu">E-posta adresi kullanılıyor Lütfen Geçerli bir E-posta adresi giriniz</string>
+    <string name="hesap_acma_sayfası_üniversite_kısmı_uyarı">Üniversite bilgisi gereklidir</string>
+    <string name="hesap_acma_sayfası_fakulte_kısmı_uyarı">Fakulte bilgisi gereklidir</string>
+    <string name="hesap_acma_sayfası_bölüm_kısmı_uyarı">Bölüm bilgisi gereklidir</string>
+    <string name="hesap_acma_sayfası_Sifre_kısmı_uyarı">Şifre bilgisi gereklidir</string>
+    <string name="hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı1">Şifre dogrulaması gereklidir</string>
+    <string name="hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı">Şifreler birbiri ile uyuşmuyor</string>
+    <string name="sozlesme">DeepNote Sözleşmesini Kabul Ediyor ve Onaylıyorum</string>
+    <string name="buton_altı_bilgilendirme">Lütfen Bilgilerinizi Kontrol Ediniz</string>
+    <string name="share_sayfası_ders_uyarı">Ders bilgisi gereklidir</string>
+    <string name="share_sayfası_bolum_uyarı">Bolum bilgisi gereklidir</string>
+    <string name="share_sayfası_acıklama_uyarı">Açıklama bilgisi gereklidir</string>
+    <string name="arama_pop_up_bolum_uyarı">Bölüm bilgisi gereklidir</string>
+    <string name="arama_pop_up_dersadi_uyarı">Ders bilgisi gereklidir</string>
+    <string name="home_sayfasi_listview_top_uyarı">Bu alanda bilgi bulunmamaktadır!!</string>
+    <string name="ayrıntısayfalari_yorum_listview_uyarı">Henüz bir yorum yok!!!</string>
+
+    <array name="universite_listesi">
+        <item>Üniversite Seçiniz</item>
+        <item>Selcuk Universty</item>
+        <item>Balıkesir Universty</item>
+        <item>Celal Bayar Universty</item>
+        <item>momomomomo</item>
+    </array>
+    <array name="Bolum_listesi">
+        <item>Bölüm Seçiniz</item>
+        <item>Bilgisayar Mühendisliği</item>
+    </array>
+    <array name="universite_listesi_arama_için">
+        <item>Hepsi</item>
+        <item>Selcuk Universty</item>
+        <item>Balıkesir Universty</item>
+        <item>Celal Bayar Universty</item>
+    </array>
+    <string name="title_activity_denememenu">denememenu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_ana_ekran">Ana_ekran</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
