@@ -95,22 +95,22 @@ ANA SAYFAYA  TÜM PAYLASIMLARI GETİRİR
 
       if (tumverilerliste.get(position).getProfilfoto().equals("default"))
         {
-            Picasso.get().load(R.drawable.main_activity_profil).resize(200,200).into(profil_foto);
+            Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
         }
         else
         {
             ///////////////////////////////////
-            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getProfilfoto()).resize(200,200).error(R.drawable.main_activity_profil).into(profil_foto);
+            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getProfilfoto()).resize(1000,1000).error(R.drawable.flat_ogrenci).into(profil_foto);
             /////////////////////////////////////
         }
 
         if (dosyaturu_string.equals("pdf"))
         {
-            gelendosya.setImageResource(R.drawable.pdf);
+            gelendosya.setImageResource(R.drawable.flat_pdf2);
         }
         else
         {
-            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getDosyayolu()).resize(200,200).error(R.drawable.ic_launcher_background).into(gelendosya);
+            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getDosyayolu()).resize(1100,1100).error(R.drawable.ic_launcher_background).into(gelendosya);
         }
 
 

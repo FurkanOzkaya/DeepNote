@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\AF\\Documents\\Projeversion02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
+            "outputFile": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\71df5d82e409c31997a8772bf35015fc\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\7b24255b5f1ba2f375621f27383c803e\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

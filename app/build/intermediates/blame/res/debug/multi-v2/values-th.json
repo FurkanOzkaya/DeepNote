@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\AF\\Documents\\Projeversion02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-th\\values-th.xml",
+            "outputFile": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-th\\values-th.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\4bf46946bf92589af57e3c47936c1cde\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\af7ddb90f76c0e097e3082a9673064ee\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\71df5d82e409c31997a8772bf35015fc\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\7b24255b5f1ba2f375621f27383c803e\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

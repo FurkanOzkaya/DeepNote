@@ -49,7 +49,7 @@ public class profil_sayfasi extends Fragment {
     List<Profilsayfasikullanicipaylasimlari> kullanici_paylasimlari;
     SharedPreferences sharedPreferences;
     String profil_ad_soyad_gelen, profil_bolum_gelen, profil_universite_gelen,Profil_foto_gelen;
-    CircularImageView profil_foto;
+    ImageView profil_foto;
     ProgressBar paylasımlar_progresbar,bilgiler_progress_bar;
     ImageView ayarlarbutonu;
 
@@ -117,7 +117,7 @@ public class profil_sayfasi extends Fragment {
                     else
                     {
                         ///////////////////////////////////
-                        Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(200,200).error(R.drawable.main_activity_profil).into(profil_foto);
+                        Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(3000,3000).error(R.drawable.main_activity_profil).into(profil_foto);
                         /////////////////////////////////////
                     }
 

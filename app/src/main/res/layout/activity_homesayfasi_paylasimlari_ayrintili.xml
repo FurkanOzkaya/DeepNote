@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#fff"
     tools:context=".homesayfasi_paylasimlari_ayrintili">
 
     <ScrollView
@@ -16,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:layout_weight="9"
             android:orientation="vertical">
 
             <LinearLayout
@@ -58,13 +58,15 @@
 
                     </LinearLayout>
                     <TextView
-                        android:id="@+id/ayrıntı_homesayfasi_ders"
+
+                        android:id="@+id/ayrıntı_homesayfasi_universite"
                         android:textColor="#6a6d72"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="15dp"
                         android:drawableLeft="@drawable/dosyaresmi"
+                        android:visibility="gone"
                         android:drawablePadding="3dp"
                         android:textSize="10dp" />
 
@@ -79,13 +81,27 @@
                     android:paddingLeft="25dp"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/ayrıntı_homesayfasi_universite"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/okul_logo"
-                        android:drawablePadding="5dp"
-                        android:textSize="10dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ders_adi_detaya_yonlendircek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/sikayet"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="10dp"
+                        android:layout_gravity="end">
+
+                        <TextView
+                            android:id="@+id/ayrıntı_homesayfasi_ders"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="10dp" />
+
+
+                    </LinearLayout>
+
+
 
                     <TextView
                         android:id="@+id/ayrıntı_homesayfasi_bolum"
@@ -94,6 +110,7 @@
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/kitap"
                         android:layout_marginTop="10dp"
+                        android:visibility="gone"
                         android:textSize="10dp" />
 
                 </LinearLayout>
@@ -102,10 +119,10 @@
             </LinearLayout>
 
 
-            <android.support.v7.widget.CardView
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_marginTop="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -133,10 +150,7 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="bottom"
-                            android:orientation="horizontal"
-                            android:padding="10dp"
-                            android:layout_weight="9">
+                            android:gravity="bottom">
 
                             <!-- pdf  gelicek buraya -->
                             <WebView
@@ -151,6 +165,48 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="350dp"
                                 android:visibility="gone"/>
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="15dp"
+                                android:paddingHorizontal="10dp"
+                                android:background="@drawable/detaysnack"
+                                android:orientation="horizontal"
+                                android:layout_alignParentBottom="true">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@+id/ayrıntı_homesayfasi_sikayet_et"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Şikayet Et"
+                                        android:textColor="#fff"/>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@+id/ayrıntı_homesayfasi_indirme"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="İndir"
+                                        android:gravity="end"
+                                        android:textColor="#fff"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
                         </RelativeLayout>
 
 
@@ -165,77 +221,30 @@
                                 android:paddingBottom="10dp"
                                 android:paddingLeft="5dp"
                                 android:layout_weight="1">
-                                <TextView
-                                    android:id="@+id/ayrıntı_homesayfasi_sikayet_et"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Şikayet Et"
-                                    android:textColor="#981515"
 
-
-                                    />
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="end">
-                                <ImageButton
-                                    android:id="@+id/ayrıntı_homesayfasi_indirme"
-                                    android:layout_width="50dp"
-                                    android:layout_height="50dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:layout_marginRight="15dp"
-                                    android:layout_toRightOf="@id/ayrıntı_homesayfasi_resim"
-                                    android:background="#fff"
-                                    android:src="@drawable/indir" />
+
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
 
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.LinearLayoutCompat>
 
 
 
 
-            <android.support.v7.widget.CardView
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/ayrıntı_homesayfasi_yorum"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:backgroundTint="#423759"
-                        android:hint="Yorum yap..."
-                        android:textSize="15dp" />
-                    <ImageButton
-                        android:id="@+id/ayrıntı_homesayfasi_yorum_buton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#fff"
-                        android:src="@drawable/send"/>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="70dp">
+                android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/yorumlar_lisview_uyarı"
                     android:layout_width="wrap_content"
@@ -266,7 +275,38 @@
                         android:visibility="gone" />
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="#000"
+                    ></View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ayrıntı_homesayfasi_yorum"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@android:color/transparent"
+                        android:hint="Yorum yap..."
+                        android:textSize="15dp"/>
+                    <ImageButton
+                        android:id="@+id/ayrıntı_homesayfasi_yorum_buton"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#fff"
+                        android:src="@drawable/ic_send_black_24dp"/>
+
+                </LinearLayout>
 
 
 

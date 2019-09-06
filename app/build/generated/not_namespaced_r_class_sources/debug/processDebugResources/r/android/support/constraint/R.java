@@ -76,23 +76,23 @@ public final class R {
         public static final int barrier = 0x7f090049;
         public static final int bottom = 0x7f09004f;
         public static final int chains = 0x7f090056;
-        public static final int dimensions = 0x7f09006b;
-        public static final int direct = 0x7f09006c;
-        public static final int end = 0x7f090074;
-        public static final int gone = 0x7f090089;
-        public static final int invisible = 0x7f090098;
-        public static final int left = 0x7f09009e;
-        public static final int none = 0x7f0900b7;
-        public static final int packed = 0x7f0900c5;
-        public static final int parent = 0x7f0900c7;
-        public static final int percent = 0x7f0900cb;
-        public static final int right = 0x7f0900e0;
-        public static final int spread = 0x7f090109;
-        public static final int spread_inside = 0x7f09010a;
-        public static final int standard = 0x7f09010e;
-        public static final int start = 0x7f09010f;
-        public static final int top = 0x7f090122;
-        public static final int wrap = 0x7f090135;
+        public static final int dimensions = 0x7f09006c;
+        public static final int direct = 0x7f09006d;
+        public static final int end = 0x7f090075;
+        public static final int gone = 0x7f09008a;
+        public static final int invisible = 0x7f090099;
+        public static final int left = 0x7f09009f;
+        public static final int none = 0x7f0900b8;
+        public static final int packed = 0x7f0900c6;
+        public static final int parent = 0x7f0900c8;
+        public static final int percent = 0x7f0900cc;
+        public static final int right = 0x7f0900e1;
+        public static final int spread = 0x7f09010a;
+        public static final int spread_inside = 0x7f09010b;
+        public static final int standard = 0x7f09010f;
+        public static final int start = 0x7f090110;
+        public static final int top = 0x7f090123;
+        public static final int wrap = 0x7f090136;
     }
     public static final class styleable {
         private styleable() {}

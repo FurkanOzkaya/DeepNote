@@ -49,10 +49,10 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
         DisplayMetrics d = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(d);
 
-        int yukseklik = d.widthPixels;
-        int genislik = d.heightPixels;
+        int genislik = d.widthPixels;
+        int yukseklik = d.heightPixels;
 
-        getWindow().setLayout((int)(yukseklik*.7),(int)(genislik*.5));
+        getWindow().setLayout((int)(genislik*.9),(int)(yukseklik*.7));
 
         WindowManager.LayoutParams p = getWindow().getAttributes();
         p.gravity = Gravity.TOP;

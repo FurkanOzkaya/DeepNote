@@ -54,8 +54,8 @@ import retrofit2.http.GET;
 
 public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
-    TextView  ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama,listview_yorumlar_uyarı,ayrıntılı_sikayet_et;
-    ImageView ayrıntılı_resim,ayrıntıı_indirme;
+    TextView  ayrıntıı_indirme,ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama,listview_yorumlar_uyarı,ayrıntılı_sikayet_et;
+    ImageView ayrıntılı_resim;
     ImageButton ayrıntı_yorum_yapmabutonu;
     String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string,profilfoto_string;
     WebView Pdfview;

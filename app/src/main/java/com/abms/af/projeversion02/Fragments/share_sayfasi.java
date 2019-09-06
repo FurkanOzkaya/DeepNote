@@ -87,7 +87,6 @@ public class share_sayfasi extends Fragment {
     SharedPreferences sharedPreferences;
     ProgressBar progressBar;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -102,6 +101,7 @@ public class share_sayfasi extends Fragment {
     }
 
     public void tanimla() {
+
         boommenu_ana_buton = view.findViewById(R.id.ana_buton);
         pdf_buton = view.findViewById(R.id.pdf_buton);
         resim_buton = view.findViewById(R.id.resim_buton);
@@ -641,7 +641,7 @@ public class share_sayfasi extends Fragment {
             out = new FileOutputStream(filename);
 
 //          write the compressed bitmap at the destination specified by filename.
-            scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 80, out);
+            scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
