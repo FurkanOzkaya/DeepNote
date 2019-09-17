@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.armdroid:filechooser:1.0.8@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4a85f1cb531796005efa7d6da51d7f6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4a85f1cb531796005efa7d6da51d7f6/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.armdroid/filechooser/1.0.8/26ce25616b5e1069d07cb4c6d5074d7467e75ff8/filechooser-1.0.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+            "outputFile": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\7b24255b5f1ba2f375621f27383c803e\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\values-v17\\values-v17.xml",
                     "from": {
-                        "startLines": "2,5,9,12,15,18,21,25,29,32,35,38,42,45,49",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,228,456,614,764,936,1106,1334,1576,1747,1921,2090,2363,2563,2767",
-                        "endLines": "4,8,11,14,17,20,24,28,31,34,37,41,44,48,52",
-                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12,12",
-                        "endOffsets": "223,451,609,759,931,1101,1329,1571,1742,1916,2085,2358,2558,2762,3091"
+                        "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,228,456,614,764,936,1161,1331,1559,1783,2025,2196,2370,2539,2812,3012,3216",
+                        "endLines": "4,8,11,14,17,21,24,28,32,36,39,42,45,49,52,56,60",
+                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12",
+                        "endOffsets": "223,451,609,759,931,1156,1326,1554,1778,2020,2191,2365,2534,2807,3007,3211,3540"
                     }
                 }
             ]

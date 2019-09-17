@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.adityak:browsemyfiles:1.9@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/04f7ebd18b4ef985c24c25cadc599f33/jars/libs/commons-io-2.6.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/04f7ebd18b4ef985c24c25cadc599f33/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/04f7ebd18b4ef985c24c25cadc599f33/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.adityak/browsemyfiles/1.9/5fc6f984dfb83f47c7740344c3c39d2ffd17f220/browsemyfiles-1.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

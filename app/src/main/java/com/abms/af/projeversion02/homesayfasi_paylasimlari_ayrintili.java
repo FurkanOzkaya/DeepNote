@@ -1,22 +1,17 @@
 package com.abms.af.projeversion02;
 
 
-import android.Manifest;
 import android.app.AlertDialog;
-import android.app.DownloadManager;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -28,13 +23,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abms.af.projeversion02.Adapters.Yorumadapter;
-import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
-import com.abms.af.projeversion02.Models.Profilfotosilmesonuc;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumyapmasonuc;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
-import com.github.barteksc.pdfviewer.PDFView;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
@@ -43,6 +35,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -50,11 +44,10 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.GET;
 
 public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
-    TextView  ayrıntıı_indirme,ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama,listview_yorumlar_uyarı,ayrıntılı_sikayet_et;
+    TextView  ayrıntili_indirme,ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama,listview_yorumlar_uyarı,ayrıntılı_sikayet_et;
     ImageView ayrıntılı_resim;
     ImageButton ayrıntı_yorum_yapmabutonu;
     String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string,profilfoto_string;
@@ -66,6 +59,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
     List<Yorumlarigetirsonuc> gelenyorumlar;
     Yorumadapter yorumadapter;
     ProgressBar progressBar;
+    Button openpdf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,11 +95,12 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         ayrintili_aciklama = findViewById(R.id.ayrıntı_homesayfasi_aciklama);
         ayrıntılı_resim = findViewById(R.id.ayrıntı_homesayfasi_resim);
         Pdfview = findViewById(R.id.ayrıntı_homesayfasi_pdf_webview);
+        openpdf = findViewById(R.id.openpdf);
         profil_foto=findViewById(R.id.ayrıntı_homesayfası_profilfotosu);
         ayrıntı_yorum=findViewById(R.id.ayrıntı_homesayfasi_yorum);
         ayrıntı_yorum_yapmabutonu=findViewById(R.id.ayrıntı_homesayfasi_yorum_buton);
         listview_yorumlar=findViewById(R.id.ayrıntı_homesayfasi_yorum_listview);
-        ayrıntıı_indirme=findViewById(R.id.ayrıntı_homesayfasi_indirme);
+        ayrıntili_indirme=findViewById(R.id.ayrıntı_homesayfasi_indirme);
 
         progressBar=findViewById(R.id.home_ayrıntı_progressbar);
 
@@ -144,12 +139,20 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         //Log.i("TAG", "islevver: "+dosyayolu_string);
         //Toast.makeText(getApplicationContext(),dosyayolu_string,Toast.LENGTH_LONG).show();
 
+        openpdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), pdfViewer.class);
+                intent.putExtra("url",getString(R.string.site_adresi)+dosyayolu_string);
+                startActivity(intent);
+            }
+        });
+
         if (dosyaturu_string.equals("pdf")) {
             ayrıntılı_resim.setVisibility(View.GONE);
             Pdfview.setVisibility(View.VISIBLE);
            // Pdfview.fromAsset("http://dergiler.ankara.edu.tr/dergiler/13/1189/13740.pdf").defaultPage(0).load();
 
-            Pdfview.getSettings().setJavaScriptEnabled(true);
             Pdfview.loadUrl("https://docs.google.com/gview?embedded=true&url="+getString(R.string.site_adresi)+dosyayolu_string);
 
 
@@ -341,9 +344,10 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         });
 
 
-        ayrıntıı_indirme.setOnClickListener(new View.OnClickListener() {
+        ayrıntili_indirme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ayrıntili_indirme.setVisibility(View.GONE);
 /*
                 downloadManager= (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
                 Uri uri=Uri.parse(getString(R.string.site_adresi)+dosyayolu_string);
@@ -361,7 +365,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                 down.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        //Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Dosya İndiriliyor Dosya Yöneticisinden Bulabilirsiniz", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Dosya İndiriliyor Dosya Yöneticisinden Bulabilirsiniz", Toast.LENGTH_SHORT).show();
 
                         Boolean dosya=dosyayıdiskeyaz(response.body());
                         if (dosya==true)
@@ -460,8 +464,8 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 private boolean dosyayıdiskeyaz(ResponseBody body) {
     try {
         // todo change the file location/name according to your needs
-        Random random1=new Random(9999);
-        Random random2=new Random(9999);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss");// you can add z for zone gmt +3
+        String currentDateandTime = sdf.format(new Date());
       //  File futureStudioIconFile = new File(getExternalFilesDir(null) + File.separator +""+universite_string+ders_string+random1+random2+".jpeg");
 
         File root = android.os.Environment.getExternalStorageDirectory();
@@ -470,12 +474,12 @@ private boolean dosyayıdiskeyaz(ResponseBody body) {
         String fileName;
         if (dosyaturu_string.equals("pdf"))
         {
-            fileName=universite_string+ders_string+random1+random2+".pdf";
+            fileName=universite_string+ders_string+currentDateandTime+".pdf";
              dir = new File(root.getAbsolutePath() + "/DeepNote_pdf");
         }
         else
         {
-            fileName=universite_string+ders_string+random1+random2+".jpeg";
+            fileName=universite_string+ders_string+currentDateandTime+".jpeg";
             dir = new File(root.getAbsolutePath() + "/DeepNote_resim");
         }
         if(dir.exists() == false){

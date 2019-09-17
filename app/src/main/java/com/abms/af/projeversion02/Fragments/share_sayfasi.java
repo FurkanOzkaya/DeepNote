@@ -3,6 +3,7 @@ package com.abms.af.projeversion02.Fragments;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -21,12 +22,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.provider.OpenableColumns;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,14 +43,17 @@ import com.abms.af.projeversion02.Models.Pdfyuklemesonuc;
 import com.abms.af.projeversion02.Models.Resimyuklemesonuc;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
+import com.developer.filepicker.controller.DialogSelectionListener;
+import com.developer.filepicker.model.DialogConfigs;
+import com.developer.filepicker.model.DialogProperties;
+import com.developer.filepicker.view.FilePickerDialog;
+import com.github.dhaval2404.imagepicker.ImagePicker;
 
-import org.apache.commons.io.FileUtils;
-
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -86,6 +86,7 @@ public class share_sayfasi extends Fragment {
     private FloatingActionButton boommenu_ana_buton;
     SharedPreferences sharedPreferences;
     ProgressBar progressBar;
+    FilePickerDialog dialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -228,6 +229,8 @@ public class share_sayfasi extends Fragment {
         });
 
 
+
+
     }
 
 
@@ -245,20 +248,74 @@ public class share_sayfasi extends Fragment {
      *
      */
     public void resimGoster() {
-        Intent intent = new Intent();
+
+        ImagePicker.Companion.with(this)
+                .galleryOnly()
+                //.crop(1f, 1f)	    		//Crop Square image(Optional)
+                .compress(1024)			//Final image size will be less than 1 MB(Optional)
+                .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                .start();
+        /*Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, 1);
+        startActivityForResult(intent, 1);*/
     }
 
     private void pdf_goster()
     {
-        Intent intent = new Intent();
+        DialogProperties properties = new DialogProperties();
+
+        properties.selection_mode = DialogConfigs.SINGLE_MODE;
+        properties.selection_type = DialogConfigs.FILE_SELECT;
+        properties.root = new File(DialogConfigs.DEFAULT_DIR);
+        properties.error_dir = new File(DialogConfigs.DEFAULT_DIR);
+        properties.offset = new File(DialogConfigs.DEFAULT_DIR);
+        properties.extensions = null;
+
+        dialog = new FilePickerDialog(getActivity(),properties);
+        dialog.setTitle("Pdf Seçiniz");
+        dialog.show();
+
+
+
+
+        dialog.setDialogSelectionListener(new DialogSelectionListener() {
+            @Override
+            public void onSelectedFilePaths(String[] files) {
+                Toast.makeText(getActivity().getApplicationContext(),"deneme: path. "+files[0],Toast.LENGTH_LONG).show();
+
+                ders_adi.setVisibility(View.VISIBLE);
+                bolum_adi.setVisibility(View.VISIBLE);
+                acıklama.setVisibility(View.VISIBLE);
+                yukleme_butonu.setVisibility(View.VISIBLE);
+
+                try {
+                    // use the FileUtils to get the actual file by uri
+                    String yol=files[0];
+
+                    mappdf = new HashMap<>();
+
+                    File file = new File(yol);
+                    RequestBody requestFile =RequestBody.create(MediaType.parse("application/pdf"),file);
+                    mappdf.put("file\"; filename=\"" + file.getName() + "\"", requestFile);
+                    //yuklenecekpdf = MultipartBody.Part.createFormData("pdf",file.getName(),requestFile);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+       /* Intent intent = new Intent();
         intent.setType("application/pdf");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, 2);
-
+*/
     }
+
+
+
 
     /*
     * resimi sunucuya yüklemek için bilgilerin aldıgı ve yüklendiği kısım
@@ -280,12 +337,12 @@ public class share_sayfasi extends Fragment {
             String bolum = bolum_adi.getSelectedItem().toString();
             String aciklama = acıklama.getText().toString();
             Call<Resimyuklemesonuc> a = ManagerAll.webyonet().resim_yukle(id_kullanici, ders, aciklama, bolum, mapresim);
-            //Toast.makeText(getActivity().getApplicationContext(), id + ders + aciklama + bolum, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getActivity().getApplicationContext(), (CharSequence) mapresim, Toast.LENGTH_LONG).show();
 
             a.enqueue(new Callback<Resimyuklemesonuc>() {
                 @Override
                 public void onResponse(Call<Resimyuklemesonuc> call, Response<Resimyuklemesonuc> response) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Dosya Yüklendi:"+response.body().getResimyuklemesonuc(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "Dosya Sonuç:"+response.body().getResimyuklemesonuc(), Toast.LENGTH_LONG).show();
 
                     /////////////////////////////////////
                     progressBar.setVisibility(View.GONE);
@@ -312,6 +369,7 @@ public class share_sayfasi extends Fragment {
             String ders = ders_adi.getText().toString();
             String bolum = bolum_adi.getSelectedItem().toString();
             String aciklama = acıklama.getText().toString();
+           // Toast.makeText(getActivity().getApplicationContext(),mappdf,Toast.LENGTH_LONG).show();
             Call<Pdfyuklemesonuc> ee=ManagerAll.webyonet().pdf_yukle(id_kullanici, ders, aciklama, bolum,mappdf);
             ee.enqueue(new Callback<Pdfyuklemesonuc>() {
                 @Override
@@ -349,26 +407,27 @@ public class share_sayfasi extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1 && resultCode == getActivity().RESULT_OK && data != null) {
+        if (requestCode == ImagePicker.REQUEST_CODE && resultCode == getActivity().RESULT_OK && data != null) {
             Uri path = data.getData();
             String uri=String.valueOf(path);
             ders_adi.setVisibility(View.VISIBLE);
             bolum_adi.setVisibility(View.VISIBLE);
             acıklama.setVisibility(View.VISIBLE);
             yukleme_butonu.setVisibility(View.VISIBLE);
+
+            String denee = ImagePicker.Companion.getFilePath(data);
+            Toast.makeText(getActivity().getApplicationContext(),"deneme: "+ denee,Toast.LENGTH_LONG).show();
             try {
                 // use the FileUtils to get the actual file by uri
-                String yol=getPath(getActivity().getApplicationContext(),path);
-                Toast.makeText(getActivity().getApplicationContext(),""+yol,Toast.LENGTH_LONG).show();
+                //String yol = getPath(getActivity().getApplicationContext(),path);
 
-                String resim=compressImage(uri);
-                ////////////////////////////////////////////////////////
-/*
-                Bitmap bitmapImage = BitmapFactory.decodeFile(yol);
-                int nh = (int) ( bitmapImage.getHeight() * (512.0 / bitmapImage.getWidth()) );
-                Bitmap scaled = Bitmap.createScaledBitmap(bitmapImage, 512, nh, true);
-*/
-                /////////////////////////////////////////////////////////
+                //Toast.makeText(getActivity().getApplicationContext(),"path: "+yol,Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity().getApplicationContext(),"Uri: "+path.toString(),Toast.LENGTH_LONG).show();
+
+                String resim=ImagePicker.Companion.getFilePath(data);
+
+               // String resim=compressImage(uri);
+
                 mapresim = new HashMap<>();
 
                 File file = new File(resim);
@@ -380,9 +439,12 @@ public class share_sayfasi extends Fragment {
             }
 
         }
-        if (requestCode == 2 && resultCode == getActivity().RESULT_OK && data != null) {
+        /*
+            it's old version of select pdf new with dialog
+         */
+        /*if (requestCode == 2 && resultCode == getActivity().RESULT_OK && data != null) {
             Uri path = data.getData();
-            Toast.makeText(getActivity().getApplicationContext(),"yol"+path.toString(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity().getApplicationContext(),"yol: "+path.toString(),Toast.LENGTH_LONG).show();
             ders_adi.setVisibility(View.VISIBLE);
             bolum_adi.setVisibility(View.VISIBLE);
             acıklama.setVisibility(View.VISIBLE);
@@ -390,7 +452,7 @@ public class share_sayfasi extends Fragment {
             try {
                 // use the FileUtils to get the actual file by uri
                 String yol=getPath(getActivity().getApplicationContext(),path);
-                Toast.makeText(getActivity().getApplicationContext(),""+yol,Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getApplicationContext(),"path: "+yol,Toast.LENGTH_LONG).show();
 
                 mappdf = new HashMap<>();
 
@@ -402,7 +464,7 @@ public class share_sayfasi extends Fragment {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+        }*/
 
         }
 
@@ -463,10 +525,12 @@ public class share_sayfasi extends Fragment {
         }
         // MediaStore (and general)
         else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            Log.d("TAG", "getPath: THİS İS content"+getDataColumn(context, uri, null, null));
             return getDataColumn(context, uri, null, null);
         }
         // File
         else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            Log.d("TAG", "getPath: THİS İS FİLE"+uri.getPath());
             return uri.getPath();
         }
 
@@ -691,4 +755,6 @@ public class share_sayfasi extends Fragment {
 
         return inSampleSize;
     }
+
+
 }

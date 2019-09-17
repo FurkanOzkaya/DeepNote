@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".pdfViewer"></activity>
         <activity android:name=".acilis_logo1_Abms">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +35,7 @@
             android:name=".profil_resmi_pop_up"
             android:theme="@style/popupstyle" />
         <activity android:name=".profil_paylasimlari_ayrinti" />
-        <activity android:name=".others_profil_sayfasi"></activity>
+        <activity android:name=".others_profil_sayfasi" />
     </application>
 
 </manifest>

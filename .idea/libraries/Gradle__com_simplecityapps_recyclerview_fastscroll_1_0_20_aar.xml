@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.simplecityapps:recyclerview-fastscroll:1.0.20@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a159a638e7085e89591a2d624f282256/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a159a638e7085e89591a2d624f282256/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a159a638e7085e89591a2d624f282256/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.simplecityapps/recyclerview-fastscroll/1.0.20/8030315a12e100c8d6c2f6ea160b803651af0f85/recyclerview-fastscroll-1.0.20-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

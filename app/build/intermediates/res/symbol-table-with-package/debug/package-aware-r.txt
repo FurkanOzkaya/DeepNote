@@ -11,15 +11,20 @@ anim abc_slide_out_bottom
 anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
+anim bounce
 anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
 anim fab_close
 anim fab_open
+anim marked_item_animation
 anim rotate
 anim rotate_ters
 anim transition
+anim ucrop_loader_circle_path
+anim ucrop_loader_circle_scale
+anim unmarked_item_animation
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -260,6 +265,7 @@ attr emptyVisibility
 attr enforceMaterialTheme
 attr errorEnabled
 attr errorTextAppearance
+attr error_dir
 attr expandActivityOverflowButtonDrawable
 attr expanded
 attr expandedTitleGravity
@@ -269,6 +275,7 @@ attr expandedTitleMarginEnd
 attr expandedTitleMarginStart
 attr expandedTitleMarginTop
 attr expandedTitleTextAppearance
+attr extensions
 attr fabAlignmentMode
 attr fabAttached
 attr fabCradleDiameter
@@ -281,6 +288,7 @@ attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
 attr fastScrollVerticalThumbDrawable
 attr fastScrollVerticalTrackDrawable
+attr firstBaselineToTopHeight
 attr floatingActionButtonStyle
 attr font
 attr fontFamily
@@ -334,6 +342,7 @@ attr itemTextAppearanceInactive
 attr itemTextColor
 attr keylines
 attr labelVisibilityMode
+attr lastBaselineToBottomHeight
 attr layout
 attr layoutManager
 attr layout_anchor
@@ -405,6 +414,7 @@ attr layout_order
 attr layout_scrollFlags
 attr layout_scrollInterpolator
 attr layout_wrapBefore
+attr lineHeight
 attr listChoiceBackgroundIndicator
 attr listDividerAlertDialog
 attr listItemLayout
@@ -432,6 +442,7 @@ attr navigationIcon
 attr navigationMode
 attr navigationViewStyle
 attr numericModifiers
+attr offset_dir
 attr overlapAnchor
 attr paddingBottomNoButtons
 attr paddingEnd
@@ -460,6 +471,7 @@ attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
 attr reverseLayout
 attr rippleColor
+attr root_dir
 attr sb_handlerColor
 attr sb_horizontal
 attr sb_indicatorColor
@@ -473,6 +485,8 @@ attr searchViewStyle
 attr seekBarStyle
 attr selectableItemBackground
 attr selectableItemBackgroundBorderless
+attr selection_mode
+attr selection_type
 attr showAsAction
 attr showDividers
 attr showMotionSpec
@@ -579,6 +593,7 @@ attr titleMargins
 attr titleTextAppearance
 attr titleTextColor
 attr titleTextStyle
+attr title_text
 attr toolbarId
 attr toolbarNavigationButtonStyle
 attr toolbarStyle
@@ -589,6 +604,22 @@ attr track
 attr trackTint
 attr trackTintMode
 attr ttcIndex
+attr ucrop_artv_ratio_title
+attr ucrop_artv_ratio_x
+attr ucrop_artv_ratio_y
+attr ucrop_aspect_ratio_x
+attr ucrop_aspect_ratio_y
+attr ucrop_circle_dimmed_layer
+attr ucrop_dimmed_color
+attr ucrop_frame_color
+attr ucrop_frame_stroke_size
+attr ucrop_grid_color
+attr ucrop_grid_column_count
+attr ucrop_grid_row_count
+attr ucrop_grid_stroke_size
+attr ucrop_show_frame
+attr ucrop_show_grid
+attr ucrop_show_oval_crop_frame
 attr useCompatPadding
 attr viewInflaterClass
 attr voiceIcon
@@ -605,7 +636,6 @@ attr windowNoTitle
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
-bool abc_config_showMenuShortcutsWhenKeyboardPresent
 bool mtrl_btn_textappearance_all_caps
 color abc_background_cache_hint_selector_material_dark
 color abc_background_cache_hint_selector_material_light
@@ -650,6 +680,7 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorAccent
+color colorHeader
 color colorPrimary
 color colorPrimaryDark
 color design_bottom_navigation_shadow_color
@@ -665,6 +696,8 @@ color design_fab_stroke_top_inner_color
 color design_fab_stroke_top_outer_color
 color design_snackbar_background_color
 color design_tint_password_toggle
+color dialog_choose_icon_color
+color dialog_choose_text_color
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -739,8 +772,24 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color textColorPrimary
+color textColorSecondary
 color tooltip_background_dark
 color tooltip_background_light
+color ucrop_color_crop_background
+color ucrop_color_default_crop_frame
+color ucrop_color_default_crop_grid
+color ucrop_color_default_dimmed
+color ucrop_color_default_logo
+color ucrop_color_progress_wheel_line
+color ucrop_color_statusbar
+color ucrop_color_toolbar
+color ucrop_color_toolbar_widget
+color ucrop_color_widget
+color ucrop_color_widget_active
+color ucrop_color_widget_background
+color ucrop_color_widget_text
+color ucrop_scale_text_view_selector
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -751,7 +800,6 @@ dimen abc_action_bar_elevation_material
 dimen abc_action_bar_icon_vertical_padding_material
 dimen abc_action_bar_overflow_padding_end_material
 dimen abc_action_bar_overflow_padding_start_material
-dimen abc_action_bar_progress_bar_size
 dimen abc_action_bar_stacked_max_height
 dimen abc_action_bar_stacked_tab_max_width
 dimen abc_action_bar_subtitle_bottom_margin_material
@@ -818,14 +866,19 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen activity_margin
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
+dimen checkbox_dimens
+dimen checkbox_margin
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
 dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
+dimen compat_notification_large_icon_max_height
+dimen compat_notification_large_icon_max_width
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -955,6 +1008,11 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen subtitle_corner_radius
+dimen subtitle_outline_width
+dimen subtitle_shadow_offset
+dimen subtitle_shadow_radius
+dimen toolbar_image_margin
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -963,6 +1021,25 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen ucrop_default_crop_frame_stoke_width
+dimen ucrop_default_crop_grid_stoke_width
+dimen ucrop_default_crop_logo_size
+dimen ucrop_default_crop_rect_corner_touch_area_line_length
+dimen ucrop_default_crop_rect_corner_touch_threshold
+dimen ucrop_default_crop_rect_min_size
+dimen ucrop_height_crop_aspect_ratio_text
+dimen ucrop_height_divider_shadow
+dimen ucrop_height_horizontal_wheel_progress_line
+dimen ucrop_height_wrapper_controls
+dimen ucrop_height_wrapper_states
+dimen ucrop_margin_horizontal_wheel_progress_line
+dimen ucrop_margit_top_widget_text
+dimen ucrop_padding_crop_frame
+dimen ucrop_progress_size
+dimen ucrop_size_dot_scale_text_view
+dimen ucrop_size_wrapper_rotate_button
+dimen ucrop_text_size_widget_text
+dimen ucrop_width_horizontal_wheel_progress_line
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -1057,6 +1134,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable bottom_gradient
 drawable bottom_nav_item_background
+drawable bottom_shadow
 drawable butonshape
 drawable buyutec_yirmi
 drawable default_scroll_handle_bottom
@@ -1099,6 +1177,8 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_photo_black_48dp
+drawable ic_photo_camera_black_48dp
 drawable ic_send_black_24dp
 drawable image
 drawable indir
@@ -1141,6 +1221,18 @@ drawable studentgirl
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transparan
+drawable ucrop_ic_angle
+drawable ucrop_ic_crop
+drawable ucrop_ic_cross
+drawable ucrop_ic_done
+drawable ucrop_ic_next
+drawable ucrop_ic_reset
+drawable ucrop_ic_rotate
+drawable ucrop_ic_scale
+drawable ucrop_shadow_upside
+drawable ucrop_vector_ic_crop
+drawable ucrop_vector_loader
+drawable ucrop_vector_loader_animated
 drawable yorumsil
 id ALT
 id CTRL
@@ -1224,6 +1316,7 @@ id bolum_uyarı
 id bottom
 id buton_altı_bilgilendirme
 id buttonPanel
+id cancel
 id cancel_action
 id center
 id center_horizontal
@@ -1251,8 +1344,11 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dimensions
+id dir_path
+id dir_select
 id direct
 id disableHome
+id dname
 id dogum_tarihi
 id dogum_tarihi_uyarı
 id e_posta
@@ -1266,12 +1362,19 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fileList
+id file_dir_select
+id file_mark
+id file_select
 id fill
 id fill_horizontal
 id fill_vertical
 id filled
 id fixed
+id fname
+id footer
 id forever
+id ftype
 id gelendosya
 id ghost_view
 id girisPaneli
@@ -1282,6 +1385,7 @@ id giris_sifre
 id giris_sifre_uyarı
 id gone
 id group_divider
+id header
 id hesap_acma
 id home
 id homeAsUp
@@ -1294,6 +1398,13 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageView
+id image_type
+id image_view_crop
+id image_view_logo
+id image_view_state_aspect_ratio
+id image_view_state_rotate
+id image_view_state_scale
 id info
 id invisible
 id italic
@@ -1301,9 +1412,13 @@ id item_touch_helper_previous_elevation
 id kayıt_ol_buton
 id labeled
 id largeLabel
+id layout_aspect_ratio
+id layout_rotate_wheel
+id layout_scale_wheel
 id left
 id line1
 id line3
+id linearLayout
 id listMode
 id list_item
 id listview_aciklama
@@ -1316,13 +1431,18 @@ id listview_profil_bolum
 id listview_profil_ders
 id listview_profil_fotosu
 id listview_universite
+id lytCameraPick
+id lytGalleryPick
 id masked
 id media_actions
+id menu_crop
+id menu_loader
 id message
 id middle
 id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
+id multi_mode
 id multiply
 id navigation_header_container
 id never
@@ -1331,6 +1451,7 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id openpdf
 id others_profil_adi
 id others_profil_bilgileri_kısmı
 id others_profil_bolum
@@ -1346,6 +1467,7 @@ id parent
 id parentPanel
 id parent_matrix
 id pdf_buton
+id pdfviewer
 id percent
 id pin
 id profil_adi
@@ -1370,9 +1492,11 @@ id resim_buton
 id right
 id right_icon
 id right_side
+id rotate_scroll_wheel
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id scale_scroll_wheel
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1389,6 +1513,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id select
 id select_dialog_listview
 id selected
 id share_sayafası_progress_bar
@@ -1401,6 +1526,7 @@ id showHome
 id showTitle
 id sifre_dogrulama
 id sifre_dogrulama_uyarı
+id single_mode
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1415,17 +1541,24 @@ id src_in
 id src_over
 id standard
 id start
+id state_aspect_ratio
+id state_rotate
+id state_scale
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
 id tabMode
 id tag_transition_group
+id tag_unhandled_key_event_manager
+id tag_unhandled_key_listeners
 id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id text_input_password_toggle
+id text_view_rotate
+id text_view_scale
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -1433,6 +1566,8 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar
+id toolbar_title
 id top
 id topPanel
 id touch_outside
@@ -1443,6 +1578,9 @@ id transition_scene_layoutid_cache
 id transition_transform
 id txt1
 id txt2
+id ucrop
+id ucrop_frame
+id ucrop_photobox
 id uniform
 id universite
 id universite_uyarı
@@ -1450,10 +1588,15 @@ id unlabeled
 id up
 id useLogo
 id view_offset_helper
+id view_overlay
 id visible
 id withText
 id wrap
 id wrap_content
+id wrapper_controls
+id wrapper_reset_rotate
+id wrapper_rotate_by_angle
+id wrapper_states
 id yorumlar_ad
 id yorumlar_listview_profil_fotosu
 id yorumlar_lisview_uyarı
@@ -1474,6 +1617,7 @@ integer mtrl_btn_anim_duration_ms
 integer mtrl_chip_anim_duration
 integer show_password_duration
 integer status_bar_notification_info_maxnum
+integer ucrop_progress_loading_anim_time
 interpolator mtrl_fast_out_linear_in
 interpolator mtrl_fast_out_slow_in
 interpolator mtrl_linear
@@ -1489,6 +1633,7 @@ layout abc_activity_chooser_view_list_item
 layout abc_alert_dialog_button_bar_material
 layout abc_alert_dialog_material
 layout abc_alert_dialog_title_material
+layout abc_cascading_menu_item_layout
 layout abc_dialog_title_material
 layout abc_expanded_menu_layout
 layout abc_list_menu_item_checkbox
@@ -1513,6 +1658,7 @@ layout activity_hesap_acma
 layout activity_homesayfasi_paylasimlari_ayrintili
 layout activity_main
 layout activity_others_profil_sayfasi
+layout activity_pdf_viewer
 layout activity_profil_paylasimlari_ayrinti
 layout activity_profil_resmi_pop_up
 layout design_bottom_navigation_item
@@ -1529,6 +1675,12 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dialog_choose_app
+layout dialog_file_list
+layout dialog_file_list_item
+layout dialog_footer
+layout dialog_header
+layout dialog_main
 layout fragment_home_sayfasi
 layout fragment_profil_sayfasi
 layout fragment_share_sayfasi
@@ -1554,10 +1706,21 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout ucrop_activity_photobox
+layout ucrop_aspect_ratio
+layout ucrop_controls
+layout ucrop_fragment_photobox
+layout ucrop_layout_rotate_wheel
+layout ucrop_layout_scale_wheel
+layout ucrop_view
 menu ana_sayfa_alt_butonlar
 menu profil_sayafasi_ayarlarmenu
+menu ucrop_menu_activity
+mipmap ic_directory_parent
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap ic_type_file
+mipmap ic_type_folder
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1578,6 +1741,16 @@ string abc_font_family_headline_material
 string abc_font_family_menu_material
 string abc_font_family_subhead_material
 string abc_font_family_title_material
+string abc_menu_alt_shortcut_label
+string abc_menu_ctrl_shortcut_label
+string abc_menu_delete_shortcut_label
+string abc_menu_enter_shortcut_label
+string abc_menu_function_shortcut_label
+string abc_menu_meta_shortcut_label
+string abc_menu_shift_shortcut_label
+string abc_menu_space_shortcut_label
+string abc_menu_sym_shortcut_label
+string abc_prepend_shortcut_label
 string abc_search_hint
 string abc_searchview_description_clear
 string abc_searchview_description_query
@@ -1587,6 +1760,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_cancel
 string action_settings
 string app_name
 string appbar_scrolling_view_behavior
@@ -1595,7 +1769,16 @@ string arama_pop_up_dersadi_uyarı
 string ayrıntısayfalari_yorum_listview_uyarı
 string bottom_sheet_behavior
 string buton_altı_bilgilendirme
+string cancel_button_label
 string character_counter_pattern
+string choose_button_label
+string default_dir
+string error_dir_access
+string error_failed_pick_gallery_image
+string error_failed_to_compress_image
+string error_failed_to_create_camera_image_file
+string error_failed_to_crop_image
+string error_task_cancelled
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string giris_uyarı
@@ -1614,7 +1797,13 @@ string hesap_acma_sayfası_üniversite_kısmı_uyarı
 string hesap_olustur
 string hide_bottom_view_on_scroll_behavior
 string home_sayfasi_listview_top_uyarı
+string image_picker_provider_authority_suffix
 string jsongüvenlikkod
+string label_parent_dir
+string label_parent_directory
+string last_edit
+string message_camera_permission_denied
+string message_gallery_permission_denied
 string mtrl_chip_close_icon_content_description
 string nav_header_desc
 string nav_header_subtitle
@@ -1626,6 +1815,8 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string permission_camera_denied
+string permission_gallery_denied
 string search_menu_title
 string share_sayfası_acıklama_uyarı
 string share_sayfası_bolum_uyarı
@@ -1636,6 +1827,14 @@ string sozlesme
 string status_bar_notification_info_overflow
 string title_activity_ana_ekran
 string title_activity_denememenu
+string title_camera
+string title_choose_image_provider
+string title_gallery
+string ucrop_error_input_data_is_absent
+string ucrop_label_edit_photo
+string ucrop_label_original
+string ucrop_menu_crop
+string ucrop_mutate_exception_hint
 string uye_olmak
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
@@ -1843,8 +2042,10 @@ style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon
 style RtlOverlay_Widget_AppCompat_PopupMenuItem
 style RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup
+style RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut
 style RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow
 style RtlOverlay_Widget_AppCompat_PopupMenuItem_Text
+style RtlOverlay_Widget_AppCompat_PopupMenuItem_Title
 style RtlOverlay_Widget_AppCompat_Search_DropDown
 style RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1
 style RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2
@@ -1987,6 +2188,7 @@ style Theme_MaterialComponents_Light_Dialog_MinWidth
 style Theme_MaterialComponents_Light_DialogWhenLarge
 style Theme_MaterialComponents_Light_NoActionBar
 style Theme_MaterialComponents_NoActionBar
+style Theme_Transparent_ImagePicker
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -2110,6 +2312,11 @@ style Widget_MaterialComponents_TextInputLayout_OutlineBox_Dense
 style Widget_Support_CoordinatorLayout
 style popupstyle
 style profil_bilgi_arkaplan
+style ucrop_ImageViewWidgetIcon
+style ucrop_TextViewCropAspectRatio
+style ucrop_TextViewWidgetText
+style ucrop_WrapperIconState
+style ucrop_WrapperRotateButton
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -2117,13 +2324,16 @@ styleable ActionMenuView
 styleable ActionMode background backgroundSplit closeItemLayout height subtitleTextStyle titleTextStyle
 styleable ActivityChooserView expandActivityOverflowButtonDrawable initialActivityCount
 styleable AlertDialog android_layout buttonIconDimen buttonPanelSideLayout listItemLayout listLayout multiChoiceItemLayout showTitle singleChoiceItemLayout
+styleable AnimatedStateListDrawableCompat android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
+styleable AnimatedStateListDrawableItem android_id android_drawable
+styleable AnimatedStateListDrawableTransition android_drawable android_toId android_fromId android_reversible
 styleable AppBarLayout android_background android_touchscreenBlocksFocus android_keyboardNavigationCluster elevation expanded
 styleable AppBarLayoutStates state_collapsed state_collapsible
 styleable AppBarLayout_Layout layout_scrollFlags layout_scrollInterpolator
 styleable AppCompatImageView android_src srcCompat tint tintMode
 styleable AppCompatSeekBar android_thumb tickMark tickMarkTint tickMarkTintMode
 styleable AppCompatTextHelper android_textAppearance android_drawableTop android_drawableBottom android_drawableLeft android_drawableRight android_drawableStart android_drawableEnd
-styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType fontFamily textAllCaps
+styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType firstBaselineToTopHeight fontFamily lastBaselineToBottomHeight lineHeight textAllCaps
 styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
 styleable BottomAppBar backgroundTint fabAlignmentMode fabAttached fabCradleDiameter fabCradleRoundedCornerRadius fabCradleVerticalOffset
 styleable BottomNavigationView elevation itemBackground itemHorizontalTranslation itemIconSize itemIconTint itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
@@ -2145,12 +2355,15 @@ styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DesignTheme bottomSheetDialogTheme bottomSheetStyle
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
+styleable FilePickerPreference error_dir extensions offset_dir root_dir selection_mode selection_type title_text
 styleable FlexboxLayout_Layout layout_flexBasisPercent layout_flexGrow layout_flexShrink layout_maxHeight layout_maxWidth layout_minHeight layout_minWidth layout_order layout_wrapBefore
 styleable FloatingActionButton backgroundTint backgroundTintMode borderWidth elevation fabCustomSize fabSize hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor showMotionSpec useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
+styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
@@ -2172,6 +2385,8 @@ styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable SnackbarLayout android_maxWidth elevation maxActionInlineWidth
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
+styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
+styleable StateListDrawableItem android_drawable
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable TabItem android_icon android_layout android_text
 styleable TabLayout tabBackground tabContentStart tabGravity tabIconTint tabIconTintMode tabIndicator tabIndicatorColor tabIndicatorFullWidth tabIndicatorGravity tabIndicatorHeight tabInlineLabel tabMaxWidth tabMinWidth tabMode tabPadding tabPaddingBottom tabPaddingEnd tabPaddingStart tabPaddingTop tabRippleColor tabSelectedTextColor tabTextAppearance tabTextColor tabUnboundedRipple
@@ -2182,3 +2397,6 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+styleable ucrop_AspectRatioTextView ucrop_artv_ratio_title ucrop_artv_ratio_x ucrop_artv_ratio_y
+styleable ucrop_UCropView ucrop_aspect_ratio_x ucrop_aspect_ratio_y ucrop_circle_dimmed_layer ucrop_dimmed_color ucrop_frame_color ucrop_frame_stroke_size ucrop_grid_color ucrop_grid_column_count ucrop_grid_row_count ucrop_grid_stroke_size ucrop_show_frame ucrop_show_grid ucrop_show_oval_crop_frame
+xml image_picker_provider_paths

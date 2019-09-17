@@ -147,6 +147,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -276,7 +277,12 @@
 
                 </LinearLayout>
             </LinearLayout>
-
+            <Button
+                android:id="@+id/openpdf"
+                android:text="Pdf'i Uygulamada görüntüle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.2dp"
