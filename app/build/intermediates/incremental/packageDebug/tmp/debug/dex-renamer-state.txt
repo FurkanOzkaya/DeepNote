@@ -1,4 +1,4 @@
-#Tue Sep 17 19:14:28 EET 2019
+#Thu Sep 19 01:18:14 EET 2019
 base.0=C\:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 path.1=classes.dex
 renamed.1=classes2.dex

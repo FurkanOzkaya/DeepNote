@@ -50,7 +50,7 @@ public interface RestApi {
 
     @FormUrlEncoded
     @POST("/Paylasimveritabanigetir.php")
-    Call<List<Homesayfasitumpaylasimveritabani>> paylasımlarintumunugetir(@Field("jsonguvenlik") String jsonguvenlik);
+    Call<List<Homesayfasitumpaylasimveritabani>> paylasımlarintumunugetir(@Field("jsonguvenlik") String jsonguvenlik,@Field("page") int page);
 
     @FormUrlEncoded
     @POST("/Profilsayfasiveritabanigetir.php")

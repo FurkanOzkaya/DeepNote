@@ -265,6 +265,7 @@ public class share_sayfasi extends Fragment {
     {
         DialogProperties properties = new DialogProperties();
 
+       // String [] extensions={"txt:pdf:"}; extensions doesnt work
         properties.selection_mode = DialogConfigs.SINGLE_MODE;
         properties.selection_type = DialogConfigs.FILE_SELECT;
         properties.root = new File(DialogConfigs.DEFAULT_DIR);

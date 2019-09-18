@@ -7,12 +7,16 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -45,7 +49,11 @@ public class home_sayfasi extends Fragment {
     ProgressBar progressBar;
     TextView home_sayfası_listview_uyarı;
     SwipeRefreshLayout refesh_home;
-
+    Button loadpagebutton;
+    LinearLayout home_listview_layout;
+    int pageCount=0;
+    int pageListSize=0;
+    int rowcount=0;
 
 
     @Override
@@ -76,7 +84,7 @@ public class home_sayfasi extends Fragment {
         progressBar=view.findViewById(R.id.anasayfa_progress_bar);
         home_sayfası_listview_uyarı=view.findViewById(R.id.home_sayfası_lisview_uyarı_mesajı);
         refesh_home=view.findViewById(R.id.home_sayfasi_refesh);
-
+        loadpagebutton=view.findViewById(R.id.loadPage);
     }
 
 
@@ -84,41 +92,48 @@ public class home_sayfasi extends Fragment {
     private void islevver() {
 
         // H O M E    S A Y F A S I    V E R İ    C E K M E
-        retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(getString(R.string.jsongüvenlikkod));
-        //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-        progressBar.setVisibility(View.VISIBLE);
-        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        ////////////////////////////////////////////////////////////////////////////////////
-        tumveriler.enqueue(new Callback<List<Homesayfasitumpaylasimveritabani>>() {
-            @Override
-            public void onResponse(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Response<List<Homesayfasitumpaylasimveritabani>> response) {
-                // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi"+response.body(),Toast.LENGTH_SHORT).show();
-                if (response.isSuccessful()) {
-                    // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
-                    tum_veriler_liste = response.body();
-                    paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
-                    listView_homesayfasi.setAdapter(paylasimtumverileradapter);
+       loadListForHome(pageCount);
 
-                    /////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ///////////////////////////   P R O G R E S S   B A R   /////////
-                }
+
+        listView_homesayfasi.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView absListView, int i) {
             }
 
-            @Override
-            public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
-                Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz "+t.getMessage(), Toast.LENGTH_SHORT).show();
 
-                //////////////////////////////////////////////////////////////
-                progressBar.setVisibility(View.GONE);
-                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
+            @Override
+            public void onScroll(AbsListView absListView, int firstvisibleitem, int visibleItemCount, int totalItem) {
+                if (listView_homesayfasi.getAdapter() == null)
+                {
+                    return;
+                }
+                if (listView_homesayfasi.getAdapter().getCount() == 0)
+                {
+                    return;
+                }
+
+                //Log.i("debug:","firtVItem: "+firstvisibleitem+" visiitemcount: "+visibleItemCount+ " totalıtemcount: "+totalItem + " lastvisibleıtem: "+ listView_homesayfasi.getLastVisiblePosition());
+                int edge = visibleItemCount + firstvisibleitem;
+                if (listView_homesayfasi.getLastVisiblePosition() == totalItem-1 && listView_homesayfasi.getChildAt(listView_homesayfasi.getChildCount() - 1).getBottom() <= listView_homesayfasi.getHeight())
+                {
+                    //Toast.makeText(getActivity().getApplicationContext(),"Sayfa Sonu Load:",Toast.LENGTH_LONG).show();
+                    loadpagebutton.setVisibility(View.VISIBLE);
+
+                }
+                else
+                {
+                    loadpagebutton.setVisibility(View.GONE);
+                }
+
             }
         });
 
-
+        loadpagebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    loadList();
+            }
+        });
 
 
         //P O P   U P    F O N K S İ Y O N U N U
@@ -143,42 +158,8 @@ public class home_sayfasi extends Fragment {
 
             @Override
             public void onRefresh() {
-                retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(getString(R.string.jsongüvenlikkod));
-                //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-                progressBar.setVisibility(View.VISIBLE);
-                getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                ////////////////////////////////////////////////////////////////////////////////////
-                tumveriler.enqueue(new Callback<List<Homesayfasitumpaylasimveritabani>>() {
-                    @Override
-                    public void onResponse(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Response<List<Homesayfasitumpaylasimveritabani>> response) {
-                        // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi"+response.body(),Toast.LENGTH_SHORT).show();
-                        if (response.isSuccessful()) {
-                            // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
-                            tum_veriler_liste = response.body();
-                            paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
-                            listView_homesayfasi.setAdapter(paylasimtumverileradapter);
-
-                            /////////////////////////////////////
-                            progressBar.setVisibility(View.GONE);
-                            refesh_home.setRefreshing(false);
-                            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                            ///////////////////////////   P R O G R E S S   B A R   /////////
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
-                        Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz "+t.getMessage(), Toast.LENGTH_SHORT).show();
-
-                        //////////////////////////////////////////////////////////////
-                        progressBar.setVisibility(View.GONE);
-                        refesh_home.setRefreshing(false);
-                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                        /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
-                    }
-                });
-
+                pageCount=0;
+                loadListForHome(pageCount);
             }
         });
 
@@ -187,6 +168,8 @@ public class home_sayfasi extends Fragment {
 
 
     }
+
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -245,6 +228,76 @@ public class home_sayfasi extends Fragment {
 
     }
 
+    void loadList()
+    {
+        int page= rowcount / pageListSize;
+        if (page > pageCount)
+        {
+            pageCount++;
+        }
+        else if(page <= pageCount)
+        {
+            pageCount=0;
+        }
+        Toast.makeText(getActivity().getApplicationContext(),"page: "+page+" pagecount: "+pageCount+" rowcount: "+rowcount + " pagelistsize: "+pageListSize,Toast.LENGTH_LONG).show();
+       loadpagebutton.setVisibility(View.GONE);
+       loadListForHome(pageCount);
 
+    }
+
+    void loadListForHome(int page)
+    {
+
+        retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(getString(R.string.jsongüvenlikkod),page);
+        //////////////////////////////// P R O G R E S S   B A R    //////////////////////
+        progressBar.setVisibility(View.VISIBLE);
+        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+        ////////////////////////////////////////////////////////////////////////////////////
+        tumveriler.enqueue(new Callback<List<Homesayfasitumpaylasimveritabani>>() {
+            @Override
+            public void onResponse(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Response<List<Homesayfasitumpaylasimveritabani>> response) {
+                 //Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi"+response.body(),Toast.LENGTH_SHORT).show();
+                if (response.isSuccessful()) {
+                   if (response.body() != null )
+                   {
+                       rowcount=response.body().get(0).getRowCount();
+                       pageListSize=response.body().get(0).getPageListSize();
+                       // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
+                       tum_veriler_liste = response.body();
+                       paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
+                       listView_homesayfasi.setAdapter(paylasimtumverileradapter);
+                       /////////////////////////////////////
+                       progressBar.setVisibility(View.GONE);
+                       refesh_home.setRefreshing(false);
+                       getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                       ///////////////////////////   P R O G R E S S   B A R   /////////
+                   }
+                   else
+                   {
+                       Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz ", Toast.LENGTH_SHORT).show();
+
+                       //////////////////////////////////////////////////////////////
+                       progressBar.setVisibility(View.GONE);
+                       refesh_home.setRefreshing(false);
+                       getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                       /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
+                   }
+                }
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
+                Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz "+t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                //////////////////////////////////////////////////////////////
+                progressBar.setVisibility(View.GONE);
+                refesh_home.setRefreshing(false);
+                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
+            }
+        });
+
+    }
 
 }

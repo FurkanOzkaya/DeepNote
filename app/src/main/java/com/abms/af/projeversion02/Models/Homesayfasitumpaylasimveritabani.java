@@ -13,6 +13,24 @@ public class Homesayfasitumpaylasimveritabani{
 	private String dosyaturu;
 	private int yorumsayisi;
 	private int gosterme;
+	private int rowCount;
+	private int pageListSize;
+
+	public int getRowCount() {
+		return rowCount;
+	}
+
+	public void setRowCount(int rowCount) {
+		this.rowCount = rowCount;
+	}
+
+	public int getPageListSize() {
+		return pageListSize;
+	}
+
+	public void setPageListSize(int pageListSize) {
+		this.pageListSize = pageListSize;
+	}
 
 	public int getYorumsayisi() {
 		return yorumsayisi;

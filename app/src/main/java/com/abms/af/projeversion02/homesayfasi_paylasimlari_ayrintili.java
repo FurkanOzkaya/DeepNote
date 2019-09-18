@@ -151,7 +151,6 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         if (dosyaturu_string.equals("pdf")) {
             ayrıntılı_resim.setVisibility(View.GONE);
             Pdfview.setVisibility(View.VISIBLE);
-           // Pdfview.fromAsset("http://dergiler.ankara.edu.tr/dergiler/13/1189/13740.pdf").defaultPage(0).load();
 
             Pdfview.loadUrl("https://docs.google.com/gview?embedded=true&url="+getString(R.string.site_adresi)+dosyayolu_string);
 

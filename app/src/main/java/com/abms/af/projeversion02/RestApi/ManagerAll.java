@@ -49,8 +49,8 @@ public class ManagerAll extends BaseManager {
         return profilbilgi;
     }
 
-    public Call<List<Homesayfasitumpaylasimveritabani>> paylasimlartumugetir(String jsonguvenlık) {
-        Call<List<Homesayfasitumpaylasimveritabani>> paylasımgelenler = getRestApiClient().paylasımlarintumunugetir(jsonguvenlık);
+    public Call<List<Homesayfasitumpaylasimveritabani>> paylasimlartumugetir(String jsonguvenlık,int page) {
+        Call<List<Homesayfasitumpaylasimveritabani>> paylasımgelenler = getRestApiClient().paylasımlarintumunugetir(jsonguvenlık,page);
         return paylasımgelenler;
     }
 
