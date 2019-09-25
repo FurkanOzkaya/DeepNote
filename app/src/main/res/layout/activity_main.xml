@@ -90,6 +90,7 @@
         android:gravity="bottom">
 
         <TextView
+            android:id="@+id/sifremi_unuttum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sifre_unutma"

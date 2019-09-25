@@ -64,9 +64,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class share_sayfasi extends Fragment {
 
     Map<String, RequestBody> mappdf,mapresim;

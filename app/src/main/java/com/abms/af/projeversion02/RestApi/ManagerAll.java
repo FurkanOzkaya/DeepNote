@@ -3,6 +3,7 @@ package com.abms.af.projeversion02.RestApi;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
 import com.abms.af.projeversion02.Models.Kullanicikayitsonuc;
+import com.abms.af.projeversion02.Models.PHPMailersifregonderme;
 import com.abms.af.projeversion02.Models.Pdfyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilbilgilerigetir;
 import com.abms.af.projeversion02.Models.Profilfotosilmesonuc;
@@ -10,6 +11,7 @@ import com.abms.af.projeversion02.Models.Profilfotoyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.Models.Resimyuklemesonuc;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
+import com.abms.af.projeversion02.Models.Yenisifrebelirleme;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumsilmesonuc;
 import com.abms.af.projeversion02.Models.Yorumyapmasonuc;
@@ -90,8 +92,6 @@ public class ManagerAll extends BaseManager {
         return yorumgel;
     }
 
-
-
     public Call<Yorumsilmesonuc> yorumsil(int id_kullanici,int paylasim_id,int id_yorum)
     {
         Call<Yorumsilmesonuc> yorumsill=getRestApiClient().yorumsil(id_kullanici,paylasim_id,id_yorum);
@@ -108,6 +108,18 @@ public class ManagerAll extends BaseManager {
     {
         Call<ResponseBody> download=getRestApiClient().indir(url);
         return download;
+    }
+
+    public Call<PHPMailersifregonderme> PHPMailersifregonderme(String email)
+    {
+        Call<PHPMailersifregonderme> x = getRestApiClient().RestPHPMailer(email);
+        return x;
+    }
+
+    public Call<Yenisifrebelirleme> YeniSfireBelirleme(String email, String sifre)
+    {
+        Call<Yenisifrebelirleme> x = getRestApiClient().RestYeniSifreBekirleme(email,sifre);
+        return x;
     }
 
 }

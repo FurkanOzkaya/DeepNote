@@ -1,7 +1,6 @@
 package com.abms.af.projeversion02;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -28,7 +27,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView uyelik,genel_uyarı;
+    TextView uyelik,genel_uyarı, sifremi_unutttum;
     EditText giris_mail,giris_sifre;
     Button giris_buton;
     SharedPreferences sharedPreferences;
@@ -98,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         giris_sifre=(EditText) findViewById(R.id.giris_sifre);
         giris_buton=(Button) findViewById(R.id.giris_buton);
         genel_uyarı=(TextView) findViewById(R.id.giris_genel_uyarı);
+        sifremi_unutttum = (TextView) findViewById(R.id.sifremi_unuttum);
 
     }
     private void islevver()
@@ -113,6 +113,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 webservis_kullanicigiris();
+            }
+        });
+
+        sifremi_unutttum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), PasswordRecoveryPopup.class);
+                startActivityForResult(i,99);
             }
         });
 

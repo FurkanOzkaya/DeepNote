@@ -57,4 +57,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_password_recovery">activity_password_recovery</string>
+    <string name="title_activity_password_recovery__popup">PasswordRecovery_Popup</string>
+    <string name="title_activity_sifre_gonderme">sifre_gonderme</string>
+    <string name="title_activity_password_recovery__popup_2">PasswordRecovery_Popup_2</string>
+    <string name="title_activity_password_recovery_popup_3">PasswordRecoveryPopup_3</string>
 </resources>

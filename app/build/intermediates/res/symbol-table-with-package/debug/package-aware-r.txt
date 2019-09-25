@@ -925,6 +925,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -1236,10 +1237,15 @@ drawable ucrop_vector_loader_animated
 drawable yorumsil
 id ALT
 id CTRL
+id Email
 id FUNCTION
+id Kod
 id META
 id SHIFT
 id SYM
+id Send
+id Sifre
+id SifreTekrar
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1527,6 +1533,7 @@ id showHome
 id showTitle
 id sifre_dogrulama
 id sifre_dogrulama_uyarı
+id sifremi_unuttum
 id single_mode
 id smallLabel
 id snackbar_action
@@ -1659,6 +1666,9 @@ layout activity_hesap_acma
 layout activity_homesayfasi_paylasimlari_ayrintili
 layout activity_main
 layout activity_others_profil_sayfasi
+layout activity_password_recovery_popup
+layout activity_password_recovery_popup_2
+layout activity_password_recovery_popup_3
 layout activity_pdf_viewer
 layout activity_profil_paylasimlari_ayrinti
 layout activity_profil_resmi_pop_up
@@ -1828,6 +1838,11 @@ string sozlesme
 string status_bar_notification_info_overflow
 string title_activity_ana_ekran
 string title_activity_denememenu
+string title_activity_password_recovery
+string title_activity_password_recovery__popup
+string title_activity_password_recovery__popup_2
+string title_activity_password_recovery_popup_3
+string title_activity_sifre_gonderme
 string title_camera
 string title_choose_image_provider
 string title_gallery
@@ -1844,6 +1859,9 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
+style AppTheme_AppBarOverlay
+style AppTheme_NoActionBar
+style AppTheme_PopupOverlay
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

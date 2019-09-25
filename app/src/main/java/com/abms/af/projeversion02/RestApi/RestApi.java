@@ -3,6 +3,7 @@ package com.abms.af.projeversion02.RestApi;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
 import com.abms.af.projeversion02.Models.Kullanicikayitsonuc;
+import com.abms.af.projeversion02.Models.PHPMailersifregonderme;
 import com.abms.af.projeversion02.Models.Pdfyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilfotosilmesonuc;
 import com.abms.af.projeversion02.Models.Profilfotoyuklemesonuc;
@@ -10,6 +11,7 @@ import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.Models.Resimyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilbilgilerigetir;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
+import com.abms.af.projeversion02.Models.Yenisifrebelirleme;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumsilmesonuc;
 import com.abms.af.projeversion02.Models.Yorumyapmasonuc;
@@ -17,7 +19,6 @@ import com.abms.af.projeversion02.Models.Yorumyapmasonuc;
 import java.util.List;
 import java.util.Map;
 
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -91,9 +92,15 @@ public interface RestApi {
     @POST("/ProfilfotoSilme.php")
     Call<Profilfotosilmesonuc> profilfotosil(@Field("id_kullanici") Integer id_kullanici);
 
-
-
     @GET
     Call<ResponseBody> indir(@Url String url);
+
+    @FormUrlEncoded
+    @POST("/kodgonderme.php")
+    Call<PHPMailersifregonderme> RestPHPMailer(@Field("email") String email);
+
+    @FormUrlEncoded
+    @POST("/YeniSifreBelirleme.php")
+    Call<Yenisifrebelirleme> RestYeniSifreBekirleme(@Field("email") String email, @Field("sifre") String sifre);
 
 }
