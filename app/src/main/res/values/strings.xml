@@ -3,7 +3,7 @@
     <string name="jsongüvenlikkod">"Abms"</string>
 
 
-    <string name="app_name">My Application</string>
+    <string name="app_name">DeepNote</string>
     <string name="sifre_unutma">Şifremi unuttum !!</string>
     <string name="giris_uyarı">E-posta veya  Sifre Yanlıs Lütfen Kontrol Ediniz</string>
     <string name="uye_olmak">Hesap Açmak için Tıklayınız</string>
@@ -27,7 +27,7 @@
     <string name="arama_pop_up_bolum_uyarı">Bölüm bilgisi gereklidir</string>
     <string name="arama_pop_up_dersadi_uyarı">Ders bilgisi gereklidir</string>
     <string name="home_sayfasi_listview_top_uyarı">Bu alanda bilgi bulunmamaktadır!!</string>
-    <string name="ayrıntısayfalari_yorum_listview_uyarı">Henüz bir yorum yok!!!</string>
+    <string name="ayrıntısayfalari_yorum_listview_uyarı">İlk yorumu sen yap</string>
 
     <array name="universite_listesi">
         <item>Üniversite Seçiniz</item>

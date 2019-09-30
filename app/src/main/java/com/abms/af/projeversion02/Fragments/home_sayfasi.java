@@ -49,7 +49,7 @@ public class home_sayfasi extends Fragment {
     ProgressBar progressBar;
     TextView home_sayfası_listview_uyarı;
     SwipeRefreshLayout refesh_home;
-    Button loadpagebutton;
+    LinearLayout loadpagebutton;
     LinearLayout home_listview_layout;
     int pageCount=0;
     int pageListSize=0;

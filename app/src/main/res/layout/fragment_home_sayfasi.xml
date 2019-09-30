@@ -20,6 +20,23 @@
             android:layout_height="match_parent"
             android:background="@drawable/bottom_gradient">
 
+            <LinearLayout
+                android:id="@+id/loadPage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dahafazla"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ustsayfayagit"/>
+
+            </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,11 +100,24 @@
         </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
-    <Button
+
+    <LinearLayout
         android:id="@+id/loadPage"
-        android:text="Loadmore"
-        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dahafazla"
         android:layout_gravity="bottom|center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/dahafazlayukle"/>
+
+    </LinearLayout>
+
+
+
+
 </FrameLayout>

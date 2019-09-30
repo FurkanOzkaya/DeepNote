@@ -7,28 +7,40 @@
     tools:context=".others_profil_sayfasi"
     android:orientation="vertical">
 
-    <FrameLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:elevation="0.1dp"
+        app:cardElevation="0.1dp"
+        app:cardCornerRadius="0dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="DeepNote"
-            android:textSize="20dp"
-            android:textStyle="bold|italic"
-            android:layout_gravity="center"
-            android:gravity="center"/>
-    </FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bottom_gradient">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DeepNote"
+                android:textSize="20dp"
+                android:textColor="#3b5998"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
 
-    <!-- Profil resmi ve bilgiler -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#fff">
         <ProgressBar
             android:id="@+id/others_profil_sayfasi_bilgiler_progress_bar"
             android:layout_width="match_parent"
@@ -43,75 +55,59 @@
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/others_profil_resmi"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:clickable="true"
                 android:contextClickable="true"
                 android:src="@drawable/main_activity_profil"
                 app:civ_border="false" />
 
 
-            <!-- Ad soyad -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="8dp">
 
-                <TextView
-                    android:id="@+id/others_profil_adi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:paddingBottom="2dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="2dp"
-                    android:textColor="#000"
-                    android:textStyle="bold" />
 
-            </LinearLayout>
         </LinearLayout>
 
 
         <LinearLayout
-            android:id="@+id/others_profil_bilgileri_kısmı"
+            android:id="@+id/profil_bilgileri_kısmı"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:gravity="center"
             android:orientation="vertical"
             android:paddingLeft="10dp"
-            android:paddingStart="20dp"
-            android:paddingTop="12dp">
+            android:paddingTop="30dp">
 
 
-            <TextView
-                android:id="@+id/others_profil_universite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:drawableLeft="@drawable/okul_logo"
-                android:drawablePadding="5dp"
-                android:paddingBottom="2dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="2dp"
-                android:textStyle="italic" />
+
 
             <TextView
                 android:id="@+id/others_profil_bolum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/kitap"
-                android:drawablePadding="5dp"
+                android:layout_marginBottom="10dp"
                 android:paddingBottom="2dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingTop="2dp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/others_profil_adi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textStyle="italic|bold"
+                />
+
+            <TextView
+                android:id="@+id/others_profil_universite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -119,18 +115,34 @@
 
 
 
-    <!-- Paylaşımlar -->
-    <LinearLayout
+
+
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:padding="5dp">
-        <TextView
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:elevation="0.1dp"
+        app:cardElevation="0.1dp"
+        app:cardCornerRadius="0dp">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="PAYLAŞIMLAR"
-            android:gravity="center"/>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:background="@drawable/qwqw3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paylaşımlar"
+                android:textSize="17dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
 
 
@@ -140,6 +152,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:background="#fff">
 
         <ProgressBar

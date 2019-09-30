@@ -150,7 +150,7 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:gravity="bottom">
 
                             <!-- pdf  gelicek buraya -->
@@ -172,8 +172,9 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:paddingVertical="15dp"
+                                android:paddingVertical="10dp"
                                 android:paddingHorizontal="10dp"
+                                android:layout_marginHorizontal="8dp"
                                 android:background="@drawable/detaysnack"
                                 android:orientation="horizontal"
                                 android:layout_alignParentBottom="true">
@@ -238,28 +239,41 @@
 
             </android.support.v7.widget.LinearLayoutCompat>
 
-
+            <Button
+                android:id="@+id/openpdf"
+                android:text="Pdf'i Uygulamada görüntüle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/qwqw"
+                android:textColor="#fff"
+                android:elevation="0dp"/>
 
 
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center">
                 <TextView
                     android:id="@+id/yorumlar_lisview_uyarı"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ayrıntısayfalari_yorum_listview_uyarı"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     android:visibility="gone"
-                    android:textColor="@color/colorAccent"
-                    android:layout_gravity="center"
-                    android:gravity="center"/>
+                    android:textColor="#456"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <ProgressBar
                         android:id="@+id/home_ayrıntı_progressbar"
@@ -277,11 +291,7 @@
 
                 </LinearLayout>
             </LinearLayout>
-            <Button
-                android:id="@+id/openpdf"
-                android:text="Pdf'i Uygulamada görüntüle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
             
                 <View
                     android:layout_width="match_parent"

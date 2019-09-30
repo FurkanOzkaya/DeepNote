@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:elevation="1dp"
-        app:cardElevation="1dp"
+        android:elevation="0.1dp"
+        app:cardElevation="0.1dp"
         app:cardCornerRadius="0dp">
 
         <RelativeLayout
@@ -27,18 +27,18 @@
                 android:layout_height="wrap_content"
                 android:text="DeepNote"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textColor="#3b5998"
                 android:layout_marginLeft="10dp"
-                android:textStyle="bold|italic"
+                android:textStyle="bold"
                 android:layout_centerVertical="true"/>
 
             <ImageView
                 android:id="@+id/profil_sayfası_ayarlar_butonu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:clickable="true"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/logout"
+                android:src="@drawable/cikisyaplo"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 />
@@ -49,12 +49,17 @@
 
 
 
+
+
+
+
+
       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-          android:background="#e5f2f2">
+        android:background="#fff">
         <ProgressBar
             android:id="@+id/profil_sayfasi_bilgiler_progress_bar"
             android:layout_width="match_parent"
@@ -69,10 +74,11 @@
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/profil_resmi"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:clickable="true"
                 android:contextClickable="true"
                 android:src="@drawable/main_activity_profil"
@@ -80,25 +86,7 @@
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="8dp">
 
-                <TextView
-                    android:id="@+id/profil_adi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:paddingBottom="2dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="2dp"
-                    android:textColor="#000"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
         </LinearLayout>
 
 
@@ -107,37 +95,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:gravity="center"
             android:orientation="vertical"
             android:paddingLeft="10dp"
-            android:paddingStart="20dp"
-            android:paddingTop="12dp">
+            android:paddingTop="30dp">
 
+
+
+
+             <TextView
+                android:id="@+id/profil_bolum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp"
+                android:textStyle="italic"
+                 android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/profil_adi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textStyle="italic|bold"
+                />
 
             <TextView
                 android:id="@+id/profil_universite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:drawableLeft="@drawable/okul_logo"
-                android:drawablePadding="5dp"
-                android:paddingBottom="2dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="2dp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/profil_bolum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/kitap"
-                android:drawablePadding="5dp"
-                android:paddingBottom="2dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="2dp"
-                android:textStyle="italic" />
+                android:textStyle="italic"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -146,22 +135,30 @@
 
 
 
-    <!-- Paylaşımlar -->
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:elevation="0.1dp"
+        app:cardElevation="0.1dp"
+        app:cardCornerRadius="0dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:padding="5dp">
+            android:layout_height="match_parent"
+            android:background="@drawable/qwqw3">
+
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PAYLAŞIMLAR"
-                android:gravity="center"/>
-        </LinearLayout>
+                android:text="Paylaşımlarım"
+                android:textSize="17dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
 

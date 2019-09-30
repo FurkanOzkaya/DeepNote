@@ -65,15 +65,15 @@ public class profil_resmi_pop_up extends AppCompatActivity {
         DisplayMetrics d = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(d);
 
-        int yukseklik = d.widthPixels;
-        int genislik = d.heightPixels;
+        int genislik = d.widthPixels;
+        int yukseklik = d.heightPixels;
 
-        getWindow().setLayout((int)(yukseklik*.6),(int)(genislik*.3));
+        getWindow().setLayout((int)(genislik*.7),(int)(yukseklik*.5));
 
         WindowManager.LayoutParams p = getWindow().getAttributes();
-        p.gravity = Gravity.TOP;
+        p.gravity = Gravity.CENTER;
         p.x = 0;
-        p.y= 200;
+        p.y= 0;
         getWindow().setAttributes(p);
         //////////////////////
         tanımla();

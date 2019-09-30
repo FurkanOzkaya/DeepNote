@@ -6,115 +6,84 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="25dp"
-    android:background="@drawable/mainbackground">
+    android:background="#29679c">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="4">
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="#456">
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#fff"
         android:orientation="vertical"
-        android:background="@drawable/transparan"
-        android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:id="@+id/girisPaneli">
+        android:gravity="center">
 
 
         <TextView
             android:id="@+id/giris_genel_uyarı"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/giris_uyarı"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:visibility="invisible"/>
+            android:visibility="invisible"
+            android:layout_marginBottom="5dp"
+            />
+
+
         <EditText
             android:id="@+id/giris_mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-posta"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/sekil"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="15dp"
-            android:drawableLeft="@drawable/main_activity_profil"
-            android:drawablePadding="10dp"
-            android:paddingLeft="2dp"
-            android:layout_marginBottom="10dp"
-            android:textSize="14sp"
-            />
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#9029679c"
+            android:hint="email"
+            android:textSize="14dp"/>
 
         <EditText
             android:id="@+id/giris_sifre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="Şifre"
-            android:inputType="textPassword"
-            android:background="@drawable/sekil"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:drawableLeft="@drawable/main_activty_sifre"
-            android:drawablePadding="10dp"
-            android:paddingLeft="2dp"
-            android:textSize="14sp"
-            />
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#9029679c"
+            android:hint="şifre"
+            android:textSize="14dp"/>
 
         <Button
             android:id="@+id/giris_buton"
-            android:text="Giriş Yap"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@drawable/butonshape"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/white"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="bottom">
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/qwqw"
+            android:text="giriş yap"
+            android:textColor="#fff"/>
 
         <TextView
             android:id="@+id/sifremi_unuttum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sifre_unutma"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="italic"/>
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="@string/sifre_unutma"/>
+
         <TextView
             android:id="@+id/hesap_acma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/uye_olmak"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Hesabın yok mu? Hemen oluştur!"
             />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"></LinearLayout>
+
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -19,6 +19,7 @@ anim design_snackbar_out
 anim fab_close
 anim fab_open
 anim marked_item_animation
+anim righttoleft
 anim rotate
 anim rotate_ters
 anim transition
@@ -1138,6 +1139,9 @@ drawable bottom_nav_item_background
 drawable bottom_shadow
 drawable butonshape
 drawable buyutec_yirmi
+drawable cikisyaplo
+drawable dahafazla
+drawable dahafazlayukle
 drawable default_scroll_handle_bottom
 drawable default_scroll_handle_left
 drawable default_scroll_handle_right
@@ -1169,6 +1173,7 @@ drawable flaticonarama
 drawable flaticonhome
 drawable flaticonprofile
 drawable flaticonyukle
+drawable folder
 drawable gonder
 drawable gonderiler_arka_plan
 drawable homeyeni
@@ -1214,7 +1219,11 @@ drawable pdf_ikonu
 drawable pop_tasarim
 drawable profil_ust_arkaplan
 drawable profilsayfasi_bilgiler_arkaplan
+drawable qwqw
+drawable qwqw2
+drawable qwqw3
 drawable resim_ikonu
+drawable resimleregit
 drawable sekil
 drawable send
 drawable sikayet
@@ -1234,6 +1243,8 @@ drawable ucrop_shadow_upside
 drawable ucrop_vector_ic_crop
 drawable ucrop_vector_loader
 drawable ucrop_vector_loader_animated
+drawable ustsayfayagit
+drawable xxxxx
 drawable yorumsil
 id ALT
 id CTRL
@@ -1274,7 +1285,6 @@ id alertTitle
 id all
 id alt_butonlar
 id always
-id ana_buton
 id ana_sayfa_fragment
 id anasayfa_listview_kullanici_profil_sayfasi
 id anasayfa_listview_layout
@@ -1307,7 +1317,6 @@ id ayrıntı_profilsayfasi_aciklama
 id ayrıntı_profilsayfasi_ad_soyad
 id ayrıntı_profilsayfasi_bolum
 id ayrıntı_profilsayfasi_ders
-id ayrıntı_profilsayfasi_indirme
 id ayrıntı_profilsayfasi_pdf_webview
 id ayrıntı_profilsayfasi_profilfotosu
 id ayrıntı_profilsayfasi_resim
@@ -1357,6 +1366,8 @@ id disableHome
 id dname
 id dogum_tarihi
 id dogum_tarihi_uyarı
+id dosyasecmekismi
+id dosyayollamakismi
 id e_posta
 id e_posta_uyarı
 id edit_query
@@ -1383,7 +1394,6 @@ id forever
 id ftype
 id gelendosya
 id ghost_view
-id girisPaneli
 id giris_buton
 id giris_genel_uyarı
 id giris_mail
@@ -1438,6 +1448,7 @@ id listview_profil_ders
 id listview_profil_fotosu
 id listview_universite
 id loadPage
+id loadPage2
 id lytCameraPick
 id lytGalleryPick
 id masked
@@ -1460,7 +1471,6 @@ id notification_main_column
 id notification_main_column_container
 id openpdf
 id others_profil_adi
-id others_profil_bilgileri_kısmı
 id others_profil_bolum
 id others_profil_resmi
 id others_profil_sayfasi_bilgiler_progress_bar
@@ -1473,7 +1483,7 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
-id pdf_buton
+id pdfsec
 id pdfviewer
 id percent
 id pin
@@ -1495,7 +1505,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id resim2
-id resim_buton
+id resimsec
 id right
 id right_icon
 id right_side
@@ -1584,7 +1594,6 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id txt1
 id txt2
 id ucrop
 id ucrop_frame

@@ -28,12 +28,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -73,14 +75,15 @@ public class share_sayfasi extends Fragment {
     Spinner bolum_adi;
     String ders_string,acıklama_string;
     int bolum_string_int;
-    FloatingActionButton ekle_buton, pdf_buton, resim_buton;
-    Animation open, close, rotate, rotate_back;
+    //FloatingActionButton ekle_buton, pdf_buton, resim_buton;
+    LinearLayout resimleregit, dosyalaragit,secmekismi,yollamakismi;
+    Animation bounce,rtol;
     boolean isopen = false;
     View view;
     Integer id;
     String[]  bolum_listesi;
     ArrayAdapter  bolum_adapter;
-    private FloatingActionButton boommenu_ana_buton;
+    //private FloatingActionButton boommenu_ana_buton;
     SharedPreferences sharedPreferences;
     ProgressBar progressBar;
     FilePickerDialog dialog;
@@ -91,6 +94,14 @@ public class share_sayfasi extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_share_sayfasi, container, false);
 
+        Window window = this.getActivity().getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            window.setStatusBarColor(this.getResources().getColor(R.color.white));
+        }
+
         tanimla();
         islevver();
 
@@ -100,9 +111,16 @@ public class share_sayfasi extends Fragment {
 
     public void tanimla() {
 
-        boommenu_ana_buton = view.findViewById(R.id.ana_buton);
+        bounce = AnimationUtils.loadAnimation(getContext(),R.anim.bounce);
+        rtol = AnimationUtils.loadAnimation(getContext(),R.anim.righttoleft);
+
+        secmekismi = view.findViewById(R.id.dosyasecmekismi);
+        yollamakismi = view.findViewById(R.id.dosyayollamakismi);
+        resimleregit = view.findViewById(R.id.resimsec);
+        dosyalaragit = view.findViewById(R.id.pdfsec);
+       /* boommenu_ana_buton = view.findViewById(R.id.ana_buton);
         pdf_buton = view.findViewById(R.id.pdf_buton);
-        resim_buton = view.findViewById(R.id.resim_buton);
+        resim_buton = view.findViewById(R.id.resim_buton);*/
         ders_adi = view.findViewById(R.id.ders_adi);
         bolum_adi = view.findViewById(R.id.bolum_adi);
         acıklama = view.findViewById(R.id.acıklama);
@@ -125,48 +143,23 @@ public class share_sayfasi extends Fragment {
 
     public void islevver()
     {
-        animasyon_yükle_boommenu_ana_buton();
-        boommenu_ana_buton.setOnClickListener(new View.OnClickListener() {
+
+        //bounce.setAnimationListener((Animation.AnimationListener) this);
+
+        resimleregit.startAnimation(bounce);
+        dosyalaragit.startAnimation(rtol);
+
+        resimleregit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                if (isopen) {
-                    resim_buton.startAnimation(close);
-                    pdf_buton.startAnimation(close);
-                    boommenu_ana_buton.startAnimation(rotate_back);
-                    pdf_buton.setClickable(false);
-                    resim_buton.setClickable(false);
-                    isopen = false;
-                    ders_adi.setVisibility(View.INVISIBLE);
-                    bolum_adi.setVisibility(View.INVISIBLE);
-                    acıklama.setVisibility(View.INVISIBLE);
-                    yukleme_butonu.setVisibility(View.INVISIBLE);
-                    // verileri sıfırlamak için kullanıldı suanlık spinner için yok
-                    ders_adi.setText("");
-                    acıklama.setText("");
-                } else {
-                    resim_buton.startAnimation(open);
-                    pdf_buton.startAnimation(open);
-                    boommenu_ana_buton.startAnimation(rotate);
-                    pdf_buton.setClickable(true);
-                    resim_buton.setClickable(true);
-                    isopen = true;
-
-                }
-
-
-            }
-        });
-        resim_buton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 yukleme_butonu.setText("Resim Yükle");
                 resimGoster();
             }
         });
-        pdf_buton.setOnClickListener(new View.OnClickListener() {
+
+        dosyalaragit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 yukleme_butonu.setText("Pdf Yükle");
                 pdf_goster();
             }
@@ -210,6 +203,8 @@ public class share_sayfasi extends Fragment {
                 else
                 {
                     dosya_yukle();
+                    secmekismi.setVisibility(View.VISIBLE);
+                    yollamakismi.setVisibility(View.INVISIBLE);
                     ders_adi.setVisibility(View.INVISIBLE);
                     bolum_adi.setVisibility(View.INVISIBLE);
                     acıklama.setVisibility(View.INVISIBLE);
@@ -233,12 +228,7 @@ public class share_sayfasi extends Fragment {
 
 
 
-    public void animasyon_yükle_boommenu_ana_buton() {
-        open = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fab_open);
-        close = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fab_close);
-        rotate = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.rotate);
-        rotate_back = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.rotate_ters);
-    }
+
 
     /*
      *resimlere ulasıp secmek için yazılan fonksiyon
@@ -286,6 +276,8 @@ public class share_sayfasi extends Fragment {
                 bolum_adi.setVisibility(View.VISIBLE);
                 acıklama.setVisibility(View.VISIBLE);
                 yukleme_butonu.setVisibility(View.VISIBLE);
+                secmekismi.setVisibility(View.INVISIBLE);
+                yollamakismi.setVisibility(View.VISIBLE);
 
                 try {
                     // use the FileUtils to get the actual file by uri
@@ -412,6 +404,8 @@ public class share_sayfasi extends Fragment {
             bolum_adi.setVisibility(View.VISIBLE);
             acıklama.setVisibility(View.VISIBLE);
             yukleme_butonu.setVisibility(View.VISIBLE);
+            secmekismi.setVisibility(View.INVISIBLE);
+            yollamakismi.setVisibility(View.VISIBLE);
 
             String denee = ImagePicker.Companion.getFilePath(data);
             Toast.makeText(getActivity().getApplicationContext(),"deneme: "+ denee,Toast.LENGTH_LONG).show();
