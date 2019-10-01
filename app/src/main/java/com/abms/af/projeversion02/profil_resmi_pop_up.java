@@ -1,6 +1,7 @@
 package com.abms.af.projeversion02;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -54,6 +55,7 @@ public class profil_resmi_pop_up extends AppCompatActivity {
     Button profil_foto_yukleme,profil_foto_silme;
     Integer id_kullanici;
     Map<String, RequestBody> profilfoto;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,14 +116,14 @@ public class profil_resmi_pop_up extends AppCompatActivity {
                     public void onResponse(Call<Profilfotosilmesonuc> call, Response<Profilfotosilmesonuc> response) {
                         if (response.isSuccessful())
                         {
-                            Toast.makeText(getApplicationContext(),"Profil Fotoğrafı Silinecek "+response.body().getProfilfotosilmesonuc(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Profil Fotoğrafınız Silindi ",Toast.LENGTH_LONG).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<Profilfotosilmesonuc> call, Throwable t) {
 
-                        Toast.makeText(getApplicationContext(),"Hata oluştu Lütfen daha sonra tekrar deneyiniz "+t.getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz ",Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -169,18 +171,18 @@ public class profil_resmi_pop_up extends AppCompatActivity {
                     public void onResponse(Call<Profilfotoyuklemesonuc> call, Response<Profilfotoyuklemesonuc> response) {
                         if (response.body().getProfilfotoyuklemesonuc().equals("Dosya eklendi"))
                         {
-                            Toast.makeText(getApplicationContext(),"sonuc "+response.body().getProfilfotoyuklemesonuc(),Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(),"sonuc "+response.body().getProfilfotoyuklemesonuc(),Toast.LENGTH_LONG).show();
 
                         }
                         else
                         {
-                            Toast.makeText(getApplicationContext(),"yuklenirken hata olustu "+response.body().getProfilfotoyuklemesonuc(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz ",Toast.LENGTH_LONG).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<Profilfotoyuklemesonuc> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(),"hata "+t.getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz ",Toast.LENGTH_LONG).show();
                     }
                 });
 

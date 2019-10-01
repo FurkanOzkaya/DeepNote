@@ -62,7 +62,7 @@
                 android:layout_marginBottom="5dp"
                 android:clickable="true"
                 android:contextClickable="true"
-                android:src="@drawable/main_activity_profil"
+                android:src="@drawable/flat_ogrenci"
                 app:civ_border="false" />
 
 

@@ -31,6 +31,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -112,12 +113,12 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
 
         if (profilfoto_string.equals("default"))
         {
-            Picasso.get().load(R.drawable.main_activity_profil).resize(200,200).into(profil_foto);
+            Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
         }
         else
         {
             ///////////////////////////////////
-            Picasso.get().load(getString(R.string.site_adresi)+profilfoto_string).resize(200,200).error(R.drawable.main_activity_profil).into(profil_foto);
+            Picasso.get().load(getString(R.string.site_adresi)+profilfoto_string).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
             /////////////////////////////////////
         }
     }
@@ -142,7 +143,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
 
         } else {
             ayrıntılı_resim.setVisibility(View.VISIBLE);
-            Log.i("TAG", "islevver: "+dosyayolu_string);
+            //Log.i("TAG", "islevver: "+dosyayolu_string);
             Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).resize(200, 200).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
         }
 
@@ -194,7 +195,11 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
 
-                        Toast.makeText(getApplicationContext(),"Yorum yapılamadı"+t.getMessage(),Toast.LENGTH_LONG).show();
+                        new SweetAlertDialog(profil_paylasimlari_ayrinti.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("Dikkat!")
+                                .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                .show();
+                        //Toast.makeText(getApplicationContext(),"Yorum yapılamadı"+t.getMessage(),Toast.LENGTH_LONG).show();
                     }
                 });
             }
@@ -270,14 +275,23 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast.makeText(getApplicationContext(),"Yorum yapılamadı",Toast.LENGTH_LONG).show();
+                            new SweetAlertDialog(profil_paylasimlari_ayrinti.this, SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Dikkat!")
+                                    .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                    .show();
+                            //Toast.makeText(getApplicationContext(),"Yorum yapılamadı",Toast.LENGTH_LONG).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
 
-                        Toast.makeText(getApplicationContext(),"Yorum yapılamadı"+t.getMessage(),Toast.LENGTH_LONG).show();
+                        new SweetAlertDialog(profil_paylasimlari_ayrinti.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("Dikkat!")
+                                .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                .show();
+
+                        //Toast.makeText(getApplicationContext(),"Yorum yapılamadı"+t.getMessage(),Toast.LENGTH_LONG).show();
                     }
                 });
 

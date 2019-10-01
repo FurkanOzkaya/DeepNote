@@ -59,6 +59,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -270,7 +271,7 @@ public class share_sayfasi extends Fragment {
         dialog.setDialogSelectionListener(new DialogSelectionListener() {
             @Override
             public void onSelectedFilePaths(String[] files) {
-                Toast.makeText(getActivity().getApplicationContext(),"deneme: path. "+files[0],Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity().getApplicationContext(),"deneme: path. "+files[0],Toast.LENGTH_LONG).show();
 
                 ders_adi.setVisibility(View.VISIBLE);
                 bolum_adi.setVisibility(View.VISIBLE);
@@ -332,7 +333,12 @@ public class share_sayfasi extends Fragment {
             a.enqueue(new Callback<Resimyuklemesonuc>() {
                 @Override
                 public void onResponse(Call<Resimyuklemesonuc> call, Response<Resimyuklemesonuc> response) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Dosya Sonuç:"+response.body().getResimyuklemesonuc(), Toast.LENGTH_LONG).show();
+
+                    new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Gönderi Paylaşıldı")
+                            .show();
+
+                    //Toast.makeText(getActivity().getApplicationContext(), "Dosya Sonuç:"+response.body().getResimyuklemesonuc(), Toast.LENGTH_LONG).show();
 
                     /////////////////////////////////////
                     progressBar.setVisibility(View.GONE);
@@ -342,7 +348,12 @@ public class share_sayfasi extends Fragment {
 
                 @Override
                 public void onFailure(Call<Resimyuklemesonuc> call, Throwable t) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Hata olustu tekrar deneyiniz", Toast.LENGTH_LONG).show();
+
+                    new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                            .show();
+
+                    //Toast.makeText(getActivity().getApplicationContext(), "Hata olustu tekrar deneyiniz", Toast.LENGTH_LONG).show();
 
                     /////////////////////////////////////
                     progressBar.setVisibility(View.GONE);
@@ -365,7 +376,11 @@ public class share_sayfasi extends Fragment {
                 @Override
                 public void onResponse(Call<Pdfyuklemesonuc> call, Response<Pdfyuklemesonuc> response) {
 
-                    Toast.makeText(getActivity().getApplicationContext(), "Dosya Yuklendi"+response.body().getPdfyuklemesonuc(), Toast.LENGTH_LONG).show();
+                    new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Gönderi Paylaşıldı")
+                            .show();
+
+                    //Toast.makeText(getActivity().getApplicationContext(), "Dosya Yuklendi"+response.body().getPdfyuklemesonuc(), Toast.LENGTH_LONG).show();
 
                     /////////////////////////////////////
                     progressBar.setVisibility(View.GONE);
@@ -375,8 +390,13 @@ public class share_sayfasi extends Fragment {
 
                 @Override
                 public void onFailure(Call<Pdfyuklemesonuc> call, Throwable t) {
-                    Toast.makeText(getActivity().getApplicationContext(), "HATA CIKTI", Toast.LENGTH_LONG).show();
-                    Log.i("TAG", "onFailure: "+t.getMessage());
+
+                    new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                            .show();
+
+                    //Toast.makeText(getActivity().getApplicationContext(), "HATA CIKTI", Toast.LENGTH_LONG).show();
+                    //Log.i("TAG", "onFailure: "+t.getMessage());
 
                     /////////////////////////////////////
                     progressBar.setVisibility(View.GONE);
@@ -408,7 +428,7 @@ public class share_sayfasi extends Fragment {
             yollamakismi.setVisibility(View.VISIBLE);
 
             String denee = ImagePicker.Companion.getFilePath(data);
-            Toast.makeText(getActivity().getApplicationContext(),"deneme: "+ denee,Toast.LENGTH_LONG).show();
+            //Toast.makeText(getActivity().getApplicationContext(),"deneme: "+ denee,Toast.LENGTH_LONG).show();
             try {
                 // use the FileUtils to get the actual file by uri
                 //String yol = getPath(getActivity().getApplicationContext(),path);

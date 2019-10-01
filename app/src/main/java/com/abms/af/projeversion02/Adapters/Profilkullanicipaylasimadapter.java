@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,14 +19,21 @@ import android.widget.Toast;
 
 import com.abms.af.projeversion02.Fragments.profil_sayfasi;
 import com.abms.af.projeversion02.MainActivity;
+import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.R;
+import com.abms.af.projeversion02.RestApi.ManagerAll;
 import com.abms.af.projeversion02.homesayfasi_paylasimlari_ayrintili;
 import com.abms.af.projeversion02.others_profil_sayfasi;
 import com.abms.af.projeversion02.profil_paylasimlari_ayrinti;
 
 import java.util.List;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Profilkullanicipaylasimadapter extends BaseAdapter {
 
@@ -33,6 +41,8 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
     Context context;
     LinearLayout layoutlist;
     Activity activity;
+    ImageView ButonSil;
+
     public Profilkullanicipaylasimadapter(List<Profilsayfasikullanicipaylasimlari> kullanicipaylasim, Context context, Activity activity) {
         this.kullanicipaylasim = kullanicipaylasim;
         this.context = context;
@@ -56,26 +66,22 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
         view= LayoutInflater.from(context).inflate(R.layout.listview_goruntu_profil_paylasimlari,viewGroup,false);
         final TextView  bolum, aciklama, ders;
-
 
         bolum = view.findViewById(R.id.listview_profil_bolum);
         aciklama = view.findViewById(R.id.listview_profil_aciklama);
         ders = view.findViewById(R.id.listview_profil_ders);
         layoutlist=view.findViewById(R.id.profilsayfasi_listview_tıklama);
-
-
+        ButonSil = view.findViewById(R.id.ButonSil);
 
         ders.setText(kullanicipaylasim.get(position).getDers());
         bolum.setText(kullanicipaylasim.get(position).getBolum());
         aciklama.setText(kullanicipaylasim.get(position).getAciklama());
 
-
-
         final String id_kullanici_string,paylasim_id_string,ad_soyad_string,universite_string,bolum_string,ders_string,aciklama_string,dosyayolu_string,dosyaturu_string,profilfoto_string;
-       final int gosterme;
+        final int gosterme;
         id_kullanici_string=kullanicipaylasim.get(position).getIdkullanici();
         paylasim_id_string=kullanicipaylasim.get(position).getPaylasimid();
         ad_soyad_string=kullanicipaylasim.get(position).getAdsoyad();
@@ -87,6 +93,84 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
         dosyaturu_string=kullanicipaylasim.get(position).getDosyaturu();
         profilfoto_string=kullanicipaylasim.get(position).getProfilfoto();
         gosterme=kullanicipaylasim.get(position).getGosterme();
+
+
+        int id_yorum = 0;
+        SharedPreferences sharedPreferences;
+        sharedPreferences =context.getSharedPreferences("giris",0);
+        if(sharedPreferences.getInt("uye_id",0) != 0)
+        {
+            id_yorum=sharedPreferences.getInt("uye_id",0);
+        }
+        else
+        {
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(context,MainActivity.class);
+            activity.startActivity(intent);
+        }
+
+
+        if (id_yorum==Integer.valueOf(kullanicipaylasim.get(position).getIdkullanici()))
+        {
+            ButonSil.setVisibility(View.VISIBLE);
+
+        }
+        else
+        {
+            ButonSil.setVisibility(View.GONE);
+        }
+
+
+        ButonSil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final SweetAlertDialog sa = new SweetAlertDialog(activity,SweetAlertDialog.WARNING_TYPE);
+                sa.setTitleText("Dikkat!");
+                sa.setContentText("Bu gönderiyi silmek istediğinize emin misiniz?");
+                sa.setConfirmText("Evet");
+                sa.setCancelClickListener(null);
+                sa.setCancelText("Hayır");
+                sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+
+                        Integer id = Integer.valueOf(paylasim_id_string);
+
+                        // for remove item
+
+                        Call<GonderiSil> request = ManagerAll.webyonet().GonderiSil(id);
+                        request.enqueue(new Callback<GonderiSil>() {
+                            @Override
+                            public void onResponse(Call<GonderiSil> call, Response<GonderiSil> response) {
+
+                                kullanicipaylasim.remove(position);
+                                notifyDataSetChanged();
+
+                                sa.cancel();
+                                new SweetAlertDialog(activity, SweetAlertDialog.SUCCESS_TYPE)
+                                        .setTitleText("Gönderi Silindi")
+                                        .show();
+
+
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<GonderiSil> call, Throwable t) {
+                                new SweetAlertDialog(activity, SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Dikkat!")
+                                        .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                        .show();
+                            }
+                        });
+                    }
+                });
+                sa.show();
+
+            }
+        });
 
         layoutlist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,15 +217,8 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
                    // Toast.makeText(context,"paylasımid:"+paylasim_id_string,Toast.LENGTH_LONG).show();
                    activity.startActivity(ayrintili);
                }
-
-
-
-
             }
         });
-
-
-
         return view;
     }
 }

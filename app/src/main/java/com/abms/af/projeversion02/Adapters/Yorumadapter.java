@@ -20,12 +20,14 @@ import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumsilmesonuc;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
+import com.abms.af.projeversion02.hesap_acmaActivity;
 import com.abms.af.projeversion02.homesayfasi_paylasimlari_ayrintili;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -112,10 +114,10 @@ public class Yorumadapter extends BaseAdapter {
             yorum.setText(gelenyorumlar.get(position).getYorum().toString());
 
             if (gelenyorumlar.get(position).getProfilfoto().equals("default")) {
-                Picasso.get().load(R.drawable.main_activity_profil).resize(200, 200).into(yorumcufotosu);
+                Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(yorumcufotosu);
             } else {
                 ///////////////////////////////////
-                Picasso.get().load(activity.getString(R.string.site_adresi) + gelenyorumlar.get(position).getProfilfoto()).resize(50,50).error(R.drawable.main_activity_profil).into(yorumcufotosu);
+                Picasso.get().load(activity.getString(R.string.site_adresi) + gelenyorumlar.get(position).getProfilfoto()).resize(50,50).error(R.drawable.flat_ogrenci).into(yorumcufotosu);
                 /////////////////////////////////////
             }
         }
@@ -147,6 +149,11 @@ public class Yorumadapter extends BaseAdapter {
 
                                     @Override
                                     public void onFailure(Call<Yorumsilmesonuc> call, Throwable t) {
+
+                                        new SweetAlertDialog(activity, SweetAlertDialog.ERROR_TYPE)
+                                                .setTitleText("Dikkat!")
+                                                .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                                .show();
 
                                     }
                                 });

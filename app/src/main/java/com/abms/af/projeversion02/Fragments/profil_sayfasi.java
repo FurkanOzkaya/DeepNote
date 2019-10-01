@@ -1,13 +1,12 @@
 package com.abms.af.projeversion02.Fragments;
 
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +26,11 @@ import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
 import com.abms.af.projeversion02.profil_resmi_pop_up;
-import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,8 +39,9 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class profil_sayfasi extends Fragment {
+public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
+    SwipeRefreshLayout yenileme_nesnesi;
     TextView profil_adi, profil_universite, profil_bolum;
     int id;
     View view;
@@ -54,6 +54,7 @@ public class profil_sayfasi extends Fragment {
     ImageView profil_foto;
     ProgressBar paylasımlar_progresbar,bilgiler_progress_bar;
     ImageView ayarlarbutonu;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -89,10 +90,16 @@ public class profil_sayfasi extends Fragment {
         paylasımlar_progresbar=view.findViewById(R.id.profil_sayfasi_paylasımlar_progress_bar);
         bilgiler_progress_bar=view.findViewById(R.id.profil_sayfasi_bilgiler_progress_bar);
         ayarlarbutonu=view.findViewById(R.id.profil_sayfası_ayarlar_butonu);
+        yenileme_nesnesi = (SwipeRefreshLayout) view.findViewById(R.id.profil_sayfasi_refesh); // nesnemizi tanıttık
+        yenileme_nesnesi.setOnRefreshListener(this);
     }
 
 
     void islev_ver() {
+
+
+
+
 
 
         Call<Profilbilgilerigetir> a = ManagerAll.webyonet().profilgetir(id);
@@ -127,7 +134,7 @@ public class profil_sayfasi extends Fragment {
                     else
                     {
                         ///////////////////////////////////
-                        Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(3000,3000).error(R.drawable.main_activity_profil).into(profil_foto);
+                        Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(3000,3000).error(R.drawable.flat_ogrenci).into(profil_foto);
                         /////////////////////////////////////
                     }
 
@@ -139,7 +146,12 @@ public class profil_sayfasi extends Fragment {
 
             @Override
             public void onFailure(Call<Profilbilgilerigetir> call, Throwable t) {
-                Toast.makeText(getActivity().getApplicationContext(), "bilgiler gelirken  hata" + t.getMessage(), Toast.LENGTH_LONG).show();
+
+                new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("\"Beklenmedik bir hata oluştu, İnternet bağlatınızı kontrol ederek daha sonra tekrar deneyiniz\"")
+                        .show();
+
+                //Toast.makeText(getActivity().getApplicationContext(), "bilgiler gelirken  hata" + t.getMessage(), Toast.LENGTH_LONG).show();
 
 
                 /////////////////////////////////////
@@ -148,7 +160,6 @@ public class profil_sayfasi extends Fragment {
                 ///////////////////////////   P R O G R E S S   B A R   /////////
             }
         });
-
 
         Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(id);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
@@ -180,7 +191,12 @@ public class profil_sayfasi extends Fragment {
 
             @Override
             public void onFailure(Call<List<Profilsayfasikullanicipaylasimlari>> call, Throwable t) {
-                Toast.makeText(getActivity().getApplicationContext(), "HATA OLUSTU " + t.getMessage(), Toast.LENGTH_LONG).show();
+
+                new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("\"Beklenmedik bir hata oluştu, İnternet bağlatınızı kontrol ederek daha sonra tekrar deneyiniz\"")
+                        .show();
+
+                //Toast.makeText(getActivity().getApplicationContext(), "HATA OLUSTU " + t.getMessage(), Toast.LENGTH_LONG).show();
 
                 /////////////////////////////////////
                 paylasımlar_progresbar.setVisibility(View.GONE);
@@ -204,33 +220,59 @@ public class profil_sayfasi extends Fragment {
         ayarlarbutonu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(getContext()).setIcon(android.R.drawable.ic_dialog_info).setTitle("Çıkış")
-                        .setMessage("Oturumu kapatmak istediğinize emin misiniz?")
-                        .setPositiveButton("Evet", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
 
-                                SharedPreferences pref =getActivity().getApplicationContext().getSharedPreferences("giris",0);
-                                if(pref.getInt("uye_id",0) != 0)
-                                {
-                                    SharedPreferences.Editor editor=pref.edit();
-                                    editor.clear().commit();
-                                }
-                                Intent intent = new Intent(getActivity().getApplicationContext(),MainActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent);
-                            }
-                        }).setNegativeButton("Hayır", null).show();
+                final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                sa.setTitleText("Dikkat!");
+                sa.setContentText("Oturumu kapatmak istediğinize emin misiniz?");
+                sa.setConfirmText("Evet");
+                sa.setCancelClickListener(null);
+                sa.setCancelText("Hayır");
+                sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+
+                        SharedPreferences pref =getActivity().getApplicationContext().getSharedPreferences("giris",0);
+                        if(pref.getInt("uye_id",0) != 0)
+                        {
+                            SharedPreferences.Editor editor=pref.edit();
+                            editor.clear().commit();
+                        }
+                        Intent intent = new Intent(getActivity().getApplicationContext(),MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+
+                    }
+                });
+                sa.show();
             }
         });
-
-
-
-
-
-
-
-
     }
 
+
+    @Override
+    public void onRefresh() {
+
+        CallProfilKullaniciPaylasimlari();
+        yenileme_nesnesi.setRefreshing(false);
+    }
+
+    public void CallProfilKullaniciPaylasimlari()
+    {
+        Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(id);
+        kullanicipaylasım.enqueue(new Callback<List<Profilsayfasikullanicipaylasimlari>>() {
+            @Override
+            public void onResponse(Call<List<Profilsayfasikullanicipaylasimlari>> call, Response<List<Profilsayfasikullanicipaylasimlari>> response) {
+                kullanici_paylasimlari = response.body();
+                profilkullaniciadapter = new Profilkullanicipaylasimadapter(kullanici_paylasimlari, getActivity().getApplicationContext(),getActivity());
+                listview_profil.setAdapter(profilkullaniciadapter);
+            }
+
+            @Override
+            public void onFailure(Call<List<Profilsayfasikullanicipaylasimlari>> call, Throwable t) {
+                new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("Beklenmedik bir hata oluştu, İnternet bağlatınızı kontrol ederek daha sonra tekrar deneyiniz")
+                        .show();
+            }
+        });
+    }
 }

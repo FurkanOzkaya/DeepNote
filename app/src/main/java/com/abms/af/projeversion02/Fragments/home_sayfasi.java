@@ -30,6 +30,7 @@ import com.abms.af.projeversion02.anasayfa_pop_up_arama;
 
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -215,7 +216,12 @@ public class home_sayfasi extends Fragment {
 
                 @Override
                 public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz "+t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                            .show();
+
+                    //Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz "+t.getMessage(), Toast.LENGTH_SHORT).show();
 
                     //////////////////////////////////////////////////////////////
                     progressBar.setVisibility(View.GONE);
@@ -239,7 +245,7 @@ public class home_sayfasi extends Fragment {
         {
             pageCount=0;
         }
-        Toast.makeText(getActivity().getApplicationContext(),"page: "+page+" pagecount: "+pageCount+" rowcount: "+rowcount + " pagelistsize: "+pageListSize,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity().getApplicationContext(),"page: "+page+" pagecount: "+pageCount+" rowcount: "+rowcount + " pagelistsize: "+pageListSize,Toast.LENGTH_LONG).show();
        loadpagebutton.setVisibility(View.GONE);
        loadListForHome(pageCount);
 
@@ -275,7 +281,12 @@ public class home_sayfasi extends Fragment {
                    }
                    else
                    {
-                       Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz ", Toast.LENGTH_SHORT).show();
+
+                       new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE)
+                               .setTitleText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                               .show();
+
+                       //Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz ", Toast.LENGTH_SHORT).show();
 
                        //////////////////////////////////////////////////////////////
                        progressBar.setVisibility(View.GONE);
@@ -288,7 +299,12 @@ public class home_sayfasi extends Fragment {
 
             @Override
             public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
-                Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz "+t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                        .show();
+
+                //Toast.makeText(getActivity().getApplicationContext(), "Beklenmeyen bir hata olustu Tekrar Deneyiniz /n Eger Devam ederse Bildiriniz "+t.getMessage(), Toast.LENGTH_SHORT).show();
 
                 //////////////////////////////////////////////////////////////
                 progressBar.setVisibility(View.GONE);

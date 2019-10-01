@@ -45,7 +45,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
                             android:clickable="true"
-                            android:src="@drawable/main_activity_profil"
+                            android:src="@drawable/flat_ogrenci"
                             app:civ_border="false" />
 
                         <TextView

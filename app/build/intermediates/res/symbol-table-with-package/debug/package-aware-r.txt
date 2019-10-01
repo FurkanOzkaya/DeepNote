@@ -16,12 +16,18 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim error_frame_in
+anim error_x_in
 anim fab_close
 anim fab_open
 anim marked_item_animation
+anim modal_in
+anim modal_out
 anim righttoleft
 anim rotate
 anim rotate_ters
+anim success_bow_roate
+anim success_mask_layout
 anim transition
 anim ucrop_loader_circle_path
 anim ucrop_loader_circle_scale
@@ -303,6 +309,7 @@ attr fontStyle
 attr fontVariationSettings
 attr fontWeight
 attr foregroundInsidePadding
+attr fromDeg
 attr gapBetweenBars
 attr goIcon
 attr headerLayout
@@ -429,6 +436,16 @@ attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
 attr logo
 attr logoDescription
+attr matProg_barColor
+attr matProg_barSpinCycleTime
+attr matProg_barWidth
+attr matProg_circleRadius
+attr matProg_fillRadius
+attr matProg_linearProgress
+attr matProg_progressIndeterminate
+attr matProg_rimColor
+attr matProg_rimWidth
+attr matProg_spinSpeed
 attr materialButtonStyle
 attr materialCardViewStyle
 attr materialSwitchStyle
@@ -457,6 +474,8 @@ attr passwordToggleDrawable
 attr passwordToggleEnabled
 attr passwordToggleTint
 attr passwordToggleTintMode
+attr pivotX
+attr pivotY
 attr popupMenuStyle
 attr popupTheme
 attr popupWindowStyle
@@ -472,6 +491,7 @@ attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
 attr reverseLayout
 attr rippleColor
+attr rollType
 attr root_dir
 attr sb_handlerColor
 attr sb_horizontal
@@ -517,6 +537,9 @@ attr subtitleTextAppearance
 attr subtitleTextColor
 attr subtitleTextStyle
 attr suggestionRowLayout
+attr sweet_alert_bg_drawable
+attr sweet_alert_content_text_color
+attr sweet_alert_title_text_color
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -595,6 +618,7 @@ attr titleTextAppearance
 attr titleTextColor
 attr titleTextStyle
 attr title_text
+attr toDeg
 attr toolbarId
 attr toolbarNavigationButtonStyle
 attr toolbarStyle
@@ -668,6 +692,8 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color blue_btn_bg_color
+color blue_btn_bg_pressed_color
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -676,6 +702,7 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color button_material_dark
 color button_material_light
+color button_text_color
 color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
@@ -684,6 +711,7 @@ color colorAccent
 color colorHeader
 color colorPrimary
 color colorPrimaryDark
+color custom_float_bg
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
 color design_default_color_primary_dark
@@ -705,16 +733,37 @@ color dim_foreground_material_dark
 color dim_foreground_material_light
 color error_color_material_dark
 color error_color_material_light
+color error_stroke_color
+color float_transparent
 color foreground_material_dark
 color foreground_material_light
 color girisStatus
+color gray_btn_bg_color
+color gray_btn_bg_pressed_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color homeStatus
+color main_blue_color
+color main_blue_stroke_color
+color main_cyan_color
+color main_cyan_stroke_color
+color main_disabled_color
+color main_disabled_stroke_color
+color main_green_color
+color main_green_stroke_color
+color main_orange_color
+color main_orange_light_color
+color main_orange_light_stroke_color
+color main_orange_stroke_color
+color material_blue_grey_80
 color material_blue_grey_800
+color material_blue_grey_90
 color material_blue_grey_900
+color material_blue_grey_95
 color material_blue_grey_950
+color material_deep_teal_20
 color material_deep_teal_200
+color material_deep_teal_50
 color material_deep_teal_500
 color material_grey_100
 color material_grey_300
@@ -723,6 +772,8 @@ color material_grey_600
 color material_grey_800
 color material_grey_850
 color material_grey_900
+color message_color
+color message_color_dark
 color mtrl_bottom_nav_colored_item_tint
 color mtrl_bottom_nav_item_tint
 color mtrl_btn_bg_color_disabled
@@ -761,12 +812,17 @@ color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color profil_bilgi
+color red_btn_bg_color
+color red_btn_bg_pressed_color
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color success_stroke_color
+color sweet_dialog_bg_color
+color sweet_dialog_bg_color_dark
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -775,8 +831,12 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color textColorPrimary
 color textColorSecondary
+color text_color
+color title_color
+color title_color_dark
 color tooltip_background_dark
 color tooltip_background_light
+color trans_success_stroke_color
 color ucrop_color_crop_background
 color ucrop_color_default_crop_frame
 color ucrop_color_default_crop_grid
@@ -791,6 +851,7 @@ color ucrop_color_widget_active
 color ucrop_color_widget_background
 color ucrop_color_widget_text
 color ucrop_scale_text_view_selector
+color warning_stroke_color
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -868,11 +929,14 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen activity_margin
+dimen alert_width
+dimen buttons_stroke_width
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
 dimen checkbox_dimens
 dimen checkbox_margin
+dimen common_circle_width
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -880,6 +944,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen custom_image_size
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -1010,6 +1075,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen progress_circle_radius
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
@@ -1134,6 +1200,7 @@ drawable arama_ikonu
 drawable aramabutonustil
 drawable avd_hide_password
 drawable avd_show_password
+drawable blue_button_background
 drawable bottom_gradient
 drawable bottom_nav_item_background
 drawable bottom_shadow
@@ -1153,8 +1220,12 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable detaysnack
+drawable dialog_background
+drawable dialog_background_dark
 drawable dosyaresmi
 drawable dw
+drawable error_center_x
+drawable error_circle
 drawable flat_download
 drawable flat_dw
 drawable flat_exit
@@ -1176,6 +1247,8 @@ drawable flaticonyukle
 drawable folder
 drawable gonder
 drawable gonderiler_arka_plan
+drawable gray_button_background
+drawable green_button_background
 drawable homeyeni
 drawable ic_delete_black_24dp
 drawable ic_launcher_background
@@ -1222,12 +1295,15 @@ drawable profilsayfasi_bilgiler_arkaplan
 drawable qwqw
 drawable qwqw2
 drawable qwqw3
+drawable red_button_background
 drawable resim_ikonu
 drawable resimleregit
 drawable sekil
 drawable send
 drawable sikayet
 drawable studentgirl
+drawable success_bow
+drawable success_circle
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transparan
@@ -1244,9 +1320,12 @@ drawable ucrop_vector_ic_crop
 drawable ucrop_vector_loader
 drawable ucrop_vector_loader_animated
 drawable ustsayfayagit
+drawable warning_circle
+drawable warning_sigh
 drawable xxxxx
 drawable yorumsil
 id ALT
+id ButonSil
 id CTRL
 id Email
 id FUNCTION
@@ -1331,8 +1410,10 @@ id bolum_uyarı
 id bottom
 id buton_altı_bilgilendirme
 id buttonPanel
+id buttons_container
 id cancel
 id cancel_action
+id cancel_button
 id center
 id center_horizontal
 id center_vertical
@@ -1342,12 +1423,16 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id confirm_button
 id container
 id content
 id contentPanel
+id content_text
 id coordinator
 id custom
 id customPanel
+id custom_image
+id custom_view_container
 id cıkısyap
 id decor_content_parent
 id default_activity_button
@@ -1376,6 +1461,8 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id error_frame
+id error_x
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1449,8 +1536,11 @@ id listview_profil_fotosu
 id listview_universite
 id loadPage
 id loadPage2
+id loading
 id lytCameraPick
 id lytGalleryPick
+id mask_left
+id mask_right
 id masked
 id media_actions
 id menu_crop
@@ -1463,6 +1553,7 @@ id mtrl_internal_children_alpha_tag
 id multi_mode
 id multiply
 id navigation_header_container
+id neutral_button
 id never
 id none
 id normal
@@ -1487,6 +1578,7 @@ id pdfsec
 id pdfviewer
 id percent
 id pin
+id place_layout_cardview
 id profil_adi
 id profil_ayrıntı_progressbar
 id profil_bilgileri_kısmı
@@ -1497,11 +1589,14 @@ id profil_resmi_silme
 id profil_resmi_yukleme
 id profil_sayfasi_bilgiler_progress_bar
 id profil_sayfasi_paylasımlar_progress_bar
+id profil_sayfasi_refesh
 id profil_sayfası_ayarlar_butonu
 id profil_universite
 id profilsayfasi_listview_tıklama
 id profilsayfası_listview
+id progressWheel
 id progress_circular
+id progress_dialog
 id progress_horizontal
 id radio
 id resim2
@@ -1566,6 +1661,8 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id success_frame
+id success_tick
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1584,6 +1681,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id title_text
 id toolbar
 id toolbar_title
 id top
@@ -1607,6 +1705,7 @@ id useLogo
 id view_offset_helper
 id view_overlay
 id visible
+id warning_frame
 id withText
 id wrap
 id wrap_content
@@ -1614,6 +1713,8 @@ id wrapper_controls
 id wrapper_reset_rotate
 id wrapper_rotate_by_angle
 id wrapper_states
+id x
+id y
 id yorumlar_ad
 id yorumlar_listview_profil_fotosu
 id yorumlar_lisview_uyarı
@@ -1621,6 +1722,7 @@ id yorumlar_tarih
 id yorumlar_yorum
 id yorumlar_yorumsil
 id yukleme_butonu
+id z
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -1681,6 +1783,7 @@ layout activity_password_recovery_popup_3
 layout activity_pdf_viewer
 layout activity_profil_paylasimlari_ayrinti
 layout activity_profil_resmi_pop_up
+layout alert_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1741,6 +1844,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap ic_type_file
 mipmap ic_type_folder
+string LOADING
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1793,6 +1897,10 @@ string cancel_button_label
 string character_counter_pattern
 string choose_button_label
 string default_dir
+string default_progressbar
+string dialog_cancel
+string dialog_default_title
+string dialog_ok
 string error_dir_access
 string error_failed_pick_gallery_image
 string error_failed_to_compress_image
@@ -2338,6 +2446,9 @@ style Widget_MaterialComponents_TextInputLayout_FilledBox_Dense
 style Widget_MaterialComponents_TextInputLayout_OutlineBox
 style Widget_MaterialComponents_TextInputLayout_OutlineBox_Dense
 style Widget_Support_CoordinatorLayout
+style alert_dialog_dark
+style alert_dialog_light
+style dialog_blue_button
 style popupstyle
 style profil_bilgi_arkaplan
 style ucrop_ImageViewWidgetIcon
@@ -2405,8 +2516,10 @@ styleable MenuView android_windowAnimationStyle android_itemTextAppearance andro
 styleable NavigationView android_background android_fitsSystemWindows android_maxWidth elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconTint itemTextAppearance itemTextColor menu
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
+styleable ProgressWheel matProg_barColor matProg_barSpinCycleTime matProg_barWidth matProg_circleRadius matProg_fillRadius matProg_linearProgress matProg_progressIndeterminate matProg_rimColor matProg_rimWidth matProg_spinSpeed
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable Rotate3dAnimation fromDeg pivotX pivotY rollType toDeg
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollBar sb_handlerColor sb_horizontal sb_indicatorColor sb_indicatorTextColor
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
