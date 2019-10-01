@@ -36,18 +36,19 @@ MERGED from [com.android.support:exifinterface:28.0.0] C:\Users\AF\.gradle\cache
 MERGED from [com.github.TutorialsAndroid:FilePicker:v4.0.19] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\5437d989c6b7bbf28498631e00c0296a\AndroidManifest.xml:2:1-13:12
 MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\53462a41d214b0977dcf206894998e8c\AndroidManifest.xml:2:1-15:12
 MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\a97fcb6bc8381064f1e6884b24088eba\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\01ce02ea873f4c3fcecc56375356254b\AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\35f97bd7b2f9239e4e4426f7d18fee86\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\2e45ae9b9d197653065b2edb80cd33c2\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\e7442a44d428abf5fa138a771ac0ede6\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\a66baf7910994612ec004deed19ae96f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\c649321971ff866e8fd948cb75984925\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\d94b765b8ce3d06d5eae85dd263f6885\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\95a83b6d02e3f74cbf32fe08db7b2423\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\29f89ae207bdf64b48a072bc3fd9c5b7\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\029a866b671aedb638fc2082df9ae766\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\7906353bcbff184b1f1a09bc874df047\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\b03256ec745044a878d1fb3b6c4dfe4f\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\35f97bd7b2f9239e4e4426f7d18fee86\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\4775facd1891db9263f8f1430ebbd144\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\72e0e10826f6b33d38ad3520f404162b\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\f621acef357942513c23812d24c180d8\AndroidManifest.xml:17:1-22:12
@@ -76,6 +77,7 @@ MERGED from [android.arch.core:runtime:1.1.1] C:\Users\AF\.gradle\caches\transfo
 MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\8b8b3846b939e5d0331a9ed3d831ebb9\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\d97ae1b1869d49e9e1f7056c55e1c78e\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\3d10dec6763bb23f0152c7ed449e3ee4\AndroidManifest.xml:17:1-24:12
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\b6d15dee50dc5daf43c5880d24664585\AndroidManifest.xml:2:1-13:12
 INJECTED from C:\Users\AF\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
 INJECTED from C:\Users\AF\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
 INJECTED from C:\Users\AF\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
@@ -169,12 +171,14 @@ MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\AF\.gradle\cache
 MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\53462a41d214b0977dcf206894998e8c\AndroidManifest.xml:11:5-13:38
 MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\a97fcb6bc8381064f1e6884b24088eba\AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\a97fcb6bc8381064f1e6884b24088eba\AndroidManifest.xml:9:5-20
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\01ce02ea873f4c3fcecc56375356254b\AndroidManifest.xml:11:5-20
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\01ce02ea873f4c3fcecc56375356254b\AndroidManifest.xml:11:5-20
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\a66baf7910994612ec004deed19ae96f\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\a66baf7910994612ec004deed19ae96f\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\c649321971ff866e8fd948cb75984925\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\c649321971ff866e8fd948cb75984925\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\d94b765b8ce3d06d5eae85dd263f6885\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\d94b765b8ce3d06d5eae85dd263f6885\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\95a83b6d02e3f74cbf32fe08db7b2423\AndroidManifest.xml:22:5-20
@@ -197,6 +201,8 @@ MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\AF\.gradle\
 MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\d97ae1b1869d49e9e1f7056c55e1c78e\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\3d10dec6763bb23f0152c7ed449e3ee4\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\3d10dec6763bb23f0152c7ed449e3ee4\AndroidManifest.xml:22:5-20
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\b6d15dee50dc5daf43c5880d24664585\AndroidManifest.xml:11:5-20
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\b6d15dee50dc5daf43c5880d24664585\AndroidManifest.xml:11:5-20
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\58c83086d0159706bc2b1678ddf9092b\AndroidManifest.xml:22:18-91
 	android:supportsRtl
@@ -363,6 +369,12 @@ MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\AF\.gradle\cache
 MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\53462a41d214b0977dcf206894998e8c\AndroidManifest.xml:7:5-9:41
 MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\a97fcb6bc8381064f1e6884b24088eba\AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\a97fcb6bc8381064f1e6884b24088eba\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\01ce02ea873f4c3fcecc56375356254b\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\01ce02ea873f4c3fcecc56375356254b\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\35f97bd7b2f9239e4e4426f7d18fee86\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\35f97bd7b2f9239e4e4426f7d18fee86\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\2e45ae9b9d197653065b2edb80cd33c2\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\2e45ae9b9d197653065b2edb80cd33c2\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:recyclerview-v7:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\e7442a44d428abf5fa138a771ac0ede6\AndroidManifest.xml:21:5-44
@@ -371,8 +383,6 @@ MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\AF\.gr
 MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\a66baf7910994612ec004deed19ae96f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\c649321971ff866e8fd948cb75984925\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\c649321971ff866e8fd948cb75984925\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\946309f4d6b6a8602e9309fc49d44acd\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\d94b765b8ce3d06d5eae85dd263f6885\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\d94b765b8ce3d06d5eae85dd263f6885\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\95a83b6d02e3f74cbf32fe08db7b2423\AndroidManifest.xml:20:5-44
@@ -385,8 +395,6 @@ MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\AF\.gradl
 MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\7906353bcbff184b1f1a09bc874df047\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\b03256ec745044a878d1fb3b6c4dfe4f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\b03256ec745044a878d1fb3b6c4dfe4f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\35f97bd7b2f9239e4e4426f7d18fee86\AndroidManifest.xml:21:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\35f97bd7b2f9239e4e4426f7d18fee86\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\4775facd1891db9263f8f1430ebbd144\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\4775facd1891db9263f8f1430ebbd144\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\72e0e10826f6b33d38ad3520f404162b\AndroidManifest.xml:20:5-44
@@ -443,6 +451,8 @@ MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\AF\.gradle\
 MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\d97ae1b1869d49e9e1f7056c55e1c78e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\3d10dec6763bb23f0152c7ed449e3ee4\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\3d10dec6763bb23f0152c7ed449e3ee4\AndroidManifest.xml:20:5-44
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\b6d15dee50dc5daf43c5880d24664585\AndroidManifest.xml:7:5-9:41
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\AF\.gradle\caches\transforms-2\files-2.1\b6d15dee50dc5daf43c5880d24664585\AndroidManifest.xml:7:5-9:41
 INJECTED from C:\Users\AF\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\AF\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion

@@ -26,6 +26,7 @@ import com.abms.af.projeversion02.RestApi.ManagerAll;
 
 import java.util.Calendar;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -189,11 +190,7 @@ public class hesap_acmaActivity extends AppCompatActivity {
                             sifre_dogrulama_uyarı.setText(uyarı);
                             sifre_dogrulama_uyarı.setVisibility(View.VISIBLE);
                         }
-
-
                 }
-
-
             }}
         );
 
@@ -259,7 +256,7 @@ public class hesap_acmaActivity extends AppCompatActivity {
         a.enqueue(new Callback<Kullanicikayitsonuc>() {
             @Override
             public void onResponse(Call<Kullanicikayitsonuc> call, Response<Kullanicikayitsonuc> response) {
-                Toast.makeText(getApplicationContext(),response.body().getKullanicikayitsonuc(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),response.body().getKullanicikayitsonuc(),Toast.LENGTH_LONG).show();
 
                 if (response.body().getKullanicikayitsonuc().toString().equals("E_posta kullaniliyor"))
                 {
@@ -270,7 +267,13 @@ public class hesap_acmaActivity extends AppCompatActivity {
 
                 else if (response.body().getKullanicikayitsonuc().toString().equals("Ekleme basarilidir"))
                 {
-                    Toast.makeText(getApplicationContext(),"kayıt oldunuz",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"kayıt oldunuz",Toast.LENGTH_LONG).show();
+
+                    new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Tebrikler")
+                            .setContentText("Kayıt işleminiz gerçekleşmiştir")
+                            .show();
+
                     Intent main=new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(main);
                 }
@@ -279,8 +282,14 @@ public class hesap_acmaActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Kullanicikayitsonuc> call, Throwable t) {
-                Log.i("HATA VERDİİİİ", "onFailure:"+t.getMessage());
-                Toast.makeText(getApplicationContext(),"kayıt olurken hata"+t.getMessage() ,Toast.LENGTH_LONG).show();
+                //Log.i("HATA VERDİİİİ", "onFailure:"+t.getMessage());
+                //Toast.makeText(getApplicationContext(),"kayıt olurken hata"+t.getMessage() ,Toast.LENGTH_LONG).show();
+
+                new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("Dikkat!")
+                        .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                        .show();
+
             }
         });
     }

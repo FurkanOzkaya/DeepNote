@@ -25,6 +25,8 @@ import com.abms.af.projeversion02.Fragments.home_sayfasi;
 import com.abms.af.projeversion02.Fragments.profil_sayfasi;
 import com.abms.af.projeversion02.Fragments.share_sayfasi;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class ana_sayfa extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     BottomNavigationView alt_butonlar;
@@ -110,18 +112,27 @@ public class ana_sayfa extends AppCompatActivity implements BottomNavigationView
 
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Çıkış")
-                .setMessage("Çıkmak istediğinize emin misiniz?")
-                .setPositiveButton("Evet", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
 
-                        Intent intent = new Intent(Intent.ACTION_MAIN);
-                        intent.addCategory(Intent.CATEGORY_HOME);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                    }
-                }).setNegativeButton("Hayır", null).show();
+        final SweetAlertDialog sa = new SweetAlertDialog(ana_sayfa.this,SweetAlertDialog.WARNING_TYPE);
+        sa.setTitleText("Dikkat!");
+        sa.setContentText("Çıkmak istediğinize emin misiniz?");
+        sa.setConfirmText("Evet");
+        sa.setCancelClickListener(null);
+        sa.setCancelText("Hayır");
+        sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sweetAlertDialog) {
+
+                sa.cancel();
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+            }
+        });
+        sa.show();
+
     }
 
 

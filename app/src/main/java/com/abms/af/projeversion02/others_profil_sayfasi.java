@@ -27,6 +27,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -100,7 +101,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
             else
                 {
                     ///////////////////////////////////
-                    Picasso.get().load(getString(R.string.site_adresi)+others_profilfoto_string).resize(200,200).error(R.drawable.main_activity_profil).into(others_profil_foto);
+                    Picasso.get().load(getString(R.string.site_adresi)+others_profilfoto_string).resize(200,200).error(R.drawable.flat_ogrenci).into(others_profil_foto);
                     /////////////////////////////////////
                 }
         int id=Integer.valueOf(others_id_kullanici_string);
@@ -122,7 +123,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
                     others_profilsayfası_listview.setAdapter(profilkullaniciadapter);
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "herhangi bir paylasım bulunmamaktadır", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Kullanıcıya ait paylaşım bulunmamaktadır", Toast.LENGTH_LONG).show();
 
                 }
 
@@ -134,7 +135,12 @@ public class others_profil_sayfasi extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Profilsayfasikullanicipaylasimlari>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "HATA OLUSTU " + t.getMessage(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "HATA OLUSTU " + t.getMessage(), Toast.LENGTH_LONG).show();
+
+                new SweetAlertDialog(others_profil_sayfasi.this, SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("Dikkat!")
+                        .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                        .show();
 
                 /////////////////////////////////////
                 others_paylasımlar_progresbar.setVisibility(View.GONE);

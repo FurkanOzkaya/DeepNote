@@ -114,7 +114,7 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
                     if (dersadi.equals("")) {
                         dersadi="UyarıBos";
                     }
-                    Toast.makeText(getApplicationContext(), "dersadi"+dersadi, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "dersadi"+dersadi, Toast.LENGTH_SHORT).show();
                     bolum_altı_bilgilendirme.setVisibility(View.GONE);
                     Intent i = new Intent();
                     i.putExtra("universite", universite);
@@ -123,17 +123,7 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
                     setResult(Activity.RESULT_OK,i);
                     finish();
                 }
-
-
-
-
-
-
             }
         });
-
-
-
-
     }
 }

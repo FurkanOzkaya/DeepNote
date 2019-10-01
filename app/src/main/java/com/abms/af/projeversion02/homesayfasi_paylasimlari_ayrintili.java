@@ -43,6 +43,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -134,12 +135,12 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
         if (profilfoto_string.equals("default"))
         {
-            Picasso.get().load(R.drawable.main_activity_profil).resize(200,200).into(profil_foto);
+            Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
         }
         else
         {
             ///////////////////////////////////
-            Picasso.get().load(getString(R.string.site_adresi)+profilfoto_string).resize(200,200).error(R.drawable.main_activity_profil).into(profil_foto);
+            Picasso.get().load(getString(R.string.site_adresi)+profilfoto_string).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
             /////////////////////////////////////
         }
     }
@@ -237,7 +238,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
                         if (response.isSuccessful())
                         {
-                            Toast.makeText(getApplicationContext(),"Yorum yapıldı",Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(),"Yorum yapıldı",Toast.LENGTH_LONG).show();
                             //////////// Y O R U M  G E T İ R M E   Y O R U M   Y A P T I K T A N  S O N R A
 
                             final Call<List<Yorumlarigetirsonuc>> yorumgetir=ManagerAll.webyonet().yorumgetir(paylasim_id);
@@ -277,14 +278,23 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast.makeText(getApplicationContext(),"Yorum yapılamadı",Toast.LENGTH_LONG).show();
+
+                            new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Dikkat!")
+                                    .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                    .show();
+
+                            //Toast.makeText(getApplicationContext(),"Yorum yapılamadı",Toast.LENGTH_LONG).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
 
-                        Toast.makeText(getApplicationContext(),"Yorum yapılamadı"+t.getMessage(),Toast.LENGTH_LONG).show();
+                        new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("Dikkat!")
+                                .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                .show();
                     }
                 });
 
@@ -381,6 +391,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                         Boolean dosya=dosyayıdiskeyaz(response.body());
                         if (dosya==true)
                         {
+                            /*
                             new AlertDialog.Builder(homesayfasi_paylasimlari_ayrintili.this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Dosya İndirme Bilgisi")
                             .setMessage("İndirme Başarılı!" +"\n"+
                                     " dosya yöneticinizden indirdiklerinizi bulabilirsiniz!!")
@@ -390,30 +401,31 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                                     dialogInterface.dismiss();
                                 }
                             }).show();
+                            */
+
+                            new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE)
+                                    .setTitleText("İndirme Başarılı!")
+                                    .setContentText("Dosya yöneticinizden indirdiklerinizi bulabilirsiniz")
+                                    .show();
 
                         }
                         else
                         {
-                            new AlertDialog.Builder(homesayfasi_paylasimlari_ayrintili.this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Dosya İndirme Bilgisi")
-                                .setMessage("İndirme Başarısız! " +"\n"+
-                                        "tekrar deneyiniz, Sorun devam ederse bildiriniz!!")
-                                .setPositiveButton("Tamam", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        dialogInterface.dismiss();
-                                    }
-                                }).show();
+                            new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Dikkat!")
+                                    .setContentText("İndirme işlemi sırasında hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                    .show();
 
                         }
                     }
 
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
-                        Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Hata olustu", Toast.LENGTH_SHORT).show();
-                        new AlertDialog.Builder(homesayfasi_paylasimlari_ayrintili.this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Dosya İndirme Bilgisi")
-                                .setMessage("İndirme Başarısız! " +"\n"+
-                                        "tekrar deneyiniz, Sorun devam ederse bildiriniz!!")
-                                .setNeutralButton("Tamam",null);
+                        //Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Hata olustu", Toast.LENGTH_SHORT).show();
+                        new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("Dikkat!")
+                                .setContentText("İndirme işlemi sırasında hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                .show();
                     }
                 });
 

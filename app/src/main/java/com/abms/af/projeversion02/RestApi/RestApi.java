@@ -1,5 +1,6 @@
 package com.abms.af.projeversion02.RestApi;
 
+import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
 import com.abms.af.projeversion02.Models.Kullanicikayitsonuc;
@@ -102,5 +103,9 @@ public interface RestApi {
     @FormUrlEncoded
     @POST("/YeniSifreBelirleme.php")
     Call<Yenisifrebelirleme> RestYeniSifreBekirleme(@Field("email") String email, @Field("sifre") String sifre);
+
+    @FormUrlEncoded
+    @POST("/GonderiSil.php")
+    Call<GonderiSil> RestGonderiSil(@Field("id") Integer id);
 
 }

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Oct 01 03:03:11 EET 2019
+#Tue Oct 01 21:13:53 EET 2019
 17.baseType=DIRECTORY
 4.path=lib/armeabi/libmodpdfium.so
 25.base=C\:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0

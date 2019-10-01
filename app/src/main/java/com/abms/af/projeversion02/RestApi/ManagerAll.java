@@ -1,5 +1,6 @@
 package com.abms.af.projeversion02.RestApi;
 
+import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
 import com.abms.af.projeversion02.Models.Kullanicikayitsonuc;
@@ -119,6 +120,12 @@ public class ManagerAll extends BaseManager {
     public Call<Yenisifrebelirleme> YeniSfireBelirleme(String email, String sifre)
     {
         Call<Yenisifrebelirleme> x = getRestApiClient().RestYeniSifreBekirleme(email,sifre);
+        return x;
+    }
+
+    public Call<GonderiSil> GonderiSil(Integer id)
+    {
+        Call<GonderiSil> x = getRestApiClient().RestGonderiSil(id);
         return x;
     }
 

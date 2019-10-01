@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -149,6 +151,12 @@ public class MainActivity extends AppCompatActivity {
     */
     private void webservis_kullanicigiris()
     {
+        final SweetAlertDialog pDialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.PROGRESS_TYPE);
+        pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+        pDialog.setTitleText("Yükleniyor");
+        pDialog.setCancelable(false);
+        pDialog.show();
+
         Call<Kullanicigirissonuc> kontrol= ManagerAll.webyonet().kontrolet(giris_mail.getText().toString(),giris_sifre.getText().toString());
         kontrol.enqueue(new Callback<Kullanicigirissonuc>() {
             @Override
@@ -168,10 +176,12 @@ public class MainActivity extends AppCompatActivity {
                         editor.putInt("uye_id",Integer.parseInt(response.body().getKullaniciid().toString()));
                         editor.commit();
                        // Toast.makeText(getApplicationContext(),"Basarili bir sekilde giris yaptınız",Toast.LENGTH_LONG).show();
+                        pDialog.cancel();
                         Intent anaekran=new Intent(getApplicationContext(),ana_sayfa.class);
                         anaekran.putExtra("Kullanici_id",Kullanici_id);
                         startActivity(anaekran);
                         genel_uyarı.setVisibility(View.INVISIBLE);
+
                     }
 
                 }
