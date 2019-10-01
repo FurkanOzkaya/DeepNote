@@ -76,8 +76,8 @@ public class ManagerAll extends BaseManager {
         return  sikayet;
     }
 
-    public Call<List<Homesayfasitumpaylasimveritabani>> aramagonderigetir(String universite,String bolum, String dersadi) {
-        Call<List<Homesayfasitumpaylasimveritabani>> aramagonderi = getRestApiClient().aramagonderigetir(universite,bolum,dersadi);
+    public Call<List<Homesayfasitumpaylasimveritabani>> aramagonderigetir(String universite,String bolum, String dersadi,int page) {
+        Call<List<Homesayfasitumpaylasimveritabani>> aramagonderi = getRestApiClient().aramagonderigetir(universite,bolum,dersadi,page);
         return aramagonderi;
     }
     public  Call<Yorumyapmasonuc> yorumyap(int id_kullanici,int paylasim_id,String yorum)

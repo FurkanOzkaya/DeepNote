@@ -239,7 +239,7 @@ public class share_sayfasi extends Fragment {
         ImagePicker.Companion.with(this)
                 .galleryOnly()
                 //.crop(1f, 1f)	    		//Crop Square image(Optional)
-                .compress(1024)			//Final image size will be less than 1 MB(Optional)
+                .compress(500)			//Final image size will be less than 1 MB(Optional)
                 .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
                 .start();
         /*Intent intent = new Intent();

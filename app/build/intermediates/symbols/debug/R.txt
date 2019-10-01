@@ -1447,7 +1447,7 @@ int id listview_profil_ders 0x7f0900c6
 int id listview_profil_fotosu 0x7f0900c7
 int id listview_universite 0x7f0900c8
 int id loadPage 0x7f0900c9
-int id loadPage2 0x7f0900ca
+int id loadprevpage 0x7f0900ca
 int id lytCameraPick 0x7f0900cb
 int id lytGalleryPick 0x7f0900cc
 int id masked 0x7f0900cd
@@ -1859,7 +1859,8 @@ int string ucrop_label_edit_photo 0x7f0f0073
 int string ucrop_label_original 0x7f0f0074
 int string ucrop_menu_crop 0x7f0f0075
 int string ucrop_mutate_exception_hint 0x7f0f0076
-int string uye_olmak 0x7f0f0077
+int string universite_listesi__arama_hepsi 0x7f0f0077
+int string uye_olmak 0x7f0f0078
 int style AlertDialog_AppCompat 0x7f100000
 int style AlertDialog_AppCompat_Light 0x7f100001
 int style Animation_AppCompat_Dialog 0x7f100002

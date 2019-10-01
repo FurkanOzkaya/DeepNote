@@ -171,7 +171,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             openpdf.setVisibility(View.GONE);
             ayrıntılı_resim.setVisibility(View.VISIBLE);
             Log.i("TAG", "islevver: "+dosyayolu_string);
-            Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).resize(200, 200).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
+            Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).resize(1080, 1080).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
         }
 
 

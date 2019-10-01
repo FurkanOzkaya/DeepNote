@@ -73,7 +73,7 @@ public interface RestApi {
 
     @FormUrlEncoded
     @POST("/Aramapopupverigetir.php")
-    Call<List<Homesayfasitumpaylasimveritabani>> aramagonderigetir(@Field("universite") String universite,@Field("bolum") String bolum ,@Field("dersadi") String dersadi );
+    Call<List<Homesayfasitumpaylasimveritabani>> aramagonderigetir(@Field("universite") String universite,@Field("bolum") String bolum ,@Field("dersadi") String dersadi,@Field("page") int page );
 
     @FormUrlEncoded
     @POST("/Yorumyapma.php")

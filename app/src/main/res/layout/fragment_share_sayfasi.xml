@@ -188,10 +188,9 @@
                 android:id="@+id/acıklama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxHeight="200dp"
                 android:hint="Açıklama Giriniz"
                 android:visibility="invisible"
-                android:inputType="text"
-                android:maxLines="1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"/>

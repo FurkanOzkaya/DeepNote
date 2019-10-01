@@ -1,7 +1,7 @@
-#Sun Sep 29 22:41:08 EET 2019
-base.0=C\:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
+#Tue Oct 01 03:03:10 EET 2019
+base.0=C\:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
+base.1=C\:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out

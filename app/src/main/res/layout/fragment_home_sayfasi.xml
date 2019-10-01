@@ -21,13 +21,14 @@
             android:background="@drawable/bottom_gradient">
 
             <LinearLayout
-                android:id="@+id/loadPage2"
+                android:id="@+id/loadprevpage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/dahafazla"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:orientation="vertical"
+                android:visibility="gone"
                 android:gravity="center">
 
                 <ImageView
@@ -83,6 +84,7 @@
             android:id="@+id/home_sayfası_lisview_uyarı_mesajı"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="@string/home_sayfasi_listview_top_uyarı"
             android:textColor="@color/colorAccent"
             android:gravity="center"
@@ -108,6 +110,7 @@
         android:background="@drawable/dahafazla"
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="10dp"
+        android:visibility="gone"
         android:gravity="center">
 
         <ImageView

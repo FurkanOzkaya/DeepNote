@@ -1448,7 +1448,7 @@ id listview_profil_ders
 id listview_profil_fotosu
 id listview_universite
 id loadPage
-id loadPage2
+id loadprevpage
 id lytCameraPick
 id lytGalleryPick
 id masked
@@ -1860,6 +1860,7 @@ string ucrop_label_edit_photo
 string ucrop_label_original
 string ucrop_menu_crop
 string ucrop_mutate_exception_hint
+string universite_listesi__arama_hepsi
 string uye_olmak
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

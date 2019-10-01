@@ -100,7 +100,7 @@ ANA SAYFAYA  TÜM PAYLASIMLARI GETİRİR
         else
         {
             ///////////////////////////////////
-            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getProfilfoto()).resize(1000,1000).error(R.drawable.flat_ogrenci).into(profil_foto);
+            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getProfilfoto()).resize(1080,1080).error(R.drawable.flat_ogrenci).into(profil_foto);
             /////////////////////////////////////
         }
 
