@@ -217,7 +217,8 @@ public class home_sayfasi extends Fragment {
 
 
             searchActive=true;
-            loadSearchPage(0);
+            pageCount=0;
+            loadSearchPage(pageCount);
         }
 
 
@@ -227,15 +228,15 @@ public class home_sayfasi extends Fragment {
     {
        loadnextpage.setVisibility(View.GONE);
        loadprevpage.setVisibility(View.GONE);
-      if (searchActive)
-      {
-          loadSearchPage(pageCount);
-      }
-      else
-      {
-          loadListForHome(pageCount);
-      }
-        int page= rowcount / pageListSize;
+        if (searchActive)
+          {
+              loadSearchPage(pageCount);
+          }
+        else
+          {
+              loadListForHome(pageCount);
+          }
+        /*int page= rowcount / pageListSize;
         if (page > pageCount)
         {
             pageCount++;
@@ -245,7 +246,7 @@ public class home_sayfasi extends Fragment {
             pageCount=0;
         }
         //Toast.makeText(getActivity().getApplicationContext(),"page: "+page+" pagecount: "+pageCount+" rowcount: "+rowcount + " pagelistsize: "+pageListSize,Toast.LENGTH_LONG).show();
-       loadListForHome(pageCount);
+       loadListForHome(pageCount);*/
 
 
     }
