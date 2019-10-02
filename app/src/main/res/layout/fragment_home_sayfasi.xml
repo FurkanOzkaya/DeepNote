@@ -79,7 +79,8 @@
             android:layout_height="wrap_content"
             android:paddingTop="25dp"
             android:visibility="gone"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:layout_marginTop="250dp"/>
         <TextView
             android:id="@+id/home_sayfası_lisview_uyarı_mesajı"
             android:layout_width="match_parent"

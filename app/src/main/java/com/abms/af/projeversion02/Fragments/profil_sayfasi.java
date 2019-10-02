@@ -256,6 +256,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         yenileme_nesnesi.setRefreshing(false);
     }
 
+
     public void CallProfilKullaniciPaylasimlari()
     {
         Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(id);
