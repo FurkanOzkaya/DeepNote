@@ -266,19 +266,23 @@ public class home_sayfasi extends Fragment {
                 if (response.isSuccessful()) {
                    if (response.body() != null )
                    {
-                       rowcount=response.body().get(0).getRowCount();
-                       pageListSize=response.body().get(0).getPageListSize();
-                       // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
-                       tum_veriler_liste = response.body();
-                       if (rowcount > 0)
+                       if(response.body().size() > 0)
                        {
-                           paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
-                           listView_homesayfasi.setAdapter(paylasimtumverileradapter);
+                           rowcount=response.body().get(0).getRowCount();
+                           pageListSize=response.body().get(0).getPageListSize();
+                           // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
+                           tum_veriler_liste = response.body();
+                           if (rowcount > 0)
+                           {
+                               paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
+                               listView_homesayfasi.setAdapter(paylasimtumverileradapter);
+                           }
+                           else
+                           {
+                               home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
+                           }
                        }
-                       else
-                       {
-                           home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
-                       }
+
                        /////////////////////////////////////
                        progressBar.setVisibility(View.GONE);
                        refesh_home.setRefreshing(false);
@@ -353,20 +357,21 @@ public class home_sayfasi extends Fragment {
                 if (response.isSuccessful()) {
                     if (response.body() != null )
                     {
-                        // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
-                        tum_veriler_liste = response.body();
-                        rowcount = response.body().get(0).getRowCount();
-                        pageListSize=response.body().get(0).getPageListSize();
-                       if (rowcount > 0)
-                       {
-                           paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
-                           listView_homesayfasi.setAdapter(paylasimtumverileradapter);
-                           home_sayfası_listview_uyarı.setVisibility(View.GONE);
-                       }
-                       else
-                       {
-                           home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
-                       }
+
+                        if(response.body().size() > 0)
+                        {
+                            // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
+                            tum_veriler_liste = response.body();
+                            rowcount = response.body().get(0).getRowCount();
+                            pageListSize = response.body().get(0).getPageListSize();
+                            if (rowcount > 0) {
+                                paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
+                                listView_homesayfasi.setAdapter(paylasimtumverileradapter);
+                                home_sayfası_listview_uyarı.setVisibility(View.GONE);
+                            } else {
+                                home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
+                            }
+                        }
                     }
                     /////////////////////////////////////
                     progressBar.setVisibility(View.GONE);
