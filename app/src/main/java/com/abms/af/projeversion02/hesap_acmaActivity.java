@@ -269,11 +269,6 @@ public class hesap_acmaActivity extends AppCompatActivity {
                 {
                     //Toast.makeText(getApplicationContext(),"kayıt oldunuz",Toast.LENGTH_LONG).show();
 
-                    new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                            .setTitleText("Tebrikler")
-                            .setContentText("Kayıt işleminiz gerçekleşmiştir")
-                            .show();
-
                     Intent main=new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(main);
                 }

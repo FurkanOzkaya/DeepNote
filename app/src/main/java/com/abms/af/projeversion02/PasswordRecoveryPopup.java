@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.abms.af.projeversion02.Models.PHPMailersifregonderme;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -74,6 +75,7 @@ public class PasswordRecoveryPopup extends AppCompatActivity {
 
                         if (response.isSuccessful())
                         {
+
                             Toast.makeText(getApplicationContext(), "Şifre sıfırlama kodu email adresinize gönderilmiştir", Toast.LENGTH_LONG).show();
                             //Toast.makeText(getApplicationContext(), response.body().getKod(), Toast.LENGTH_LONG).show();
 

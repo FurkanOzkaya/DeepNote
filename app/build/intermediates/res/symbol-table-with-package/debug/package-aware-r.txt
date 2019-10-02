@@ -1193,9 +1193,6 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable abms
-drawable alt_home_sayfasi
-drawable alt_profil_sayfasi
-drawable alt_share_sayfasi
 drawable arama_ikonu
 drawable aramabutonustil
 drawable avd_hide_password
@@ -1323,7 +1320,6 @@ drawable ustsayfayagit
 drawable warning_circle
 drawable warning_sigh
 drawable xxxxx
-drawable yorumsil
 id ALT
 id ButonSil
 id CTRL

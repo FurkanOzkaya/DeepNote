@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 alertBuilder.setCancelable(true);
                 alertBuilder.setTitle("Depolama izni");
                 alertBuilder.setIcon(android.R.drawable.ic_dialog_info);
-                alertBuilder.setMessage("Yükleme ve İndirme işlemleri için kullanilacaktir!");
+                alertBuilder.setMessage("Yükleme ve indirme işlemleri için kullanılacaktır!");
                 alertBuilder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

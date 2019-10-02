@@ -2,6 +2,7 @@ package com.abms.af.projeversion02.Fragments;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abms.af.projeversion02.Adapters.Paylasimtumverileradapter;
+import com.abms.af.projeversion02.MainActivity;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
@@ -256,6 +258,8 @@ public class home_sayfasi extends Fragment {
         retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(getString(R.string.jsongüvenlikkod),page);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         progressBar.setVisibility(View.VISIBLE);
+
+
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         ////////////////////////////////////////////////////////////////////////////////////
