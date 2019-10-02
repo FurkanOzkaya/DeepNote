@@ -100,7 +100,7 @@ ANA SAYFAYA  TÜM PAYLASIMLARI GETİRİR
         else
         {
             ///////////////////////////////////
-            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getProfilfoto()).resize(1080,1080).error(R.drawable.flat_ogrenci).into(profil_foto);
+            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getProfilfoto()).error(R.drawable.flat_ogrenci).into(profil_foto);
             /////////////////////////////////////
         }
 
@@ -110,7 +110,7 @@ ANA SAYFAYA  TÜM PAYLASIMLARI GETİRİR
         }
         else
         {
-            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getDosyayolu()).resize(1100,1100).error(R.drawable.ic_launcher_background).into(gelendosya);
+            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getDosyayolu()).error(R.drawable.ic_launcher_background).into(gelendosya);
         }
 
 

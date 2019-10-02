@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Oct 02 16:13:25 EET 2019
+#Wed Oct 02 16:51:11 EET 2019
 17.baseType=DIRECTORY
 4.path=lib/x86/libmodpng.so
 25.base=C\:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11

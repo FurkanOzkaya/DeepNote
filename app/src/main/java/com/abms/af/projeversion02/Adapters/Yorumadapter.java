@@ -117,7 +117,7 @@ public class Yorumadapter extends BaseAdapter {
                 Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(yorumcufotosu);
             } else {
                 ///////////////////////////////////
-                Picasso.get().load(activity.getString(R.string.site_adresi) + gelenyorumlar.get(position).getProfilfoto()).resize(50,50).error(R.drawable.flat_ogrenci).into(yorumcufotosu);
+                Picasso.get().load(activity.getString(R.string.site_adresi) + gelenyorumlar.get(position).getProfilfoto()).error(R.drawable.flat_ogrenci).into(yorumcufotosu);
                 /////////////////////////////////////
             }
         }
