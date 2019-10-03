@@ -17,6 +17,23 @@
         android:background="@drawable/transparan"
         android:padding="15dp">
 
+
+        <AutoCompleteTextView
+            android:id="@+id/autotext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="okul seç"
+            android:completionThreshold="1"
+            />
+
+        <AutoCompleteTextView
+            android:id="@+id/autookul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="bölüm seç"
+            android:completionThreshold="1"
+            />
+
         <Spinner
             android:id="@+id/arama_universite"
             android:layout_width="match_parent"

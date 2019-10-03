@@ -1372,6 +1372,8 @@ id arama_dersadi
 id arama_universite
 id async
 id auto
+id autookul
+id autotext
 id ayrıntı_homesayfasi_aciklama
 id ayrıntı_homesayfasi_ad_soyad
 id ayrıntı_homesayfasi_bolum
@@ -1403,6 +1405,7 @@ id blocking
 id bolum
 id bolum_adi
 id bolum_uyarı
+id bolumtextitem
 id bottom
 id buton_altı_bilgilendirme
 id buttonPanel
@@ -1556,6 +1559,7 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id okultextitem
 id openpdf
 id others_profil_adi
 id others_profil_bolum
@@ -1780,6 +1784,7 @@ layout activity_pdf_viewer
 layout activity_profil_paylasimlari_ayrinti
 layout activity_profil_resmi_pop_up
 layout alert_dialog
+layout bolumler
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1821,6 +1826,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout okullar
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -25,6 +26,10 @@ import java.util.List;
 
 public class anasayfa_pop_up_arama extends AppCompatActivity {
 
+    private static final String[] OKULLAR = new String[]{
+            "okul1","okul2","okul3"
+    };
+
     Spinner arama_universite,arama_bolum;
     EditText arama_dersadi;
     Button arama_buton;
@@ -37,6 +42,7 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
     Paylasimtumverileradapter paylasimtumverileradapter;
     ListView listView_homesayfasi;
     ProgressBar progressBar;
+    AutoCompleteTextView auto,autobolum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +58,12 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
         int genislik = d.widthPixels;
         int yukseklik = d.heightPixels;
 
-        getWindow().setLayout((int)(genislik*.7),(int)(yukseklik*.5));
+        getWindow().setLayout((int)(genislik),(int)(yukseklik*.6));
 
         WindowManager.LayoutParams p = getWindow().getAttributes();
-        p.gravity = Gravity.CENTER;
+        p.gravity = Gravity.TOP;
         p.x = 0;
-        p.y= 0;
+        p.y= 100;
 
         getWindow().setAttributes(p);
 
@@ -67,6 +73,8 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
 
     public void tanımla()
     {
+        auto = findViewById(R.id.autotext);
+        autobolum = findViewById(R.id.autookul);
         arama_universite=findViewById(R.id.arama_universite);
         arama_bolum=findViewById(R.id.arama_bolum);
         arama_buton=findViewById(R.id.arama_buton);
@@ -90,6 +98,14 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
 
     public void islevver()
     {
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.okullar,R.id.okultextitem,universite_listesi);
+        auto.setAdapter(adapter);
+
+        ArrayAdapter<String> adapterbolum = new ArrayAdapter<String>(this,R.layout.bolumler,R.id.bolumtextitem,bolum_listesi);
+        autobolum.setAdapter(adapterbolum);
+
+
 
 
         arama_buton.setOnClickListener(new View.OnClickListener() {
