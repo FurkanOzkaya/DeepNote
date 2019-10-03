@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -57,6 +58,8 @@ public class profil_resmi_pop_up extends AppCompatActivity {
     Button profil_foto_yukleme,profil_foto_silme;
     Integer id_kullanici;
     Map<String, RequestBody> profilfoto;
+    SharedPreferences sharedPreferences;
+    String email="";
 
 
     @Override
@@ -96,13 +99,25 @@ public class profil_resmi_pop_up extends AppCompatActivity {
     }
    public void islevver()
     {
+        sharedPreferences =getApplicationContext().getSharedPreferences("giris",0);
+        if(sharedPreferences.getInt("uye_id",0) != 0)
+        {
+            email=sharedPreferences.getString("email","");
+
+        }
+        else
+        {
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+
         profil_foto_yukleme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 resimsec();
-
-
-
 
             }
         });
@@ -112,7 +127,7 @@ public class profil_resmi_pop_up extends AppCompatActivity {
             public void onClick(View view) {
 
                 profil_resmi_pop_up.this.finish();
-                Call<Profilfotosilmesonuc> fotosill=ManagerAll.webyonet().fotosil(id_kullanici);
+                Call<Profilfotosilmesonuc> fotosill=ManagerAll.webyonet().fotosil(email,id_kullanici);
                 fotosill.enqueue(new Callback<Profilfotosilmesonuc>() {
                     @Override
                     public void onResponse(Call<Profilfotosilmesonuc> call, Response<Profilfotosilmesonuc> response) {
@@ -162,7 +177,7 @@ public class profil_resmi_pop_up extends AppCompatActivity {
                 profilfoto.put("file\"; filename=\"" + file.getName() + "\"", requestFile);
 
 
-                Call<Profilfotoyuklemesonuc> c= ManagerAll.webyonet().ppyukle(id_kullanici,profilfoto);
+                Call<Profilfotoyuklemesonuc> c= ManagerAll.webyonet().ppyukle(email,id_kullanici,profilfoto);
                 c.enqueue(new Callback<Profilfotoyuklemesonuc>() {
                     @Override
                     public void onResponse(Call<Profilfotoyuklemesonuc> call, Response<Profilfotoyuklemesonuc> response) {

@@ -174,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
                         sharedPreferences = getApplicationContext().getSharedPreferences("giris",0);
                         SharedPreferences.Editor editor=sharedPreferences.edit();
                         editor.putInt("uye_id",Integer.parseInt(response.body().getKullaniciid().toString()));
+                        editor.putString("email",response.body().getEmail().toString());
                         editor.commit();
                        // Toast.makeText(getApplicationContext(),"Basarili bir sekilde giris yaptınız",Toast.LENGTH_LONG).show();
                         pDialog.cancel();

@@ -1372,8 +1372,6 @@ id arama_dersadi
 id arama_universite
 id async
 id auto
-id autookul
-id autotext
 id ayrıntı_homesayfasi_aciklama
 id ayrıntı_homesayfasi_ad_soyad
 id ayrıntı_homesayfasi_bolum
@@ -1929,6 +1927,7 @@ string hide_bottom_view_on_scroll_behavior
 string home_sayfasi_listview_top_uyarı
 string image_picker_provider_authority_suffix
 string jsongüvenlikkod
+string key_for_protection_create_user
 string label_parent_dir
 string label_parent_directory
 string last_edit

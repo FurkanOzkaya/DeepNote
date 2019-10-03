@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zu\\values-zu.xml",
+            "outputFile": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zu\\values-zu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\values-zu\\values-zu.xml",
+                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\72a3e576fb1328758fa3c66be589d84d\\res\\values-zu\\values-zu.xml",
+                    "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\58c83086d0159706bc2b1678ddf9092b\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

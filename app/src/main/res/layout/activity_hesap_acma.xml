@@ -83,30 +83,11 @@
                 android:id="@+id/universite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="okul seç"
+                android:hint="Üniverite"
                 android:completionThreshold="1"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginBottom="10dp"
                 />
-
-            <AutoCompleteTextView
-                android:id="@+id/bolum"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="25dp"
-                android:hint="bölüm seç"
-                android:completionThreshold="1"
-                />
-
-            <!-- <Spinner
-                android:id="@+id/universite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="10dp"
-                android:textAlignment="center"
-
-                /> -->
 
             <TextView
                 android:id="@+id/universite_uyarı"
@@ -119,13 +100,14 @@
                 android:textStyle="bold"
                 android:visibility="invisible" />
 
-           <!-- <Spinner
+            <AutoCompleteTextView
                 android:id="@+id/bolum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="10dp"
-                android:textAlignment="center" /> -->
+                android:hint="Bölüm"
+                android:completionThreshold="1"
+                />
 
             <TextView
                 android:id="@+id/bolum_uyarı"

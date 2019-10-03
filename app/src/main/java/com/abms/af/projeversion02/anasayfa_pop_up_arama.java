@@ -30,7 +30,6 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
             "okul1","okul2","okul3"
     };
 
-    Spinner arama_universite,arama_bolum;
     EditText arama_dersadi;
     Button arama_buton;
     String universite,bolum,dersadi;
@@ -42,7 +41,7 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
     Paylasimtumverileradapter paylasimtumverileradapter;
     ListView listView_homesayfasi;
     ProgressBar progressBar;
-    AutoCompleteTextView auto,autobolum;
+    AutoCompleteTextView arama_universite,arama_bolum;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +73,8 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
     public void tanımla()
     {
 
-        auto=findViewById(R.id.arama_universite);
-        autobolum=findViewById(R.id.arama_bolum);
+        arama_universite=findViewById(R.id.arama_universite);
+        arama_bolum=findViewById(R.id.arama_bolum);
         arama_buton=findViewById(R.id.arama_buton);
         arama_dersadi=findViewById(R.id.arama_dersadi);
         bolum_altı_bilgilendirme=findViewById(R.id.arama_bolum_altı_bilgilendirme);
@@ -84,25 +83,24 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
 
         // Spinnerlara eleman ekleme
         universite_listesi = getResources().getStringArray(R.array.universite_listesi_arama_için);
-        universite_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, universite_listesi);
+       // universite_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, universite_listesi);
 
-        arama_universite.setAdapter(universite_adapter);
+        //arama_universite.setAdapter(universite_adapter);
 
         bolum_listesi = getResources().getStringArray(R.array.Bolum_listesi);
-        bolum_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, bolum_listesi);
-        arama_bolum.setAdapter(bolum_adapter);
+       // bolum_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, bolum_listesi);
+       // arama_bolum.setAdapter(bolum_adapter);
         //Spinnerlara eleman ekleme sonu
-
     }
 
     public void islevver()
     {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.okullar,R.id.okultextitem,universite_listesi);
-        auto.setAdapter(adapter);
+        arama_universite.setAdapter(adapter);
 
         ArrayAdapter<String> adapterbolum = new ArrayAdapter<String>(this,R.layout.bolumler,R.id.bolumtextitem,bolum_listesi);
-        autobolum.setAdapter(adapterbolum);
+        arama_bolum.setAdapter(adapterbolum);
 
 
 
@@ -110,19 +108,19 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
         arama_buton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                universite=auto.getText().toString();
-                bolum=autobolum.getText().toString();
+                universite=arama_universite.getText().toString();
+                bolum=arama_bolum.getText().toString();
                 dersadi=arama_dersadi.getText().toString();
 
-                if(arama_bolum.getSelectedItemPosition()==0)
+                if (universite.equals(""))
                 {
+                    universite=getString(R.string.universite_listesi__arama_hepsi);
+                }
 
-                    if (arama_bolum.getSelectedItemPosition()==0) {
+                if(bolum.matches(""))
+                {
                         bolum_altı_bilgilendirme.setVisibility(View.VISIBLE);
 
-                    } else {
-                        bolum_altı_bilgilendirme.setVisibility(View.GONE);
-                    }
                 }
                 else
                 {
