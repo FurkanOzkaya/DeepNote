@@ -73,10 +73,9 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
 
     public void tanımla()
     {
-        auto = findViewById(R.id.autotext);
-        autobolum = findViewById(R.id.autookul);
-        arama_universite=findViewById(R.id.arama_universite);
-        arama_bolum=findViewById(R.id.arama_bolum);
+
+        auto=findViewById(R.id.arama_universite);
+        autobolum=findViewById(R.id.arama_bolum);
         arama_buton=findViewById(R.id.arama_buton);
         arama_dersadi=findViewById(R.id.arama_dersadi);
         bolum_altı_bilgilendirme=findViewById(R.id.arama_bolum_altı_bilgilendirme);
@@ -111,8 +110,8 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
         arama_buton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                universite=arama_universite.getSelectedItem().toString();
-                bolum=arama_bolum.getSelectedItem().toString();
+                universite=auto.getText().toString();
+                bolum=autobolum.getText().toString();
                 dersadi=arama_dersadi.getText().toString();
 
                 if(arama_bolum.getSelectedItemPosition()==0)

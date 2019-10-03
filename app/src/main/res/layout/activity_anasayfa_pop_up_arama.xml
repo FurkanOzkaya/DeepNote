@@ -19,7 +19,7 @@
 
 
         <AutoCompleteTextView
-            android:id="@+id/autotext"
+            android:id="@+id/arama_universite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="okul seç"
@@ -27,14 +27,14 @@
             />
 
         <AutoCompleteTextView
-            android:id="@+id/autookul"
+            android:id="@+id/arama_bolum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="bölüm seç"
             android:completionThreshold="1"
             />
 
-        <Spinner
+        <!-- <Spinner
             android:id="@+id/arama_universite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Bölüm Adı"
-            android:gravity="center"/>
+            android:gravity="center"/> -->
 
         <TextView
             android:id="@+id/arama_bolum_altı_bilgilendirme"

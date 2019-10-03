@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -42,6 +43,7 @@ public class hesap_acmaActivity extends AppCompatActivity {
     String[] universite_listesi, bolum_listesi;
     DatePickerDialog.OnDateSetListener mDateSetListener;
     String ad_soyad_text,dogum_tarihi_text,e_posta_text,sifre_text,sifre_dogrulama_text,universite_text,bolum_text;
+    AutoCompleteTextView okuls,bolums;
 
     DatePickerDialog datePickerDialog;
     Calendar calendar;
@@ -71,8 +73,8 @@ public class hesap_acmaActivity extends AppCompatActivity {
     private void tanimla() {
         ad_soyad = (EditText) findViewById(R.id.ad_soyad);
         dogum_Tarihi = (EditText) findViewById(R.id.dogum_tarihi);
-        universite = (Spinner) findViewById(R.id.universite);
-        bolum = (Spinner) findViewById(R.id.bolum);
+        okuls = findViewById(R.id.universite);
+        bolums = findViewById(R.id.bolum);
         e_posta = (EditText) findViewById(R.id.e_posta);
         sifre = (EditText) findViewById(R.id.giris_sifre);
         sifre_dogrulama = (EditText) findViewById(R.id.sifre_dogrulama);
@@ -103,6 +105,13 @@ public class hesap_acmaActivity extends AppCompatActivity {
 
     private void islevver() {
 
+
+        ArrayAdapter<String> a = new ArrayAdapter<String>(this,R.layout.okullar,R.id.okultextitem,universite_listesi);
+        okuls.setAdapter(a);
+
+        ArrayAdapter<String> a2 = new ArrayAdapter<String>(this,R.layout.bolumler,R.id.bolumtextitem,bolum_listesi);
+        bolums.setAdapter(a);
+
         kayıt_ol_butonu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,8 +127,8 @@ public class hesap_acmaActivity extends AppCompatActivity {
                 sifre_dogrulama_text=sifre_dogrulama.getText().toString();
                 universite_int=universite.getSelectedItemPosition();
                 bolum_int=bolum.getSelectedItemPosition();
-                universite_text=universite.getSelectedItem().toString();
-                bolum_text= bolum.getSelectedItem().toString();
+                universite_text=okuls.getText().toString();
+                bolum_text= bolums.getText().toString();
 
 
                 if (ad_soyad_text.equals("") || dogum_tarihi_text.equals("") || universite_int == 0 ||bolum_int == 0 || e_posta_text.equals("") || sifre_text.equals("") || sifre_dogrulama_text.equals("") )
