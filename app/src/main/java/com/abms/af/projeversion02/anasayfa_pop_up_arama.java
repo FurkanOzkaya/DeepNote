@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -25,7 +26,10 @@ import java.util.List;
 
 public class anasayfa_pop_up_arama extends AppCompatActivity {
 
-    Spinner arama_universite,arama_bolum;
+    private static final String[] OKULLAR = new String[]{
+            "okul1","okul2","okul3"
+    };
+
     EditText arama_dersadi;
     Button arama_buton;
     String universite,bolum,dersadi;
@@ -37,6 +41,7 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
     Paylasimtumverileradapter paylasimtumverileradapter;
     ListView listView_homesayfasi;
     ProgressBar progressBar;
+    AutoCompleteTextView arama_universite,arama_bolum;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +57,12 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
         int genislik = d.widthPixels;
         int yukseklik = d.heightPixels;
 
-        getWindow().setLayout((int)(genislik*.7),(int)(yukseklik*.5));
+        getWindow().setLayout((int)(genislik),(int)(yukseklik*.6));
 
         WindowManager.LayoutParams p = getWindow().getAttributes();
-        p.gravity = Gravity.CENTER;
+        p.gravity = Gravity.TOP;
         p.x = 0;
-        p.y= 0;
+        p.y= 100;
 
         getWindow().setAttributes(p);
 
@@ -67,6 +72,7 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
 
     public void tanımla()
     {
+
         arama_universite=findViewById(R.id.arama_universite);
         arama_bolum=findViewById(R.id.arama_bolum);
         arama_buton=findViewById(R.id.arama_buton);
@@ -77,37 +83,44 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
 
         // Spinnerlara eleman ekleme
         universite_listesi = getResources().getStringArray(R.array.universite_listesi_arama_için);
-        universite_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, universite_listesi);
+       // universite_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, universite_listesi);
 
-        arama_universite.setAdapter(universite_adapter);
+        //arama_universite.setAdapter(universite_adapter);
 
         bolum_listesi = getResources().getStringArray(R.array.Bolum_listesi);
-        bolum_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, bolum_listesi);
-        arama_bolum.setAdapter(bolum_adapter);
+       // bolum_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, bolum_listesi);
+       // arama_bolum.setAdapter(bolum_adapter);
         //Spinnerlara eleman ekleme sonu
-
     }
 
     public void islevver()
     {
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.okullar,R.id.okultextitem,universite_listesi);
+        arama_universite.setAdapter(adapter);
+
+        ArrayAdapter<String> adapterbolum = new ArrayAdapter<String>(this,R.layout.bolumler,R.id.bolumtextitem,bolum_listesi);
+        arama_bolum.setAdapter(adapterbolum);
+
+
+
 
         arama_buton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                universite=arama_universite.getSelectedItem().toString();
-                bolum=arama_bolum.getSelectedItem().toString();
+                universite=arama_universite.getText().toString();
+                bolum=arama_bolum.getText().toString();
                 dersadi=arama_dersadi.getText().toString();
 
-                if(arama_bolum.getSelectedItemPosition()==0)
+                if (universite.equals(""))
                 {
+                    universite=getString(R.string.universite_listesi__arama_hepsi);
+                }
 
-                    if (arama_bolum.getSelectedItemPosition()==0) {
+                if(bolum.matches(""))
+                {
                         bolum_altı_bilgilendirme.setVisibility(View.VISIBLE);
 
-                    } else {
-                        bolum_altı_bilgilendirme.setVisibility(View.GONE);
-                    }
                 }
                 else
                 {

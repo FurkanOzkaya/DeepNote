@@ -28,6 +28,7 @@
     <string name="arama_pop_up_dersadi_uyarı">Ders bilgisi gereklidir</string>
     <string name="home_sayfasi_listview_top_uyarı">Bu alanda bilgi bulunmamaktadır!!</string>
     <string name="ayrıntısayfalari_yorum_listview_uyarı">İlk yorumu sen yap</string>
+    <string name="key_for_protection_create_user">A84qwe468WDQW45AS)-+1KeY94815we1623qw742</string>
 
     <array name="universite_listesi">
         <item>Üniversite Seçiniz</item>

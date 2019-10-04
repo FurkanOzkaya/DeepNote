@@ -69,6 +69,7 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
     public View getView(final int position, View view, ViewGroup viewGroup) {
         view= LayoutInflater.from(context).inflate(R.layout.listview_goruntu_profil_paylasimlari,viewGroup,false);
         final TextView  bolum, aciklama, ders;
+        String email="";
 
         bolum = view.findViewById(R.id.listview_profil_bolum);
         aciklama = view.findViewById(R.id.listview_profil_aciklama);
@@ -110,6 +111,21 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
             activity.startActivity(intent);
         }
 
+        sharedPreferences =activity.getApplicationContext().getSharedPreferences("giris",0);
+        if(sharedPreferences.getInt("uye_id",0) != 0)
+        {
+            email=sharedPreferences.getString("email","");
+
+        }
+        else
+        {
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(activity.getApplicationContext(),MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            activity.startActivity(intent);
+        }
+
 
         if (id_yorum==Integer.valueOf(kullanicipaylasim.get(position).getIdkullanici()))
         {
@@ -122,6 +138,7 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
         }
 
 
+        final String finalEmail = email;
         ButonSil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,7 +157,7 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
 
                         // for remove item
 
-                        Call<GonderiSil> request = ManagerAll.webyonet().GonderiSil(id);
+                        Call<GonderiSil> request = ManagerAll.webyonet().GonderiSil(finalEmail,id);
                         request.enqueue(new Callback<GonderiSil>() {
                             @Override
                             public void onResponse(Call<GonderiSil> call, Response<GonderiSil> response) {

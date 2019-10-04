@@ -43,7 +43,8 @@ public class others_profil_sayfasi extends AppCompatActivity {
     CircularImageView others_profil_foto;
     ProgressBar others_paylasımlar_progresbar;
     String others_id_kullanici_string, others_paylasim_id_string, others_ad_soyad_string, others_universite_string, others_bolum_string, others_ders_string, others_aciklama_string, others_dosyayolu_string, others_dosyaturu_string,others_profilfoto_string;
-
+    SharedPreferences sharedPreferences;
+    String email="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +91,21 @@ public class others_profil_sayfasi extends AppCompatActivity {
 
     void islev_ver() {
 
+        sharedPreferences =getApplicationContext().getSharedPreferences("giris",0);
+        if(sharedPreferences.getInt("uye_id",0) != 0)
+        {
+            email=sharedPreferences.getString("email","");
+
+        }
+        else
+        {
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+
             others_profil_adi.setText(others_ad_soyad_string);
             others_profil_universite.setText(others_universite_string);
             others_profil_bolum.setText(others_bolum_string);
@@ -105,7 +121,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
                     /////////////////////////////////////
                 }
         int id=Integer.valueOf(others_id_kullanici_string);
-        Call<List<Profilsayfasikullanicipaylasimlari>> otherspaylasim = ManagerAll.webyonet().kullancigönderigetir(id);
+        Call<List<Profilsayfasikullanicipaylasimlari>> otherspaylasim = ManagerAll.webyonet().kullancigönderigetir(email,id);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         others_paylasımlar_progresbar.setVisibility(View.VISIBLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,

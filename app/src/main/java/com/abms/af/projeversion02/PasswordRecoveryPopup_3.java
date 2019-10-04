@@ -79,7 +79,7 @@ public class PasswordRecoveryPopup_3 extends AppCompatActivity {
 
                 if (sifre.equals(sifreTekrar))
                 {
-                    Call<Yenisifrebelirleme> request = ManagerAll.webyonet().YeniSfireBelirleme(email,sifre);
+                    Call<Yenisifrebelirleme> request = ManagerAll.webyonet().YeniSfireBelirleme(getString(R.string.key_for_protection_create_user),email,sifre);
                     request.enqueue(new Callback<Yenisifrebelirleme>() {
                         @Override
                         public void onResponse(Call<Yenisifrebelirleme> call, Response<Yenisifrebelirleme> response) {

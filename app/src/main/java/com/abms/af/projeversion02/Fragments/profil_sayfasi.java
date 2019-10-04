@@ -54,7 +54,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
     ImageView profil_foto;
     ProgressBar paylasımlar_progresbar,bilgiler_progress_bar;
     ImageView ayarlarbutonu;
-
+    String email="";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -97,12 +97,25 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
 
     void islev_ver() {
 
+        sharedPreferences =getActivity().getApplicationContext().getSharedPreferences("giris",0);
+        if(sharedPreferences.getInt("uye_id",0) != 0)
+        {
+            email=sharedPreferences.getString("email","");
+
+        }
+        else
+        {
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(getActivity().getApplicationContext(),MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
 
 
 
 
-
-        Call<Profilbilgilerigetir> a = ManagerAll.webyonet().profilgetir(id);
+        Call<Profilbilgilerigetir> a = ManagerAll.webyonet().profilgetir(email,id);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         bilgiler_progress_bar.setVisibility(View.VISIBLE);
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
@@ -161,7 +174,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
             }
         });
 
-        Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(id);
+        Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(email,id);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         paylasımlar_progresbar.setVisibility(View.VISIBLE);
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
@@ -259,7 +272,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
 
     public void CallProfilKullaniciPaylasimlari()
     {
-        Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(id);
+        Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(email,id);
         kullanicipaylasım.enqueue(new Callback<List<Profilsayfasikullanicipaylasimlari>>() {
             @Override
             public void onResponse(Call<List<Profilsayfasikullanicipaylasimlari>> call, Response<List<Profilsayfasikullanicipaylasimlari>> response) {

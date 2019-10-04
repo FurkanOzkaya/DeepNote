@@ -1,14 +1,10 @@
 package com.abms.af.projeversion02.Fragments;
 
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,7 +18,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,6 +28,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -41,6 +37,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.abms.af.projeversion02.MainActivity;
 import com.abms.af.projeversion02.Models.Pdfyuklemesonuc;
 import com.abms.af.projeversion02.Models.Resimyuklemesonuc;
 import com.abms.af.projeversion02.R;
@@ -61,7 +58,6 @@ import java.util.Map;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -69,22 +65,19 @@ import retrofit2.Response;
 
 public class share_sayfasi extends Fragment {
 
-    Map<String, RequestBody> mappdf,mapresim;
+    Map<String, RequestBody> mappdf, mapresim;
     Button yukleme_butonu;
-    EditText ders_adi , acıklama;
-    TextView ders_adi_uyarı,bolum_uyarı,acıklama_uyarı;
-    Spinner bolum_adi;
-    String ders_string,acıklama_string;
+    EditText ders_adi, acıklama;
+    TextView ders_adi_uyarı, bolum_uyarı, acıklama_uyarı;
+    AutoCompleteTextView bolum_adi;
+    String ders_string, acıklama_string, email = "";
     int bolum_string_int;
     //FloatingActionButton ekle_buton, pdf_buton, resim_buton;
-    LinearLayout resimleregit, dosyalaragit,secmekismi,yollamakismi;
-    Animation bounce,rtol;
-    boolean isopen = false;
+    LinearLayout resimleregit, dosyalaragit, secmekismi, yollamakismi;
+    Animation bounce, rtol;
     View view;
     Integer id;
-    String[]  bolum_listesi;
-    ArrayAdapter  bolum_adapter;
-    //private FloatingActionButton boommenu_ana_buton;
+    String[] bolum_listesi;
     SharedPreferences sharedPreferences;
     ProgressBar progressBar;
     FilePickerDialog dialog;
@@ -112,8 +105,8 @@ public class share_sayfasi extends Fragment {
 
     public void tanimla() {
 
-        bounce = AnimationUtils.loadAnimation(getContext(),R.anim.bounce);
-        rtol = AnimationUtils.loadAnimation(getContext(),R.anim.righttoleft);
+        bounce = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+        rtol = AnimationUtils.loadAnimation(getContext(), R.anim.righttoleft);
 
         secmekismi = view.findViewById(R.id.dosyasecmekismi);
         yollamakismi = view.findViewById(R.id.dosyayollamakismi);
@@ -126,24 +119,34 @@ public class share_sayfasi extends Fragment {
         bolum_adi = view.findViewById(R.id.bolum_adi);
         acıklama = view.findViewById(R.id.acıklama);
         yukleme_butonu = view.findViewById(R.id.yukleme_butonu);
-        ders_adi_uyarı=view.findViewById(R.id.share_sayfası_ders_uyarı);
-        bolum_uyarı=view.findViewById(R.id.share_sayfası_bolum_uyarı);
-        acıklama_uyarı=view.findViewById(R.id.share_sayfası_acıklama_uyarı);
+        ders_adi_uyarı = view.findViewById(R.id.share_sayfası_ders_uyarı);
+        bolum_uyarı = view.findViewById(R.id.share_sayfası_bolum_uyarı);
+        acıklama_uyarı = view.findViewById(R.id.share_sayfası_acıklama_uyarı);
 
         sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("giris", 0);
-        id  =sharedPreferences.getInt("uye_id",0);
+        id = sharedPreferences.getInt("uye_id", 0);
 
 
         bolum_listesi = getResources().getStringArray(R.array.Bolum_listesi);
-        bolum_adapter = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, bolum_listesi);
-        bolum_adi.setAdapter(bolum_adapter);
+        ArrayAdapter<String> a2 = new ArrayAdapter<String>(getActivity().getApplicationContext(), R.layout.bolumler, R.id.bolumtextitem, bolum_listesi);
+        bolum_adi.setAdapter(a2);
 
 
-        progressBar=view.findViewById(R.id.share_sayafası_progress_bar);
+        progressBar = view.findViewById(R.id.share_sayafası_progress_bar);
     }
 
-    public void islevver()
-    {
+    public void islevver() {
+        sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("giris", 0);
+        if (sharedPreferences.getInt("uye_id", 0) != 0) {
+            email = sharedPreferences.getString("email", "");
+
+        } else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
 
         //bounce.setAnimationListener((Animation.AnimationListener) this);
 
@@ -170,39 +173,26 @@ public class share_sayfasi extends Fragment {
         yukleme_butonu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ders_string=ders_adi.getText().toString();
-                bolum_string_int=bolum_adi.getSelectedItemPosition();
-                acıklama_string=acıklama.getText().toString();
-                if (ders_string.equals("") || bolum_string_int==0 || acıklama_string.equals(""))
-                {
-                    if (ders_string.equals(""))
-                    {
+                ders_string = ders_adi.getText().toString();
+                acıklama_string = acıklama.getText().toString();
+                if (ders_string.equals("") || bolum_adi.getText().toString().matches("") || acıklama_string.equals("")) {
+                    if (ders_string.equals("")) {
                         ders_adi_uyarı.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
+                    } else {
                         ders_adi_uyarı.setVisibility(View.INVISIBLE);
                     }
-                    if (bolum_adi.getSelectedItemPosition()==0)
-                    {
+                    if (bolum_adi.getText().toString().matches("")) {
                         bolum_uyarı.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
+                    } else {
                         bolum_uyarı.setVisibility(View.INVISIBLE);
                     }
-                    if (acıklama.getText().toString().equals(""))
-                    {
+                    if (acıklama.getText().toString().equals("")) {
                         acıklama_uyarı.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
+                    } else {
                         acıklama_uyarı.setVisibility(View.INVISIBLE);
                     }
 
-                }
-                else
-                {
+                } else {
                     dosya_yukle();
                     secmekismi.setVisibility(View.VISIBLE);
                     yollamakismi.setVisibility(View.INVISIBLE);
@@ -222,13 +212,7 @@ public class share_sayfasi extends Fragment {
         });
 
 
-
-
     }
-
-
-
-
 
 
     /*
@@ -240,8 +224,8 @@ public class share_sayfasi extends Fragment {
         ImagePicker.Companion.with(this)
                 .galleryOnly()
                 //.crop(1f, 1f)	    		//Crop Square image(Optional)
-                .compress(500)			//Final image size will be less than 1 MB(Optional)
-                .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                .compress(500)            //Final image size will be less than 1 MB(Optional)
+                .maxResultSize(1080, 1080)    //Final image resolution will be less than 1080 x 1080(Optional)
                 .start();
         /*Intent intent = new Intent();
         intent.setType("image/*");
@@ -249,11 +233,10 @@ public class share_sayfasi extends Fragment {
         startActivityForResult(intent, 1);*/
     }
 
-    private void pdf_goster()
-    {
+    private void pdf_goster() {
         DialogProperties properties = new DialogProperties();
 
-       // String [] extensions={"txt:pdf:"}; extensions doesnt work
+        // String [] extensions={"txt:pdf:"}; extensions doesnt work
         properties.selection_mode = DialogConfigs.SINGLE_MODE;
         properties.selection_type = DialogConfigs.FILE_SELECT;
         properties.root = new File(DialogConfigs.DEFAULT_DIR);
@@ -261,11 +244,9 @@ public class share_sayfasi extends Fragment {
         properties.offset = new File(DialogConfigs.DEFAULT_DIR);
         properties.extensions = null;
 
-        dialog = new FilePickerDialog(getActivity(),properties);
+        dialog = new FilePickerDialog(getActivity(), properties);
         dialog.setTitle("Pdf Seçiniz");
         dialog.show();
-
-
 
 
         dialog.setDialogSelectionListener(new DialogSelectionListener() {
@@ -282,12 +263,12 @@ public class share_sayfasi extends Fragment {
 
                 try {
                     // use the FileUtils to get the actual file by uri
-                    String yol=files[0];
+                    String yol = files[0];
 
                     mappdf = new HashMap<>();
 
                     File file = new File(yol);
-                    RequestBody requestFile =RequestBody.create(MediaType.parse("application/pdf"),file);
+                    RequestBody requestFile = RequestBody.create(MediaType.parse("application/pdf"), file);
                     mappdf.put("file\"; filename=\"" + file.getName() + "\"", requestFile);
                     //yuklenecekpdf = MultipartBody.Part.createFormData("pdf",file.getName(),requestFile);
 
@@ -309,10 +290,11 @@ public class share_sayfasi extends Fragment {
 
 
     /*
-    * resimi sunucuya yüklemek için bilgilerin aldıgı ve yüklendiği kısım
+     * resimi sunucuya yüklemek için bilgilerin aldıgı ve yüklendiği kısım
      */
 
     public void dosya_yukle() {
+
 
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         progressBar.setVisibility(View.VISIBLE);
@@ -320,14 +302,13 @@ public class share_sayfasi extends Fragment {
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         ////////////////////////////////////////////////////////////////////////////////////
 
-        if(yukleme_butonu.getText().equals("Resim Yükle"))
-        {
+        if (yukleme_butonu.getText().equals("Resim Yükle")) {
 
             Integer id_kullanici = id;
             String ders = ders_adi.getText().toString();
-            String bolum = bolum_adi.getSelectedItem().toString();
+            String bolum = bolum_adi.getText().toString();
             String aciklama = acıklama.getText().toString();
-            Call<Resimyuklemesonuc> a = ManagerAll.webyonet().resim_yukle(id_kullanici, ders, aciklama, bolum, mapresim);
+            Call<Resimyuklemesonuc> a = ManagerAll.webyonet().resim_yukle(email, id_kullanici, ders, aciklama, bolum, mapresim);
             //Toast.makeText(getActivity().getApplicationContext(), (CharSequence) mapresim, Toast.LENGTH_LONG).show();
 
             a.enqueue(new Callback<Resimyuklemesonuc>() {
@@ -362,16 +343,14 @@ public class share_sayfasi extends Fragment {
                 }
             });
 
-        }
-       else if (yukleme_butonu.getText().equals("Pdf Yükle"))
-        {
+        } else if (yukleme_butonu.getText().equals("Pdf Yükle")) {
 
             Integer id_kullanici = id;
             String ders = ders_adi.getText().toString();
-            String bolum = bolum_adi.getSelectedItem().toString();
+            String bolum = bolum_adi.getText().toString();
             String aciklama = acıklama.getText().toString();
-           // Toast.makeText(getActivity().getApplicationContext(),mappdf,Toast.LENGTH_LONG).show();
-            Call<Pdfyuklemesonuc> ee=ManagerAll.webyonet().pdf_yukle(id_kullanici, ders, aciklama, bolum,mappdf);
+            // Toast.makeText(getActivity().getApplicationContext(),mappdf,Toast.LENGTH_LONG).show();
+            Call<Pdfyuklemesonuc> ee = ManagerAll.webyonet().pdf_yukle(email, id_kullanici, ders, aciklama, bolum, mappdf);
             ee.enqueue(new Callback<Pdfyuklemesonuc>() {
                 @Override
                 public void onResponse(Call<Pdfyuklemesonuc> call, Response<Pdfyuklemesonuc> response) {
@@ -411,7 +390,7 @@ public class share_sayfasi extends Fragment {
 
 
     /*
-    *resimin alındıgı ve alınacak bilgiler için edittextlerin gösterildiği bölüm
+     *resimin alındıgı ve alınacak bilgiler için edittextlerin gösterildiği bölüm
      */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -419,7 +398,7 @@ public class share_sayfasi extends Fragment {
 
         if (requestCode == ImagePicker.REQUEST_CODE && resultCode == getActivity().RESULT_OK && data != null) {
             Uri path = data.getData();
-            String uri=String.valueOf(path);
+            String uri = String.valueOf(path);
             ders_adi.setVisibility(View.VISIBLE);
             bolum_adi.setVisibility(View.VISIBLE);
             acıklama.setVisibility(View.VISIBLE);
@@ -436,14 +415,14 @@ public class share_sayfasi extends Fragment {
                 //Toast.makeText(getActivity().getApplicationContext(),"path: "+yol,Toast.LENGTH_LONG).show();
                 //Toast.makeText(getActivity().getApplicationContext(),"Uri: "+path.toString(),Toast.LENGTH_LONG).show();
 
-                String resim=ImagePicker.Companion.getFilePath(data);
+                String resim = ImagePicker.Companion.getFilePath(data);
 
-               // String resim=compressImage(uri);
+                // String resim=compressImage(uri);
 
                 mapresim = new HashMap<>();
 
                 File file = new File(resim);
-                RequestBody requestFile =RequestBody.create(MediaType.parse("image/*"),file);
+                RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
                 mapresim.put("file\"; filename=\"" + file.getName() + "\"", requestFile);
 
             } catch (Exception e) {
@@ -478,15 +457,13 @@ public class share_sayfasi extends Fragment {
             }
         }*/
 
-        }
+    }
 
 
 
 
 
-    ////////
-    @SuppressLint("NewApi")
-    public static String getPath(final Context context, final Uri uri) {
+    /*public static String getPath(final Context context, final Uri uri) {
 
         final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
 
@@ -548,7 +525,7 @@ public class share_sayfasi extends Fragment {
 
         return null;
     }
-    /**
+    *//**
      * Get the value of the data column for this Uri. This is useful for
      * MediaStore Uris, and other file-based ContentProviders.
      *
@@ -557,7 +534,7 @@ public class share_sayfasi extends Fragment {
      * @param selection (Optional) Filter used in the query.
      * @param selectionArgs (Optional) Selection arguments used in the query.
      * @return The value of the _data column, which is typically a file path.
-     */
+     *//*
     public static String getDataColumn(Context context, Uri uri, String selection,
                                        String[] selectionArgs) {
 
@@ -580,26 +557,26 @@ public class share_sayfasi extends Fragment {
         }
         return null;
     }
-    /**
+    *//**
      * @param uri The Uri to check.
      * @return Whether the Uri authority is ExternalStorageProvider.
-     */
+     *//*
     public static boolean isExternalStorageDocument(Uri uri) {
         return "com.android.externalstorage.documents".equals(uri.getAuthority());
     }
 
-    /**
+    *//**
      * @param uri The Uri to check.
      * @return Whether the Uri authority is DownloadsProvider.
-     */
+     *//*
     public static boolean isDownloadsDocument(Uri uri) {
         return "com.android.providers.downloads.documents".equals(uri.getAuthority());
     }
 
-    /**
+    *//**
      * @param uri The Uri to check.
      * @return Whether the Uri authority is MediaProvider.
-     */
+     *//*
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
@@ -768,5 +745,5 @@ public class share_sayfasi extends Fragment {
         return inSampleSize;
     }
 
-
+*/
 }
