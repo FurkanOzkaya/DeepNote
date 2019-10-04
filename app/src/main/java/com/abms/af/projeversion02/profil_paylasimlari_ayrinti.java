@@ -163,7 +163,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
         } else {
             ayrıntılı_resim.setVisibility(View.VISIBLE);
             //Log.i("TAG", "islevver: "+dosyayolu_string);
-            Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).resize(200, 200).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
+            Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
         }
 
 
@@ -401,5 +401,10 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
             return false;
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

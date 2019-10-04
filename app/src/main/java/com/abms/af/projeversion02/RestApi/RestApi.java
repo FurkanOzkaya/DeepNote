@@ -98,11 +98,11 @@ public interface RestApi {
 
     @FormUrlEncoded
     @POST("/kodgonderme.php")
-    Call<PHPMailersifregonderme> RestPHPMailer(@Field("email") String email);
+    Call<PHPMailersifregonderme> RestPHPMailer(@Field("protectionKey") String  key ,@Field("email") String email);
 
     @FormUrlEncoded
     @POST("/YeniSifreBelirleme.php")
-    Call<Yenisifrebelirleme> RestYeniSifreBekirleme(@Field("email") String email, @Field("sifre") String sifre);
+    Call<Yenisifrebelirleme> RestYeniSifreBekirleme(@Field("protectionKey") String  key ,@Field("email") String email, @Field("sifre") String sifre);
 
     @FormUrlEncoded
     @POST("/GonderiSil.php")

@@ -111,15 +111,15 @@ public class ManagerAll extends BaseManager {
         return download;
     }
 
-    public Call<PHPMailersifregonderme> PHPMailersifregonderme(String email)
+    public Call<PHPMailersifregonderme> PHPMailersifregonderme(String key ,String email)
     {
-        Call<PHPMailersifregonderme> x = getRestApiClient().RestPHPMailer(email);
+        Call<PHPMailersifregonderme> x = getRestApiClient().RestPHPMailer(key,email);
         return x;
     }
 
-    public Call<Yenisifrebelirleme> YeniSfireBelirleme(String email, String sifre)
+    public Call<Yenisifrebelirleme> YeniSfireBelirleme(String key ,String email, String sifre)
     {
-        Call<Yenisifrebelirleme> x = getRestApiClient().RestYeniSifreBekirleme(email,sifre);
+        Call<Yenisifrebelirleme> x = getRestApiClient().RestYeniSifreBekirleme(key,email,sifre);
         return x;
     }
 
