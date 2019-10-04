@@ -190,6 +190,10 @@ public class MainActivity extends AppCompatActivity {
                    // Toast.makeText(getApplicationContext(),"giris basarisiz",Toast.LENGTH_LONG).show();
                     genel_uyarı.setVisibility(View.VISIBLE);
                     pDialog.cancel();
+                    new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Dikkat!")
+                            .setContentText("Beklenmedik bir hata oluştu, Lütfen internet bağlantınızı kontrol ederek daha sonra tekrar deneyiniz")
+                            .show();
 
                 }
 
@@ -197,8 +201,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Kullanicigirissonuc> call, Throwable t) {
-               Log.i("HATA VERDİİİİ", "onFailure:"+t.getMessage());
-               Toast.makeText(getApplicationContext(),"hata olustu giris kısmı "+t.toString(),Toast.LENGTH_LONG).show();
+               //Log.i("HATA VERDİİİİ", "onFailure:"+t.getMessage());
+               //Toast.makeText(getApplicationContext(),"hata olustu giris kısmı "+t.toString(),Toast.LENGTH_LONG).show();
+                pDialog.cancel();
+                new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("Dikkat!")
+                        .setContentText("Beklenmedik bir hata oluştu, Lütfen internet bağlantınızı kontrol ederek daha sonra tekrar deneyiniz")
+                        .show();
             }
         });
     }

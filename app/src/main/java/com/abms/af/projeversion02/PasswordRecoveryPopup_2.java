@@ -3,6 +3,7 @@ package com.abms.af.projeversion02;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,6 +14,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class PasswordRecoveryPopup_2 extends AppCompatActivity {
 
@@ -42,6 +45,21 @@ public class PasswordRecoveryPopup_2 extends AppCompatActivity {
 
         getWindow().setAttributes(p);
 
+        /*
+        final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecoveryPopup_2.this,SweetAlertDialog.WARNING_TYPE);
+        sa.setTitleText("Dikkat!");
+        sa.setContentText("Şifre değiştirme kodu mail adresinize gönderilmiştir!");
+        sa.setConfirmText("Tamam");
+        sa.setCancelClickListener(null);
+        sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                sa.cancel();
+            }
+        });
+        sa.show();
+        */
+
         tanımla();
         islevver();
 
@@ -60,6 +78,7 @@ public class PasswordRecoveryPopup_2 extends AppCompatActivity {
 
     public void islevver()
     {
+
 
         Send.setOnClickListener(new View.OnClickListener() {
             @Override

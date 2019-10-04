@@ -3710,6 +3710,7 @@
         <item name="windowActionBar">false</item>
     </style></file><file name="image_picker_provider_paths" path="C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\9b8baca694daac12850137bb32ac6163\res\xml\image_picker_provider_paths.xml" qualifiers="" type="xml"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res"/><source path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\build\generated\res\rs\debug"/><source path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res"><file name="bounce" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\anim\bounce.xml" qualifiers="" type="anim"/><file name="fab_close" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\anim\fab_close.xml" qualifiers="" type="anim"/><file name="fab_open" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\anim\fab_open.xml" qualifiers="" type="anim"/><file name="righttoleft" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\anim\righttoleft.xml" qualifiers="" type="anim"/><file name="rotate" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\anim\rotate.xml" qualifiers="" type="anim"/><file name="rotate_ters" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\anim\rotate_ters.xml" qualifiers="" type="anim"/><file name="transition" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\anim\transition.xml" qualifiers="" type="anim"/><file name="abms" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\abms.jpeg" qualifiers="" type="drawable"/><file name="aramabutonustil" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\aramabutonustil.xml" qualifiers="" type="drawable"/><file name="arama_ikonu" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\arama_ikonu.jpeg" qualifiers="" type="drawable"/><file name="bottom_gradient" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\bottom_gradient.xml" qualifiers="" type="drawable"/><file name="bottom_nav_item_background" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\bottom_nav_item_background.xml" qualifiers="" type="drawable"/><file name="butonshape" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\butonshape.xml" qualifiers="" type="drawable"/><file name="buyutec_yirmi" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\buyutec_yirmi.png" qualifiers="" type="drawable"/><file name="cikisyaplo" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\cikisyaplo.png" qualifiers="" type="drawable"/><file name="dahafazla" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\dahafazla.xml" qualifiers="" type="drawable"/><file name="dahafazlayukle" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\dahafazlayukle.png" qualifiers="" type="drawable"/><file name="detaysnack" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\detaysnack.xml" qualifiers="" type="drawable"/><file name="dosyaresmi" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\dosyaresmi.png" qualifiers="" type="drawable"/><file name="dw" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\dw.png" qualifiers="" type="drawable"/><file name="flaticonarama" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flaticonarama.png" qualifiers="" type="drawable"/><file name="flaticonhome" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flaticonhome.png" qualifiers="" type="drawable"/><file name="flaticonprofile" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flaticonprofile.png" qualifiers="" type="drawable"/><file name="flaticonyukle" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flaticonyukle.png" qualifiers="" type="drawable"/><file name="flat_download" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_download.png" qualifiers="" type="drawable"/><file name="flat_dw" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_dw.png" qualifiers="" type="drawable"/><file name="flat_exit" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_exit.png" qualifiers="" type="drawable"/><file name="flat_home" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_home.png" qualifiers="" type="drawable"/><file name="flat_home2" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_home2.png" qualifiers="" type="drawable"/><file name="flat_ogrenci" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_ogrenci.png" qualifiers="" type="drawable"/><file name="flat_pdf" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_pdf.png" qualifiers="" type="drawable"/><file name="flat_pdf2" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_pdf2.png" qualifiers="" type="drawable"/><file name="flat_profile" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_profile.png" qualifiers="" type="drawable"/><file name="flat_search" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_search.png" qualifiers="" type="drawable"/><file name="flat_share" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_share.png" qualifiers="" type="drawable"/><file name="flat_share2" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_share2.png" qualifiers="" type="drawable"/><file name="flat_share3" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_share3.png" qualifiers="" type="drawable"/><file name="flat_user" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\flat_user.png" qualifiers="" type="drawable"/><file name="folder" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\folder.png" qualifiers="" type="drawable"/><file name="gonder" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\gonder.png" qualifiers="" type="drawable"/><file name="gonderiler_arka_plan" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\gonderiler_arka_plan.xml" qualifiers="" type="drawable"/><file name="homeyeni" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\homeyeni.xml" qualifiers="" type="drawable"/><file name="ic_delete_black_24dp" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\ic_delete_black_24dp.xml" qualifiers="" type="drawable"/><file name="ic_launcher_background" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\ic_launcher_background.xml" qualifiers="" type="drawable"/><file name="ic_send_black_24dp" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\ic_send_black_24dp.xml" qualifiers="" type="drawable"/><file name="image" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\image.jpg" qualifiers="" type="drawable"/><file name="indir" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\indir.jpeg" qualifiers="" type="drawable"/><file name="indirr" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\indirr.xml" qualifiers="" type="drawable"/><file name="indr" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\indr.png" qualifiers="" type="drawable"/><file name="kitap" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\kitap.png" qualifiers="" type="drawable"/><file name="logout" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\logout.png" qualifiers="" type="drawable"/><file name="mainbackground" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\mainbackground.xml" qualifiers="" type="drawable"/><file name="main_activity_profil" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\main_activity_profil.jpeg" qualifiers="" type="drawable"/><file name="main_activty_sifre" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\main_activty_sifre.jpeg" qualifiers="" type="drawable"/><file name="menu" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\menu.jpeg" qualifiers="" type="drawable"/><file name="okul_logo" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\okul_logo.png" qualifiers="" type="drawable"/><file name="paylasimlar" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\paylasimlar.xml" qualifiers="" type="drawable"/><file name="paylasimlar_arka_plan" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\paylasimlar_arka_plan.xml" qualifiers="" type="drawable"/><file name="paylas_butonu2" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\paylas_butonu2.jpeg" qualifiers="" type="drawable"/><file name="pdf" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\pdf.jpg" qualifiers="" type="drawable"/><file name="pdf_ikonu" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\pdf_ikonu.jpeg" qualifiers="" type="drawable"/><file name="pop_tasarim" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\pop_tasarim.xml" qualifiers="" type="drawable"/><file name="profilsayfasi_bilgiler_arkaplan" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\profilsayfasi_bilgiler_arkaplan.xml" qualifiers="" type="drawable"/><file name="profil_ust_arkaplan" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\profil_ust_arkaplan.xml" qualifiers="" type="drawable"/><file name="qwqw" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\qwqw.xml" qualifiers="" type="drawable"/><file name="qwqw2" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\qwqw2.xml" qualifiers="" type="drawable"/><file name="qwqw3" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\qwqw3.xml" qualifiers="" type="drawable"/><file name="resimleregit" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\resimleregit.png" qualifiers="" type="drawable"/><file name="resim_ikonu" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\resim_ikonu.jpeg" qualifiers="" type="drawable"/><file name="sekil" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\sekil.xml" qualifiers="" type="drawable"/><file name="send" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\send.jpeg" qualifiers="" type="drawable"/><file name="sikayet" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\sikayet.xml" qualifiers="" type="drawable"/><file name="studentgirl" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\studentgirl.jpg" qualifiers="" type="drawable"/><file name="transparan" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\transparan.xml" qualifiers="" type="drawable"/><file name="ustsayfayagit" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\ustsayfayagit.png" qualifiers="" type="drawable"/><file name="xxxxx" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable\xxxxx.xml" qualifiers="" type="drawable"/><file name="ic_launcher_foreground" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\drawable-v24\ic_launcher_foreground.xml" qualifiers="v24" type="drawable"/><file name="activity_acilis_logo1__abms" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_acilis_logo1__abms.xml" qualifiers="" type="layout"/><file name="activity_acilis_logo2_deepnote" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_acilis_logo2_deepnote.xml" qualifiers="" type="layout"/><file name="activity_anasayfa_pop_up_arama" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_anasayfa_pop_up_arama.xml" qualifiers="" type="layout"/><file name="activity_ana_sayfa" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_ana_sayfa.xml" qualifiers="" type="layout"/><file name="activity_hesap_acma" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_hesap_acma.xml" qualifiers="" type="layout"/><file name="activity_homesayfasi_paylasimlari_ayrintili" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_homesayfasi_paylasimlari_ayrintili.xml" qualifiers="" type="layout"/><file name="activity_main" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="activity_others_profil_sayfasi" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_others_profil_sayfasi.xml" qualifiers="" type="layout"/><file name="activity_password_recovery_popup" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_password_recovery_popup.xml" qualifiers="" type="layout"/><file name="activity_password_recovery_popup_2" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_password_recovery_popup_2.xml" qualifiers="" type="layout"/><file name="activity_password_recovery_popup_3" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_password_recovery_popup_3.xml" qualifiers="" type="layout"/><file name="activity_pdf_viewer" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_pdf_viewer.xml" qualifiers="" type="layout"/><file name="activity_profil_paylasimlari_ayrinti" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_profil_paylasimlari_ayrinti.xml" qualifiers="" type="layout"/><file name="activity_profil_resmi_pop_up" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\activity_profil_resmi_pop_up.xml" qualifiers="" type="layout"/><file name="fragment_home_sayfasi" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\fragment_home_sayfasi.xml" qualifiers="" type="layout"/><file name="fragment_profil_sayfasi" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\fragment_profil_sayfasi.xml" qualifiers="" type="layout"/><file name="fragment_share_sayfasi" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\fragment_share_sayfasi.xml" qualifiers="" type="layout"/><file name="listview_goruntu_anasayfa_paylasimlari" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\listview_goruntu_anasayfa_paylasimlari.xml" qualifiers="" type="layout"/><file name="listview_goruntu_profil_paylasimlari" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\listview_goruntu_profil_paylasimlari.xml" qualifiers="" type="layout"/><file name="listview_goruntu_yorumlar" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\layout\listview_goruntu_yorumlar.xml" qualifiers="" type="layout"/><file name="ana_sayfa_alt_butonlar" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\menu\ana_sayfa_alt_butonlar.xml" qualifiers="" type="menu"/><file name="profil_sayafasi_ayarlarmenu" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\menu\profil_sayafasi_ayarlarmenu.xml" qualifiers="" type="menu"/><file name="ic_launcher" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-hdpi\ic_launcher_round.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-mdpi\ic_launcher_round.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-xxhdpi\ic_launcher.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\values\colors.xml" qualifiers=""><color name="colorPrimary">#3F51B5</color><color name="colorPrimaryDark">#303F9F</color><color name="colorAccent">#FF4081</color><color name="profil_bilgi">#fde962</color><color name="girisStatus">#9fc2c4</color><color name="white">#ffff</color><color name="homeStatus">#006767</color></file><file path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\values\dimens.xml" qualifiers=""><dimen name="fab_margin">16dp</dimen></file><file path="C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\res\values\strings.xml" qualifiers=""><string name="site_adresi">"https://sandystreamtr.com/"</string><string name="jsongüvenlikkod">"Abms"</string><string name="app_name">DeepNote</string><string name="sifre_unutma">Şifremi unuttum !!</string><string name="giris_uyarı">E-posta veya  Sifre Yanlıs Lütfen Kontrol Ediniz</string><string name="uye_olmak">Hesap Açmak için Tıklayınız</string><string name="hesap_acma_sayfası_bilgi">Yazacağınız bilgilerin doğru olmasına özen gösteriniz</string><string name="hesap_olustur">Hesap oluştur</string><string name="hesap_acma_sayfası_ad_soyad_kısmı_uyarı">Ad bilgisi gereklidir</string><string name="hesap_acma_sayfası_dogum_tarihi_kısmı">Doğum Tarihi bilgisi gereklidir</string><string name="hesap_acma_sayfası_e_posta_kısmı">E-posta bilgisi gereklidir</string><string name="hesap_acma_sayfası_e_posta_kısmı_aynı_olması_durumu">E-posta adresi kullanılıyor Lütfen Geçerli bir E-posta adresi giriniz</string><string name="hesap_acma_sayfası_üniversite_kısmı_uyarı">Üniversite bilgisi gereklidir</string><string name="hesap_acma_sayfası_fakulte_kısmı_uyarı">Fakulte bilgisi gereklidir</string><string name="hesap_acma_sayfası_bölüm_kısmı_uyarı">Bölüm bilgisi gereklidir</string><string name="hesap_acma_sayfası_Sifre_kısmı_uyarı">Şifre bilgisi gereklidir</string><string name="hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı1">Şifre dogrulaması gereklidir</string><string name="hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı">Şifreler birbiri ile uyuşmuyor</string><string name="sozlesme">DeepNote Sözleşmesini Kabul Ediyor ve Onaylıyorum</string><string name="buton_altı_bilgilendirme">Lütfen Bilgilerinizi Kontrol Ediniz</string><string name="share_sayfası_ders_uyarı">Ders bilgisi gereklidir</string><string name="share_sayfası_bolum_uyarı">Bolum bilgisi gereklidir</string><string name="share_sayfası_acıklama_uyarı">Açıklama bilgisi gereklidir</string><string name="arama_pop_up_bolum_uyarı">Bölüm bilgisi gereklidir</string><string name="arama_pop_up_dersadi_uyarı">Ders bilgisi gereklidir</string><string name="home_sayfasi_listview_top_uyarı">Bu alanda bilgi bulunmamaktadır!!</string><string name="ayrıntısayfalari_yorum_listview_uyarı">İlk yorumu sen yap</string><array name="universite_listesi">
         <item>Üniversite Seçiniz</item>
+
         <item>Abdullah Gül Üniversitesi</item>
 
         <item>Acıbadem Mehmet Ali Aydınlar Üniversitesi</item>
@@ -4123,23 +4124,18 @@
         <item>Zonguldak Bülent Ecevit Üniversitesi</item>
     </array><array name="Bolum_listesi">
         <item>Bölüm Seçiniz</item>
-        <item>Acil Yardım Ve Afet Yönetimi (Fakülte)</item>
 
-        <item>Acil Yardım Ve Afet Yönetimi (Yüksekokul)</item>
+        <item>Acil Yardım Ve Afet Yönetimi</item>
 
         <item>Adli Bilimler</item>
 
         <item>Adli Bilişim Mühendisliği</item>
 
-        <item>Adli Bilişim Mühendisliği (M.T.O.K.)</item>
-
         <item>Ağaç İşleri Endüstri Mühendisliği</item>
 
         <item>Aile Ve Tüketici Bilimleri</item>
 
-        <item>Aktüerya (Fakülte)</item>
-
-        <item>Aktüerya (Yüksekokul)</item>
+        <item>Aktüerya</item>
 
         <item>Aktüerya Bilimleri</item>
 
@@ -4153,9 +4149,7 @@
 
         <item>Animasyon Ve Oyun Tasarımı</item>
 
-        <item>Antrenörlük Eğitimi (Fakülte)</item>
-
-        <item>Antrenörlük Eğitimi (Yüksekokul)</item>
+        <item>Antrenörlük Eğitimi</item>
 
         <item>Antropoloji</item>
 
@@ -4187,25 +4181,17 @@
 
         <item>Bahçe Ve Tarla Bitkileri</item>
 
-        <item>Balıkçılık Teknolojisi (Fakülte)</item>
-
-        <item>Balıkçılık Teknolojisi (Yüksekokul)</item>
+        <item>Balıkçılık Teknolojisi</item>
 
         <item>Balıkçılık Teknolojisi Mühendisliği</item>
 
-        <item>Bankacılık (Yüksekokul)</item>
+        <item>Bankacılık</item>
 
-        <item>Bankacılık Ve Finans (Fakülte)</item>
+        <item>Bankacılık Ve Finans</item>
 
-        <item>Bankacılık Ve Finans (Yüksekokul)</item>
+        <item>Bankacılık Ve Sigortacılık</item>
 
-        <item>Bankacılık Ve Finansman (Yüksekokul)</item>
-
-        <item>Bankacılık Ve Sigortacılık (Fakülte)</item>
-
-        <item>Bankacılık Ve Sigortacılık (Yüksekokul)</item>
-
-        <item>Basım Teknolojileri (Yüksekokul)</item>
+        <item>Basım Teknolojileri</item>
 
         <item>Basım Yayın Ve Redakte</item>
 
@@ -4215,9 +4201,7 @@
 
         <item>Beden Eğitimi Ve Spor Öğretmenliği</item>
 
-        <item>Beslenme Ve Diyetetik (Fakülte)</item>
-
-        <item>Beslenme Ve Diyetetik (Yüksekokul)</item>
+        <item>Beslenme Ve Diyetetik</item>
 
         <item>Bilgi Ve Belge Yönetimi</item>
 
@@ -4225,9 +4209,7 @@
 
         <item>Bilgisayar Mühendisliği</item>
 
-        <item>Bilgisayar Mühendisliği (M.T.O.K.)</item>
-
-        <item>Bilgisayar Teknolojisi Ve Bilişim Sistemleri (Yüksekokul)</item>
+        <item>Bilgisayar Teknolojisi Ve Bilişim Sistemleri</item>
 
         <item>Bilgisayar Ve Öğretim Teknolojileri Öğretmenliği</item>
 
@@ -4239,9 +4221,7 @@
 
         <item>Bilişim Sistemleri Mühendisliği</item>
 
-        <item>Bilişim Sistemleri Mühendisliği (M.T.O.K.)</item>
-
-        <item>Bilişim Sistemleri Ve Teknolojileri (Fakülte)</item>
+        <item>Bilişim Sistemleri Ve Teknolojileri</item>
 
         <item>Bitki Koruma</item>
 
@@ -4257,7 +4237,7 @@
 
         <item>Biyomedikal Mühendisliği</item>
 
-        <item>Biyomedikal Mühendisliği (M.T.O.K.)</item>
+        <item>Biyomedikal Mühendisliği</item>
 
         <item>Biyomühendislik</item>
 
@@ -4277,8 +4257,6 @@
 
         <item>Çalışma Ekonomisi Ve Endüstri İlişkileri</item>
 
-        <item>Çalışma Ekonomisi Ve Endüstri İlişkileri (Açıköğretim)</item>
-
         <item>Canlandırma Filmi Tasarım Ve Yönetimi</item>
 
         <item>Çerkez Dili Ve Edebiyatı</item>
@@ -4293,29 +4271,21 @@
 
         <item>Çizgi Film Ve Animasyon</item>
 
-        <item>Çocuk Gelişimi (Fakülte)</item>
-
-        <item>Çocuk Gelişimi (Yüksekokul)</item>
+        <item>Çocuk Gelişimi</item>
 
         <item>Coğrafya</item>
-
-        <item>Coğrafya (Açıköğretim)</item>
 
         <item>Coğrafya Öğretmenliği</item>
 
         <item>Deniz İşletmeciliği Ve Yönetimi</item>
 
-        <item>Deniz Ulaştırma İşletme Mühendisliği (Fakülte)</item>
+        <item>Deniz Ulaştırma İşletme Mühendisliği</item>
 
-        <item>Deniz Ulaştırma İşletme Mühendisliği (Yüksekokul)</item>
-
-        <item>Denizcilik İşletmeleri Yönetimi (Fakülte)</item>
+        <item>Denizcilik İşletmeleri Yönetimi</item>
 
         <item>Deri Mühendisliği</item>
 
-        <item>Dijital Oyun Tasarımı (Fakülte)</item>
-
-        <item>Dijital Oyun Tasarımı (Yüksekokul)</item>
+        <item>Dijital Oyun Tasarımı</item>
 
         <item>Dil Ve Konuşma Terapisi</item>
 
@@ -4327,9 +4297,7 @@
 
         <item>Doğu Dilleri</item>
 
-        <item>Ebelik (Fakülte)</item>
-
-        <item>Ebelik (Yüksekokul)</item>
+        <item>Ebelik</item>
 
         <item>Eczacılık</item>
 
@@ -4339,15 +4307,13 @@
 
         <item>Ekonomi Ve Finans</item>
 
-        <item>El Sanatları (M.T.O.K.)</item>
+        <item>El Sanatları</item>
 
         <item>El Sanatları Tasarımı Ve Üretimi</item>
 
         <item>Elektrik Mühendisliği</item>
 
         <item>Elektrik-Elektronik Mühendisliği</item>
-
-        <item>Elektrik-Elektronik Mühendisliği (M.T.O.K.)</item>
 
         <item>Elektronik Mühendisliği</item>
 
@@ -4361,9 +4327,7 @@
 
         <item>Endüstri Tasarımı</item>
 
-        <item>Endüstri Ürünleri Tasarımı (Fakülte)</item>
-
-        <item>Endüstri Ürünleri Tasarımı (Yüksekokul)</item>
+        <item>Endüstri Ürünleri Tasarımı</item>
 
         <item>Endüstri Ve Sistem Mühendisliği</item>
 
@@ -4371,21 +4335,15 @@
 
         <item>Endüstriyel Tasarım Mühendisliği</item>
 
-        <item>Endüstriyel Tasarım Mühendisliği (M.T.O.K.)</item>
-
         <item>Enerji Mühendisliği</item>
 
         <item>Enerji Sistemleri Mühendisliği</item>
-
-        <item>Enerji Sistemleri Mühendisliği (M.T.O.K.)</item>
 
         <item>Enerji Ve Malzeme Mühendisliği</item>
 
         <item>Enerji Yönetimi</item>
 
-        <item>Ergoterapi (Fakülte)</item>
-
-        <item>Ergoterapi (Yüksekokul)</item>
+        <item>Ergoterapi</item>
 
         <item>Ermeni Dili Ve Edebiyatı</item>
 
@@ -4397,8 +4355,6 @@
 
         <item>Felsefe</item>
 
-        <item>Felsefe (Açıköğretim)</item>
-
         <item>Felsefe Grubu Öğretmenliği</item>
 
         <item>Fen Bilgisi Öğretmenliği</item>
@@ -4409,7 +4365,7 @@
 
         <item>Film Tasarımı</item>
 
-        <item>Finans Ve Bankacılık (Fakülte)</item>
+        <item>Finans Ve Bankacılık</item>
 
         <item>Finansal Ekonometri</item>
 
@@ -4419,9 +4375,7 @@
 
         <item>Fizik Öğretmenliği</item>
 
-        <item>Fizyoterapi Ve Rehabilitasyon (Fakülte)</item>
-
-        <item>Fizyoterapi Ve Rehabilitasyon (Yüksekokul)</item>
+        <item>Fizyoterapi Ve Rehabilitasyon</item>
 
         <item>Fotoğraf</item>
 
@@ -4431,37 +4385,23 @@
 
         <item>Fransızca Öğretmenliği</item>
 
-        <item>Gastronomi (Fakülte)</item>
-
-        <item>Gastronomi (Yüksekokul)</item>
+        <item>Gastronomi</item>
 
         <item>Gastronomi Ve Mutfak Sanatları</item>
 
-        <item>Gastronomi Ve Mutfak Sanatları (Fakülte)</item>
+        <item>Gayrimenkul Geliştirme Ve Yönetimi</item>
 
-        <item>Gastronomi Ve Mutfak Sanatları (M.T.O.K.)</item>
-
-        <item>Gastronomi Ve Mutfak Sanatları (Yüksekokul)</item>
-
-        <item>Gayrimenkul Geliştirme Ve Yönetimi (Fakülte)</item>
-
-        <item>Gayrimenkul Geliştirme Ve Yönetimi (Yüksekokul)</item>
-
-        <item>Gayrimenkul Ve Varlık Değerleme (Fakülte)</item>
-
-        <item>Gayrimenkul Ve Varlık Değerleme (Yüksekokul)</item>
+        <item>Gayrimenkul Ve Varlık Değerleme</item>
 
         <item>Gazetecilik</item>
 
         <item>Gazetecilik Ve Kitle İletişim</item>
 
-        <item>Geleneksel Türk Sanatları (M.T.O.K.)</item>
+        <item>Geleneksel Türk Sanatları</item>
 
         <item>Gemi İnşaatı Ve Gemi Makineleri Mühendisliği</item>
 
-        <item>Gemi Makineleri İşletme Mühendisliği (Fakülte)</item>
-
-        <item>Gemi Makineleri İşletme Mühendisliği (Yüksekokul)</item>
+        <item>Gemi Makineleri İşletme Mühendisliği</item>
 
         <item>Gemi Ve Deniz Teknolojisi Mühendisliği</item>
 
@@ -4477,7 +4417,7 @@
 
         <item>Gıda Mühendisliği</item>
 
-        <item>Gıda Teknolojisi (Yüksekokul)</item>
+        <item>Gıda Teknolojisi</item>
 
         <item>Girişimcilik</item>
 
@@ -4486,8 +4426,6 @@
         <item>Görsel İletişim Tasarımı</item>
 
         <item>Görsel Sanatlar</item>
-
-        <item>Görsel Sanatlar (M.T.O.K.)</item>
 
         <item>Görsel Sanatlar Ve Görsel İletişim Tasarımı</item>
 
@@ -4499,55 +4437,37 @@
 
         <item>Grafik Tasarımı</item>
 
-        <item>Grafik Tasarımı (M.T.O.K.)</item>
-
-        <item>Gümrük İşletme (Yüksekokul)</item>
+        <item>Gümrük İşletme</item>
 
         <item>Gürcü Dili Ve Edebiyatı</item>
 
-        <item>Güverte (Yüksekokul)</item>
+        <item>Güverte</item>
 
         <item>Halkbilim</item>
 
         <item>Halkla İlişkiler</item>
 
-        <item>Halkla İlişkiler Ve Reklamcılık (Açıköğretim)</item>
-
-        <item>Halkla İlişkiler Ve Reklamcılık (Fakülte)</item>
-
-        <item>Halkla İlişkiler Ve Reklamcılık (Yüksekokul)</item>
+        <item>Halkla İlişkiler Ve Reklamcılık</item>
 
         <item>Halkla İlişkiler Ve Tanıtım</item>
-
-        <item>Halkla İlişkiler Ve Tanıtım (Açıköğretim)</item>
 
         <item>Harita Mühendisliği</item>
 
         <item>Hava Trafik Kontrol</item>
 
-        <item>Havacılık Elektrik Ve Elektroniği (Fakülte)</item>
-
-        <item>Havacılık Elektrik Ve Elektroniği (Yüksekokul)</item>
+        <item>Havacılık Elektrik Ve Elektroniği</item>
 
         <item>Havacılık Ve Uzay Mühendisliği</item>
 
-        <item>Havacılık Yönetimi (Açıköğretim)</item>
+        <item>Havacılık Yönetimi</item>
 
-        <item>Havacılık Yönetimi (Fakülte)</item>
-
-        <item>Havacılık Yönetimi (Yüksekokul)</item>
-
-        <item>Hayvansal Üretim (Yüksekokul)</item>
+        <item>Hayvansal Üretim</item>
 
         <item>Hayvansal Üretim Ve Teknolojileri</item>
 
-        <item>Hemşirelik (Fakülte)</item>
+        <item>Hemşirelik</item>
 
-        <item>Hemşirelik (Yüksekokul)</item>
-
-        <item>Hemşirelik Ve Sağlık Hizmetleri (Fakülte)</item>
-
-        <item>Hemşirelik Ve Sağlık Hizmetleri (Yüksekokul)</item>
+        <item>Hemşirelik Ve Sağlık Hizmetleri</item>
 
         <item>Hidrojeoloji Mühendisliği</item>
 
@@ -4571,8 +4491,6 @@
 
         <item>İktisat</item>
 
-        <item>İktisat (Açıköğretim)</item>
-
         <item>İlahiyat</item>
 
         <item>İletişim</item>
@@ -4593,8 +4511,6 @@
 
         <item>İmalat Mühendisliği</item>
 
-        <item>İmalat Mühendisliği (M.T.O.K.)</item>
-
         <item>İngiliz Dil Bilimi</item>
 
         <item>İngiliz Dili Ve Edebiyatı</item>
@@ -4607,17 +4523,11 @@
 
         <item>İnşaat Mühendisliği</item>
 
-        <item>İnşaat Mühendisliği (M.T.O.K.)</item>
-
-        <item>İnsan Kaynakları Yönetimi (Fakülte)</item>
-
-        <item>İnsan Kaynakları Yönetimi (Yüksekokul)</item>
+        <item>İnsan Kaynakları Yönetimi</item>
 
         <item>İnsan Ve Toplum Bilimleri</item>
 
-        <item>İş Sağlığı Ve Güvenliği (Fakülte)</item>
-
-        <item>İş Sağlığı Ve Güvenliği (Yüksekokul)</item>
+        <item>İş Sağlığı Ve Güvenliği</item>
 
         <item>İslam Bilimleri</item>
 
@@ -4629,9 +4539,7 @@
 
         <item>İşletme</item>
 
-        <item>İşletme (Açıköğretim)</item>
-
-        <item>İşletme Bilgi Yönetimi (Yüksekokul)</item>
+        <item>İşletme Bilgi Yönetimi</item>
 
         <item>İşletme Enformatiği</item>
 
@@ -4659,8 +4567,6 @@
 
         <item>Kamu Yönetimi</item>
 
-        <item>Kamu Yönetimi (Açıköğretim)</item>
-
         <item>Kanatlı Hayvan Yetiştiriciliği</item>
 
         <item>Karşılaştırmalı Edebiyat</item>
@@ -4668,8 +4574,6 @@
         <item>Kazak Dili Ve Edebiyatı</item>
 
         <item>Kentsel Tasarım Ve Peyzaj Mimarisi</item>
-
-        <item>Kentsel Tasarım Ve Peyzaj Mimarlığı</item>
 
         <item>Kimya</item>
 
@@ -4685,13 +4589,9 @@
 
         <item>Klasik Arkeoloji</item>
 
-        <item>Konaklama İşletmeciliği (Fakülte)</item>
+        <item>Konaklama İşletmeciliği</item>
 
-        <item>Konaklama İşletmeciliği (Fakülte) (Açıköğretim)</item>
-
-        <item>Konaklama İşletmeciliği (Yüksekokul)</item>
-
-        <item>Konaklama Ve Turizm İşletmeciliği (Yüksekokul)</item>
+        <item>Konaklama Ve Turizm İşletmeciliği</item>
 
         <item>Kontrol Ve Otomasyon Mühendisliği</item>
 
@@ -4709,35 +4609,25 @@
 
         <item>Kuyumculuk Ve Mücevher Tasarımı</item>
 
-        <item>Kuyumculuk Ve Mücevher Tasarımı (M.T.O.K.)</item>
-
         <item>Latin Dili Ve Edebiyatı</item>
 
         <item>Leh Dili Ve Edebiyatı</item>
 
         <item>Lif Ve Polimer Mühendisliği</item>
 
-        <item>Lojistik (Yüksekokul)</item>
+        <item>Lojistik</item>
 
-        <item>Lojistik Ve Taşımacılık (Yüksekokul)</item>
+        <item>Lojistik Ve Taşımacılık</item>
 
-        <item>Lojistik Yönetimi (Fakülte)</item>
-
-        <item>Lojistik Yönetimi (Yüksekokul)</item>
+        <item>Lojistik Yönetimi</item>
 
         <item>Maden Mühendisliği</item>
 
         <item>Makine Mühendisliği</item>
 
-        <item>Makine Mühendisliği (M.T.O.K.)</item>
-
         <item>Makine Ve İmalat Mühendisliği</item>
 
-        <item>Makine Ve İmalat Mühendisliği (M.T.O.K.)</item>
-
         <item>Maliye</item>
-
-        <item>Maliye (Açıköğretim)</item>
 
         <item>Malzeme Bilimi Ve Mühendisliği</item>
 
@@ -4761,29 +4651,19 @@
 
         <item>Medya Ve İletişim</item>
 
-        <item>Medya Ve İletişim Sistemleri (Fakülte)</item>
-
-        <item>Medya Ve İletişim Sistemleri (Yüksekokul)</item>
+        <item>Medya Ve İletişim Sistemleri</item>
 
         <item>Mekatronik Mühendisliği</item>
-
-        <item>Mekatronik Mühendisliği (M.T.O.K.)</item>
 
         <item>Mekatronik Sistemler Mühendisliği</item>
 
         <item>Metalurji Ve Malzeme Mühendisliği</item>
 
-        <item>Metalurji Ve Malzeme Mühendisliği (M.T.O.K.)</item>
-
         <item>Meteoroloji Mühendisliği</item>
 
         <item>Mimarlık</item>
 
-        <item>Moda Tasarımı (Fakülte)</item>
-
-        <item>Moda Tasarımı (M.T.O.K.)</item>
-
-        <item>Moda Tasarımı (Yüksekokul)</item>
+        <item>Moda Tasarımı</item>
 
         <item>Moda Ve Tekstil Tasarımı</item>
 
@@ -4791,31 +4671,21 @@
 
         <item>Moleküler Biyoteknoloji</item>
 
-        <item>Muhasebe (Yüksekokul)</item>
+        <item>Muhasebe</item>
 
-        <item>Muhasebe Bilgi Sistemleri (Yüksekokul)</item>
+        <item>Muhasebe Bilgi Sistemleri</item>
 
-        <item>Muhasebe Ve Denetim (Fakülte)</item>
+        <item>Muhasebe Ve Denetim</item>
 
-        <item>Muhasebe Ve Denetim (Yüksekokul)</item>
+        <item>Muhasebe Ve Finans Yönetimi</item>
 
-        <item>Muhasebe Ve Finans Yönetimi (Fakülte)</item>
-
-        <item>Muhasebe Ve Finans Yönetimi (Yüksekokul)</item>
-
-        <item>Muhasebe Ve Finansal Yönetim (Fakülte)</item>
-
-        <item>Muhasebe Ve Finansal Yönetim (Yüksekokul)</item>
+        <item>Muhasebe Ve Finansal Yönetim</item>
 
         <item>Mühendislik Programları</item>
 
-        <item>Mühendislik Ve Doğa Bilimleri Programları (Bilgisayar Bilimi Ve Mühendisliği,Elektronik Mühendisliği, Mekatronik Mühendisliği, Malzeme Bilimi Ve Nano Mühendisliği,Moleküler Biyoloji, Genetik Ve Biyomühendislik) </item>
+        <item>Mühendislik Ve Doğa Bilimleri Programları</item>
 
-        <item>Mütercim-Tercümanlık(Dil-1)</item>
-
-        <item>Mütercim-Tercümanlık(Dil-2)</item>
-
-        <item>Mütercim-Tercümanlık(Dil-3)</item>
+        <item>Mütercim-Tercümanlık</item>
 
         <item>Müzecilik</item>
 
@@ -4827,9 +4697,7 @@
 
         <item>Nükleer Enerji Mühendisliği</item>
 
-        <item>Odyoloji (Fakülte)</item>
-
-        <item>Odyoloji (Yüksekokul)</item>
+        <item>Odyoloji</item>
 
         <item>Öğretmenlik Programları</item>
 
@@ -4837,31 +4705,23 @@
 
         <item>Optik Ve Akustik Mühendisliği</item>
 
-        <item>Organik Tarım İşletmeciliği (Yüksekokul)</item>
+        <item>Organik Tarım İşletmeciliği</item>
 
         <item>Orman Endüstrisi Mühendisliği</item>
 
         <item>Orman Mühendisliği</item>
 
-        <item>Ortez-Protez (Fakülte)</item>
+        <item>Ortez-Protez</item>
 
-        <item>Ortez-Protez (Yüksekokul)</item>
-
-        <item>Otel Yöneticiliği (Yüksekokul)</item>
+        <item>Otel Yöneticiliği</item>
 
         <item>Otomotiv Mühendisliği</item>
 
-        <item>Otomotiv Mühendisliği (M.T.O.K.)</item>
-
         <item>Özel Eğitim Öğretmenliği</item>
 
-        <item>Pazarlama (Fakülte)</item>
+        <item>Pazarlama</item>
 
-        <item>Pazarlama (Yüksekokul)</item>
-
-        <item>Perfüzyon (Fakülte)</item>
-
-        <item>Perfüzyon (Yüksekokul)</item>
+        <item>Perfüzyon</item>
 
         <item>Petrol Ve Doğalgaz Mühendisliği</item>
 
@@ -4897,15 +4757,9 @@
 
         <item>Reklamcılık Ve Halkla İlişkiler</item>
 
-        <item>Rekreasyon (Fakülte)</item>
+        <item>Rekreasyon</item>
 
-        <item>Rekreasyon (Yüksekokul)</item>
-
-        <item>Rekreasyon Yönetimi (Fakülte)</item>
-
-        <item>Rekreasyon Yönetimi (M.T.O.K.)</item>
-
-        <item>Rekreasyon Yönetimi (Yüksekokul)</item>
+        <item>Rekreasyon Yönetimi</item>
 
         <item>Restorasyon Ve Konservasyon</item>
 
@@ -4919,43 +4773,31 @@
 
         <item>Sağlık İdaresi</item>
 
-        <item>Sağlık Yönetimi (Açıköğretim)</item>
-
-        <item>Sağlık Yönetimi (Fakülte)</item>
-
-        <item>Sağlık Yönetimi (Yüksekokul)</item>
+        <item>Sağlık Yönetimi</item>
 
         <item>Sanat Tarihi</item>
 
         <item>Sanat Ve Kültür Yönetimi</item>
 
-        <item>Sanat Ve Sosyal Bilimler Programları (Ekonomi, Siyaset Bilimi, Uluslararası Çalışmalar, Görsel Sanatlar Ve Görsel İletişim Tasarımı, Kültürel Çalışmalar, Psikoloji) </item>
+        <item>Sanat Ve Sosyal Bilimler Programları</item>
 
         <item>Sanat Yönetimi</item>
 
         <item>Şehir Ve Bölge Planlama</item>
 
-        <item>Sermaye Piyasaları Ve Portföy Yönetimi (Fakülte)</item>
+        <item>Sermaye Piyasaları Ve Portföy Yönetimi</item>
 
-        <item>Sermaye Piyasaları Ve Portföy Yönetimi (Yüksekokul)</item>
+        <item>Sermaye Piyasası</item>
 
-        <item>Sermaye Piyasası (Yüksekokul)</item>
+        <item>Seyahat İşletmeciliği</item>
 
-        <item>Seyahat İşletmeciliği (Fakülte)</item>
+        <item>Seyahat İşletmeciliği Ve Turizm Rehberliği</item>
 
-        <item>Seyahat İşletmeciliği (Yüksekokul)</item>
+        <item>Sigortacılık</item>
 
-        <item>Seyahat İşletmeciliği Ve Turizm Rehberliği (Fakülte)</item>
+        <item>Sigortacılık Ve Aktüerya Bilimleri</item>
 
-        <item>Seyahat İşletmeciliği Ve Turizm Rehberliği (M.T.O.K.)</item>
-
-        <item>Sigortacılık (Yüksekokul)</item>
-
-        <item>Sigortacılık Ve Aktüerya Bilimleri (Fakülte)</item>
-
-        <item>Sigortacılık Ve Risk Yönetimi (Fakülte)</item>
-
-        <item>Sigortacılık Ve Risk Yönetimi (Yüksekokul)</item>
+        <item>Sigortacılık Ve Risk Yönetimi</item>
 
         <item>Sigortacılık Ve Sosyal Güvenlik</item>
 
@@ -4977,23 +4819,13 @@
 
         <item>Sosyal Bilgiler Öğretmenliği</item>
 
-        <item>Sosyal Hizmet (Açıköğretim)</item>
-
-        <item>Sosyal Hizmet (Fakülte)</item>
-
-        <item>Sosyal Hizmet (Fakülte) (Açıköğretim)</item>
-
-        <item>Sosyal Hizmet (Yüksekokul)</item>
+        <item>Sosyal Hizmet</item>
 
         <item>Sosyal Ve Siyasal Bilimler</item>
 
         <item>Sosyoloji</item>
 
-        <item>Sosyoloji (Açıköğretim)</item>
-
-        <item>Spor Yöneticiliği (Fakülte)</item>
-
-        <item>Spor Yöneticiliği (Yüksekokul)</item>
+        <item>Spor Yöneticiliği</item>
 
         <item>Su Bilimleri Mühendisliği</item>
 
@@ -5005,13 +4837,11 @@
 
         <item>Süt Teknolojisi</item>
 
-        <item>Takı Tasarımı (Fakülte)</item>
+        <item>Takı Tasarımı)</item>
 
-        <item>Tapu Kadastro (Yüksekokul)</item>
+        <item>Tapu Kadastro</item>
 
         <item>Tarih</item>
-
-        <item>Tarih (Açıköğretim)</item>
 
         <item>Tarih Öğretmenliği</item>
 
@@ -5035,47 +4865,33 @@
 
         <item>Tekstil Mühendisliği</item>
 
-        <item>Tekstil Tasarımı (M.T.O.K.)</item>
+        <item>Tekstil Tasarımı</item>
 
         <item>Tekstil Ve Moda Tasarımı</item>
 
-        <item>Televizyon Haberciliği Ve Programcılığı (Fakülte)</item>
-
-        <item>Televizyon Haberciliği Ve Programcılığı (Yüksekokul)</item>
+        <item>Televizyon Haberciliği Ve Programcılığı</item>
 
         <item>Tıp</item>
 
         <item>Tıp Mühendisliği</item>
 
-        <item>Tiyatro Eleştirmenliği Ve Dramaturji (Fakülte)</item>
+        <item>Tiyatro Eleştirmenliği Ve Dramaturji</item>
 
         <item>Toprak Bilimi Ve Bitki Besleme</item>
 
-        <item>Turizm İşletmeciliği (Fakülte)</item>
+        <item>Turizm İşletmeciliği</item>
 
-        <item>Turizm İşletmeciliği (M.T.O.K.)</item>
-
-        <item>Turizm İşletmeciliği (Yüksekokul)</item>
-
-        <item>Turizm İşletmeciliği Ve Otelcilik (Yüksekokul)</item>
+        <item>Turizm İşletmeciliği Ve Otelcilik</item>
 
         <item>Turizm Rehberliği</item>
 
-        <item>Turizm Ve Otel İşletmeciliği (Fakülte)</item>
-
-        <item>Turizm Ve Otel İşletmeciliği (Yüksekokul)</item>
+        <item>Turizm Ve Otel İşletmeciliği</item>
 
         <item>Turizm Ve Otel Yöneticiliği</item>
 
-        <item>Turizm Ve Otelcilik (Fakülte)</item>
-
-        <item>Turizm Ve Otelcilik (Yüksekokul)</item>
+        <item>Turizm Ve Otelcilik</item>
 
         <item>Türk Dili Ve Edebiyatı</item>
-
-        <item>Türk Dili Ve Edebiyatı (Açıköğretim)</item>
-
-        <item>Türk Dili Ve Edebiyatı Öğretmenliği</item>
 
         <item>Türk Halkbilimi</item>
 
@@ -5085,19 +4901,13 @@
 
         <item>Türkoloji</item>
 
-        <item>Tütün Eksperliği (Yüksekokul)</item>
+        <item>Tütün Eksperliği</item>
 
-        <item>Uçak Elektrik-Elektronik (Fakülte)</item>
+        <item>Uçak Elektrik-Elektronik</item>
 
-        <item>Uçak Elektrik-Elektronik (Yüksekokul)</item>
+        <item>Uçak Gövde-Motor</item>
 
-        <item>Uçak Gövde-Motor (Fakülte)</item>
-
-        <item>Uçak Gövde-Motor (Yüksekokul)</item>
-
-        <item>Uçak Gövde-Motor Bakım (Fakülte)</item>
-
-        <item>Uçak Gövde-Motor Bakım (Yüksekokul)</item>
+        <item>Uçak Gövde-Motor Bakım</item>
 
         <item>Uçak Mühendisliği</item>
 
@@ -5107,29 +4917,19 @@
 
         <item>Ulaştırma Mühendisliği</item>
 
-        <item>Ulaştırma Ve Lojistik (Fakülte)</item>
+        <item>Ulaştırma Ve Lojistik</item>
 
-        <item>Ulaştırma Ve Lojistik (Yüksekokul)</item>
-
-        <item>Ulaştırma Ve Lojistik Yönetimi (Fakülte)</item>
-
-        <item>Ulaştırma Ve Lojistik Yönetimi (Yüksekokul)</item>
+        <item>Ulaştırma Ve Lojistik Yönetimi</item>
 
         <item>Uluslararası Ekonomik İlişkiler</item>
 
-        <item>Uluslararası Finans (Fakülte)</item>
+        <item>Uluslararası Finans</item>
 
-        <item>Uluslararası Finans (Yüksekokul)</item>
-
-        <item>Uluslararası Finans Ve Bankacılık (Fakülte)</item>
-
-        <item>Uluslararası Finans Ve Bankacılık (Yüksekokul)</item>
+        <item>Uluslararası Finans Ve Bankacılık</item>
 
         <item>Uluslararası Girişimcilik</item>
 
         <item>Uluslararası İlişkiler</item>
-
-        <item>Uluslararası İlişkiler (Açıköğretim)</item>
 
         <item>Uluslararası İşletme</item>
 
@@ -5137,45 +4937,27 @@
 
         <item>Uluslararası İşletmecilik</item>
 
-        <item>Uluslararası İşletmecilik Ve Ticaret (Fakülte)</item>
+        <item>Uluslararası İşletmecilik Ve Ticaret</item>
 
-        <item>Uluslararası İşletmecilik Ve Ticaret (Yüksekokul)</item>
+        <item>Uluslararası Lojistik</item>
 
-        <item>Uluslararası Lojistik (Fakülte)</item>
-
-        <item>Uluslararası Lojistik (Yüksekokul)</item>
-
-        <item>Uluslararası Lojistik Ve Taşımacılık (Fakülte)</item>
-
-        <item>Uluslararası Lojistik Ve Taşımacılık (Yüksekokul)</item>
+        <item>Uluslararası Lojistik Ve Taşımacılık</item>
 
         <item>Uluslararası Lojistik Yönetimi</item>
 
-        <item>Uluslararası Perakende Yönetimi (Yüksekokul)</item>
-
-        <item>Uluslararası Ticaret (Fakülte)</item>
-
-        <item>Uluslararası Ticaret (Yüksekokul)</item>
+        <item>Uluslararası Ticaret</item>
 
         <item>Uluslararası Ticaret Ve Finans</item>
 
         <item>Uluslararası Ticaret Ve Finansman</item>
 
-        <item>Uluslararası Ticaret Ve İşletmecilik (Yüksekokul)</item>
+        <item>Uluslararası Ticaret Ve İşletmecilik</item>
 
-        <item>Uluslararası Ticaret Ve İşletmecilik (Fakülte)</item>
+        <item>Uluslararası Ticaret Ve Lojistik</item>
 
-        <item>Uluslararası Ticaret Ve Lojistik (Fakülte)</item>
+        <item>Uluslararası Ticaret Ve Lojistik Yönetimi</item>
 
-        <item>Uluslararası Ticaret Ve Lojistik (Yüksekokul)</item>
-
-        <item>Uluslararası Ticaret Ve Lojistik Yönetimi (Açıköğretim</item>
-
-        <item>Uluslararası Ticaret Ve Lojistik Yönetimi (Fakülte)</item>
-
-        <item>Uluslararası Ticaret Ve Lojistik Yönetimi (Yüksekokul)</item>
-
-        <item>Uluslararası Ticaret, Lojistik Ve İşletmecilik (Yüksekokul)</item>
+        <item>Uluslararası Ticaret, Lojistik Ve İşletmecilik</item>
 
         <item>Urdu Dili Ve Edebiyatı</item>
 
@@ -5189,11 +4971,7 @@
 
         <item>Yazılım Mühendisliği</item>
 
-        <item>Yazılım Mühendisliği (M.T.O.K.)</item>
-
-        <item>Yeni Medya (Fakülte)</item>
-
-        <item>Yeni Medya (Yüksekokul)</item>
+        <item>Yeni Medya</item>
 
         <item>Yeni Medya Ve Gazetecilik</item>
 
@@ -5205,17 +4983,11 @@
 
         <item>Yerel Yönetimler</item>
 
-        <item>Yiyecek-İçecek İşletmeciliği (Fakülte)</item>
-
-        <item>Yiyecek-İçecek İşletmeciliği (Yüksekokul)</item>
+        <item>Yiyecek-İçecek İşletmeciliği</item>
 
         <item>Yönetim Bilimleri Programları</item>
 
-        <item>Yönetim Bilişim Sistemleri (Açıköğretim)</item>
-
-        <item>Yönetim Bilişim Sistemleri (Fakülte)</item>
-
-        <item>Yönetim Bilişim Sistemleri (Yüksekokul)</item>
+        <item>Yönetim Bilişim Sistemleri</item>
 
         <item>Yunan Dili Ve Edebiyatı</item>
 
@@ -5226,6 +4998,7 @@
         <item>Zootekni</item>
     </array><string name="universite_listesi__arama_hepsi">Tüm Okullarda Ara</string><array name="universite_listesi_arama_için">
         <item>Tüm Okullarda Ara</item>
+
         <item>Abdullah Gül Üniversitesi</item>
 
         <item>Acıbadem Mehmet Ali Aydınlar Üniversitesi</item>
