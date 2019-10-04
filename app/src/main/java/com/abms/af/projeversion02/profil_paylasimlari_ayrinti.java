@@ -52,6 +52,8 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
    List<Yorumlarigetirsonuc> gelenyorumlar;
    Yorumadapter yorumadapter;
    ProgressBar progressBar;
+   SharedPreferences sharedPreferences;
+   String email="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,6 +127,23 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
 
 
     public void islevver() {
+
+
+        sharedPreferences =getApplicationContext().getSharedPreferences("giris",0);
+        if(sharedPreferences.getInt("uye_id",0) != 0)
+        {
+            email=sharedPreferences.getString("email","");
+
+        }
+        else
+        {
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+
         //Toast.makeText(getApplicationContext(),dosyaturu_string,Toast.LENGTH_LONG).show();
         //Log.i("TAG", "islevver: "+dosyayolu_string);
         //Toast.makeText(getApplicationContext(),dosyayolu_string,Toast.LENGTH_LONG).show();
@@ -177,7 +196,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
 
                 }
 
-                Call<Yorumyapmasonuc> x= ManagerAll.webyonet().yorumyap(id,paylasim_id,yorum);
+                Call<Yorumyapmasonuc> x= ManagerAll.webyonet().yorumyap(email,id,paylasim_id,yorum);
                 x.enqueue(new Callback<Yorumyapmasonuc>() {
                     @Override
                     public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
@@ -228,7 +247,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
 
                 }
                 ////////// Y O R U M   Y A P M A   K I S M I
-                Call<Yorumyapmasonuc> x= ManagerAll.webyonet().yorumyap(id,paylasim_id,yorum);
+                Call<Yorumyapmasonuc> x= ManagerAll.webyonet().yorumyap(email,id,paylasim_id,yorum);
                 x.enqueue(new Callback<Yorumyapmasonuc>() {
                     @Override
                     public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
@@ -238,7 +257,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Yorum yapıldı",Toast.LENGTH_LONG).show();
                             //////////// Y O R U M  G E T İ R M E   Y O R U M   Y A P T I K T A N  S O N R A
 
-                            final Call<List<Yorumlarigetirsonuc>> yorumgetir=ManagerAll.webyonet().yorumgetir(paylasim_id);
+                            final Call<List<Yorumlarigetirsonuc>> yorumgetir=ManagerAll.webyonet().yorumgetir(email,paylasim_id);
                             //////////////////////////////// P R O G R E S S   B A R    //////////////////////
                             progressBar.setVisibility(View.VISIBLE);
                             ////////////////////////////////////////////////////////////////////////////////////
@@ -308,7 +327,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
 
         //////////// Y O R U M  G E T İ R M E
 
-        final Call<List<Yorumlarigetirsonuc>> yorumgetir=ManagerAll.webyonet().yorumgetir(paylasim_id);
+        final Call<List<Yorumlarigetirsonuc>> yorumgetir=ManagerAll.webyonet().yorumgetir(email,paylasim_id);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         progressBar.setVisibility(View.VISIBLE);
         ////////////////////////////////////////////////////////////////////////////////////
@@ -382,5 +401,10 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
             return false;
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

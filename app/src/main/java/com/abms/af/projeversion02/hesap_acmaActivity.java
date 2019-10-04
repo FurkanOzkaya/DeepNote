@@ -2,6 +2,7 @@ package com.abms.af.projeversion02;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -37,16 +39,15 @@ public class hesap_acmaActivity extends AppCompatActivity {
     EditText ad_soyad, dogum_Tarihi, e_posta, sifre, sifre_dogrulama;
     Button kayıt_ol_butonu;
     CheckBox sozlesme;
-    Spinner universite, bolum;
     ArrayAdapter universite_adapter, bolum_adapter;
     String[] universite_listesi, bolum_listesi;
     DatePickerDialog.OnDateSetListener mDateSetListener;
     String ad_soyad_text,dogum_tarihi_text,e_posta_text,sifre_text,sifre_dogrulama_text,universite_text,bolum_text;
-
+    AutoCompleteTextView universite, bolum;
+    SharedPreferences sharedPreferences;
     DatePickerDialog datePickerDialog;
     Calendar calendar;
 
-    int universite_int,bolum_int;
 
 
     @Override
@@ -71,8 +72,8 @@ public class hesap_acmaActivity extends AppCompatActivity {
     private void tanimla() {
         ad_soyad = (EditText) findViewById(R.id.ad_soyad);
         dogum_Tarihi = (EditText) findViewById(R.id.dogum_tarihi);
-        universite = (Spinner) findViewById(R.id.universite);
-        bolum = (Spinner) findViewById(R.id.bolum);
+        universite = findViewById(R.id.universite);
+        bolum = findViewById(R.id.bolum);
         e_posta = (EditText) findViewById(R.id.e_posta);
         sifre = (EditText) findViewById(R.id.giris_sifre);
         sifre_dogrulama = (EditText) findViewById(R.id.sifre_dogrulama);
@@ -88,16 +89,14 @@ public class hesap_acmaActivity extends AppCompatActivity {
         buton_altı_bilgilendirme = (TextView) findViewById(R.id.buton_altı_bilgilendirme);
 
 
-        // Spinnerlara eleman ekleme
         universite_listesi = getResources().getStringArray(R.array.universite_listesi);
-        universite_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, universite_listesi);
-        universite.setAdapter(universite_adapter);
-
         bolum_listesi = getResources().getStringArray(R.array.Bolum_listesi);
-        bolum_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, bolum_listesi);
-        bolum.setAdapter(bolum_adapter);
-        //Spinnerlara eleman ekleme sonu
 
+        ArrayAdapter<String> a = new ArrayAdapter<String>(this,R.layout.okullar,R.id.okultextitem,universite_listesi);
+        universite.setAdapter(a);
+
+        ArrayAdapter<String> a2 = new ArrayAdapter<String>(this,R.layout.bolumler,R.id.bolumtextitem,bolum_listesi);
+        bolum.setAdapter(a2);
 
     }
 
@@ -107,22 +106,15 @@ public class hesap_acmaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Toast.makeText(getApplicationContext(),"butona tıklandı",Toast.LENGTH_LONG).show();
-                boolean sifre_uyusması;
-
-
                 ad_soyad_text=ad_soyad.getText().toString();
                 dogum_tarihi_text=dogum_Tarihi.getText().toString();
                 e_posta_text=e_posta.getText().toString();
                 sifre_text=sifre.getText().toString();
                 sifre_dogrulama_text=sifre_dogrulama.getText().toString();
-                universite_int=universite.getSelectedItemPosition();
-                bolum_int=bolum.getSelectedItemPosition();
-                universite_text=universite.getSelectedItem().toString();
-                bolum_text= bolum.getSelectedItem().toString();
+                universite_text=universite.getText().toString();
+                bolum_text= bolum.getText().toString();
 
-
-                if (ad_soyad_text.equals("") || dogum_tarihi_text.equals("") || universite_int == 0 ||bolum_int == 0 || e_posta_text.equals("") || sifre_text.equals("") || sifre_dogrulama_text.equals("") )
+                if (ad_soyad_text.equals("") || dogum_tarihi_text.equals("") || universite_text.matches("") || universite_text.equals(getString(R.string.universite_listesi__arama_hepsi)) || bolum_text.matches("") || e_posta_text.equals("") || sifre_text.equals("") || sifre_dogrulama_text.equals("") )
                 {
                     if (ad_soyad_text.equals("")) {
                         ad_soyad_uyarı.setVisibility(View.VISIBLE);
@@ -136,13 +128,13 @@ public class hesap_acmaActivity extends AppCompatActivity {
                     } else {
                         dogum_tarihi_uyarı.setVisibility(View.INVISIBLE);
                     }
-                    if (universite_int == 0) {
+                    if (universite_text.matches("")) {
                         universite_uyarı.setVisibility(View.VISIBLE);
                         buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
                     } else {
                         universite_uyarı.setVisibility(View.INVISIBLE);
                     }
-                    if (bolum_int == 0) {
+                    if (bolum_text.matches("")) {
                         bolum_uyarı.setVisibility(View.VISIBLE);
                         buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
                     } else {
@@ -169,7 +161,6 @@ public class hesap_acmaActivity extends AppCompatActivity {
                 }
                 else
                 {
-
                     ad_soyad_uyarı.setVisibility(View.INVISIBLE);
                     dogum_tarihi_uyarı.setVisibility(View.INVISIBLE);
                     universite_uyarı.setVisibility(View.INVISIBLE);
@@ -179,12 +170,10 @@ public class hesap_acmaActivity extends AppCompatActivity {
                     sifre_dogrulama_uyarı.setVisibility(View.INVISIBLE);
                     buton_altı_bilgilendirme.setVisibility(View.INVISIBLE);
                         if (sifre_text.equals(sifre_dogrulama_text)) {
-                            // Toast.makeText(getApplicationContext(),"sifreler dogrulandı",Toast.LENGTH_SHORT).show();
-                            sifre_uyusması = true;
+                            //Toast.makeText(getApplicationContext(),"sifreler dogrulandı",Toast.LENGTH_SHORT).show();
                             webservis_kullanicikayıt();
 
                         } else {
-                            sifre_uyusması = false;
                             // Toast.makeText(getApplicationContext(),"sifreler yanlıs",Toast.LENGTH_SHORT).show();
                             String uyarı=getResources().getString(R.string.hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı);
                             sifre_dogrulama_uyarı.setText(uyarı);
@@ -252,11 +241,12 @@ public class hesap_acmaActivity extends AppCompatActivity {
     {
        // Log.i("nkjn","istek:"+ ad_soyad.getText().toString()+dogum_Tarihi.getText().toString()+universite.getSelectedItem().toString()+bolum.getSelectedItem().toString()+e_posta.getText().toString()+sifre.getText().toString());
 
-        Call<Kullanicikayitsonuc> a= ManagerAll.webyonet().kullaniciekle(ad_soyad_text,dogum_tarihi_text,universite_text,bolum_text,e_posta_text,sifre_text);
+        Call<Kullanicikayitsonuc> a= ManagerAll.webyonet().kullaniciekle(getString(R.string.key_for_protection_create_user),ad_soyad_text,dogum_tarihi_text,universite_text,bolum_text,e_posta_text,sifre_text);
         a.enqueue(new Callback<Kullanicikayitsonuc>() {
             @Override
             public void onResponse(Call<Kullanicikayitsonuc> call, Response<Kullanicikayitsonuc> response) {
-                //Toast.makeText(getApplicationContext(),response.body().getKullanicikayitsonuc(),Toast.LENGTH_LONG).show();
+
+                Toast.makeText(getApplicationContext(),response.body().toString(),Toast.LENGTH_LONG).show();
 
                 if (response.body().getKullanicikayitsonuc().toString().equals("E_posta kullaniliyor"))
                 {
@@ -268,7 +258,10 @@ public class hesap_acmaActivity extends AppCompatActivity {
                 else if (response.body().getKullanicikayitsonuc().toString().equals("Ekleme basarilidir"))
                 {
                     //Toast.makeText(getApplicationContext(),"kayıt oldunuz",Toast.LENGTH_LONG).show();
-
+                    sharedPreferences = getApplicationContext().getSharedPreferences("protection",0);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("token",response.body().getToken().toString());
+                    editor.commit();
                     Intent main=new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(main);
                 }

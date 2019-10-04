@@ -2,6 +2,7 @@ package com.abms.af.projeversion02.Fragments;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,8 +29,10 @@ import com.abms.af.projeversion02.MainActivity;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
+import com.abms.af.projeversion02.ana_sayfa;
 import com.abms.af.projeversion02.anasayfa_pop_up_arama;
 
+import java.sql.SQLTransactionRollbackException;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -57,7 +60,8 @@ public class home_sayfasi extends Fragment {
     int pageCount=0;
     int pageListSize=0;
     int rowcount=0;
-
+    SharedPreferences sharedPreferences;
+    String email="";
     String universite;
     String bolum;
     String dersadi;
@@ -256,7 +260,23 @@ public class home_sayfasi extends Fragment {
     void loadListForHome(int page)
     {
 
-        retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(getString(R.string.jsongüvenlikkod),page);
+
+        sharedPreferences =getActivity().getApplicationContext().getSharedPreferences("giris",0);
+        if(sharedPreferences.getInt("uye_id",0) != 0)
+        {
+            email=sharedPreferences.getString("email","");
+
+        }
+        else
+        {
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(getActivity().getApplicationContext(),MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+
+        retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(email,getString(R.string.jsongüvenlikkod),page);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         progressBar.setVisibility(View.VISIBLE);
 
@@ -341,7 +361,7 @@ public class home_sayfasi extends Fragment {
         }
 
         // H O M E    S A Y F A S I    V E R İ    C E K M E
-        Call<List<Homesayfasitumpaylasimveritabani>> f = ManagerAll.webyonet().aramagonderigetir(universite,bolum,dersadi,pageCount);
+        Call<List<Homesayfasitumpaylasimveritabani>> f = ManagerAll.webyonet().aramagonderigetir(email,universite,bolum,dersadi,pageCount);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         progressBar.setVisibility(View.VISIBLE);
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,

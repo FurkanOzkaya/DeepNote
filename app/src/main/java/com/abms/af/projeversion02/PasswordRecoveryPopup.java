@@ -69,7 +69,7 @@ public class PasswordRecoveryPopup extends AppCompatActivity {
                 final String email = Email.getText().toString();
                 //Toast.makeText(getApplicationContext(), email ,Toast.LENGTH_LONG).show();
 
-                final Call<PHPMailersifregonderme> request = ManagerAll.webyonet().PHPMailersifregonderme(email);
+                final Call<PHPMailersifregonderme> request = ManagerAll.webyonet().PHPMailersifregonderme(getString(R.string.key_for_protection_create_user),email);
                 request.enqueue(new Callback<PHPMailersifregonderme>() {
                     @Override
                     public void onResponse(Call<PHPMailersifregonderme> call, Response<PHPMailersifregonderme> response) {

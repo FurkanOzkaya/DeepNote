@@ -67,6 +67,8 @@ public class Yorumadapter extends BaseAdapter {
     public View getView(final int position, View view, ViewGroup viewGroup) {
         TextView yorumcu_adi,tarih,yorum;
         ImageButton yorum_silme_butonu;
+        SharedPreferences sharedPreferences;
+        String email="";
 
         view = LayoutInflater.from(context).inflate(R.layout.listview_goruntu_yorumlar, viewGroup, false);
 
@@ -78,7 +80,6 @@ public class Yorumadapter extends BaseAdapter {
 
 
         int id = 0;
-        SharedPreferences sharedPreferences;
         sharedPreferences =context.getSharedPreferences("giris",0);
         if(sharedPreferences.getInt("uye_id",0) != 0)
         {
@@ -104,6 +105,23 @@ public class Yorumadapter extends BaseAdapter {
         }
 
 
+        // taking email for email validate
+        sharedPreferences =activity.getApplicationContext().getSharedPreferences("giris",0);
+        if(sharedPreferences.getInt("uye_id",0) != 0)
+        {
+            email=sharedPreferences.getString("email","");
+
+        }
+        else
+        {
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(activity.getApplicationContext(),MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            activity.startActivity(intent);
+        }
+
+
 
         Log.i("TAG", "yorumlar: "+gelenyorumlar.get(position).getAdsoyad()+gelenyorumlar.get(position).getTarih()+gelenyorumlar.get(position).getYorum());
 
@@ -123,7 +141,7 @@ public class Yorumadapter extends BaseAdapter {
         }
 
 
-
+        final String finalEmail = email;
         yorum_silme_butonu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,7 +155,7 @@ public class Yorumadapter extends BaseAdapter {
                                 int paylasim_id = Integer.valueOf(gelenyorumlar.get(position).getPaylasim_id());
                                 int id_yorum = Integer.valueOf(gelenyorumlar.get(position).getId_yorum());
 
-                                Call<Yorumsilmesonuc> yorumsil = ManagerAll.webyonet().yorumsil(id_kullanici, paylasim_id, id_yorum);
+                                Call<Yorumsilmesonuc> yorumsil = ManagerAll.webyonet().yorumsil(finalEmail,id_kullanici, paylasim_id, id_yorum);
                                 yorumsil.enqueue(new Callback<Yorumsilmesonuc>() {
                                     @Override
                                     public void onResponse(Call<Yorumsilmesonuc> call, Response<Yorumsilmesonuc> response) {

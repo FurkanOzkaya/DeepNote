@@ -32,8 +32,8 @@ public class ManagerAll extends BaseManager {
         return webyonet;
     }
 
-    public Call<Kullanicikayitsonuc> kullaniciekle(String ad_soyad, String dogum_tarihi, String universite, String bolum, String e_posta, String sifre) {
-        Call<Kullanicikayitsonuc> kullaniciekleme = getRestApiClient().kullaniciekle(ad_soyad, dogum_tarihi, universite, bolum, e_posta, sifre);
+    public Call<Kullanicikayitsonuc> kullaniciekle(String key ,String ad_soyad, String dogum_tarihi, String universite, String bolum, String e_posta, String sifre) {
+        Call<Kullanicikayitsonuc> kullaniciekleme = getRestApiClient().kullaniciekle(key,ad_soyad, dogum_tarihi, universite, bolum, e_posta, sifre);
         return kullaniciekleme;
     }
 
@@ -42,90 +42,90 @@ public class ManagerAll extends BaseManager {
         return kontrol;
     }
 
-    public Call<Resimyuklemesonuc> resim_yukle(Integer id_kullanici, String ders, String aciklama, String bolum, Map<String, RequestBody> file) {
-        Call<Resimyuklemesonuc> resimekle = getRestApiClient().resimekle(id_kullanici, ders, aciklama, bolum,  file);
+    public Call<Resimyuklemesonuc> resim_yukle(String email,Integer id_kullanici, String ders, String aciklama, String bolum, Map<String, RequestBody> file) {
+        Call<Resimyuklemesonuc> resimekle = getRestApiClient().resimekle(email,id_kullanici, ders, aciklama, bolum,  file);
         return resimekle;
     }
 
-    public Call<Profilbilgilerigetir> profilgetir(Integer id_kullanici) {
-        Call<Profilbilgilerigetir> profilbilgi = getRestApiClient().profilgetir(id_kullanici);
+    public Call<Profilbilgilerigetir> profilgetir(String email,Integer id_kullanici) {
+        Call<Profilbilgilerigetir> profilbilgi = getRestApiClient().profilgetir(email,id_kullanici);
         return profilbilgi;
     }
 
-    public Call<List<Homesayfasitumpaylasimveritabani>> paylasimlartumugetir(String jsonguvenlık,int page) {
-        Call<List<Homesayfasitumpaylasimveritabani>> paylasımgelenler = getRestApiClient().paylasımlarintumunugetir(jsonguvenlık,page);
+    public Call<List<Homesayfasitumpaylasimveritabani>> paylasimlartumugetir(String email,String jsonguvenlık,int page) {
+        Call<List<Homesayfasitumpaylasimveritabani>> paylasımgelenler = getRestApiClient().paylasımlarintumunugetir(email,jsonguvenlık,page);
         return paylasımgelenler;
     }
 
-    public Call<List<Profilsayfasikullanicipaylasimlari>> kullancigönderigetir(Integer id_kullanici) {
-        Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasim = getRestApiClient().kullanicigönderigetir(id_kullanici);
+    public Call<List<Profilsayfasikullanicipaylasimlari>> kullancigönderigetir(String email,Integer id_kullanici) {
+        Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasim = getRestApiClient().kullanicigönderigetir(email,id_kullanici);
         return kullanicipaylasim;
     }
 
-    public Call<Pdfyuklemesonuc> pdf_yukle(Integer id_kullanici, String ders, String aciklama, String bolum, Map<String, RequestBody> file) {
-        Call<Pdfyuklemesonuc> pdfekle = getRestApiClient().pdfekle(id_kullanici, ders, aciklama, bolum, file);
+    public Call<Pdfyuklemesonuc> pdf_yukle(String email,Integer id_kullanici, String ders, String aciklama, String bolum, Map<String, RequestBody> file) {
+        Call<Pdfyuklemesonuc> pdfekle = getRestApiClient().pdfekle(email,id_kullanici, ders, aciklama, bolum, file);
         return pdfekle;
     }
-    public Call<Profilfotoyuklemesonuc> ppyukle(Integer id_kullanici,Map<String, RequestBody> file)
+    public Call<Profilfotoyuklemesonuc> ppyukle(String email,Integer id_kullanici,Map<String, RequestBody> file)
     {
-        Call<Profilfotoyuklemesonuc> ppyukleme=getRestApiClient().profilfotoyukle(id_kullanici,file);
+        Call<Profilfotoyuklemesonuc> ppyukleme=getRestApiClient().profilfotoyukle(email,id_kullanici,file);
         return  ppyukleme;
     }
-    public  Call<Sikayetetmesonuc> sikayetet(Integer paylasımid)
+    public  Call<Sikayetetmesonuc> sikayetet(String email,Integer paylasımid)
     {
-        Call<Sikayetetmesonuc> sikayet=getRestApiClient().sikayetet(paylasımid);
+        Call<Sikayetetmesonuc> sikayet=getRestApiClient().sikayetet(email,paylasımid);
         return  sikayet;
     }
 
-    public Call<List<Homesayfasitumpaylasimveritabani>> aramagonderigetir(String universite,String bolum, String dersadi,int page) {
-        Call<List<Homesayfasitumpaylasimveritabani>> aramagonderi = getRestApiClient().aramagonderigetir(universite,bolum,dersadi,page);
+    public Call<List<Homesayfasitumpaylasimveritabani>> aramagonderigetir(String email,String universite,String bolum, String dersadi,int page) {
+        Call<List<Homesayfasitumpaylasimveritabani>> aramagonderi = getRestApiClient().aramagonderigetir(email,universite,bolum,dersadi,page);
         return aramagonderi;
     }
-    public  Call<Yorumyapmasonuc> yorumyap(int id_kullanici,int paylasim_id,String yorum)
+    public  Call<Yorumyapmasonuc> yorumyap(String email,int id_kullanici,int paylasim_id,String yorum)
     {
-        Call<Yorumyapmasonuc> yorumgonder=getRestApiClient().yorumyap(id_kullanici,paylasim_id,yorum);
+        Call<Yorumyapmasonuc> yorumgonder=getRestApiClient().yorumyap(email,id_kullanici,paylasim_id,yorum);
         return yorumgonder;
     }
 
-    public Call<List<Yorumlarigetirsonuc>> yorumgetir(int paylasim_id)
+    public Call<List<Yorumlarigetirsonuc>> yorumgetir(String email,int paylasim_id)
     {
-        Call<List<Yorumlarigetirsonuc>> yorumgel=getRestApiClient().yorumgetir(paylasim_id);
+        Call<List<Yorumlarigetirsonuc>> yorumgel=getRestApiClient().yorumgetir(email,paylasim_id);
         return yorumgel;
     }
 
-    public Call<Yorumsilmesonuc> yorumsil(int id_kullanici,int paylasim_id,int id_yorum)
+    public Call<Yorumsilmesonuc> yorumsil(String email,int id_kullanici,int paylasim_id,int id_yorum)
     {
-        Call<Yorumsilmesonuc> yorumsill=getRestApiClient().yorumsil(id_kullanici,paylasim_id,id_yorum);
+        Call<Yorumsilmesonuc> yorumsill=getRestApiClient().yorumsil(email,id_kullanici,paylasim_id,id_yorum);
         return yorumsill;
     }
 
-    public Call<Profilfotosilmesonuc> fotosil(Integer id_kullanici)
+    public Call<Profilfotosilmesonuc> fotosil(String email,Integer id_kullanici)
     {
-        Call<Profilfotosilmesonuc> fotosil=getRestApiClient().profilfotosil(id_kullanici);
+        Call<Profilfotosilmesonuc> fotosil=getRestApiClient().profilfotosil(email,id_kullanici);
         return fotosil;
     }
 
-    public Call<ResponseBody> indirr(String url)
+    public Call<ResponseBody> indirr(String email,String url)
     {
-        Call<ResponseBody> download=getRestApiClient().indir(url);
+        Call<ResponseBody> download=getRestApiClient().indir(email,url);
         return download;
     }
 
-    public Call<PHPMailersifregonderme> PHPMailersifregonderme(String email)
+    public Call<PHPMailersifregonderme> PHPMailersifregonderme(String key ,String email)
     {
-        Call<PHPMailersifregonderme> x = getRestApiClient().RestPHPMailer(email);
+        Call<PHPMailersifregonderme> x = getRestApiClient().RestPHPMailer(key,email);
         return x;
     }
 
-    public Call<Yenisifrebelirleme> YeniSfireBelirleme(String email, String sifre)
+    public Call<Yenisifrebelirleme> YeniSfireBelirleme(String key ,String email, String sifre)
     {
-        Call<Yenisifrebelirleme> x = getRestApiClient().RestYeniSifreBekirleme(email,sifre);
+        Call<Yenisifrebelirleme> x = getRestApiClient().RestYeniSifreBekirleme(key,email,sifre);
         return x;
     }
 
-    public Call<GonderiSil> GonderiSil(Integer id)
+    public Call<GonderiSil> GonderiSil(String email,Integer id)
     {
-        Call<GonderiSil> x = getRestApiClient().RestGonderiSil(id);
+        Call<GonderiSil> x = getRestApiClient().RestGonderiSil(email,id);
         return x;
     }
 
