@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.home_sayfasi"
-    android:background="#fff">
+    android:background="#fff"
+    tools:context=".Fragments.home_sayfasi">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
         android:elevation="0.1dp"
-        app:cardElevation="0.1dp"
-        app:cardCornerRadius="0dp">
+        android:orientation="horizontal"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0.1dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -24,84 +24,84 @@
                 android:id="@+id/loadprevpage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/dahafazla"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:background="@drawable/dahafazla"
+                android:gravity="center"
                 android:orientation="vertical"
-                android:visibility="gone"
-                android:gravity="center">
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:src="@drawable/ustsayfayagit"/>
+                    android:src="@drawable/ustsayfayagit" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DeepNote"
-                android:textSize="20dp"
-                android:textColor="#3b5998"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:layout_centerVertical="true"/>
+                android:text="DeepNote"
+                android:textColor="#3b5998"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/arama_butonu"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:clickable="true"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/flaticonarama"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                />
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:src="@drawable/flaticonarama" />
 
         </RelativeLayout>
+
     </android.support.v7.widget.CardView>
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="#fff"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <ProgressBar
             android:id="@+id/anasayfa_progress_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="25dp"
-            android:visibility="gone"
             android:layout_gravity="center"
-            android:layout_marginTop="250dp"/>
+            android:layout_marginTop="250dp"
+            android:paddingTop="25dp"
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/home_sayfası_lisview_uyarı_mesajı"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:gravity="center"
             android:text="@string/home_sayfasi_listview_top_uyarı"
             android:textColor="@color/colorAccent"
-            android:gravity="center"
             android:textSize="16sp"
             android:textStyle="bold|italic"
-            android:visibility="gone"/>
+            android:visibility="gone" />
+
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/home_sayfasi_refesh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <ListView
-            android:id="@+id/listview_homesayfasi"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:divider="@null"
-            android:dividerHeight="0dp"/>
+
+            <ListView
+                android:id="@+id/listview_homesayfasi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:dividerHeight="0dp" />
+
         </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
@@ -110,20 +110,17 @@
         android:id="@+id/loadPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/dahafazla"
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="10dp"
-        android:visibility="gone"
-        android:gravity="center">
+        android:background="@drawable/dahafazla"
+        android:gravity="center"
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/dahafazlayukle"/>
+            android:src="@drawable/dahafazlayukle" />
 
     </LinearLayout>
-
-
-
 
 </FrameLayout>

@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#29679c"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="#29679c">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,20 +21,17 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="#fff"
-        android:orientation="vertical"
-        android:gravity="center">
-
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/giris_genel_uyarı"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:gravity="center"
             android:text="@string/giris_uyarı"
-            android:visibility="invisible"
-            android:layout_marginBottom="5dp"
-            />
-
+            android:visibility="invisible" />
 
         <EditText
             android:id="@+id/giris_mail"
@@ -43,8 +40,10 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="#9029679c"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
             android:hint="email"
-            android:textSize="14dp"/>
+            android:inputType="textFilter|textEmailAddress"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/giris_sifre"
@@ -53,8 +52,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="#9029679c"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
             android:hint="şifre"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
 
         <Button
             android:id="@+id/giris_buton"
@@ -64,7 +64,7 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/qwqw"
             android:text="giriş yap"
-            android:textColor="#fff"/>
+            android:textColor="#fff" />
 
         <TextView
             android:id="@+id/sifremi_unuttum"
@@ -72,18 +72,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:text="@string/sifre_unutma"/>
+            android:text="@string/sifre_unutma" />
 
         <TextView
             android:id="@+id/hesap_acma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Hesabın yok mu? Hemen oluştur!"
-            />
-
+            android:text="Hesabın yok mu? Hemen oluştur!" />
 
     </LinearLayout>
-
 
 </LinearLayout>

@@ -4,69 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
-    tools:context=".anasayfa_pop_up_arama"
     android:background="@drawable/pop_tasarim"
-    android:gravity="center">
-
+    android:gravity="center"
+    android:padding="15dp"
+    tools:context=".anasayfa_pop_up_arama">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:background="@drawable/transparan"
+        android:orientation="vertical"
         android:padding="15dp">
-
 
         <AutoCompleteTextView
             android:id="@+id/arama_universite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Üniversite"
-            android:text="@string/universite_listesi__arama_hepsi"
             android:completionThreshold="1"
-            />
+            android:hint="Üniversite"
+            android:text="@string/universite_listesi__arama_hepsi" />
 
         <AutoCompleteTextView
             android:id="@+id/arama_bolum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bölüm"
             android:completionThreshold="1"
-            />
-
+            android:hint="Bölüm" />
 
         <TextView
             android:id="@+id/arama_bolum_altı_bilgilendirme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/arama_pop_up_bolum_uyarı"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:gravity="center"
+            android:text="@string/arama_pop_up_bolum_uyarı"
             android:textColor="@color/colorAccent"
             android:textStyle="bold"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
+
         <EditText
             android:id="@+id/arama_dersadi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ders Adı"
-            />
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
+            android:hint="Ders Adı" />
+
         <Button
             android:id="@+id/arama_buton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/aramabutonustil"
             android:text="Ara"
-            android:textColor="#fff"
-            android:layout_gravity="center"/>
-
-
+            android:textColor="#fff" />
 
     </LinearLayout>
 
