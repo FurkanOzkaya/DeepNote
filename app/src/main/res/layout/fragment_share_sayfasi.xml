@@ -163,7 +163,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:hint="Ders"
-                android:inputType="text"
+                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
+                android:inputType="textFilter|text"
                 android:maxLines="1"
                 android:visibility="invisible" />
 
@@ -188,6 +189,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:completionThreshold="1"
+                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
+                android:inputType="textFilter|textAutoComplete"
                 android:hint="Bölüm"
                 android:textColor="#000"
                 android:visibility="invisible" />
@@ -212,6 +215,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
+                android:inputType="textFilter|text"
                 android:hint="Açıklama Giriniz"
                 android:maxHeight="200dp"
                 android:visibility="invisible" />

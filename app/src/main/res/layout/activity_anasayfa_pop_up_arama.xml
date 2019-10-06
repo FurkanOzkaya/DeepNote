@@ -21,6 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:completionThreshold="1"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
+            android:inputType="textFilter|textAutoComplete"
             android:hint="Üniversite"
             android:text="@string/universite_listesi__arama_hepsi" />
 
@@ -29,6 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:completionThreshold="1"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
+            android:inputType="textFilter|textAutoComplete"
             android:hint="Bölüm" />
 
         <TextView
