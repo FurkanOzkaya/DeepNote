@@ -54,6 +54,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
     ProgressBar progressBar;
     SharedPreferences sharedPreferences;
     String email = "";
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,128 +156,56 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String yorum = profil_ayrıntı_yorum.getText().toString();
-                int paylasim_id = Integer.valueOf(paylasim_id_string);
-                int id = 0;
-                SharedPreferences sharedPreferences;
-                sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
-                if (sharedPreferences.getInt("uye_id", 0) != 0) {
-                    id = sharedPreferences.getInt("uye_id", 0);
-                } else {
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.clear().commit();
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                }
-
-                Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
-                x.enqueue(new Callback<Yorumyapmasonuc>() {
-                    @Override
-                    public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
-
-                        if (response.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Yorum yapıldı", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Yorum yapılamadı", Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
-
-                        final SweetAlertDialog sa = new SweetAlertDialog(profil_paylasimlari_ayrinti.this,SweetAlertDialog.WARNING_TYPE);
-                        sa.setTitleText("Dikkat");
-                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                        sa.setConfirmText("Tamam");
-                        sa.show();
-                    }
-                });
-            }
-        });
-
-
-        final int paylasim_id = Integer.valueOf(paylasim_id_string);
-        profil_ayrıntı_yorum_yapmabutonu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String yorum = profil_ayrıntı_yorum.getText().toString();
+                final int paylasim_id = Integer.valueOf(paylasim_id_string);
                 profil_ayrıntı_yorum.setText("");
-                int id = 0;
-                SharedPreferences sharedPreferences;
-                sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
-                if (sharedPreferences.getInt("uye_id", 0) != 0) {
-                    id = sharedPreferences.getInt("uye_id", 0);
-                } else {
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.clear().commit();
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
+                if (!yorum.equals("")) {
+                    int id = 0;
+                    SharedPreferences sharedPreferences;
+                    sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
+                    if (sharedPreferences.getInt("uye_id", 0) != 0) {
+                        id = sharedPreferences.getInt("uye_id", 0);
+                    } else {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.clear().commit();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                    }
 
-                }
-                ////////// Y O R U M   Y A P M A   K I S M I
-                Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
-                x.enqueue(new Callback<Yorumyapmasonuc>() {
-                    @Override
-                    public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
+                    Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
+                    x.enqueue(new Callback<Yorumyapmasonuc>() {
+                        @Override
+                        public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
 
-                        if (response.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Yorum yapıldı", Toast.LENGTH_LONG).show();
-                            //////////// Y O R U M  G E T İ R M E   Y O R U M   Y A P T I K T A N  S O N R A
+                            if (response.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "Yorum yapıldı", Toast.LENGTH_LONG).show();
+                                yorumGetir(paylasim_id);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Yorum yapılamadı", Toast.LENGTH_LONG).show();
+                            }
+                        }
 
-                            final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
-                            //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-                            progressBar.setVisibility(View.VISIBLE);
-                            ////////////////////////////////////////////////////////////////////////////////////
-                            yorumgetir.enqueue(new Callback<List<Yorumlarigetirsonuc>>() {
-                                @Override
-                                public void onResponse(Call<List<Yorumlarigetirsonuc>> call, Response<List<Yorumlarigetirsonuc>> response) {
-                                    if (response.isSuccessful()) {
-                                        profil_yorumlar_listview.setVisibility(View.VISIBLE);
-                                        profil_ayrıntı_yorumlar_uyari.setVisibility(View.GONE);
-                                        //Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
-                                        gelenyorumlar = response.body();
-                                        yorumadapter = new Yorumadapter(gelenyorumlar, profil_paylasimlari_ayrinti.this, getApplicationContext());
-                                        profil_yorumlar_listview.setAdapter(yorumadapter);
-                                        setListViewHeightBasedOnItems(profil_yorumlar_listview);
-                                        /////////////////////////////////////
-                                        progressBar.setVisibility(View.GONE);
-                                        ///////////////////////////   P R O G R E S S   B A R   /////////
-                                    }
-                                }
+                        @Override
+                        public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
 
-                                @Override
-                                public void onFailure(Call<List<Yorumlarigetirsonuc>> call, Throwable t) {
-                                    // Toast.makeText(getApplicationContext(),"Yorumalar gelmedi"+t.getMessage(),Toast.LENGTH_LONG).show();
-                                    profil_yorumlar_listview.setVisibility(View.GONE);
-                                    profil_ayrıntı_yorumlar_uyari.setVisibility(View.VISIBLE);
-
-                                    /////////////////////////////////////
-                                    progressBar.setVisibility(View.GONE);
-                                    ///////////////////////////   P R O G R E S S   B A R   /////////
-                                }
-                            });
-                        } else {
-                            final SweetAlertDialog sa = new SweetAlertDialog(profil_paylasimlari_ayrinti.this,SweetAlertDialog.WARNING_TYPE);
+                            final SweetAlertDialog sa = new SweetAlertDialog(profil_paylasimlari_ayrinti.this, SweetAlertDialog.WARNING_TYPE);
                             sa.setTitleText("Dikkat");
                             sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                             sa.setConfirmText("Tamam");
                             sa.show();
                         }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
-
-                        final SweetAlertDialog sa = new SweetAlertDialog(profil_paylasimlari_ayrinti.this,SweetAlertDialog.WARNING_TYPE);
-                        sa.setTitleText("Dikkat");
-                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                        sa.setConfirmText("Tamam");
-                        sa.show();
-                    }
-                });
+                    });
+                }
             }
         });
 
 
+
+
+
+    }
+
+    public  void  yorumGetir(int paylasim_id)
+    {
         //////////// Y O R U M  G E T İ R M E
         final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
@@ -343,6 +272,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
             return false;
         }
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
