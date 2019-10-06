@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.abms.af.projeversion02.Models.Yenisifrebelirleme;
 import com.abms.af.projeversion02.RestApi.ManagerAll;

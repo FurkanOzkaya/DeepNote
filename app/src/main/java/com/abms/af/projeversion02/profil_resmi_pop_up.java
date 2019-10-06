@@ -30,19 +30,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.abms.af.projeversion02.Fragments.profil_sayfasi;
 import com.abms.af.projeversion02.Models.Profilfotosilmesonuc;
 import com.abms.af.projeversion02.Models.Profilfotoyuklemesonuc;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
 import com.github.dhaval2404.imagepicker.ImagePicker;
-import com.squareup.picasso.Picasso;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.Inet4Address;
 import java.util.HashMap;
 import java.util.Map;
 

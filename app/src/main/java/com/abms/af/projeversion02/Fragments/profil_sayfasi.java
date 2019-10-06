@@ -204,7 +204,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                         else
                         {
                             ///////////////////////////////////
-                            Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(3000,3000).error(R.drawable.flat_ogrenci).into(profil_foto);
+                            Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
                             /////////////////////////////////////
                         }
 

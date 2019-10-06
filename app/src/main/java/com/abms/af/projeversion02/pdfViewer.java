@@ -1,6 +1,5 @@
 package com.abms.af.projeversion02;
 
-import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,11 +8,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
-
-import com.github.barteksc.pdfviewer.PDFView;
-
-import java.io.File;
 
 public class pdfViewer extends AppCompatActivity {
 
@@ -35,7 +29,7 @@ public class pdfViewer extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String url = bundle.getString("url");
-        Toast.makeText(getApplicationContext(), "url: " + url, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "url: " + url, Toast.LENGTH_LONG).show();
 
         pdfview = findViewById(R.id.pdfviewer);
 

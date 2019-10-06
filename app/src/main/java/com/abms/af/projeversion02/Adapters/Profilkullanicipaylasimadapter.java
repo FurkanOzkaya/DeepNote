@@ -4,28 +4,19 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.abms.af.projeversion02.Fragments.profil_sayfasi;
 import com.abms.af.projeversion02.MainActivity;
 import com.abms.af.projeversion02.Models.GonderiSil;
-import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
 import com.abms.af.projeversion02.homesayfasi_paylasimlari_ayrintili;
-import com.abms.af.projeversion02.others_profil_sayfasi;
 import com.abms.af.projeversion02.profil_paylasimlari_ayrinti;
 
 import java.util.List;
