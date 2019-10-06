@@ -62,12 +62,7 @@ public class ana_sayfa extends AppCompatActivity implements BottomNavigationView
 
     }
 
-    public void islevver() {
-
-    }
-
-
-
+    public void islevver() { }
 
     /*
     fragmenti yüklemek için yazılan metod
@@ -134,6 +129,4 @@ public class ana_sayfa extends AppCompatActivity implements BottomNavigationView
         sa.show();
 
     }
-
-
 }

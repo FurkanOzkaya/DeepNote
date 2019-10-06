@@ -1,5 +1,6 @@
 package com.abms.af.projeversion02.RestApi;
 
+import com.abms.af.projeversion02.Models.AdSoyadProfilfoto;
 import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
@@ -105,9 +106,9 @@ public class ManagerAll extends BaseManager {
         return fotosil;
     }
 
-    public Call<ResponseBody> indirr(String email,String url)
+    public Call<ResponseBody> indirr(String url)
     {
-        Call<ResponseBody> download=getRestApiClient().indir(email,url);
+        Call<ResponseBody> download=getRestApiClient().indir(url);
         return download;
     }
 
@@ -126,6 +127,12 @@ public class ManagerAll extends BaseManager {
     public Call<GonderiSil> GonderiSil(String email,Integer id)
     {
         Call<GonderiSil> x = getRestApiClient().RestGonderiSil(email,id);
+        return x;
+    }
+
+    public Call<AdSoyadProfilfoto> AdSoyadProfilfoto(String email)
+    {
+        Call<AdSoyadProfilfoto> x = getRestApiClient().RestAdSoyadProfilfoto(email);
         return x;
     }
 
