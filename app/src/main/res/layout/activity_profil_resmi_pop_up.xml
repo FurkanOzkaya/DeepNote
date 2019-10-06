@@ -12,33 +12,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:background="@drawable/transparan"
+        android:orientation="vertical"
         android:padding="15dp">
-    <Button
-        android:id="@+id/profil_resmi_yukleme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:layout_marginTop="10dp"
-        android:background="#046ec8"
-        android:text="Yeni Resim Sec"
-        android:textStyle="normal"
-        android:textColor="#fff"
-        android:layout_gravity="center"/>
-    <Button
-        android:id="@+id/profil_resmi_silme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:layout_marginTop="10dp"
-        android:background="#046ec8"
-        android:text="Sil"
-        android:textColor="#fff"
-        android:layout_gravity="center"/>
-   </LinearLayout>
+
+        <Button
+            android:id="@+id/profil_resmi_yukleme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#046ec8"
+            android:clickable="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Yeni Resim Sec"
+            android:textColor="#fff"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/profil_resmi_silme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#046ec8"
+            android:clickable="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Sil"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
 </RelativeLayout>

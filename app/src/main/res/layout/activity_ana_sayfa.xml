@@ -4,26 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ana_sayfa"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ana_sayfa">
 
     <FrameLayout
         android:id="@+id/ana_sayfa_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="9">
-    </FrameLayout>
+        android:layout_weight="9"></FrameLayout>
 
-            <android.support.design.widget.BottomNavigationView
-                android:id="@+id/alt_butonlar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bottom_gradient"
-                app:itemHorizontalTranslation="true"
-                app:itemIconTint="@drawable/bottom_nav_item_background"
-                app:menu="@menu/ana_sayfa_alt_butonlar"
-                app:labelVisibilityMode="unlabeled"
-                />
-
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/alt_butonlar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_gradient"
+        app:itemHorizontalTranslation="true"
+        app:itemIconTint="@drawable/bottom_nav_item_background"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/ana_sayfa_alt_butonlar" />
 
 </LinearLayout>

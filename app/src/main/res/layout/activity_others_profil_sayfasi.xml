@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".others_profil_sayfasi"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".others_profil_sayfasi">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
         android:elevation="0.1dp"
-        app:cardElevation="0.1dp"
-        app:cardCornerRadius="0dp">
+        android:orientation="horizontal"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0.1dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -23,30 +23,29 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DeepNote"
-                android:textSize="20dp"
-                android:textColor="#3b5998"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:layout_centerVertical="true"/>
+                android:text="DeepNote"
+                android:textColor="#3b5998"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
+
     </android.support.v7.widget.CardView>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#fff"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:background="#fff">
+        android:orientation="horizontal">
+
         <ProgressBar
             android:id="@+id/others_profil_sayfasi_bilgiler_progress_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -65,11 +64,7 @@
                 android:src="@drawable/flat_ogrenci"
                 app:civ_border="false" />
 
-
-
-
         </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/profil_bilgileri_kısmı"
@@ -80,51 +75,42 @@
             android:paddingLeft="10dp"
             android:paddingTop="30dp">
 
-
-
-
             <TextView
                 android:id="@+id/others_profil_bolum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:paddingBottom="2dp"
                 android:paddingLeft="5dp"
-                android:paddingRight="5dp"
                 android:paddingTop="2dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="2dp"
                 android:textStyle="italic"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/others_profil_adi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:textStyle="italic|bold"
-                />
+                android:textStyle="italic|bold" />
 
             <TextView
                 android:id="@+id/others_profil_universite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="italic"/>
+                android:textStyle="italic" />
 
         </LinearLayout>
+
     </LinearLayout>
-
-
-
-
-
-
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:orientation="horizontal"
         android:elevation="0.1dp"
-        app:cardElevation="0.1dp"
-        app:cardCornerRadius="0dp">
+        android:orientation="horizontal"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0.1dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -134,32 +120,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Paylaşımlar"
-                android:textSize="17dp"
-                android:textColor="#fff"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:layout_centerVertical="true"/>
+                android:text="Paylaşımlar"
+                android:textColor="#fff"
+                android:textSize="17dp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
+
     </android.support.v7.widget.CardView>
-
-
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#fff">
+        android:background="#fff"
+        android:orientation="vertical">
 
         <ProgressBar
             android:id="@+id/others_profil_sayfasi_paylasımlar_progress_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <ListView
             android:id="@+id/others_profilsayfası_listview"
@@ -167,4 +149,5 @@
             android:layout_height="wrap_content"></ListView>
 
     </LinearLayout>
+
 </LinearLayout>
