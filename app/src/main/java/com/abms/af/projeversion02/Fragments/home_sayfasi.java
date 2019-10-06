@@ -245,91 +245,97 @@ public class home_sayfasi extends Fragment {
             startActivity(intent);
         }
 
-        final retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(email, getString(R.string.jsongüvenlikkod), page);
-        //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-        progressBar.setVisibility(View.VISIBLE);
+        try {
+            retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(email, getString(R.string.jsongüvenlikkod), page);
+            //////////////////////////////// P R O G R E S S   B A R    //////////////////////
+            progressBar.setVisibility(View.VISIBLE);
 
 
-        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        ////////////////////////////////////////////////////////////////////////////////////
-        tumveriler.enqueue(new Callback<List<Homesayfasitumpaylasimveritabani>>() {
-            @Override
-            public void onResponse(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Response<List<Homesayfasitumpaylasimveritabani>> response) {
-                //Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi"+response.body(),Toast.LENGTH_SHORT).show();
-                if (response.isSuccessful()) {
-                    if (response.body() != null) {
-                        if (response.body().size() > 0) {
-                            rowcount = response.body().get(0).getRowCount();
-                            pageListSize = response.body().get(0).getPageListSize();
-                            // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
-                            if (response.body().size()>0)
-                            {
-                                if (tum_veriler_liste == null)
+            getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            ////////////////////////////////////////////////////////////////////////////////////
+            tumveriler.enqueue(new Callback<List<Homesayfasitumpaylasimveritabani>>() {
+                @Override
+                public void onResponse(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Response<List<Homesayfasitumpaylasimveritabani>> response) {
+                    //Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi"+response.body(),Toast.LENGTH_SHORT).show();
+                    if (response.isSuccessful()) {
+                        if (response.body() != null) {
+                            if (response.body().size() > 0) {
+                                rowcount = response.body().get(0).getRowCount();
+                                pageListSize = response.body().get(0).getPageListSize();
+                                // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
+                                if (response.body().size()>0)
                                 {
-                                    tum_veriler_liste= response.body();
-                                }
-                                else
-                                {
-
-                                    for (int i=0; i<response.body().size();i++)
+                                    if (tum_veriler_liste == null)
                                     {
-                                        tum_veriler_liste.add(response.body().get(i));
+                                        tum_veriler_liste= response.body();
+                                    }
+                                    else
+                                    {
+
+                                        for (int i=0; i<response.body().size();i++)
+                                        {
+                                            tum_veriler_liste.add(response.body().get(i));
+                                        }
                                     }
                                 }
-                            }
 
 
-                            if ( rowcount >= 0) {
-                                paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
-                                listView_homesayfasi.setAdapter(paylasimtumverileradapter);
+                                if ( rowcount >= 0) {
+                                    paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
+                                    listView_homesayfasi.setAdapter(paylasimtumverileradapter);
 
+                                }
+                                else {
+                                    home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
+                                }
+                                int a=pageCount*pageListSize;
+                                listView_homesayfasi.setSelection(a);
                             }
-                            else {
-                                home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
-                            }
-                            int a=pageCount*pageListSize;
-                            listView_homesayfasi.setSelection(a);
+
+                            /////////////////////////////////////
+                            progressBar.setVisibility(View.GONE);
+                            refesh_home.setRefreshing(false);
+                            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                            ///////////////////////////   P R O G R E S S   B A R   /////////
+                        } else {
+
+                            final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                            sa.setTitleText("Dikkat");
+                            sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                            sa.setConfirmText("Tamam");
+                            sa.show();
+
+                            //////////////////////////////////////////////////////////////
+                            progressBar.setVisibility(View.GONE);
+                            refesh_home.setRefreshing(false);
+                            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                            /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
                         }
-
-                        /////////////////////////////////////
-                        progressBar.setVisibility(View.GONE);
-                        refesh_home.setRefreshing(false);
-                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                        ///////////////////////////   P R O G R E S S   B A R   /////////
-                    } else {
-
-                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                        sa.setTitleText("Dikkat");
-                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                        sa.setConfirmText("Tamam");
-                        sa.show();
-
-                        //////////////////////////////////////////////////////////////
-                        progressBar.setVisibility(View.GONE);
-                        refesh_home.setRefreshing(false);
-                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                        /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
                     }
                 }
-            }
 
-            @Override
-            public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
+                @Override
+                public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
 
-                final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                sa.setTitleText("Dikkat");
-                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                sa.setConfirmText("Tamam");
-                sa.show();
+                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                    sa.setTitleText("Dikkat");
+                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                    sa.setConfirmText("Tamam");
+                    sa.show();
 
-                //////////////////////////////////////////////////////////////
-                progressBar.setVisibility(View.GONE);
-                refesh_home.setRefreshing(false);
-                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
-            }
-        });
+                    //////////////////////////////////////////////////////////////
+                    progressBar.setVisibility(View.GONE);
+                    refesh_home.setRefreshing(false);
+                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                    /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
+                }
+            });
+        }catch (Exception e)
+        {
+            Log.e("TAG", "loadSearchPage: "+e);
+        }
+
     }
 
     void loadSearchPage(final int pageCount) {
@@ -338,75 +344,82 @@ public class home_sayfasi extends Fragment {
             universite = "Hepsi";
         }
 
-        // H O M E    S A Y F A S I    V E R İ    C E K M E
-        Call<List<Homesayfasitumpaylasimveritabani>> f = ManagerAll.webyonet().aramagonderigetir(email, universite, bolum, dersadi, pageCount);
-        //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-        progressBar.setVisibility(View.VISIBLE);
-        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        ////////////////////////////////////////////////////////////////////////////////////
-        f.enqueue(new Callback<List<Homesayfasitumpaylasimveritabani>>() {
-            @Override
-            public void onResponse(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Response<List<Homesayfasitumpaylasimveritabani>> response) {
-                //Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi"+response.body(),Toast.LENGTH_SHORT).show();
-                if (response.body().isEmpty()) {
-                    home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
-                } else {
-                    home_sayfası_listview_uyarı.setVisibility(View.GONE);
-                }
-                if (response.isSuccessful()) {
-                    if (response.body() != null) {
+        try {
+            // H O M E    S A Y F A S I    V E R İ    C E K M E
+            Call<List<Homesayfasitumpaylasimveritabani>> f = ManagerAll.webyonet().aramagonderigetir(email, universite, bolum, dersadi, pageCount);
+            //////////////////////////////// P R O G R E S S   B A R    //////////////////////
+            progressBar.setVisibility(View.VISIBLE);
+            getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            ////////////////////////////////////////////////////////////////////////////////////
+            f.enqueue(new Callback<List<Homesayfasitumpaylasimveritabani>>() {
+                @Override
+                public void onResponse(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Response<List<Homesayfasitumpaylasimveritabani>> response) {
+                    //Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi"+response.body(),Toast.LENGTH_SHORT).show();
+                    if (response.body().isEmpty()) {
+                        home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
+                    } else {
+                        home_sayfası_listview_uyarı.setVisibility(View.GONE);
+                    }
+                    if (response.isSuccessful()) {
+                        if (response.body() != null) {
 
-                        if (response.body().size() > 0) {
-                            if (response.body().size()>0)
-                            {
-                                if (tum_versiler_arama_liste == null)
+                            if (response.body().size() > 0) {
+                                if (response.body().size()>0)
                                 {
-                                    tum_versiler_arama_liste= response.body();
-                                }
-                                else
-                                {
-
-                                    for (int i=0; i<response.body().size();i++)
+                                    if (tum_versiler_arama_liste == null)
                                     {
-                                        tum_versiler_arama_liste.add(response.body().get(i));
+                                        tum_versiler_arama_liste= response.body();
+                                    }
+                                    else
+                                    {
+
+                                        for (int i=0; i<response.body().size();i++)
+                                        {
+                                            tum_versiler_arama_liste.add(response.body().get(i));
+                                        }
                                     }
                                 }
+                                rowcount = response.body().get(0).getRowCount();
+                                pageListSize = response.body().get(0).getPageListSize();
+                                if (rowcount > 0) {
+                                    paylasimtumverileradapter = new Paylasimtumverileradapter(tum_versiler_arama_liste, getActivity().getApplicationContext(), getActivity());
+                                    listView_homesayfasi.setAdapter(paylasimtumverileradapter);
+                                    home_sayfası_listview_uyarı.setVisibility(View.GONE);
+                                } else {
+                                    home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
+                                }
+                                int a=pageCount*pageListSize;
+                                listView_homesayfasi.setSelection(a);
                             }
-                            rowcount = response.body().get(0).getRowCount();
-                            pageListSize = response.body().get(0).getPageListSize();
-                            if (rowcount > 0) {
-                                paylasimtumverileradapter = new Paylasimtumverileradapter(tum_versiler_arama_liste, getActivity().getApplicationContext(), getActivity());
-                                listView_homesayfasi.setAdapter(paylasimtumverileradapter);
-                                home_sayfası_listview_uyarı.setVisibility(View.GONE);
-                            } else {
-                                home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
-                            }
-                            int a=pageCount*pageListSize;
-                            listView_homesayfasi.setSelection(a);
                         }
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                        ///////////////////////////   P R O G R E S S   B A R   /////////
                     }
-                    /////////////////////////////////////
+                }
+
+                @Override
+                public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
+
+                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                    sa.setTitleText("Dikkat");
+                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                    sa.setConfirmText("Tamam");
+                    sa.show();
+
+                    //////////////////////////////////////////////////////////////
                     progressBar.setVisibility(View.GONE);
                     getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ///////////////////////////   P R O G R E S S   B A R   /////////
+                    /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
                 }
-            }
+            });
+        }
+        catch (Exception e)
+        {
+            Log.e("TAG", "loadSearchPage: "+e);
+        }
 
-            @Override
-            public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
-
-                final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                sa.setTitleText("Dikkat");
-                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                sa.setConfirmText("Tamam");
-                sa.show();
-
-                //////////////////////////////////////////////////////////////
-                progressBar.setVisibility(View.GONE);
-                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
-            }
-        });
     }
 }

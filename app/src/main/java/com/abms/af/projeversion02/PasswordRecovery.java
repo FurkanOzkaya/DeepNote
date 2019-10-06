@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -69,81 +70,87 @@ public class PasswordRecovery extends AppCompatActivity {
                 final String email = Email.getText().toString();
                 //Toast.makeText(getApplicationContext(), email ,Toast.LENGTH_LONG).show();
 
-                final Call<PHPMailersifregonderme> request = ManagerAll.webyonet().PHPMailersifregonderme(getString(R.string.key_for_protection_create_user),email);
-                request.enqueue(new Callback<PHPMailersifregonderme>() {
-                    @Override
-                    public void onResponse(Call<PHPMailersifregonderme> call, Response<PHPMailersifregonderme> response) {
+                try {
+                    final Call<PHPMailersifregonderme> request = ManagerAll.webyonet().PHPMailersifregonderme(getString(R.string.key_for_protection_create_user),email);
+                    request.enqueue(new Callback<PHPMailersifregonderme>() {
+                        @Override
+                        public void onResponse(Call<PHPMailersifregonderme> call, Response<PHPMailersifregonderme> response) {
 
-                        if (response.isSuccessful())
-                        {
-                            if (response.body().getResult().equals("Basarili"))
+                            if (response.isSuccessful())
                             {
-                                //Toast.makeText(getApplicationContext(), "Şifre sıfırlama kodu email adresinize gönderilmiştir", Toast.LENGTH_LONG).show();
-                                //Toast.makeText(getApplicationContext(), response.body().getKod(), Toast.LENGTH_LONG).show();
+                                if (response.body().getResult().equals("Basarili"))
+                                {
+                                    //Toast.makeText(getApplicationContext(), "Şifre sıfırlama kodu email adresinize gönderilmiştir", Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(getApplicationContext(), response.body().getKod(), Toast.LENGTH_LONG).show();
 
-                                sharedPref = getApplicationContext().getSharedPreferences("sifre",0);
-                                SharedPreferences.Editor editor = sharedPref.edit();
-                                editor.putString("Kod", response.body().getKod()); //string değer ekleniyor
-                                editor.putString("Email", response.body().getEmail()); //string değer ekleniyor
-                                editor.commit(); //Kayıt
+                                    sharedPref = getApplicationContext().getSharedPreferences("sifre",0);
+                                    SharedPreferences.Editor editor = sharedPref.edit();
+                                    editor.putString("Kod", response.body().getKod()); //string değer ekleniyor
+                                    editor.putString("Email", response.body().getEmail()); //string değer ekleniyor
+                                    editor.commit(); //Kayıt
 
-                                pDialog.cancel();
+                                    pDialog.cancel();
 
-                                new SweetAlertDialog(PasswordRecovery.this, SweetAlertDialog.NORMAL_TYPE)
-                                        .setTitleText("E-posta Gönderildi")
-                                        .setContentText(email + " adresine, hesabına yeniden girebilmeni sağlayacak bir kod içeren bir e-posta gönderildi")
-                                        .setConfirmText("Tamam")
-                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                            @Override
-                                            public void onClick(SweetAlertDialog sDialog) {
-                                                //sDialog.dismissWithAnimation();
+                                    new SweetAlertDialog(PasswordRecovery.this, SweetAlertDialog.NORMAL_TYPE)
+                                            .setTitleText("E-posta Gönderildi")
+                                            .setContentText(email + " adresine, hesabına yeniden girebilmeni sağlayacak bir kod içeren bir e-posta gönderildi")
+                                            .setConfirmText("Tamam")
+                                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                                @Override
+                                                public void onClick(SweetAlertDialog sDialog) {
+                                                    //sDialog.dismissWithAnimation();
 
-                                                Intent intent = new Intent(getApplicationContext(), PasswordRecovery2.class);
-                                                startActivity(intent);
-                                            }
-                                        })
-                                        .show();
+                                                    Intent intent = new Intent(getApplicationContext(), PasswordRecovery2.class);
+                                                    startActivity(intent);
+                                                }
+                                            })
+                                            .show();
+                                }
+                                else
+                                {
+                                    pDialog.cancel();
+
+                                    final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery.this,SweetAlertDialog.ERROR_TYPE);
+                                    sa.setTitleText("Hata");
+                                    sa.setContentText("Kullanıcı bulunamadı, Lütfene-posta adresinizi kontrol ederek tekrar deneyiniz");
+                                    sa.setConfirmText("Tamam");
+                                    sa.show();
+                                }
+
                             }
                             else
                             {
                                 pDialog.cancel();
 
-                                final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery.this,SweetAlertDialog.ERROR_TYPE);
-                                sa.setTitleText("Hata");
-                                sa.setContentText("Kullanıcı bulunamadı, Lütfene-posta adresinizi kontrol ederek tekrar deneyiniz");
+                                //Toast.makeText(getApplicationContext(), "Hata ile Karşılaşıldı, Daha Sonra Tekrar Deneyiniz", Toast.LENGTH_LONG).show();
+                                final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery.this,SweetAlertDialog.WARNING_TYPE);
+                                sa.setTitleText("Dikkat");
+                                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                                 sa.setConfirmText("Tamam");
                                 sa.show();
                             }
 
                         }
-                        else
-                        {
+
+                        @Override
+                        public void onFailure(Call<PHPMailersifregonderme> call, Throwable t) {
+
                             pDialog.cancel();
 
-                            //Toast.makeText(getApplicationContext(), "Hata ile Karşılaşıldı, Daha Sonra Tekrar Deneyiniz", Toast.LENGTH_LONG).show();
                             final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery.this,SweetAlertDialog.WARNING_TYPE);
                             sa.setTitleText("Dikkat");
                             sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                             sa.setConfirmText("Tamam");
                             sa.show();
+
+                            //Toast.makeText(getApplicationContext(), "Hata ile Karşılaşıldı, Daha Sonra Tekrar Deneyiniz", Toast.LENGTH_LONG).show();
                         }
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<PHPMailersifregonderme> call, Throwable t) {
-
-                        pDialog.cancel();
-
-                        final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery.this,SweetAlertDialog.WARNING_TYPE);
-                        sa.setTitleText("Dikkat");
-                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                        sa.setConfirmText("Tamam");
-                        sa.show();
-
-                        //Toast.makeText(getApplicationContext(), "Hata ile Karşılaşıldı, Daha Sonra Tekrar Deneyiniz", Toast.LENGTH_LONG).show();
-                    }
-                });
+                    });
+                }
+                catch (Exception e)
+                {
+                    Log.e("TAG", "onClick: ",e );
+                }
             }
         });
     }

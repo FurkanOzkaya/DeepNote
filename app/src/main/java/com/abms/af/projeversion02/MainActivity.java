@@ -138,57 +138,62 @@ public class MainActivity extends AppCompatActivity {
         pDialog.setCancelable(false);
         pDialog.show();
 
-        Call<Kullanicigirissonuc> kontrol = ManagerAll.webyonet().kontrolet(giris_mail.getText().toString(), giris_sifre.getText().toString());
-        kontrol.enqueue(new Callback<Kullanicigirissonuc>() {
-            @Override
-            public void onResponse(Call<Kullanicigirissonuc> call, Response<Kullanicigirissonuc> response) {
+       try {
+           Call<Kullanicigirissonuc> kontrol = ManagerAll.webyonet().kontrolet(giris_mail.getText().toString(), giris_sifre.getText().toString());
+           kontrol.enqueue(new Callback<Kullanicigirissonuc>() {
+               @Override
+               public void onResponse(Call<Kullanicigirissonuc> call, Response<Kullanicigirissonuc> response) {
 
-                if (response.body().getKullanicigirissonuc().toString().equals("Giris Basarili")) {
+                   if (response.body().getKullanicigirissonuc().toString().equals("Giris Basarili")) {
 
-                    Kullanici_id = Integer.parseInt(response.body().getKullaniciid().toString());
-                    if (Kullanici_id != 0) {
+                       Kullanici_id = Integer.parseInt(response.body().getKullaniciid().toString());
+                       if (Kullanici_id != 0) {
 
-                        sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putInt("uye_id", Integer.parseInt(response.body().getKullaniciid().toString()));
-                        editor.putString("email", response.body().getEmail().toString());
-                        editor.commit();
+                           sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
+                           SharedPreferences.Editor editor = sharedPreferences.edit();
+                           editor.putInt("uye_id", Integer.parseInt(response.body().getKullaniciid().toString()));
+                           editor.putString("email", response.body().getEmail().toString());
+                           editor.commit();
 
-                        pDialog.cancel();
+                           pDialog.cancel();
 
-                        Intent anaekran = new Intent(getApplicationContext(), ana_sayfa.class);
-                        anaekran.putExtra("Kullanici_id", Kullanici_id);
-                        startActivity(anaekran);
+                           Intent anaekran = new Intent(getApplicationContext(), ana_sayfa.class);
+                           anaekran.putExtra("Kullanici_id", Kullanici_id);
+                           startActivity(anaekran);
 
-                        genel_uyarı.setVisibility(View.INVISIBLE);
-                    }
+                           genel_uyarı.setVisibility(View.INVISIBLE);
+                       }
 
-                } else if (response.body().getKullanicigirissonuc().toString().equals("Giris Basarisiz")) {
+                   } else if (response.body().getKullanicigirissonuc().toString().equals("Giris Basarisiz")) {
 
-                    genel_uyarı.setVisibility(View.VISIBLE);
+                       genel_uyarı.setVisibility(View.VISIBLE);
 
-                    pDialog.cancel();
+                       pDialog.cancel();
 
-                    final SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
-                    sa.setTitleText("Dikkat");
-                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                    sa.setConfirmText("Tamam");
-                    sa.show();
-                }
-            }
+                       final SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                       sa.setTitleText("Dikkat");
+                       sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                       sa.setConfirmText("Tamam");
+                       sa.show();
+                   }
+               }
 
-            @Override
-            public void onFailure(Call<Kullanicigirissonuc> call, Throwable t) {
+               @Override
+               public void onFailure(Call<Kullanicigirissonuc> call, Throwable t) {
 
-                pDialog.cancel();
+                   pDialog.cancel();
 
-                final SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
-                sa.setTitleText("Dikkat");
-                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                sa.setConfirmText("Tamam");
-                sa.show();
-            }
-        });
+                   final SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                   sa.setTitleText("Dikkat");
+                   sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                   sa.setConfirmText("Tamam");
+                   sa.show();
+               }
+           });
+       }catch (Exception e)
+       {
+           Log.e("TAG", "webservis_kullanicigiris: ",e );
+       }
     }
 
     @Override

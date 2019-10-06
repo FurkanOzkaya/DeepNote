@@ -282,44 +282,50 @@ public class share_sayfasi extends Fragment {
             String ders = ders_adi.getText().toString();
             String bolum = bolum_adi.getText().toString();
             String aciklama = acıklama.getText().toString();
-            Call<Resimyuklemesonuc> a = ManagerAll.webyonet().resim_yukle(email, id_kullanici, ders, aciklama, bolum, mapresim);
-            //Toast.makeText(getActivity().getApplicationContext(), (CharSequence) mapresim, Toast.LENGTH_LONG).show();
 
-            a.enqueue(new Callback<Resimyuklemesonuc>() {
-                @Override
-                public void onResponse(Call<Resimyuklemesonuc> call, Response<Resimyuklemesonuc> response) {
+            try {
+                Call<Resimyuklemesonuc> a = ManagerAll.webyonet().resim_yukle(email, id_kullanici, ders, aciklama, bolum, mapresim);
+                //Toast.makeText(getActivity().getApplicationContext(), (CharSequence) mapresim, Toast.LENGTH_LONG).show();
 
-                    pDialog.cancel();
+                a.enqueue(new Callback<Resimyuklemesonuc>() {
+                    @Override
+                    public void onResponse(Call<Resimyuklemesonuc> call, Response<Resimyuklemesonuc> response) {
 
-                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE);
-                    sa.setTitleText("Başarılı");
-                    sa.setContentText("Notunuz başarıyla paylaşıldı, teşekkür ederiz");
-                    sa.setConfirmText("Tamam");
-                    sa.show();
+                        pDialog.cancel();
 
-                    /////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
-                }
+                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE);
+                        sa.setTitleText("Başarılı");
+                        sa.setContentText("Notunuz başarıyla paylaşıldı, teşekkür ederiz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
 
-                @Override
-                public void onFailure(Call<Resimyuklemesonuc> call, Throwable t) {
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                        ////////////////////////////////////
+                    }
 
-                    pDialog.cancel();
+                    @Override
+                    public void onFailure(Call<Resimyuklemesonuc> call, Throwable t) {
 
-                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                    sa.setTitleText("Dikkat");
-                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                    sa.setConfirmText("Tamam");
-                    sa.show();
+                        pDialog.cancel();
 
-                    /////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
-                }
-            });
+                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
+
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                        ////////////////////////////////////
+                    }
+                });
+            }catch (Exception e)
+            {
+                Log.e("TAG", "dosya_yukle: ",e );
+            }
 
         } else if (yukleme_butonu.getText().equals("Pdf Yükle")) {
 
@@ -334,44 +340,50 @@ public class share_sayfasi extends Fragment {
             String bolum = bolum_adi.getText().toString();
             String aciklama = acıklama.getText().toString();
             // Toast.makeText(getActivity().getApplicationContext(),mappdf,Toast.LENGTH_LONG).show();
-            Call<Pdfyuklemesonuc> ee = ManagerAll.webyonet().pdf_yukle(email, id_kullanici, ders, aciklama, bolum, mappdf);
-            ee.enqueue(new Callback<Pdfyuklemesonuc>() {
-                @Override
-                public void onResponse(Call<Pdfyuklemesonuc> call, Response<Pdfyuklemesonuc> response) {
 
-                    pDialog.cancel();
+            try {
+                Call<Pdfyuklemesonuc> ee = ManagerAll.webyonet().pdf_yukle(email, id_kullanici, ders, aciklama, bolum, mappdf);
+                ee.enqueue(new Callback<Pdfyuklemesonuc>() {
+                    @Override
+                    public void onResponse(Call<Pdfyuklemesonuc> call, Response<Pdfyuklemesonuc> response) {
 
-                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE);
-                    sa.setTitleText("Başarılı");
-                    sa.setContentText("Notunuz başarıyla paylaşıldı, teşekkür ederiz");
-                    sa.setConfirmText("Tamam");
-                    sa.show();
+                        pDialog.cancel();
 
-                    //Toast.makeText(getActivity().getApplicationContext(), "Dosya Yuklendi"+response.body().getPdfyuklemesonuc(), Toast.LENGTH_LONG).show();
+                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE);
+                        sa.setTitleText("Başarılı");
+                        sa.setContentText("Notunuz başarıyla paylaşıldı, teşekkür ederiz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
 
-                    /////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
-                }
+                        //Toast.makeText(getActivity().getApplicationContext(), "Dosya Yuklendi"+response.body().getPdfyuklemesonuc(), Toast.LENGTH_LONG).show();
 
-                @Override
-                public void onFailure(Call<Pdfyuklemesonuc> call, Throwable t) {
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                        ////////////////////////////////////
+                    }
 
-                    pDialog.cancel();
+                    @Override
+                    public void onFailure(Call<Pdfyuklemesonuc> call, Throwable t) {
 
-                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                    sa.setTitleText("Dikkat");
-                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                    sa.setConfirmText("Tamam");
-                    sa.show();
+                        pDialog.cancel();
 
-                    /////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
-                }
-            });
+                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
+
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                        ////////////////////////////////////
+                    }
+                });
+            }catch (Exception e)
+            {
+                Log.e("TAG", "dosya_yukle: ",e );
+            }
         }
     }
 

@@ -231,106 +231,116 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }
-                    ////////// Y O R U M   Y A P M A   K I S M I
-                    Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
-                    x.enqueue(new Callback<Yorumyapmasonuc>() {
-                        @Override
-                        public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
+                   try {
+                       ////////// Y O R U M   Y A P M A   K I S M I
+                       Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
+                       x.enqueue(new Callback<Yorumyapmasonuc>() {
+                           @Override
+                           public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
 
-                            if (response.isSuccessful()) {
-                                //Toast.makeText(getApplicationContext(),"Yorum yapıldı",Toast.LENGTH_LONG).show();
-                                //////////// Y O R U M  G E T İ R M E   Y O R U M   Y A P T I K T A N  S O N R A
+                               if (response.isSuccessful()) {
+                                   //Toast.makeText(getApplicationContext(),"Yorum yapıldı",Toast.LENGTH_LONG).show();
+                                   //////////// Y O R U M  G E T İ R M E   Y O R U M   Y A P T I K T A N  S O N R A
 
-                                final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
-                                //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-                                progressBar.setVisibility(View.VISIBLE);
-                                ////////////////////////////////////////////////////////////////////////////////////
-                                yorumgetir.enqueue(new Callback<List<Yorumlarigetirsonuc>>() {
-                                    @Override
-                                    public void onResponse(Call<List<Yorumlarigetirsonuc>> call, Response<List<Yorumlarigetirsonuc>> response) {
-                                        if (response.isSuccessful()) {
-                                            listview_yorumlar.setVisibility(View.VISIBLE);
-                                            listview_yorumlar_uyarı.setVisibility(View.GONE);
-                                            //Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
-                                            gelenyorumlar = response.body();
-                                            yorumadapter = new Yorumadapter(gelenyorumlar, homesayfasi_paylasimlari_ayrintili.this, getApplicationContext());
-                                            listview_yorumlar.setAdapter(yorumadapter);
-                                            setListViewHeightBasedOnItems(listview_yorumlar);
+                                   final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
+                                   //////////////////////////////// P R O G R E S S   B A R    //////////////////////
+                                   progressBar.setVisibility(View.VISIBLE);
+                                   ////////////////////////////////////////////////////////////////////////////////////
+                                   yorumgetir.enqueue(new Callback<List<Yorumlarigetirsonuc>>() {
+                                       @Override
+                                       public void onResponse(Call<List<Yorumlarigetirsonuc>> call, Response<List<Yorumlarigetirsonuc>> response) {
+                                           if (response.isSuccessful()) {
+                                               listview_yorumlar.setVisibility(View.VISIBLE);
+                                               listview_yorumlar_uyarı.setVisibility(View.GONE);
+                                               //Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
+                                               gelenyorumlar = response.body();
+                                               yorumadapter = new Yorumadapter(gelenyorumlar, homesayfasi_paylasimlari_ayrintili.this, getApplicationContext());
+                                               listview_yorumlar.setAdapter(yorumadapter);
+                                               setListViewHeightBasedOnItems(listview_yorumlar);
 
-                                            /////////////////////////////////////
-                                            progressBar.setVisibility(View.GONE);
-                                            ///////////////////////////   P R O G R E S S   B A R   /////////
-                                        }
+                                               /////////////////////////////////////
+                                               progressBar.setVisibility(View.GONE);
+                                               ///////////////////////////   P R O G R E S S   B A R   /////////
+                                           }
 
-                                    }
+                                       }
 
-                                    @Override
-                                    public void onFailure(Call<List<Yorumlarigetirsonuc>> call, Throwable t) {
-                                        // Toast.makeText(getApplicationContext(),"Yorumalar gelmedi"+t.getMessage(),Toast.LENGTH_LONG).show();
-                                        listview_yorumlar.setVisibility(View.GONE);
-                                        listview_yorumlar_uyarı.setVisibility(View.VISIBLE);
-                                        /////////////////////////////////////
-                                        progressBar.setVisibility(View.GONE);
-                                        ///////////////////////////   P R O G R E S S   B A R   /////////
-                                    }
-                                });
-                            } else {
+                                       @Override
+                                       public void onFailure(Call<List<Yorumlarigetirsonuc>> call, Throwable t) {
+                                           // Toast.makeText(getApplicationContext(),"Yorumalar gelmedi"+t.getMessage(),Toast.LENGTH_LONG).show();
+                                           listview_yorumlar.setVisibility(View.GONE);
+                                           listview_yorumlar_uyarı.setVisibility(View.VISIBLE);
+                                           /////////////////////////////////////
+                                           progressBar.setVisibility(View.GONE);
+                                           ///////////////////////////   P R O G R E S S   B A R   /////////
+                                       }
+                                   });
+                               } else {
 
-                                new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
-                                        .setTitleText("Dikkat!")
-                                        .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
-                                        .show();
-                            }
-                        }
+                                   new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
+                                           .setTitleText("Dikkat!")
+                                           .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                           .show();
+                               }
+                           }
 
-                        @Override
-                        public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
+                           @Override
+                           public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
 
-                            final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
-                            sa.setTitleText("Dikkat");
-                            sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                            sa.setConfirmText("Tamam");
-                            sa.show();
-                        }
-                    });
+                               final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                               sa.setTitleText("Dikkat");
+                               sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                               sa.setConfirmText("Tamam");
+                               sa.show();
+                           }
+                       });
+                   }catch (Exception e)
+                   {
+                       Log.e("TAG", "onClick: ",e );
+                   }
                 }
             }
         });
 
 
-        //////////// Y O R U M  G E T İ R M E
-        final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
-        //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-        progressBar.setVisibility(View.VISIBLE);
-        ////////////////////////////////////////////////////////////////////////////////////
-        yorumgetir.enqueue(new Callback<List<Yorumlarigetirsonuc>>() {
-            @Override
-            public void onResponse(Call<List<Yorumlarigetirsonuc>> call, Response<List<Yorumlarigetirsonuc>> response) {
-                if (response.isSuccessful()) {
-                    listview_yorumlar.setVisibility(View.VISIBLE);
-                    listview_yorumlar_uyarı.setVisibility(View.GONE);
-                    // Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
-                    gelenyorumlar = response.body();
-                    yorumadapter = new Yorumadapter(gelenyorumlar, homesayfasi_paylasimlari_ayrintili.this, getApplicationContext());
-                    listview_yorumlar.setAdapter(yorumadapter);
-                    setListViewHeightBasedOnItems(listview_yorumlar);
+        try {
+            //////////// Y O R U M  G E T İ R M E
+            final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
+            //////////////////////////////// P R O G R E S S   B A R    //////////////////////
+            progressBar.setVisibility(View.VISIBLE);
+            ////////////////////////////////////////////////////////////////////////////////////
+            yorumgetir.enqueue(new Callback<List<Yorumlarigetirsonuc>>() {
+                @Override
+                public void onResponse(Call<List<Yorumlarigetirsonuc>> call, Response<List<Yorumlarigetirsonuc>> response) {
+                    if (response.isSuccessful()) {
+                        listview_yorumlar.setVisibility(View.VISIBLE);
+                        listview_yorumlar_uyarı.setVisibility(View.GONE);
+                        // Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
+                        gelenyorumlar = response.body();
+                        yorumadapter = new Yorumadapter(gelenyorumlar, homesayfasi_paylasimlari_ayrintili.this, getApplicationContext());
+                        listview_yorumlar.setAdapter(yorumadapter);
+                        setListViewHeightBasedOnItems(listview_yorumlar);
 
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        ///////////////////////////   P R O G R E S S   B A R   /////////
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<Yorumlarigetirsonuc>> call, Throwable t) {
+                    //Toast.makeText(getApplicationContext(),"Yorumalar gelmedi"+t.getMessage(),Toast.LENGTH_LONG).show();
+                    listview_yorumlar.setVisibility(View.GONE);
+                    listview_yorumlar_uyarı.setVisibility(View.VISIBLE);
                     /////////////////////////////////////
                     progressBar.setVisibility(View.GONE);
                     ///////////////////////////   P R O G R E S S   B A R   /////////
                 }
-            }
-
-            @Override
-            public void onFailure(Call<List<Yorumlarigetirsonuc>> call, Throwable t) {
-                //Toast.makeText(getApplicationContext(),"Yorumalar gelmedi"+t.getMessage(),Toast.LENGTH_LONG).show();
-                listview_yorumlar.setVisibility(View.GONE);
-                listview_yorumlar_uyarı.setVisibility(View.VISIBLE);
-                /////////////////////////////////////
-                progressBar.setVisibility(View.GONE);
-                ///////////////////////////   P R O G R E S S   B A R   /////////
-            }
-        });
+            });
+        }catch (Exception e)
+        {
+            Log.e("TAG", "islevver: ",e );
+        }
 
         other_profil_kullanici.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -357,39 +367,44 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                 ayrıntili_indirme.setVisibility(View.GONE);
 
 
-                Call<ResponseBody> down=ManagerAll.webyonet().indirr(dosyayolu_string);
-                down.enqueue(new Callback<ResponseBody>() {
-                    @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Dosya İndiriliyor Dosya Yöneticisinden Bulabilirsiniz", Toast.LENGTH_SHORT).show();
+                try {
+                    Call<ResponseBody> down=ManagerAll.webyonet().indirr(dosyayolu_string);
+                    down.enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                            Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Dosya İndiriliyor Dosya Yöneticisinden Bulabilirsiniz", Toast.LENGTH_SHORT).show();
 
-                        Boolean dosya=dosyayıdiskeyaz(response.body());
-                        if (dosya==true)
-                        {
+                            Boolean dosya=dosyayıdiskeyaz(response.body());
+                            if (dosya==true)
+                            {
 
-                            new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE)
-                                    .setTitleText("İndirme Başarılı!")
-                                    .setContentText("Dosya yöneticinizden indirdiklerinizi bulabilirsiniz")
-                                    .show();
+                                new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE)
+                                        .setTitleText("İndirme Başarılı!")
+                                        .setContentText("Dosya yöneticinizden indirdiklerinizi bulabilirsiniz")
+                                        .show();
 
-                        } else {
-                            new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
-                                    .setTitleText("Dikkat!")
-                                    .setContentText("İndirme işlemi sırasında hata oluştu, Lütfen daha sonra tekrar deneyiniz")
-                                    .show();
+                            } else {
+                                new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Dikkat!")
+                                        .setContentText("İndirme işlemi sırasında hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                        .show();
+                            }
                         }
-                    }
 
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-                        final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
-                        sa.setTitleText("Dikkat");
-                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                        sa.setConfirmText("Tamam");
-                        sa.show();
-                    }
-                });
+                            final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                            sa.setTitleText("Dikkat");
+                            sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                            sa.setConfirmText("Tamam");
+                            sa.show();
+                        }
+                    });
+                }catch (Exception e)
+                {
+                    Log.e("TAG", "onClick: ",e );
+                }
 
             }
         });

@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -113,48 +114,54 @@ public class others_profil_sayfasi extends AppCompatActivity {
             Picasso.get().load(getString(R.string.site_adresi) + others_profilfoto_string).resize(200, 200).error(R.drawable.flat_ogrenci).into(others_profil_foto);
         }
         int id = Integer.valueOf(others_id_kullanici_string);
-        Call<List<Profilsayfasikullanicipaylasimlari>> otherspaylasim = ManagerAll.webyonet().kullancigönderigetir(email, id);
 
-        //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-        others_paylasımlar_progresbar.setVisibility(View.VISIBLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        ////////////////////////////////////////////////////////////////////////////////////
+      try {
+          Call<List<Profilsayfasikullanicipaylasimlari>> otherspaylasim = ManagerAll.webyonet().kullancigönderigetir(email, id);
 
-        otherspaylasim.enqueue(new Callback<List<Profilsayfasikullanicipaylasimlari>>() {
-            @Override
-            public void onResponse(Call<List<Profilsayfasikullanicipaylasimlari>> call, Response<List<Profilsayfasikullanicipaylasimlari>> response) {
-                if (response.isSuccessful()) {
+          //////////////////////////////// P R O G R E S S   B A R    //////////////////////
+          others_paylasımlar_progresbar.setVisibility(View.VISIBLE);
+          getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                  WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+          ////////////////////////////////////////////////////////////////////////////////////
 
-                    others_kullanici_paylasimlari = response.body();
-                    profilkullaniciadapter = new Profilkullanicipaylasimadapter(others_kullanici_paylasimlari, getApplicationContext(), others_profil_sayfasi.this);
-                    others_profilsayfası_listview.setAdapter(profilkullaniciadapter);
+          otherspaylasim.enqueue(new Callback<List<Profilsayfasikullanicipaylasimlari>>() {
+              @Override
+              public void onResponse(Call<List<Profilsayfasikullanicipaylasimlari>> call, Response<List<Profilsayfasikullanicipaylasimlari>> response) {
+                  if (response.isSuccessful()) {
 
-                } else {
-                    Toast.makeText(getApplicationContext(), "Kullanıcıya ait paylaşım bulunmamaktadır", Toast.LENGTH_LONG).show();
-                }
+                      others_kullanici_paylasimlari = response.body();
+                      profilkullaniciadapter = new Profilkullanicipaylasimadapter(others_kullanici_paylasimlari, getApplicationContext(), others_profil_sayfasi.this);
+                      others_profilsayfası_listview.setAdapter(profilkullaniciadapter);
 
-                /////////////////////////////////////
-                others_paylasımlar_progresbar.setVisibility(View.GONE);
-                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                ////////////////////////////////////
-            }
+                  } else {
+                      Toast.makeText(getApplicationContext(), "Kullanıcıya ait paylaşım bulunmamaktadır", Toast.LENGTH_LONG).show();
+                  }
 
-            @Override
-            public void onFailure(Call<List<Profilsayfasikullanicipaylasimlari>> call, Throwable t) {
+                  /////////////////////////////////////
+                  others_paylasımlar_progresbar.setVisibility(View.GONE);
+                  getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                  ////////////////////////////////////
+              }
 
-                final SweetAlertDialog sa = new SweetAlertDialog(others_profil_sayfasi.this,SweetAlertDialog.WARNING_TYPE);
-                sa.setTitleText("Dikkat");
-                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                sa.setConfirmText("Tamam");
-                sa.show();
+              @Override
+              public void onFailure(Call<List<Profilsayfasikullanicipaylasimlari>> call, Throwable t) {
 
-                /////////////////////////////////////
-                others_paylasımlar_progresbar.setVisibility(View.GONE);
-                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                ////////////////////////////////////
+                  final SweetAlertDialog sa = new SweetAlertDialog(others_profil_sayfasi.this,SweetAlertDialog.WARNING_TYPE);
+                  sa.setTitleText("Dikkat");
+                  sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                  sa.setConfirmText("Tamam");
+                  sa.show();
 
-            }
-        });
+                  /////////////////////////////////////
+                  others_paylasımlar_progresbar.setVisibility(View.GONE);
+                  getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                  ////////////////////////////////////
+
+              }
+          });
+      }catch (Exception e)
+      {
+          Log.e("TAG", "islev_ver: ",e );
+      }
     }
 }
