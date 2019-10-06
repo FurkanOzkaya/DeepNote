@@ -141,14 +141,15 @@ public class Yorumadapter extends BaseAdapter {
                             public void onClick(DialogInterface dialog, int which) {
                                 int id_kullanici = Integer.valueOf(gelenyorumlar.get(position).getId_kullanici());
                                 int paylasim_id = Integer.valueOf(gelenyorumlar.get(position).getPaylasim_id());
-                                int id_yorum = Integer.valueOf(gelenyorumlar.get(position).getId_yorum());
+                                final int id_yorum = Integer.valueOf(gelenyorumlar.get(position).getId_yorum());
 
                                 Call<Yorumsilmesonuc> yorumsil = ManagerAll.webyonet().yorumsil(finalEmail, id_kullanici, paylasim_id, id_yorum);
                                 yorumsil.enqueue(new Callback<Yorumsilmesonuc>() {
                                     @Override
                                     public void onResponse(Call<Yorumsilmesonuc> call, Response<Yorumsilmesonuc> response) {
                                         if (response.isSuccessful()) {
-                                            Toast.makeText(context, "Yorumunuz Silindi" + response.body().getYorumsilmesonuc(), Toast.LENGTH_SHORT).show();
+                                            gelenyorumlar.remove(position);
+                                            notifyDataSetChanged();
                                         }
 
                                     }
