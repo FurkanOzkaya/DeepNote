@@ -113,8 +113,63 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         }
 
 
+        CallProfilePage();
 
 
+
+        profil_foto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity().getApplication(), profil_resmi_pop_up.class);
+                i.putExtra("id_kullanici",id);
+                startActivity(i);
+
+            }
+        });
+
+
+        ayarlarbutonu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                sa.setTitleText("Dikkat!");
+                sa.setContentText("Oturumu kapatmak istediğinize emin misiniz?");
+                sa.setConfirmText("Evet");
+                sa.setCancelClickListener(null);
+                sa.setCancelText("Hayır");
+                sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+
+                        SharedPreferences pref =getActivity().getApplicationContext().getSharedPreferences("giris",0);
+                        if(pref.getInt("uye_id",0) != 0)
+                        {
+                            SharedPreferences.Editor editor=pref.edit();
+                            editor.clear().commit();
+                        }
+                        Intent intent = new Intent(getActivity().getApplicationContext(),MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+
+                    }
+                });
+                sa.show();
+            }
+        });
+    }
+
+
+    @Override
+    public void onRefresh() {
+
+        CallProfilePage();
+        yenileme_nesnesi.setRefreshing(false);
+    }
+
+
+    public void CallProfilePage()
+    {
         Call<Profilbilgilerigetir> a = ManagerAll.webyonet().profilgetir(email,id);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         bilgiler_progress_bar.setVisibility(View.VISIBLE);
@@ -216,76 +271,6 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                 getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 ////////////////////////////////////
 
-            }
-        });
-
-        profil_foto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity().getApplication(), profil_resmi_pop_up.class);
-                i.putExtra("id_kullanici",id);
-                startActivity(i);
-
-            }
-        });
-
-
-        ayarlarbutonu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                sa.setTitleText("Dikkat!");
-                sa.setContentText("Oturumu kapatmak istediğinize emin misiniz?");
-                sa.setConfirmText("Evet");
-                sa.setCancelClickListener(null);
-                sa.setCancelText("Hayır");
-                sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-
-                        SharedPreferences pref =getActivity().getApplicationContext().getSharedPreferences("giris",0);
-                        if(pref.getInt("uye_id",0) != 0)
-                        {
-                            SharedPreferences.Editor editor=pref.edit();
-                            editor.clear().commit();
-                        }
-                        Intent intent = new Intent(getActivity().getApplicationContext(),MainActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
-
-                    }
-                });
-                sa.show();
-            }
-        });
-    }
-
-
-    @Override
-    public void onRefresh() {
-
-        CallProfilKullaniciPaylasimlari();
-        yenileme_nesnesi.setRefreshing(false);
-    }
-
-
-    public void CallProfilKullaniciPaylasimlari()
-    {
-        Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(email,id);
-        kullanicipaylasım.enqueue(new Callback<List<Profilsayfasikullanicipaylasimlari>>() {
-            @Override
-            public void onResponse(Call<List<Profilsayfasikullanicipaylasimlari>> call, Response<List<Profilsayfasikullanicipaylasimlari>> response) {
-                kullanici_paylasimlari = response.body();
-                profilkullaniciadapter = new Profilkullanicipaylasimadapter(kullanici_paylasimlari, getActivity().getApplicationContext(),getActivity());
-                listview_profil.setAdapter(profilkullaniciadapter);
-            }
-
-            @Override
-            public void onFailure(Call<List<Profilsayfasikullanicipaylasimlari>> call, Throwable t) {
-                new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE)
-                        .setTitleText("Beklenmedik bir hata oluştu, İnternet bağlatınızı kontrol ederek daha sonra tekrar deneyiniz")
-                        .show();
             }
         });
     }
