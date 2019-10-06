@@ -47,7 +47,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class home_sayfasi extends Fragment {
 
-    List<Homesayfasitumpaylasimveritabani> tum_veriler_liste;
+    List<Homesayfasitumpaylasimveritabani> tum_veriler_liste,tum_versiler_arama_liste;
     Paylasimtumverileradapter paylasimtumverileradapter;
     View view;
     ListView listView_homesayfasi;
@@ -130,7 +130,7 @@ public class home_sayfasi extends Fragment {
                 }
 
                 if (firstvisibleitem == 0 && pageCount != 0) {
-                    loadprevpage.setVisibility(View.VISIBLE);
+                   // loadprevpage.setVisibility(View.VISIBLE);
                 } else {
                     loadprevpage.setVisibility(View.GONE);
                 }
@@ -147,8 +147,10 @@ public class home_sayfasi extends Fragment {
                     pageCount++;
                 } else if (page <= pageCount) {
                     pageCount = 0;
+                    tum_versiler_arama_liste=null;
+                    tum_veriler_liste=null;
+                    Toast.makeText(getActivity().getApplicationContext(),"Bütün gönderiler görüldü. Başa Dönülüyor.",Toast.LENGTH_LONG).show();
                 }
-                Toast.makeText(getActivity().getApplicationContext(), "page: " + page + " pagecount: " + pageCount + " rowcount: " + rowcount + " pagelistsize: " + pageListSize, Toast.LENGTH_LONG).show();
                 loadList(pageCount);
             }
         });
@@ -180,6 +182,8 @@ public class home_sayfasi extends Fragment {
             public void onRefresh() {
                 searchActive = false;
                 pageCount = 0;
+                tum_veriler_liste=null;
+                tum_versiler_arama_liste=null;
                 home_sayfası_listview_uyarı.setVisibility(View.GONE);
                 loadListForHome(pageCount);
             }
@@ -241,7 +245,7 @@ public class home_sayfasi extends Fragment {
             startActivity(intent);
         }
 
-        retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(email, getString(R.string.jsongüvenlikkod), page);
+        final retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(email, getString(R.string.jsongüvenlikkod), page);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         progressBar.setVisibility(View.VISIBLE);
 
@@ -259,13 +263,33 @@ public class home_sayfasi extends Fragment {
                             rowcount = response.body().get(0).getRowCount();
                             pageListSize = response.body().get(0).getPageListSize();
                             // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
-                            tum_veriler_liste = response.body();
-                            if (rowcount > 0) {
+                            if (response.body().size()>0)
+                            {
+                                if (tum_veriler_liste == null)
+                                {
+                                    tum_veriler_liste= response.body();
+                                }
+                                else
+                                {
+
+                                    for (int i=0; i<response.body().size();i++)
+                                    {
+                                        tum_veriler_liste.add(response.body().get(i));
+                                    }
+                                }
+                            }
+
+
+                            if ( rowcount >= 0) {
                                 paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
                                 listView_homesayfasi.setAdapter(paylasimtumverileradapter);
-                            } else {
+
+                            }
+                            else {
                                 home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
                             }
+                            int a=pageCount*pageListSize;
+                            listView_homesayfasi.setSelection(a);
                         }
 
                         /////////////////////////////////////
@@ -308,7 +332,7 @@ public class home_sayfasi extends Fragment {
         });
     }
 
-    void loadSearchPage(int pageCount) {
+    void loadSearchPage(final int pageCount) {
 
         if (universite.equals(getString(R.string.universite_listesi__arama_hepsi))) {
             universite = "Hepsi";
@@ -334,16 +358,32 @@ public class home_sayfasi extends Fragment {
                     if (response.body() != null) {
 
                         if (response.body().size() > 0) {
-                            tum_veriler_liste = response.body();
+                            if (response.body().size()>0)
+                            {
+                                if (tum_versiler_arama_liste == null)
+                                {
+                                    tum_versiler_arama_liste= response.body();
+                                }
+                                else
+                                {
+
+                                    for (int i=0; i<response.body().size();i++)
+                                    {
+                                        tum_versiler_arama_liste.add(response.body().get(i));
+                                    }
+                                }
+                            }
                             rowcount = response.body().get(0).getRowCount();
                             pageListSize = response.body().get(0).getPageListSize();
                             if (rowcount > 0) {
-                                paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
+                                paylasimtumverileradapter = new Paylasimtumverileradapter(tum_versiler_arama_liste, getActivity().getApplicationContext(), getActivity());
                                 listView_homesayfasi.setAdapter(paylasimtumverileradapter);
                                 home_sayfası_listview_uyarı.setVisibility(View.GONE);
                             } else {
                                 home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
                             }
+                            int a=pageCount*pageListSize;
+                            listView_homesayfasi.setSelection(a);
                         }
                     }
                     /////////////////////////////////////
