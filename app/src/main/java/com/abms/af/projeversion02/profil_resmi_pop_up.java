@@ -168,6 +168,7 @@ public class profil_resmi_pop_up extends AppCompatActivity {
 
         if (requestCode == ImagePicker.REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             try {
+                Toast.makeText(getApplicationContext(),"foto secildi ",Toast.LENGTH_LONG).show();
 
                 String resim = ImagePicker.Companion.getFilePath(data);
                 profilfoto = new HashMap<>();
@@ -198,7 +199,7 @@ public class profil_resmi_pop_up extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Profilfotoyuklemesonuc> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(),"Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz ",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz "+t.getMessage(),Toast.LENGTH_LONG).show();
                     }
                 });
 

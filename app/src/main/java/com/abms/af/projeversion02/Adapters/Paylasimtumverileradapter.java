@@ -110,7 +110,7 @@ ANA SAYFAYA  TÜM PAYLASIMLARI GETİRİR
         }
         else
         {
-            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getDosyayolu()).resize(1100,1100).error(R.drawable.ic_launcher_background).into(gelendosya);
+            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getDosyayolu()).error(R.drawable.ic_launcher_background).into(gelendosya);
         }
 
 

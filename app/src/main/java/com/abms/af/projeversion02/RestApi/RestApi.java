@@ -65,7 +65,7 @@ public interface RestApi {
 
     @Multipart
     @POST("/Profilfotoyukleme.php")
-    Call<Profilfotoyuklemesonuc> profilfotoyukle(@Field("email") String email,@Part("id_kullanici") Integer  id_kullanici,@PartMap Map<String, RequestBody> file);
+    Call<Profilfotoyuklemesonuc> profilfotoyukle(@Part("email") String email,@Part("id_kullanici") Integer  id_kullanici,@PartMap Map<String, RequestBody> file);
 
 
     @FormUrlEncoded
@@ -94,7 +94,7 @@ public interface RestApi {
     Call<Profilfotosilmesonuc> profilfotosil(@Field("email") String email,@Field("id_kullanici") Integer id_kullanici);
 
     @GET
-    Call<ResponseBody> indir(@Field("email") String email,@Url String url);
+    Call<ResponseBody> indir(@Url String url);
 
     @FormUrlEncoded
     @POST("/kodgonderme.php")

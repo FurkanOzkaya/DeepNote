@@ -192,7 +192,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             openpdf.setVisibility(View.GONE);
             ayrıntılı_resim.setVisibility(View.VISIBLE);
             Log.i("TAG", "islevver: "+dosyayolu_string);
-            Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).resize(1080, 1080).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
+            Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
         }
 
 
@@ -390,20 +390,9 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ayrıntili_indirme.setVisibility(View.GONE);
-/*
-                downloadManager= (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-                Uri uri=Uri.parse(getString(R.string.site_adresi)+dosyayolu_string);
-                DownloadManager.Request request=new DownloadManager.Request(uri);
-                request.setTitle("My File");
-                request.setDescription("Downloading");
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                request.setDestinationUri(Uri.parse("file://" + folderName + "/myfile.mp3"));
-                downloadmanager.enqueue(request);
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                Long reference=downloadManager.enqueue(request);
-*/
 
-                Call<ResponseBody> down=ManagerAll.webyonet().indirr(email,dosyayolu_string);
+
+                Call<ResponseBody> down=ManagerAll.webyonet().indirr(dosyayolu_string);
                 down.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -412,17 +401,6 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                         Boolean dosya=dosyayıdiskeyaz(response.body());
                         if (dosya==true)
                         {
-                            /*
-                            new AlertDialog.Builder(homesayfasi_paylasimlari_ayrintili.this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Dosya İndirme Bilgisi")
-                            .setMessage("İndirme Başarılı!" +"\n"+
-                                    " dosya yöneticinizden indirdiklerinizi bulabilirsiniz!!")
-                            .setPositiveButton("Tamam", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    dialogInterface.dismiss();
-                                }
-                            }).show();
-                            */
 
                             new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE)
                                     .setTitleText("İndirme Başarılı!")

@@ -105,9 +105,9 @@ public class ManagerAll extends BaseManager {
         return fotosil;
     }
 
-    public Call<ResponseBody> indirr(String email,String url)
+    public Call<ResponseBody> indirr(String url)
     {
-        Call<ResponseBody> download=getRestApiClient().indir(email,url);
+        Call<ResponseBody> download=getRestApiClient().indir(url);
         return download;
     }
 
