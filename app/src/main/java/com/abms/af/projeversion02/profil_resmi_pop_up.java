@@ -46,6 +46,7 @@ import java.net.Inet4Address;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -54,19 +55,16 @@ import retrofit2.Response;
 
 public class profil_resmi_pop_up extends AppCompatActivity {
 
-
-    Button profil_foto_yukleme,profil_foto_silme;
+    Button profil_foto_yukleme, profil_foto_silme;
     Integer id_kullanici;
     Map<String, RequestBody> profilfoto;
     SharedPreferences sharedPreferences;
-    String email="";
-
+    String email = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil_resmi_pop_up);
-
 
         // P O P   U P   A C I L M A S I
         DisplayMetrics d = new DisplayMetrics();
@@ -75,12 +73,12 @@ public class profil_resmi_pop_up extends AppCompatActivity {
         int genislik = d.widthPixels;
         int yukseklik = d.heightPixels;
 
-        getWindow().setLayout((int)(genislik*.7),(int)(yukseklik*.5));
+        getWindow().setLayout((int) (genislik * .7), (int) (yukseklik * .5));
 
         WindowManager.LayoutParams p = getWindow().getAttributes();
         p.gravity = Gravity.CENTER;
         p.x = 0;
-        p.y= 0;
+        p.y = 0;
         getWindow().setAttributes(p);
         //////////////////////
         tanımla();
@@ -88,28 +86,23 @@ public class profil_resmi_pop_up extends AppCompatActivity {
 
     }
 
-
-    public void tanımla()
-    {
-        profil_foto_yukleme=findViewById(R.id.profil_resmi_yukleme);
-        profil_foto_silme=findViewById(R.id.profil_resmi_silme);
+    public void tanımla() {
+        profil_foto_yukleme = findViewById(R.id.profil_resmi_yukleme);
+        profil_foto_silme = findViewById(R.id.profil_resmi_silme);
         Bundle extras = getIntent().getExtras();
-        id_kullanici =extras.getInt("id_kullanici");
+        id_kullanici = extras.getInt("id_kullanici");
 
     }
-   public void islevver()
-    {
-        sharedPreferences =getApplicationContext().getSharedPreferences("giris",0);
-        if(sharedPreferences.getInt("uye_id",0) != 0)
-        {
-            email=sharedPreferences.getString("email","");
 
-        }
-        else
-        {
-            SharedPreferences.Editor editor=sharedPreferences.edit();
+    public void islevver() {
+        sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
+        if (sharedPreferences.getInt("uye_id", 0) != 0) {
+            email = sharedPreferences.getString("email", "");
+
+        } else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear().commit();
-            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
@@ -127,36 +120,35 @@ public class profil_resmi_pop_up extends AppCompatActivity {
             public void onClick(View view) {
 
                 profil_resmi_pop_up.this.finish();
-                Call<Profilfotosilmesonuc> fotosill=ManagerAll.webyonet().fotosil(email,id_kullanici);
+                Call<Profilfotosilmesonuc> fotosill = ManagerAll.webyonet().fotosil(email, id_kullanici);
                 fotosill.enqueue(new Callback<Profilfotosilmesonuc>() {
                     @Override
                     public void onResponse(Call<Profilfotosilmesonuc> call, Response<Profilfotosilmesonuc> response) {
-                        if (response.isSuccessful())
-                        {
-                            Toast.makeText(getApplicationContext(),"Profil Fotoğrafınız Silindi ",Toast.LENGTH_LONG).show();
+                        if (response.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "Profil Fotoğrafınız Silindi ", Toast.LENGTH_LONG).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<Profilfotosilmesonuc> call, Throwable t) {
 
-                        Toast.makeText(getApplicationContext(),"Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz ",Toast.LENGTH_LONG).show();
+                        final SweetAlertDialog sa = new SweetAlertDialog(profil_resmi_pop_up.this,SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
                     }
                 });
-
             }
         });
-
     }
 
-
-    public void resimsec()
-    {
+    public void resimsec() {
         ImagePicker.Companion.with(this)
                 .galleryOnly()
-                .crop(1f, 1f)	    		//Crop Square image(Optional)
-                .compress(1024)			//Final image size will be less than 1 MB(Optional)
-                .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                .crop(1f, 1f)                //Crop Square image(Optional)
+                .compress(1024)            //Final image size will be less than 1 MB(Optional)
+                .maxResultSize(1080, 1080)    //Final image resolution will be less than 1080 x 1080(Optional)
                 .start();
     }
 
@@ -174,32 +166,32 @@ public class profil_resmi_pop_up extends AppCompatActivity {
                 profilfoto = new HashMap<>();
 
                 File file = new File(resim);
-                RequestBody requestFile =RequestBody.create(MediaType.parse("image/*"),file);
+                RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
                 profilfoto.put("file\"; filename=\"" + file.getName() + "\"", requestFile);
 
-
-                Call<Profilfotoyuklemesonuc> c= ManagerAll.webyonet().ppyukle(email,id_kullanici,profilfoto);
+                Call<Profilfotoyuklemesonuc> c = ManagerAll.webyonet().ppyukle(email, id_kullanici, profilfoto);
                 c.enqueue(new Callback<Profilfotoyuklemesonuc>() {
                     @Override
                     public void onResponse(Call<Profilfotoyuklemesonuc> call, Response<Profilfotoyuklemesonuc> response) {
-                        if (response.body().getProfilfotoyuklemesonuc().equals("Dosya eklendi"))
-                        {
-
-                            Toast.makeText(getApplicationContext(),"Profil Resminiz Başarı ile değiştirildi.",Toast.LENGTH_LONG).show();
-
-
-                        }
-                        else
-                        {
-
-                            Toast.makeText(getApplicationContext(),"Profil Fotoğrafı Ekleme Hatası",Toast.LENGTH_LONG).show();
-
+                        if (response.body().getProfilfotoyuklemesonuc().equals("Dosya eklendi")) {
+                            Toast.makeText(getApplicationContext(), "Profil Resminiz değiştirildi.", Toast.LENGTH_LONG).show();
+                        } else {
+                            final SweetAlertDialog sa = new SweetAlertDialog(profil_resmi_pop_up.this, SweetAlertDialog.WARNING_TYPE);
+                            sa.setTitleText("Dikkat");
+                            sa.setContentText("Profil fotoğrafı eklenirken bir hata oluştu lütfen daha sonra tekrar deneyiniz");
+                            sa.setConfirmText("Tamam");
+                            sa.show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<Profilfotoyuklemesonuc> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(),"Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz "+t.getMessage(),Toast.LENGTH_LONG).show();
+
+                        final SweetAlertDialog sa = new SweetAlertDialog(profil_resmi_pop_up.this,SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
                     }
                 });
 

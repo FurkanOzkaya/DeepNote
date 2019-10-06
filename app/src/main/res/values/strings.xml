@@ -32,6 +32,7 @@
 
     <array name="universite_listesi">
         <item>Üniversite Seçiniz</item>
+
         <item>Abdullah Gül Üniversitesi</item>
 
         <item>Acıbadem Mehmet Ali Aydınlar Üniversitesi</item>
@@ -446,23 +447,18 @@
     </array>
     <array name="Bolum_listesi">
         <item>Bölüm Seçiniz</item>
-        <item>Acil Yardım Ve Afet Yönetimi (Fakülte)</item>
 
-        <item>Acil Yardım Ve Afet Yönetimi (Yüksekokul)</item>
+        <item>Acil Yardım Ve Afet Yönetimi</item>
 
         <item>Adli Bilimler</item>
 
         <item>Adli Bilişim Mühendisliği</item>
 
-        <item>Adli Bilişim Mühendisliği (M.T.O.K.)</item>
-
         <item>Ağaç İşleri Endüstri Mühendisliği</item>
 
         <item>Aile Ve Tüketici Bilimleri</item>
 
-        <item>Aktüerya (Fakülte)</item>
-
-        <item>Aktüerya (Yüksekokul)</item>
+        <item>Aktüerya</item>
 
         <item>Aktüerya Bilimleri</item>
 
@@ -476,9 +472,7 @@
 
         <item>Animasyon Ve Oyun Tasarımı</item>
 
-        <item>Antrenörlük Eğitimi (Fakülte)</item>
-
-        <item>Antrenörlük Eğitimi (Yüksekokul)</item>
+        <item>Antrenörlük Eğitimi</item>
 
         <item>Antropoloji</item>
 
@@ -510,25 +504,17 @@
 
         <item>Bahçe Ve Tarla Bitkileri</item>
 
-        <item>Balıkçılık Teknolojisi (Fakülte)</item>
-
-        <item>Balıkçılık Teknolojisi (Yüksekokul)</item>
+        <item>Balıkçılık Teknolojisi</item>
 
         <item>Balıkçılık Teknolojisi Mühendisliği</item>
 
-        <item>Bankacılık (Yüksekokul)</item>
+        <item>Bankacılık</item>
 
-        <item>Bankacılık Ve Finans (Fakülte)</item>
+        <item>Bankacılık Ve Finans</item>
 
-        <item>Bankacılık Ve Finans (Yüksekokul)</item>
+        <item>Bankacılık Ve Sigortacılık</item>
 
-        <item>Bankacılık Ve Finansman (Yüksekokul)</item>
-
-        <item>Bankacılık Ve Sigortacılık (Fakülte)</item>
-
-        <item>Bankacılık Ve Sigortacılık (Yüksekokul)</item>
-
-        <item>Basım Teknolojileri (Yüksekokul)</item>
+        <item>Basım Teknolojileri</item>
 
         <item>Basım Yayın Ve Redakte</item>
 
@@ -538,9 +524,7 @@
 
         <item>Beden Eğitimi Ve Spor Öğretmenliği</item>
 
-        <item>Beslenme Ve Diyetetik (Fakülte)</item>
-
-        <item>Beslenme Ve Diyetetik (Yüksekokul)</item>
+        <item>Beslenme Ve Diyetetik</item>
 
         <item>Bilgi Ve Belge Yönetimi</item>
 
@@ -548,9 +532,7 @@
 
         <item>Bilgisayar Mühendisliği</item>
 
-        <item>Bilgisayar Mühendisliği (M.T.O.K.)</item>
-
-        <item>Bilgisayar Teknolojisi Ve Bilişim Sistemleri (Yüksekokul)</item>
+        <item>Bilgisayar Teknolojisi Ve Bilişim Sistemleri</item>
 
         <item>Bilgisayar Ve Öğretim Teknolojileri Öğretmenliği</item>
 
@@ -562,9 +544,7 @@
 
         <item>Bilişim Sistemleri Mühendisliği</item>
 
-        <item>Bilişim Sistemleri Mühendisliği (M.T.O.K.)</item>
-
-        <item>Bilişim Sistemleri Ve Teknolojileri (Fakülte)</item>
+        <item>Bilişim Sistemleri Ve Teknolojileri</item>
 
         <item>Bitki Koruma</item>
 
@@ -580,7 +560,7 @@
 
         <item>Biyomedikal Mühendisliği</item>
 
-        <item>Biyomedikal Mühendisliği (M.T.O.K.)</item>
+        <item>Biyomedikal Mühendisliği</item>
 
         <item>Biyomühendislik</item>
 
@@ -600,8 +580,6 @@
 
         <item>Çalışma Ekonomisi Ve Endüstri İlişkileri</item>
 
-        <item>Çalışma Ekonomisi Ve Endüstri İlişkileri (Açıköğretim)</item>
-
         <item>Canlandırma Filmi Tasarım Ve Yönetimi</item>
 
         <item>Çerkez Dili Ve Edebiyatı</item>
@@ -616,29 +594,21 @@
 
         <item>Çizgi Film Ve Animasyon</item>
 
-        <item>Çocuk Gelişimi (Fakülte)</item>
-
-        <item>Çocuk Gelişimi (Yüksekokul)</item>
+        <item>Çocuk Gelişimi</item>
 
         <item>Coğrafya</item>
-
-        <item>Coğrafya (Açıköğretim)</item>
 
         <item>Coğrafya Öğretmenliği</item>
 
         <item>Deniz İşletmeciliği Ve Yönetimi</item>
 
-        <item>Deniz Ulaştırma İşletme Mühendisliği (Fakülte)</item>
+        <item>Deniz Ulaştırma İşletme Mühendisliği</item>
 
-        <item>Deniz Ulaştırma İşletme Mühendisliği (Yüksekokul)</item>
-
-        <item>Denizcilik İşletmeleri Yönetimi (Fakülte)</item>
+        <item>Denizcilik İşletmeleri Yönetimi</item>
 
         <item>Deri Mühendisliği</item>
 
-        <item>Dijital Oyun Tasarımı (Fakülte)</item>
-
-        <item>Dijital Oyun Tasarımı (Yüksekokul)</item>
+        <item>Dijital Oyun Tasarımı</item>
 
         <item>Dil Ve Konuşma Terapisi</item>
 
@@ -650,9 +620,7 @@
 
         <item>Doğu Dilleri</item>
 
-        <item>Ebelik (Fakülte)</item>
-
-        <item>Ebelik (Yüksekokul)</item>
+        <item>Ebelik</item>
 
         <item>Eczacılık</item>
 
@@ -662,15 +630,13 @@
 
         <item>Ekonomi Ve Finans</item>
 
-        <item>El Sanatları (M.T.O.K.)</item>
+        <item>El Sanatları</item>
 
         <item>El Sanatları Tasarımı Ve Üretimi</item>
 
         <item>Elektrik Mühendisliği</item>
 
         <item>Elektrik-Elektronik Mühendisliği</item>
-
-        <item>Elektrik-Elektronik Mühendisliği (M.T.O.K.)</item>
 
         <item>Elektronik Mühendisliği</item>
 
@@ -684,9 +650,7 @@
 
         <item>Endüstri Tasarımı</item>
 
-        <item>Endüstri Ürünleri Tasarımı (Fakülte)</item>
-
-        <item>Endüstri Ürünleri Tasarımı (Yüksekokul)</item>
+        <item>Endüstri Ürünleri Tasarımı</item>
 
         <item>Endüstri Ve Sistem Mühendisliği</item>
 
@@ -694,21 +658,15 @@
 
         <item>Endüstriyel Tasarım Mühendisliği</item>
 
-        <item>Endüstriyel Tasarım Mühendisliği (M.T.O.K.)</item>
-
         <item>Enerji Mühendisliği</item>
 
         <item>Enerji Sistemleri Mühendisliği</item>
-
-        <item>Enerji Sistemleri Mühendisliği (M.T.O.K.)</item>
 
         <item>Enerji Ve Malzeme Mühendisliği</item>
 
         <item>Enerji Yönetimi</item>
 
-        <item>Ergoterapi (Fakülte)</item>
-
-        <item>Ergoterapi (Yüksekokul)</item>
+        <item>Ergoterapi</item>
 
         <item>Ermeni Dili Ve Edebiyatı</item>
 
@@ -720,8 +678,6 @@
 
         <item>Felsefe</item>
 
-        <item>Felsefe (Açıköğretim)</item>
-
         <item>Felsefe Grubu Öğretmenliği</item>
 
         <item>Fen Bilgisi Öğretmenliği</item>
@@ -732,7 +688,7 @@
 
         <item>Film Tasarımı</item>
 
-        <item>Finans Ve Bankacılık (Fakülte)</item>
+        <item>Finans Ve Bankacılık</item>
 
         <item>Finansal Ekonometri</item>
 
@@ -742,9 +698,7 @@
 
         <item>Fizik Öğretmenliği</item>
 
-        <item>Fizyoterapi Ve Rehabilitasyon (Fakülte)</item>
-
-        <item>Fizyoterapi Ve Rehabilitasyon (Yüksekokul)</item>
+        <item>Fizyoterapi Ve Rehabilitasyon</item>
 
         <item>Fotoğraf</item>
 
@@ -754,37 +708,23 @@
 
         <item>Fransızca Öğretmenliği</item>
 
-        <item>Gastronomi (Fakülte)</item>
-
-        <item>Gastronomi (Yüksekokul)</item>
+        <item>Gastronomi</item>
 
         <item>Gastronomi Ve Mutfak Sanatları</item>
 
-        <item>Gastronomi Ve Mutfak Sanatları (Fakülte)</item>
+        <item>Gayrimenkul Geliştirme Ve Yönetimi</item>
 
-        <item>Gastronomi Ve Mutfak Sanatları (M.T.O.K.)</item>
-
-        <item>Gastronomi Ve Mutfak Sanatları (Yüksekokul)</item>
-
-        <item>Gayrimenkul Geliştirme Ve Yönetimi (Fakülte)</item>
-
-        <item>Gayrimenkul Geliştirme Ve Yönetimi (Yüksekokul)</item>
-
-        <item>Gayrimenkul Ve Varlık Değerleme (Fakülte)</item>
-
-        <item>Gayrimenkul Ve Varlık Değerleme (Yüksekokul)</item>
+        <item>Gayrimenkul Ve Varlık Değerleme</item>
 
         <item>Gazetecilik</item>
 
         <item>Gazetecilik Ve Kitle İletişim</item>
 
-        <item>Geleneksel Türk Sanatları (M.T.O.K.)</item>
+        <item>Geleneksel Türk Sanatları</item>
 
         <item>Gemi İnşaatı Ve Gemi Makineleri Mühendisliği</item>
 
-        <item>Gemi Makineleri İşletme Mühendisliği (Fakülte)</item>
-
-        <item>Gemi Makineleri İşletme Mühendisliği (Yüksekokul)</item>
+        <item>Gemi Makineleri İşletme Mühendisliği</item>
 
         <item>Gemi Ve Deniz Teknolojisi Mühendisliği</item>
 
@@ -800,7 +740,7 @@
 
         <item>Gıda Mühendisliği</item>
 
-        <item>Gıda Teknolojisi (Yüksekokul)</item>
+        <item>Gıda Teknolojisi</item>
 
         <item>Girişimcilik</item>
 
@@ -809,8 +749,6 @@
         <item>Görsel İletişim Tasarımı</item>
 
         <item>Görsel Sanatlar</item>
-
-        <item>Görsel Sanatlar (M.T.O.K.)</item>
 
         <item>Görsel Sanatlar Ve Görsel İletişim Tasarımı</item>
 
@@ -822,55 +760,37 @@
 
         <item>Grafik Tasarımı</item>
 
-        <item>Grafik Tasarımı (M.T.O.K.)</item>
-
-        <item>Gümrük İşletme (Yüksekokul)</item>
+        <item>Gümrük İşletme</item>
 
         <item>Gürcü Dili Ve Edebiyatı</item>
 
-        <item>Güverte (Yüksekokul)</item>
+        <item>Güverte</item>
 
         <item>Halkbilim</item>
 
         <item>Halkla İlişkiler</item>
 
-        <item>Halkla İlişkiler Ve Reklamcılık (Açıköğretim)</item>
-
-        <item>Halkla İlişkiler Ve Reklamcılık (Fakülte)</item>
-
-        <item>Halkla İlişkiler Ve Reklamcılık (Yüksekokul)</item>
+        <item>Halkla İlişkiler Ve Reklamcılık</item>
 
         <item>Halkla İlişkiler Ve Tanıtım</item>
-
-        <item>Halkla İlişkiler Ve Tanıtım (Açıköğretim)</item>
 
         <item>Harita Mühendisliği</item>
 
         <item>Hava Trafik Kontrol</item>
 
-        <item>Havacılık Elektrik Ve Elektroniği (Fakülte)</item>
-
-        <item>Havacılık Elektrik Ve Elektroniği (Yüksekokul)</item>
+        <item>Havacılık Elektrik Ve Elektroniği</item>
 
         <item>Havacılık Ve Uzay Mühendisliği</item>
 
-        <item>Havacılık Yönetimi (Açıköğretim)</item>
+        <item>Havacılık Yönetimi</item>
 
-        <item>Havacılık Yönetimi (Fakülte)</item>
-
-        <item>Havacılık Yönetimi (Yüksekokul)</item>
-
-        <item>Hayvansal Üretim (Yüksekokul)</item>
+        <item>Hayvansal Üretim</item>
 
         <item>Hayvansal Üretim Ve Teknolojileri</item>
 
-        <item>Hemşirelik (Fakülte)</item>
+        <item>Hemşirelik</item>
 
-        <item>Hemşirelik (Yüksekokul)</item>
-
-        <item>Hemşirelik Ve Sağlık Hizmetleri (Fakülte)</item>
-
-        <item>Hemşirelik Ve Sağlık Hizmetleri (Yüksekokul)</item>
+        <item>Hemşirelik Ve Sağlık Hizmetleri</item>
 
         <item>Hidrojeoloji Mühendisliği</item>
 
@@ -894,8 +814,6 @@
 
         <item>İktisat</item>
 
-        <item>İktisat (Açıköğretim)</item>
-
         <item>İlahiyat</item>
 
         <item>İletişim</item>
@@ -916,8 +834,6 @@
 
         <item>İmalat Mühendisliği</item>
 
-        <item>İmalat Mühendisliği (M.T.O.K.)</item>
-
         <item>İngiliz Dil Bilimi</item>
 
         <item>İngiliz Dili Ve Edebiyatı</item>
@@ -930,17 +846,11 @@
 
         <item>İnşaat Mühendisliği</item>
 
-        <item>İnşaat Mühendisliği (M.T.O.K.)</item>
-
-        <item>İnsan Kaynakları Yönetimi (Fakülte)</item>
-
-        <item>İnsan Kaynakları Yönetimi (Yüksekokul)</item>
+        <item>İnsan Kaynakları Yönetimi</item>
 
         <item>İnsan Ve Toplum Bilimleri</item>
 
-        <item>İş Sağlığı Ve Güvenliği (Fakülte)</item>
-
-        <item>İş Sağlığı Ve Güvenliği (Yüksekokul)</item>
+        <item>İş Sağlığı Ve Güvenliği</item>
 
         <item>İslam Bilimleri</item>
 
@@ -952,9 +862,7 @@
 
         <item>İşletme</item>
 
-        <item>İşletme (Açıköğretim)</item>
-
-        <item>İşletme Bilgi Yönetimi (Yüksekokul)</item>
+        <item>İşletme Bilgi Yönetimi</item>
 
         <item>İşletme Enformatiği</item>
 
@@ -982,8 +890,6 @@
 
         <item>Kamu Yönetimi</item>
 
-        <item>Kamu Yönetimi (Açıköğretim)</item>
-
         <item>Kanatlı Hayvan Yetiştiriciliği</item>
 
         <item>Karşılaştırmalı Edebiyat</item>
@@ -991,8 +897,6 @@
         <item>Kazak Dili Ve Edebiyatı</item>
 
         <item>Kentsel Tasarım Ve Peyzaj Mimarisi</item>
-
-        <item>Kentsel Tasarım Ve Peyzaj Mimarlığı</item>
 
         <item>Kimya</item>
 
@@ -1008,13 +912,9 @@
 
         <item>Klasik Arkeoloji</item>
 
-        <item>Konaklama İşletmeciliği (Fakülte)</item>
+        <item>Konaklama İşletmeciliği</item>
 
-        <item>Konaklama İşletmeciliği (Fakülte) (Açıköğretim)</item>
-
-        <item>Konaklama İşletmeciliği (Yüksekokul)</item>
-
-        <item>Konaklama Ve Turizm İşletmeciliği (Yüksekokul)</item>
+        <item>Konaklama Ve Turizm İşletmeciliği</item>
 
         <item>Kontrol Ve Otomasyon Mühendisliği</item>
 
@@ -1032,35 +932,25 @@
 
         <item>Kuyumculuk Ve Mücevher Tasarımı</item>
 
-        <item>Kuyumculuk Ve Mücevher Tasarımı (M.T.O.K.)</item>
-
         <item>Latin Dili Ve Edebiyatı</item>
 
         <item>Leh Dili Ve Edebiyatı</item>
 
         <item>Lif Ve Polimer Mühendisliği</item>
 
-        <item>Lojistik (Yüksekokul)</item>
+        <item>Lojistik</item>
 
-        <item>Lojistik Ve Taşımacılık (Yüksekokul)</item>
+        <item>Lojistik Ve Taşımacılık</item>
 
-        <item>Lojistik Yönetimi (Fakülte)</item>
-
-        <item>Lojistik Yönetimi (Yüksekokul)</item>
+        <item>Lojistik Yönetimi</item>
 
         <item>Maden Mühendisliği</item>
 
         <item>Makine Mühendisliği</item>
 
-        <item>Makine Mühendisliği (M.T.O.K.)</item>
-
         <item>Makine Ve İmalat Mühendisliği</item>
 
-        <item>Makine Ve İmalat Mühendisliği (M.T.O.K.)</item>
-
         <item>Maliye</item>
-
-        <item>Maliye (Açıköğretim)</item>
 
         <item>Malzeme Bilimi Ve Mühendisliği</item>
 
@@ -1084,29 +974,19 @@
 
         <item>Medya Ve İletişim</item>
 
-        <item>Medya Ve İletişim Sistemleri (Fakülte)</item>
-
-        <item>Medya Ve İletişim Sistemleri (Yüksekokul)</item>
+        <item>Medya Ve İletişim Sistemleri</item>
 
         <item>Mekatronik Mühendisliği</item>
-
-        <item>Mekatronik Mühendisliği (M.T.O.K.)</item>
 
         <item>Mekatronik Sistemler Mühendisliği</item>
 
         <item>Metalurji Ve Malzeme Mühendisliği</item>
 
-        <item>Metalurji Ve Malzeme Mühendisliği (M.T.O.K.)</item>
-
         <item>Meteoroloji Mühendisliği</item>
 
         <item>Mimarlık</item>
 
-        <item>Moda Tasarımı (Fakülte)</item>
-
-        <item>Moda Tasarımı (M.T.O.K.)</item>
-
-        <item>Moda Tasarımı (Yüksekokul)</item>
+        <item>Moda Tasarımı</item>
 
         <item>Moda Ve Tekstil Tasarımı</item>
 
@@ -1114,31 +994,21 @@
 
         <item>Moleküler Biyoteknoloji</item>
 
-        <item>Muhasebe (Yüksekokul)</item>
+        <item>Muhasebe</item>
 
-        <item>Muhasebe Bilgi Sistemleri (Yüksekokul)</item>
+        <item>Muhasebe Bilgi Sistemleri</item>
 
-        <item>Muhasebe Ve Denetim (Fakülte)</item>
+        <item>Muhasebe Ve Denetim</item>
 
-        <item>Muhasebe Ve Denetim (Yüksekokul)</item>
+        <item>Muhasebe Ve Finans Yönetimi</item>
 
-        <item>Muhasebe Ve Finans Yönetimi (Fakülte)</item>
-
-        <item>Muhasebe Ve Finans Yönetimi (Yüksekokul)</item>
-
-        <item>Muhasebe Ve Finansal Yönetim (Fakülte)</item>
-
-        <item>Muhasebe Ve Finansal Yönetim (Yüksekokul)</item>
+        <item>Muhasebe Ve Finansal Yönetim</item>
 
         <item>Mühendislik Programları</item>
 
-        <item>Mühendislik Ve Doğa Bilimleri Programları (Bilgisayar Bilimi Ve Mühendisliği,Elektronik Mühendisliği, Mekatronik Mühendisliği, Malzeme Bilimi Ve Nano Mühendisliği,Moleküler Biyoloji, Genetik Ve Biyomühendislik) </item>
+        <item>Mühendislik Ve Doğa Bilimleri Programları</item>
 
-        <item>Mütercim-Tercümanlık(Dil-1)</item>
-
-        <item>Mütercim-Tercümanlık(Dil-2)</item>
-
-        <item>Mütercim-Tercümanlık(Dil-3)</item>
+        <item>Mütercim-Tercümanlık</item>
 
         <item>Müzecilik</item>
 
@@ -1150,9 +1020,7 @@
 
         <item>Nükleer Enerji Mühendisliği</item>
 
-        <item>Odyoloji (Fakülte)</item>
-
-        <item>Odyoloji (Yüksekokul)</item>
+        <item>Odyoloji</item>
 
         <item>Öğretmenlik Programları</item>
 
@@ -1160,31 +1028,23 @@
 
         <item>Optik Ve Akustik Mühendisliği</item>
 
-        <item>Organik Tarım İşletmeciliği (Yüksekokul)</item>
+        <item>Organik Tarım İşletmeciliği</item>
 
         <item>Orman Endüstrisi Mühendisliği</item>
 
         <item>Orman Mühendisliği</item>
 
-        <item>Ortez-Protez (Fakülte)</item>
+        <item>Ortez-Protez</item>
 
-        <item>Ortez-Protez (Yüksekokul)</item>
-
-        <item>Otel Yöneticiliği (Yüksekokul)</item>
+        <item>Otel Yöneticiliği</item>
 
         <item>Otomotiv Mühendisliği</item>
 
-        <item>Otomotiv Mühendisliği (M.T.O.K.)</item>
-
         <item>Özel Eğitim Öğretmenliği</item>
 
-        <item>Pazarlama (Fakülte)</item>
+        <item>Pazarlama</item>
 
-        <item>Pazarlama (Yüksekokul)</item>
-
-        <item>Perfüzyon (Fakülte)</item>
-
-        <item>Perfüzyon (Yüksekokul)</item>
+        <item>Perfüzyon</item>
 
         <item>Petrol Ve Doğalgaz Mühendisliği</item>
 
@@ -1220,15 +1080,9 @@
 
         <item>Reklamcılık Ve Halkla İlişkiler</item>
 
-        <item>Rekreasyon (Fakülte)</item>
+        <item>Rekreasyon</item>
 
-        <item>Rekreasyon (Yüksekokul)</item>
-
-        <item>Rekreasyon Yönetimi (Fakülte)</item>
-
-        <item>Rekreasyon Yönetimi (M.T.O.K.)</item>
-
-        <item>Rekreasyon Yönetimi (Yüksekokul)</item>
+        <item>Rekreasyon Yönetimi</item>
 
         <item>Restorasyon Ve Konservasyon</item>
 
@@ -1242,43 +1096,31 @@
 
         <item>Sağlık İdaresi</item>
 
-        <item>Sağlık Yönetimi (Açıköğretim)</item>
-
-        <item>Sağlık Yönetimi (Fakülte)</item>
-
-        <item>Sağlık Yönetimi (Yüksekokul)</item>
+        <item>Sağlık Yönetimi</item>
 
         <item>Sanat Tarihi</item>
 
         <item>Sanat Ve Kültür Yönetimi</item>
 
-        <item>Sanat Ve Sosyal Bilimler Programları (Ekonomi, Siyaset Bilimi, Uluslararası Çalışmalar, Görsel Sanatlar Ve Görsel İletişim Tasarımı, Kültürel Çalışmalar, Psikoloji) </item>
+        <item>Sanat Ve Sosyal Bilimler Programları</item>
 
         <item>Sanat Yönetimi</item>
 
         <item>Şehir Ve Bölge Planlama</item>
 
-        <item>Sermaye Piyasaları Ve Portföy Yönetimi (Fakülte)</item>
+        <item>Sermaye Piyasaları Ve Portföy Yönetimi</item>
 
-        <item>Sermaye Piyasaları Ve Portföy Yönetimi (Yüksekokul)</item>
+        <item>Sermaye Piyasası</item>
 
-        <item>Sermaye Piyasası (Yüksekokul)</item>
+        <item>Seyahat İşletmeciliği</item>
 
-        <item>Seyahat İşletmeciliği (Fakülte)</item>
+        <item>Seyahat İşletmeciliği Ve Turizm Rehberliği</item>
 
-        <item>Seyahat İşletmeciliği (Yüksekokul)</item>
+        <item>Sigortacılık</item>
 
-        <item>Seyahat İşletmeciliği Ve Turizm Rehberliği (Fakülte)</item>
+        <item>Sigortacılık Ve Aktüerya Bilimleri</item>
 
-        <item>Seyahat İşletmeciliği Ve Turizm Rehberliği (M.T.O.K.)</item>
-
-        <item>Sigortacılık (Yüksekokul)</item>
-
-        <item>Sigortacılık Ve Aktüerya Bilimleri (Fakülte)</item>
-
-        <item>Sigortacılık Ve Risk Yönetimi (Fakülte)</item>
-
-        <item>Sigortacılık Ve Risk Yönetimi (Yüksekokul)</item>
+        <item>Sigortacılık Ve Risk Yönetimi</item>
 
         <item>Sigortacılık Ve Sosyal Güvenlik</item>
 
@@ -1300,23 +1142,13 @@
 
         <item>Sosyal Bilgiler Öğretmenliği</item>
 
-        <item>Sosyal Hizmet (Açıköğretim)</item>
-
-        <item>Sosyal Hizmet (Fakülte)</item>
-
-        <item>Sosyal Hizmet (Fakülte) (Açıköğretim)</item>
-
-        <item>Sosyal Hizmet (Yüksekokul)</item>
+        <item>Sosyal Hizmet</item>
 
         <item>Sosyal Ve Siyasal Bilimler</item>
 
         <item>Sosyoloji</item>
 
-        <item>Sosyoloji (Açıköğretim)</item>
-
-        <item>Spor Yöneticiliği (Fakülte)</item>
-
-        <item>Spor Yöneticiliği (Yüksekokul)</item>
+        <item>Spor Yöneticiliği</item>
 
         <item>Su Bilimleri Mühendisliği</item>
 
@@ -1328,13 +1160,11 @@
 
         <item>Süt Teknolojisi</item>
 
-        <item>Takı Tasarımı (Fakülte)</item>
+        <item>Takı Tasarımı)</item>
 
-        <item>Tapu Kadastro (Yüksekokul)</item>
+        <item>Tapu Kadastro</item>
 
         <item>Tarih</item>
-
-        <item>Tarih (Açıköğretim)</item>
 
         <item>Tarih Öğretmenliği</item>
 
@@ -1358,47 +1188,33 @@
 
         <item>Tekstil Mühendisliği</item>
 
-        <item>Tekstil Tasarımı (M.T.O.K.)</item>
+        <item>Tekstil Tasarımı</item>
 
         <item>Tekstil Ve Moda Tasarımı</item>
 
-        <item>Televizyon Haberciliği Ve Programcılığı (Fakülte)</item>
-
-        <item>Televizyon Haberciliği Ve Programcılığı (Yüksekokul)</item>
+        <item>Televizyon Haberciliği Ve Programcılığı</item>
 
         <item>Tıp</item>
 
         <item>Tıp Mühendisliği</item>
 
-        <item>Tiyatro Eleştirmenliği Ve Dramaturji (Fakülte)</item>
+        <item>Tiyatro Eleştirmenliği Ve Dramaturji</item>
 
         <item>Toprak Bilimi Ve Bitki Besleme</item>
 
-        <item>Turizm İşletmeciliği (Fakülte)</item>
+        <item>Turizm İşletmeciliği</item>
 
-        <item>Turizm İşletmeciliği (M.T.O.K.)</item>
-
-        <item>Turizm İşletmeciliği (Yüksekokul)</item>
-
-        <item>Turizm İşletmeciliği Ve Otelcilik (Yüksekokul)</item>
+        <item>Turizm İşletmeciliği Ve Otelcilik</item>
 
         <item>Turizm Rehberliği</item>
 
-        <item>Turizm Ve Otel İşletmeciliği (Fakülte)</item>
-
-        <item>Turizm Ve Otel İşletmeciliği (Yüksekokul)</item>
+        <item>Turizm Ve Otel İşletmeciliği</item>
 
         <item>Turizm Ve Otel Yöneticiliği</item>
 
-        <item>Turizm Ve Otelcilik (Fakülte)</item>
-
-        <item>Turizm Ve Otelcilik (Yüksekokul)</item>
+        <item>Turizm Ve Otelcilik</item>
 
         <item>Türk Dili Ve Edebiyatı</item>
-
-        <item>Türk Dili Ve Edebiyatı (Açıköğretim)</item>
-
-        <item>Türk Dili Ve Edebiyatı Öğretmenliği</item>
 
         <item>Türk Halkbilimi</item>
 
@@ -1408,19 +1224,13 @@
 
         <item>Türkoloji</item>
 
-        <item>Tütün Eksperliği (Yüksekokul)</item>
+        <item>Tütün Eksperliği</item>
 
-        <item>Uçak Elektrik-Elektronik (Fakülte)</item>
+        <item>Uçak Elektrik-Elektronik</item>
 
-        <item>Uçak Elektrik-Elektronik (Yüksekokul)</item>
+        <item>Uçak Gövde-Motor</item>
 
-        <item>Uçak Gövde-Motor (Fakülte)</item>
-
-        <item>Uçak Gövde-Motor (Yüksekokul)</item>
-
-        <item>Uçak Gövde-Motor Bakım (Fakülte)</item>
-
-        <item>Uçak Gövde-Motor Bakım (Yüksekokul)</item>
+        <item>Uçak Gövde-Motor Bakım</item>
 
         <item>Uçak Mühendisliği</item>
 
@@ -1430,29 +1240,19 @@
 
         <item>Ulaştırma Mühendisliği</item>
 
-        <item>Ulaştırma Ve Lojistik (Fakülte)</item>
+        <item>Ulaştırma Ve Lojistik</item>
 
-        <item>Ulaştırma Ve Lojistik (Yüksekokul)</item>
-
-        <item>Ulaştırma Ve Lojistik Yönetimi (Fakülte)</item>
-
-        <item>Ulaştırma Ve Lojistik Yönetimi (Yüksekokul)</item>
+        <item>Ulaştırma Ve Lojistik Yönetimi</item>
 
         <item>Uluslararası Ekonomik İlişkiler</item>
 
-        <item>Uluslararası Finans (Fakülte)</item>
+        <item>Uluslararası Finans</item>
 
-        <item>Uluslararası Finans (Yüksekokul)</item>
-
-        <item>Uluslararası Finans Ve Bankacılık (Fakülte)</item>
-
-        <item>Uluslararası Finans Ve Bankacılık (Yüksekokul)</item>
+        <item>Uluslararası Finans Ve Bankacılık</item>
 
         <item>Uluslararası Girişimcilik</item>
 
         <item>Uluslararası İlişkiler</item>
-
-        <item>Uluslararası İlişkiler (Açıköğretim)</item>
 
         <item>Uluslararası İşletme</item>
 
@@ -1460,45 +1260,27 @@
 
         <item>Uluslararası İşletmecilik</item>
 
-        <item>Uluslararası İşletmecilik Ve Ticaret (Fakülte)</item>
+        <item>Uluslararası İşletmecilik Ve Ticaret</item>
 
-        <item>Uluslararası İşletmecilik Ve Ticaret (Yüksekokul)</item>
+        <item>Uluslararası Lojistik</item>
 
-        <item>Uluslararası Lojistik (Fakülte)</item>
-
-        <item>Uluslararası Lojistik (Yüksekokul)</item>
-
-        <item>Uluslararası Lojistik Ve Taşımacılık (Fakülte)</item>
-
-        <item>Uluslararası Lojistik Ve Taşımacılık (Yüksekokul)</item>
+        <item>Uluslararası Lojistik Ve Taşımacılık</item>
 
         <item>Uluslararası Lojistik Yönetimi</item>
 
-        <item>Uluslararası Perakende Yönetimi (Yüksekokul)</item>
-
-        <item>Uluslararası Ticaret (Fakülte)</item>
-
-        <item>Uluslararası Ticaret (Yüksekokul)</item>
+        <item>Uluslararası Ticaret</item>
 
         <item>Uluslararası Ticaret Ve Finans</item>
 
         <item>Uluslararası Ticaret Ve Finansman</item>
 
-        <item>Uluslararası Ticaret Ve İşletmecilik (Yüksekokul)</item>
+        <item>Uluslararası Ticaret Ve İşletmecilik</item>
 
-        <item>Uluslararası Ticaret Ve İşletmecilik (Fakülte)</item>
+        <item>Uluslararası Ticaret Ve Lojistik</item>
 
-        <item>Uluslararası Ticaret Ve Lojistik (Fakülte)</item>
+        <item>Uluslararası Ticaret Ve Lojistik Yönetimi</item>
 
-        <item>Uluslararası Ticaret Ve Lojistik (Yüksekokul)</item>
-
-        <item>Uluslararası Ticaret Ve Lojistik Yönetimi (Açıköğretim</item>
-
-        <item>Uluslararası Ticaret Ve Lojistik Yönetimi (Fakülte)</item>
-
-        <item>Uluslararası Ticaret Ve Lojistik Yönetimi (Yüksekokul)</item>
-
-        <item>Uluslararası Ticaret, Lojistik Ve İşletmecilik (Yüksekokul)</item>
+        <item>Uluslararası Ticaret, Lojistik Ve İşletmecilik</item>
 
         <item>Urdu Dili Ve Edebiyatı</item>
 
@@ -1512,11 +1294,7 @@
 
         <item>Yazılım Mühendisliği</item>
 
-        <item>Yazılım Mühendisliği (M.T.O.K.)</item>
-
-        <item>Yeni Medya (Fakülte)</item>
-
-        <item>Yeni Medya (Yüksekokul)</item>
+        <item>Yeni Medya</item>
 
         <item>Yeni Medya Ve Gazetecilik</item>
 
@@ -1528,17 +1306,11 @@
 
         <item>Yerel Yönetimler</item>
 
-        <item>Yiyecek-İçecek İşletmeciliği (Fakülte)</item>
-
-        <item>Yiyecek-İçecek İşletmeciliği (Yüksekokul)</item>
+        <item>Yiyecek-İçecek İşletmeciliği</item>
 
         <item>Yönetim Bilimleri Programları</item>
 
-        <item>Yönetim Bilişim Sistemleri (Açıköğretim)</item>
-
-        <item>Yönetim Bilişim Sistemleri (Fakülte)</item>
-
-        <item>Yönetim Bilişim Sistemleri (Yüksekokul)</item>
+        <item>Yönetim Bilişim Sistemleri</item>
 
         <item>Yunan Dili Ve Edebiyatı</item>
 
@@ -1548,9 +1320,12 @@
 
         <item>Zootekni</item>
     </array>
+
+
     <string name="universite_listesi__arama_hepsi">Tüm Okullarda Ara</string>
     <array name="universite_listesi_arama_için">
         <item>Tüm Okullarda Ara</item>
+
         <item>Abdullah Gül Üniversitesi</item>
 
         <item>Acıbadem Mehmet Ali Aydınlar Üniversitesi</item>

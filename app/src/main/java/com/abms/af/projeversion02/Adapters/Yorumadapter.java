@@ -41,8 +41,7 @@ public class Yorumadapter extends BaseAdapter {
     CircularImageView yorumcufotosu;
 
 
-
-    public Yorumadapter(List<Yorumlarigetirsonuc> gelenyorumlar, Activity activity, Context context)  {
+    public Yorumadapter(List<Yorumlarigetirsonuc> gelenyorumlar, Activity activity, Context context) {
         this.gelenyorumlar = gelenyorumlar;
         this.context = context;
         this.activity = activity;
@@ -65,68 +64,57 @@ public class Yorumadapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
-        TextView yorumcu_adi,tarih,yorum;
+        TextView yorumcu_adi, tarih, yorum;
         ImageButton yorum_silme_butonu;
         SharedPreferences sharedPreferences;
-        String email="";
+        String email = "";
 
         view = LayoutInflater.from(context).inflate(R.layout.listview_goruntu_yorumlar, viewGroup, false);
 
-        yorumcufotosu=view.findViewById(R.id.yorumlar_listview_profil_fotosu);
-        yorumcu_adi=view.findViewById(R.id.yorumlar_ad);
-        tarih=view.findViewById(R.id.yorumlar_tarih);
-        yorum=view.findViewById(R.id.yorumlar_yorum);
-        yorum_silme_butonu=view.findViewById(R.id.yorumlar_yorumsil);
+        yorumcufotosu = view.findViewById(R.id.yorumlar_listview_profil_fotosu);
+        yorumcu_adi = view.findViewById(R.id.yorumlar_ad);
+        tarih = view.findViewById(R.id.yorumlar_tarih);
+        yorum = view.findViewById(R.id.yorumlar_yorum);
+        yorum_silme_butonu = view.findViewById(R.id.yorumlar_yorumsil);
 
 
         int id = 0;
-        sharedPreferences =context.getSharedPreferences("giris",0);
-        if(sharedPreferences.getInt("uye_id",0) != 0)
-        {
-            id=sharedPreferences.getInt("uye_id",0);
-        }
-        else
-        {
-            SharedPreferences.Editor editor=sharedPreferences.edit();
+        sharedPreferences = context.getSharedPreferences("giris", 0);
+        if (sharedPreferences.getInt("uye_id", 0) != 0) {
+            id = sharedPreferences.getInt("uye_id", 0);
+        } else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear().commit();
-            Intent intent = new Intent(context,MainActivity.class);
+            Intent intent = new Intent(context, MainActivity.class);
             activity.startActivity(intent);
         }
 
 
-        if (id==Integer.valueOf(gelenyorumlar.get(position).getId_kullanici()))
-        {
+        if (id == Integer.valueOf(gelenyorumlar.get(position).getId_kullanici())) {
             yorum_silme_butonu.setVisibility(View.VISIBLE);
 
-        }
-        else
-        {
+        } else {
             yorum_silme_butonu.setVisibility(View.GONE);
         }
 
 
         // taking email for email validate
-        sharedPreferences =activity.getApplicationContext().getSharedPreferences("giris",0);
-        if(sharedPreferences.getInt("uye_id",0) != 0)
-        {
-            email=sharedPreferences.getString("email","");
+        sharedPreferences = activity.getApplicationContext().getSharedPreferences("giris", 0);
+        if (sharedPreferences.getInt("uye_id", 0) != 0) {
+            email = sharedPreferences.getString("email", "");
 
-        }
-        else
-        {
-            SharedPreferences.Editor editor=sharedPreferences.edit();
+        } else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear().commit();
-            Intent intent = new Intent(activity.getApplicationContext(),MainActivity.class);
+            Intent intent = new Intent(activity.getApplicationContext(), MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             activity.startActivity(intent);
         }
 
 
+        Log.i("TAG", "yorumlar: " + gelenyorumlar.get(position).getAdsoyad() + gelenyorumlar.get(position).getTarih() + gelenyorumlar.get(position).getYorum());
 
-        Log.i("TAG", "yorumlar: "+gelenyorumlar.get(position).getAdsoyad()+gelenyorumlar.get(position).getTarih()+gelenyorumlar.get(position).getYorum());
-
-        if (gelenyorumlar.get(position).getId_kullanici()!=null && gelenyorumlar.get(position).getProfilfoto()!=null && gelenyorumlar.get(position).getAdsoyad()!=null && gelenyorumlar.get(position).getYorum()!=null && gelenyorumlar.get(position).getTarih()!=null)
-        {
+        if (gelenyorumlar.get(position).getId_kullanici() != null && gelenyorumlar.get(position).getProfilfoto() != null && gelenyorumlar.get(position).getAdsoyad() != null && gelenyorumlar.get(position).getYorum() != null && gelenyorumlar.get(position).getTarih() != null) {
             yorumcu_adi.setText(gelenyorumlar.get(position).getAdsoyad().toString());
             tarih.setText(gelenyorumlar.get(position).getTarih().toString());
             yorum.setText(gelenyorumlar.get(position).getYorum().toString());
@@ -135,7 +123,7 @@ public class Yorumadapter extends BaseAdapter {
                 Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(yorumcufotosu);
             } else {
                 ///////////////////////////////////
-                Picasso.get().load(activity.getString(R.string.site_adresi) + gelenyorumlar.get(position).getProfilfoto()).resize(50,50).error(R.drawable.flat_ogrenci).into(yorumcufotosu);
+                Picasso.get().load(activity.getString(R.string.site_adresi) + gelenyorumlar.get(position).getProfilfoto()).error(R.drawable.flat_ogrenci).into(yorumcufotosu);
                 /////////////////////////////////////
             }
         }
@@ -155,12 +143,12 @@ public class Yorumadapter extends BaseAdapter {
                                 int paylasim_id = Integer.valueOf(gelenyorumlar.get(position).getPaylasim_id());
                                 int id_yorum = Integer.valueOf(gelenyorumlar.get(position).getId_yorum());
 
-                                Call<Yorumsilmesonuc> yorumsil = ManagerAll.webyonet().yorumsil(finalEmail,id_kullanici, paylasim_id, id_yorum);
+                                Call<Yorumsilmesonuc> yorumsil = ManagerAll.webyonet().yorumsil(finalEmail, id_kullanici, paylasim_id, id_yorum);
                                 yorumsil.enqueue(new Callback<Yorumsilmesonuc>() {
                                     @Override
                                     public void onResponse(Call<Yorumsilmesonuc> call, Response<Yorumsilmesonuc> response) {
                                         if (response.isSuccessful()) {
-                                            Toast.makeText(context, "Yorum Silinecek " + response.body().getYorumsilmesonuc(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(context, "Yorumunuz Silindi" + response.body().getYorumsilmesonuc(), Toast.LENGTH_SHORT).show();
                                         }
 
                                     }
@@ -168,10 +156,11 @@ public class Yorumadapter extends BaseAdapter {
                                     @Override
                                     public void onFailure(Call<Yorumsilmesonuc> call, Throwable t) {
 
-                                        new SweetAlertDialog(activity, SweetAlertDialog.ERROR_TYPE)
-                                                .setTitleText("Dikkat!")
-                                                .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
-                                                .show();
+                                        final SweetAlertDialog sa = new SweetAlertDialog(activity, SweetAlertDialog.WARNING_TYPE);
+                                        sa.setTitleText("Dikkat");
+                                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                                        sa.setConfirmText("Tamam");
+                                        sa.show();
 
                                     }
                                 });
@@ -181,7 +170,6 @@ public class Yorumadapter extends BaseAdapter {
                         }).setNegativeButton("Hayır", null).show();
             }
         });
-
 
 
         return view;

@@ -25,17 +25,16 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class Paylasimtumverileradapter extends BaseAdapter {
-/*
-ANA SAYFAYA  TÜM PAYLASIMLARI GETİRİR
- */
+    /*
+    ANA SAYFAYA  TÜM PAYLASIMLARI GETİRİR
+     */
     List<Homesayfasitumpaylasimveritabani> tumverilerliste;
     Context context;
-    LinearLayout layoutlist,other_profil_kullanici;
+    LinearLayout layoutlist, other_profil_kullanici;
     Activity activity;
 
 
-
-    public Paylasimtumverileradapter(List<Homesayfasitumpaylasimveritabani> tumverilerliste, Context context,Activity activity) {
+    public Paylasimtumverileradapter(List<Homesayfasitumpaylasimveritabani> tumverilerliste, Context context, Activity activity) {
         this.tumverilerliste = tumverilerliste;
         this.context = context;
         this.activity = activity;
@@ -68,22 +67,22 @@ ANA SAYFAYA  TÜM PAYLASIMLARI GETİRİR
         aciklama = view.findViewById(R.id.listview_aciklama);
         ders = view.findViewById(R.id.listview_ders);
         layoutlist = view.findViewById(R.id.anasayfa_listview_layout);
-        gelendosya=view.findViewById(R.id.gelendosya);
-        profil_foto=view.findViewById(R.id.listview_profil_fotosu);
-        other_profil_kullanici=view.findViewById(R.id.anasayfa_listview_kullanici_profil_sayfasi);
+        gelendosya = view.findViewById(R.id.gelendosya);
+        profil_foto = view.findViewById(R.id.listview_profil_fotosu);
+        other_profil_kullanici = view.findViewById(R.id.anasayfa_listview_kullanici_profil_sayfasi);
 
 
-        final String id_kullanici_string,paylasim_id_string,ad_soyad_string,universite_string,bolum_string,ders_string,aciklama_string,dosyayolu_string,dosyaturu_string,profilfoto_string;
-        id_kullanici_string=tumverilerliste.get(position).getIdkullanici();
-        paylasim_id_string=tumverilerliste.get(position).getPaylasimid();
-        ad_soyad_string=tumverilerliste.get(position).getAdsoyad();
-        universite_string=tumverilerliste.get(position).getUniversite();
-        bolum_string=tumverilerliste.get(position).getBolum();
-        ders_string=tumverilerliste.get(position).getDers();
-        aciklama_string=tumverilerliste.get(position).getAciklama();
-        dosyayolu_string=tumverilerliste.get(position).getDosyayolu();
-        dosyaturu_string=tumverilerliste.get(position).getDosyaturu();
-        profilfoto_string=tumverilerliste.get(position).getProfilfoto();
+        final String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
+        id_kullanici_string = tumverilerliste.get(position).getIdkullanici();
+        paylasim_id_string = tumverilerliste.get(position).getPaylasimid();
+        ad_soyad_string = tumverilerliste.get(position).getAdsoyad();
+        universite_string = tumverilerliste.get(position).getUniversite();
+        bolum_string = tumverilerliste.get(position).getBolum();
+        ders_string = tumverilerliste.get(position).getDers();
+        aciklama_string = tumverilerliste.get(position).getAciklama();
+        dosyayolu_string = tumverilerliste.get(position).getDosyayolu();
+        dosyaturu_string = tumverilerliste.get(position).getDosyaturu();
+        profilfoto_string = tumverilerliste.get(position).getProfilfoto();
 
 
         ad_soyad.setText(tumverilerliste.get(position).getAdsoyad());
@@ -93,67 +92,58 @@ ANA SAYFAYA  TÜM PAYLASIMLARI GETİRİR
         aciklama.setText(tumverilerliste.get(position).getAciklama());
 
 
-      if (tumverilerliste.get(position).getProfilfoto().equals("default"))
-        {
-            Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
-        }
-        else
-        {
+        if (tumverilerliste.get(position).getProfilfoto().equals("default")) {
+            Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(profil_foto);
+        } else {
             ///////////////////////////////////
-            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getProfilfoto()).resize(1080,1080).error(R.drawable.flat_ogrenci).into(profil_foto);
+            Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getProfilfoto()).error(R.drawable.flat_ogrenci).into(profil_foto);
             /////////////////////////////////////
         }
 
-        if (dosyaturu_string.equals("pdf"))
-        {
+        if (dosyaturu_string.equals("pdf")) {
             gelendosya.setImageResource(R.drawable.flat_pdf2);
+        } else {
+            Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getDosyayolu()).error(R.drawable.ic_launcher_background).into(gelendosya);
         }
-        else
-        {
-            Picasso.get().load(activity.getString(R.string.site_adresi)+tumverilerliste.get(position).getDosyayolu()).error(R.drawable.ic_launcher_background).into(gelendosya);
-        }
-
-
-
 
 
         layoutlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ayrintili=new Intent(activity,homesayfasi_paylasimlari_ayrintili.class);
-                ayrintili.putExtra("id_kullanici",id_kullanici_string);
-                ayrintili.putExtra("paylasim_id",paylasim_id_string);
-                ayrintili.putExtra("ad_soyad",ad_soyad_string);
-                ayrintili.putExtra("universite",universite_string);
-                ayrintili.putExtra("bolum",bolum_string);
-                ayrintili.putExtra("ders",ders_string);
-                ayrintili.putExtra("aciklama",aciklama_string);
-                ayrintili.putExtra("dosyayolu",dosyayolu_string);
-                ayrintili.putExtra("dosyaturu",dosyaturu_string);
-                ayrintili.putExtra("profilfoto",profilfoto_string);
-              // Toast.makeText(context,"bilgiler:"+aciklama_string+bolum_string+ders_string,Toast.LENGTH_LONG).show();
-               // Toast.makeText(context,"paylasımid:"+paylasim_id_string,Toast.LENGTH_LONG).show();
+                Intent ayrintili = new Intent(activity, homesayfasi_paylasimlari_ayrintili.class);
+                ayrintili.putExtra("id_kullanici", id_kullanici_string);
+                ayrintili.putExtra("paylasim_id", paylasim_id_string);
+                ayrintili.putExtra("ad_soyad", ad_soyad_string);
+                ayrintili.putExtra("universite", universite_string);
+                ayrintili.putExtra("bolum", bolum_string);
+                ayrintili.putExtra("ders", ders_string);
+                ayrintili.putExtra("aciklama", aciklama_string);
+                ayrintili.putExtra("dosyayolu", dosyayolu_string);
+                ayrintili.putExtra("dosyaturu", dosyaturu_string);
+                ayrintili.putExtra("profilfoto", profilfoto_string);
+                // Toast.makeText(context,"bilgiler:"+aciklama_string+bolum_string+ders_string,Toast.LENGTH_LONG).show();
+                // Toast.makeText(context,"paylasımid:"+paylasim_id_string,Toast.LENGTH_LONG).show();
                 activity.startActivity(ayrintili);
             }
         });
 
-      other_profil_kullanici.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-              Intent others=new Intent(activity,others_profil_sayfasi.class);
-              others.putExtra("id_kullanici",id_kullanici_string);
-              others.putExtra("paylasim_id",paylasim_id_string);
-              others.putExtra("ad_soyad",ad_soyad_string);
-              others.putExtra("universite",universite_string);
-              others.putExtra("bolum",bolum_string);
-              others.putExtra("ders",ders_string);
-              others.putExtra("aciklama",aciklama_string);
-              others.putExtra("dosyayolu",dosyayolu_string);
-              others.putExtra("dosyaturu",dosyaturu_string);
-              others.putExtra("profilfoto",profilfoto_string);
-              activity.startActivity(others);
-          }
-      });
+        other_profil_kullanici.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent others = new Intent(activity, others_profil_sayfasi.class);
+                others.putExtra("id_kullanici", id_kullanici_string);
+                others.putExtra("paylasim_id", paylasim_id_string);
+                others.putExtra("ad_soyad", ad_soyad_string);
+                others.putExtra("universite", universite_string);
+                others.putExtra("bolum", bolum_string);
+                others.putExtra("ders", ders_string);
+                others.putExtra("aciklama", aciklama_string);
+                others.putExtra("dosyayolu", dosyayolu_string);
+                others.putExtra("dosyaturu", dosyaturu_string);
+                others.putExtra("profilfoto", profilfoto_string);
+                activity.startActivity(others);
+            }
+        });
 
 
         return view;

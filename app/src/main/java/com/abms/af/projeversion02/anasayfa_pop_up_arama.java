@@ -48,9 +48,6 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anasayfa_pop_up_arama);
 
-
-
-
         DisplayMetrics d = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(d);
 
@@ -101,9 +98,6 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
 
         ArrayAdapter<String> adapterbolum = new ArrayAdapter<String>(this,R.layout.bolumler,R.id.bolumtextitem,bolum_listesi);
         arama_bolum.setAdapter(adapterbolum);
-
-
-
 
         arama_buton.setOnClickListener(new View.OnClickListener() {
             @Override

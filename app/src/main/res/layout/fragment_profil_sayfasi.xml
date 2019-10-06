@@ -183,9 +183,7 @@
         <ListView
             android:id="@+id/profilsayfası_listview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@null"
-            android:dividerHeight="-10dp"></ListView>
+            android:layout_height="wrap_content"></ListView>
 
         </android.support.v4.widget.SwipeRefreshLayout>
 

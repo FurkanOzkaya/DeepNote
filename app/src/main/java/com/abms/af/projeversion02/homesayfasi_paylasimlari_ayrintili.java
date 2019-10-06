@@ -51,10 +51,10 @@ import retrofit2.Response;
 
 public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
-    TextView  ayrıntili_indirme,ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama,listview_yorumlar_uyarı,ayrıntılı_sikayet_et;
+    TextView ayrıntili_indirme, ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama, listview_yorumlar_uyarı, ayrıntılı_sikayet_et;
     ImageView ayrıntılı_resim;
     ImageButton ayrıntı_yorum_yapmabutonu;
-    String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string,profilfoto_string;
+    String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
     WebView Pdfview;
     CircularImageView profil_foto;
     EditText ayrıntı_yorum;
@@ -87,6 +87,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
 
     public void bilgilerial() {
+
         Bundle bundle = getIntent().getExtras();
         id_kullanici_string = bundle.getString("id_kullanici");
         paylasim_id_string = bundle.getString("paylasim_id");
@@ -98,37 +99,33 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         dosyayolu_string = bundle.getString("dosyayolu");
         dosyaturu_string = bundle.getString("dosyaturu");
         profilfoto_string = bundle.getString("profilfoto");
-
     }
 
     public void tanımla() {
 
         ayrintili_ad_soyad = findViewById(R.id.ayrıntı_homesayfasi_ad_soyad);
         ayrintili_universite = findViewById(R.id.ayrıntı_homesayfasi_universite);
-        ayrintili_bolum=findViewById(R.id.ayrıntı_homesayfasi_bolum);
-        ayrintili_ders=findViewById(R.id.ayrıntı_homesayfasi_ders);
+        ayrintili_bolum = findViewById(R.id.ayrıntı_homesayfasi_bolum);
+        ayrintili_ders = findViewById(R.id.ayrıntı_homesayfasi_ders);
         ayrintili_aciklama = findViewById(R.id.ayrıntı_homesayfasi_aciklama);
         ayrıntılı_resim = findViewById(R.id.ayrıntı_homesayfasi_resim);
         Pdfview = findViewById(R.id.ayrıntı_homesayfasi_pdf_webview);
         openpdf = findViewById(R.id.openpdf);
-        profil_foto=findViewById(R.id.ayrıntı_homesayfası_profilfotosu);
-        ayrıntı_yorum=findViewById(R.id.ayrıntı_homesayfasi_yorum);
-        ayrıntı_yorum_yapmabutonu=findViewById(R.id.ayrıntı_homesayfasi_yorum_buton);
-        listview_yorumlar=findViewById(R.id.ayrıntı_homesayfasi_yorum_listview);
-        ayrıntili_indirme=findViewById(R.id.ayrıntı_homesayfasi_indirme);
+        profil_foto = findViewById(R.id.ayrıntı_homesayfası_profilfotosu);
+        ayrıntı_yorum = findViewById(R.id.ayrıntı_homesayfasi_yorum);
+        ayrıntı_yorum_yapmabutonu = findViewById(R.id.ayrıntı_homesayfasi_yorum_buton);
+        listview_yorumlar = findViewById(R.id.ayrıntı_homesayfasi_yorum_listview);
+        ayrıntili_indirme = findViewById(R.id.ayrıntı_homesayfasi_indirme);
 
-        progressBar=findViewById(R.id.home_ayrıntı_progressbar);
+        progressBar = findViewById(R.id.home_ayrıntı_progressbar);
 
         /////////// profil acmak için//////////////////
-        other_profil_kullanici=findViewById(R.id.home_sayfası_profil_gonderme);
+        other_profil_kullanici = findViewById(R.id.home_sayfası_profil_gonderme);
         ///////////////////////////////////
         /////////////////////////////
-        ayrıntılı_sikayet_et=findViewById(R.id.ayrıntı_homesayfasi_sikayet_et);
+        ayrıntılı_sikayet_et = findViewById(R.id.ayrıntı_homesayfasi_sikayet_et);
         //////////////////////////////////////
-        listview_yorumlar_uyarı=findViewById(R.id.yorumlar_lisview_uyarı);
-
-
-
+        listview_yorumlar_uyarı = findViewById(R.id.yorumlar_lisview_uyarı);
 
         ayrintili_ad_soyad.setText(ad_soyad_string);
         ayrintili_universite.setText(universite_string);
@@ -136,46 +133,33 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         ayrintili_ders.setText(ders_string);
         ayrintili_aciklama.setText(aciklama_string);
 
-        if (profilfoto_string.equals("default"))
-        {
-            Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
-        }
-        else
-        {
-            ///////////////////////////////////
-            Picasso.get().load(getString(R.string.site_adresi)+profilfoto_string).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
-            /////////////////////////////////////
+        if (profilfoto_string.equals("default")) {
+            Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(profil_foto);
+        } else {
+            Picasso.get().load(getString(R.string.site_adresi) + profilfoto_string).error(R.drawable.flat_ogrenci).into(profil_foto);
         }
     }
 
 
     public void islevver() {
 
+        sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
+        if (sharedPreferences.getInt("uye_id", 0) != 0) {
+            email = sharedPreferences.getString("email", "");
 
-
-        sharedPreferences =getApplicationContext().getSharedPreferences("giris",0);
-        if(sharedPreferences.getInt("uye_id",0) != 0)
-        {
-            email=sharedPreferences.getString("email","");
-
-        }
-        else
-        {
-            SharedPreferences.Editor editor=sharedPreferences.edit();
+        } else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear().commit();
-            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
-        //Toast.makeText(getApplicationContext(),dosyaturu_string,Toast.LENGTH_LONG).show();
-        //Log.i("TAG", "islevver: "+dosyayolu_string);
-        //Toast.makeText(getApplicationContext(),dosyayolu_string,Toast.LENGTH_LONG).show();
 
         openpdf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), pdfViewer.class);
-                intent.putExtra("url",getString(R.string.site_adresi)+dosyayolu_string);
+                Intent intent = new Intent(getApplicationContext(), pdfViewer.class);
+                intent.putExtra("url", getString(R.string.site_adresi) + dosyayolu_string);
                 startActivity(intent);
             }
         });
@@ -184,9 +168,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             ayrıntılı_resim.setVisibility(View.GONE);
             Pdfview.setVisibility(View.VISIBLE);
 
-            Pdfview.loadUrl("https://docs.google.com/gview?embedded=true&url="+getString(R.string.site_adresi)+dosyayolu_string);
-
-
+            Pdfview.loadUrl("https://docs.google.com/gview?embedded=true&url=" + getString(R.string.site_adresi) + dosyayolu_string);
 
         } else {
             openpdf.setVisibility(View.GONE);
@@ -194,8 +176,6 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             Log.i("TAG", "islevver: "+dosyayolu_string);
             Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
         }
-
-
 
         ayrıntılı_sikayet_et.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,21 +185,21 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                         .setPositiveButton("Evet", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Integer paylasımid=Integer.parseInt(paylasim_id_string);
+                                Integer paylasımid = Integer.parseInt(paylasim_id_string);
 
-                                Call<Sikayetetmesonuc> s= ManagerAll.webyonet().sikayetet(email,paylasımid);
+                                Call<Sikayetetmesonuc> s = ManagerAll.webyonet().sikayetet(email, paylasımid);
                                 s.enqueue(new Callback<Sikayetetmesonuc>() {
                                     @Override
                                     public void onResponse(Call<Sikayetetmesonuc> call, Response<Sikayetetmesonuc> response) {
 
-                                        Toast.makeText(getApplicationContext(),response.body().getSikayetetmesonuc(),Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), response.body().getSikayetetmesonuc(), Toast.LENGTH_LONG).show();
 
                                         ayrıntılı_sikayet_et.setVisibility(View.GONE);
                                     }
 
                                     @Override
                                     public void onFailure(Call<Sikayetetmesonuc> call, Throwable t) {
-                                        Toast.makeText(getApplicationContext(),"Şikayet edilemedi",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "Şikayet edilemedi", Toast.LENGTH_LONG).show();
                                     }
                                 });
 
@@ -228,54 +208,46 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             }
         });
 
-
-
-        final int paylasim_id=Integer.valueOf(paylasim_id_string);
+        final int paylasim_id = Integer.valueOf(paylasim_id_string);
         ayrıntı_yorum_yapmabutonu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String yorum=ayrıntı_yorum.getText().toString();
+                String yorum = ayrıntı_yorum.getText().toString();
                 ayrıntı_yorum.setText("");
                 int id = 0;
                 SharedPreferences sharedPreferences;
-                sharedPreferences =getApplicationContext().getSharedPreferences("giris",0);
-                if(sharedPreferences.getInt("uye_id",0) != 0)
-                {
-                   id=sharedPreferences.getInt("uye_id",0);
+                sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
+                if (sharedPreferences.getInt("uye_id", 0) != 0) {
+                    id = sharedPreferences.getInt("uye_id", 0);
+                } else {
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.clear().commit();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
                 }
-                else
-                {
-                        SharedPreferences.Editor editor=sharedPreferences.edit();
-                        editor.clear().commit();
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                        startActivity(intent);
-
-                }
-        ////////// Y O R U M   Y A P M A   K I S M I
-                Call<Yorumyapmasonuc> x= ManagerAll.webyonet().yorumyap(email,id,paylasim_id,yorum);
+                ////////// Y O R U M   Y A P M A   K I S M I
+                Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
                 x.enqueue(new Callback<Yorumyapmasonuc>() {
                     @Override
                     public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
 
-                        if (response.isSuccessful())
-                        {
+                        if (response.isSuccessful()) {
                             //Toast.makeText(getApplicationContext(),"Yorum yapıldı",Toast.LENGTH_LONG).show();
                             //////////// Y O R U M  G E T İ R M E   Y O R U M   Y A P T I K T A N  S O N R A
 
-                            final Call<List<Yorumlarigetirsonuc>> yorumgetir=ManagerAll.webyonet().yorumgetir(email,paylasim_id);
+                            final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
                             //////////////////////////////// P R O G R E S S   B A R    //////////////////////
                             progressBar.setVisibility(View.VISIBLE);
                             ////////////////////////////////////////////////////////////////////////////////////
                             yorumgetir.enqueue(new Callback<List<Yorumlarigetirsonuc>>() {
                                 @Override
                                 public void onResponse(Call<List<Yorumlarigetirsonuc>> call, Response<List<Yorumlarigetirsonuc>> response) {
-                                    if (response.isSuccessful())
-                                    {
+                                    if (response.isSuccessful()) {
                                         listview_yorumlar.setVisibility(View.VISIBLE);
                                         listview_yorumlar_uyarı.setVisibility(View.GONE);
                                         //Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
-                                        gelenyorumlar=response.body();
-                                        yorumadapter=new Yorumadapter(gelenyorumlar,homesayfasi_paylasimlari_ayrintili.this,getApplicationContext());
+                                        gelenyorumlar = response.body();
+                                        yorumadapter = new Yorumadapter(gelenyorumlar, homesayfasi_paylasimlari_ayrintili.this, getApplicationContext());
                                         listview_yorumlar.setAdapter(yorumadapter);
                                         setListViewHeightBasedOnItems(listview_yorumlar);
 
@@ -296,53 +268,43 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                                     ///////////////////////////   P R O G R E S S   B A R   /////////
                                 }
                             });
-                        }
-                        else
-                        {
+                        } else {
 
                             new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
                                     .setTitleText("Dikkat!")
                                     .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
                                     .show();
-
-                            //Toast.makeText(getApplicationContext(),"Yorum yapılamadı",Toast.LENGTH_LONG).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
 
-                        new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
-                                .setTitleText("Dikkat!")
-                                .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
-                                .show();
+                        final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
                     }
                 });
-
-
-
-
             }
         });
 
 
-
         //////////// Y O R U M  G E T İ R M E
-
-        final Call<List<Yorumlarigetirsonuc>> yorumgetir=ManagerAll.webyonet().yorumgetir(email,paylasim_id);
+        final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
         //////////////////////////////// P R O G R E S S   B A R    //////////////////////
         progressBar.setVisibility(View.VISIBLE);
         ////////////////////////////////////////////////////////////////////////////////////
         yorumgetir.enqueue(new Callback<List<Yorumlarigetirsonuc>>() {
             @Override
             public void onResponse(Call<List<Yorumlarigetirsonuc>> call, Response<List<Yorumlarigetirsonuc>> response) {
-                if (response.isSuccessful())
-                {
+                if (response.isSuccessful()) {
                     listview_yorumlar.setVisibility(View.VISIBLE);
                     listview_yorumlar_uyarı.setVisibility(View.GONE);
-                   // Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
-                    gelenyorumlar=response.body();
-                    yorumadapter=new Yorumadapter(gelenyorumlar,homesayfasi_paylasimlari_ayrintili.this,getApplicationContext());
+                    // Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
+                    gelenyorumlar = response.body();
+                    yorumadapter = new Yorumadapter(gelenyorumlar, homesayfasi_paylasimlari_ayrintili.this, getApplicationContext());
                     listview_yorumlar.setAdapter(yorumadapter);
                     setListViewHeightBasedOnItems(listview_yorumlar);
 
@@ -350,7 +312,6 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                     ///////////////////////////   P R O G R E S S   B A R   /////////
                 }
-
             }
 
             @Override
@@ -364,27 +325,24 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             }
         });
 
-
-
         other_profil_kullanici.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent others=new Intent(homesayfasi_paylasimlari_ayrintili.this,others_profil_sayfasi.class);
-                others.putExtra("id_kullanici",id_kullanici_string);
-                others.putExtra("paylasim_id",paylasim_id_string);
-                others.putExtra("ad_soyad",ad_soyad_string);
-                others.putExtra("universite",universite_string);
-                others.putExtra("bolum",bolum_string);
-                others.putExtra("ders",ders_string);
-                others.putExtra("aciklama",aciklama_string);
-                others.putExtra("dosyayolu",dosyayolu_string);
-                others.putExtra("dosyaturu",dosyaturu_string);
-                others.putExtra("profilfoto",profilfoto_string);
+                Intent others = new Intent(homesayfasi_paylasimlari_ayrintili.this, others_profil_sayfasi.class);
+                others.putExtra("id_kullanici", id_kullanici_string);
+                others.putExtra("paylasim_id", paylasim_id_string);
+                others.putExtra("ad_soyad", ad_soyad_string);
+                others.putExtra("universite", universite_string);
+                others.putExtra("bolum", bolum_string);
+                others.putExtra("ders", ders_string);
+                others.putExtra("aciklama", aciklama_string);
+                others.putExtra("dosyayolu", dosyayolu_string);
+                others.putExtra("dosyaturu", dosyaturu_string);
+                others.putExtra("profilfoto", profilfoto_string);
                 finish();
                 homesayfasi_paylasimlari_ayrintili.this.startActivity(others);
             }
         });
-
 
         ayrıntili_indirme.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -407,24 +365,22 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                                     .setContentText("Dosya yöneticinizden indirdiklerinizi bulabilirsiniz")
                                     .show();
 
-                        }
-                        else
-                        {
+                        } else {
                             new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
                                     .setTitleText("Dikkat!")
                                     .setContentText("İndirme işlemi sırasında hata oluştu, Lütfen daha sonra tekrar deneyiniz")
                                     .show();
-
                         }
                     }
 
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
-                        //Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Hata olustu", Toast.LENGTH_SHORT).show();
-                        new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
-                                .setTitleText("Dikkat!")
-                                .setContentText("İndirme işlemi sırasında hata oluştu, Lütfen daha sonra tekrar deneyiniz")
-                                .show();
+
+                        final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
                     }
                 });
 
@@ -456,7 +412,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             for (int itemPos = 0; itemPos < numberOfItems; itemPos++) {
                 View item = listAdapter.getView(itemPos, null, listView);
                 float px = 500 * (listView.getResources().getDisplayMetrics().density);
-                item.measure(View.MeasureSpec.makeMeasureSpec((int)px, View.MeasureSpec.AT_MOST), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                item.measure(View.MeasureSpec.makeMeasureSpec((int) px, View.MeasureSpec.AT_MOST), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
                 totalItemsHeight += item.getMeasuredHeight();
             }
 
@@ -480,83 +436,80 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
     }
 
 
-/*
-            Bu fonksiyon indirilen dosyanın kaydedilmesi için yazılmıstır..
- */
-private boolean dosyayıdiskeyaz(ResponseBody body) {
-    try {
-        // todo change the file location/name according to your needs
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss");// you can add z for zone gmt +3
-        String currentDateandTime = sdf.format(new Date());
-      //  File futureStudioIconFile = new File(getExternalFilesDir(null) + File.separator +""+universite_string+ders_string+random1+random2+".jpeg");
-
-        File root = android.os.Environment.getExternalStorageDirectory();
-
-        File dir;
-        String fileName;
-        if (dosyaturu_string.equals("pdf"))
-        {
-            fileName=universite_string+ders_string+currentDateandTime+".pdf";
-             dir = new File(root.getAbsolutePath() + "/DeepNote_pdf");
-        }
-        else
-        {
-            fileName=universite_string+ders_string+currentDateandTime+".jpeg";
-            dir = new File(root.getAbsolutePath() + "/DeepNote_resim");
-        }
-        if(dir.exists() == false){
-            dir.mkdirs();
-        }
-
-        File file = new File(dir,fileName);
-        InputStream inputStream = null;
-        OutputStream outputStream = null;
-
+    /*
+                Bu fonksiyon indirilen dosyanın kaydedilmesi için yazılmıstır..
+     */
+    private boolean dosyayıdiskeyaz(ResponseBody body) {
         try {
-            byte[] fileReader = new byte[4096];
+            // todo change the file location/name according to your needs
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss");// you can add z for zone gmt +3
+            String currentDateandTime = sdf.format(new Date());
+            //  File futureStudioIconFile = new File(getExternalFilesDir(null) + File.separator +""+universite_string+ders_string+random1+random2+".jpeg");
 
-            long fileSize = body.contentLength();
-            long fileSizeDownloaded = 0;
+            File root = android.os.Environment.getExternalStorageDirectory();
 
-            inputStream = body.byteStream();
-            outputStream = new FileOutputStream(file);
+            File dir;
+            String fileName;
+            if (dosyaturu_string.equals("pdf")) {
+                fileName = universite_string + ders_string + currentDateandTime + ".pdf";
+                dir = new File(root.getAbsolutePath() + "/DeepNote_pdf");
+            } else {
+                fileName = universite_string + ders_string + currentDateandTime + ".jpeg";
+                dir = new File(root.getAbsolutePath() + "/DeepNote_resim");
+            }
+            if (dir.exists() == false) {
+                dir.mkdirs();
+            }
 
-            while (true) {
-                int read = inputStream.read(fileReader);
+            File file = new File(dir, fileName);
+            InputStream inputStream = null;
+            OutputStream outputStream = null;
 
-                if (read == -1) {
-                    break;
+            try {
+                byte[] fileReader = new byte[4096];
+
+                long fileSize = body.contentLength();
+                long fileSizeDownloaded = 0;
+
+                inputStream = body.byteStream();
+                outputStream = new FileOutputStream(file);
+
+                while (true) {
+                    int read = inputStream.read(fileReader);
+
+                    if (read == -1) {
+                        break;
+                    }
+
+                    outputStream.write(fileReader, 0, read);
+
+                    fileSizeDownloaded += read;
+
+                    Log.d("TAG", "file download: " + fileSizeDownloaded + " of " + fileSize);
                 }
 
-                outputStream.write(fileReader, 0, read);
+                outputStream.flush();
 
-                fileSizeDownloaded += read;
+                return true;
+            } catch (IOException e) {
+                Log.i("TAG", "dosyayıdiskeyaz: " + e.getMessage());
+                Toast.makeText(this, "hata" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                return false;
+            } finally {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
 
-                Log.d("TAG", "file download: " + fileSizeDownloaded + " of " + fileSize);
+                if (outputStream != null) {
+                    outputStream.close();
+                }
             }
-
-            outputStream.flush();
-
-            return true;
         } catch (IOException e) {
-            Log.i("TAG", "dosyayıdiskeyaz: "+e.getMessage());
-            Toast.makeText(this, "hata"+e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.i("TAG", "dosyayıdiskeyaz: " + e.getMessage());
+            Toast.makeText(this, "hata" + e.getMessage(), Toast.LENGTH_SHORT).show();
             return false;
-        } finally {
-            if (inputStream != null) {
-                inputStream.close();
-            }
-
-            if (outputStream != null) {
-                outputStream.close();
-            }
         }
-    } catch (IOException e) {
-        Log.i("TAG", "dosyayıdiskeyaz: "+e.getMessage());
-        Toast.makeText(this, "hata"+e.getMessage(), Toast.LENGTH_SHORT).show();
-        return false;
     }
-}
 }
 
 

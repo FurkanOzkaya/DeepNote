@@ -1,5 +1,6 @@
 package com.abms.af.projeversion02.RestApi;
 
+import com.abms.af.projeversion02.Models.AdSoyadProfilfoto;
 import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
@@ -107,5 +108,9 @@ public interface RestApi {
     @FormUrlEncoded
     @POST("/GonderiSil.php")
     Call<GonderiSil> RestGonderiSil(@Field("email") String email,@Field("id") Integer id);
+
+    @FormUrlEncoded
+    @POST("/AdSoyadProfilfoto.php")
+    Call<AdSoyadProfilfoto> RestAdSoyadProfilfoto(@Field("email") String email);
 
 }
