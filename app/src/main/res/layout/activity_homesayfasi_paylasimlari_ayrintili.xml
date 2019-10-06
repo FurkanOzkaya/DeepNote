@@ -7,7 +7,10 @@
     android:orientation="vertical"
     android:background="#fff"
     tools:context=".homesayfasi_paylasimlari_ayrintili">
-
+<android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/paylasimlar_ayrinti_refesh"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -328,5 +331,5 @@
 
         </LinearLayout>
     </ScrollView>
-
+</android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

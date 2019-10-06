@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,6 +57,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
     ImageButton ayrıntı_yorum_yapmabutonu;
     String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
     WebView Pdfview;
+    SwipeRefreshLayout swipeRefesh;
     CircularImageView profil_foto;
     EditText ayrıntı_yorum;
     ListView listview_yorumlar;
@@ -116,6 +118,8 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         ayrıntı_yorum_yapmabutonu = findViewById(R.id.ayrıntı_homesayfasi_yorum_buton);
         listview_yorumlar = findViewById(R.id.ayrıntı_homesayfasi_yorum_listview);
         ayrıntili_indirme = findViewById(R.id.ayrıntı_homesayfasi_indirme);
+        swipeRefesh = findViewById(R.id.paylasimlar_ayrinti_refesh);
+
 
         progressBar = findViewById(R.id.home_ayrıntı_progressbar);
 
@@ -387,18 +391,18 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             }
         });
 
+
+        swipeRefesh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                islevver();
+                swipeRefesh.setRefreshing(false);
+            }
+        });
     }
-/*
-
-    @Override
-    public void onBackPressed() {
 
 
-                        Intent intent = new Intent(homesayfasi_paylasimlari_ayrintili.this,ana_sayfa.class);
-                        startActivity(intent);
 
-    }
-*/
 
     public static boolean setListViewHeightBasedOnItems(ListView listView) {
 
