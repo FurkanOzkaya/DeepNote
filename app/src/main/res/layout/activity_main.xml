@@ -41,7 +41,7 @@
             android:layout_marginBottom="20dp"
             android:backgroundTint="#9029679c"
             android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
-            android:hint="email"
+            android:hint="E-mail"
             android:inputType="textFilter|textEmailAddress"
             android:textSize="14dp" />
 
@@ -53,7 +53,8 @@
             android:layout_marginBottom="20dp"
             android:backgroundTint="#9029679c"
             android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
-            android:hint="şifre"
+            android:hint="Şifre"
+            android:inputType="textPassword"
             android:textSize="14dp" />
 
         <Button

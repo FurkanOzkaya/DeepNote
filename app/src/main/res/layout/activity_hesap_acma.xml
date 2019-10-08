@@ -35,11 +35,11 @@
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#9029679c"
-                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
                 android:hint="Ad Soyad"
-                android:inputType="text"
                 android:maxLines="1"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+                android:inputType="textFilter|text" />
 
             <TextView
                 android:id="@+id/ad_soyad_uyarı"
@@ -64,7 +64,7 @@
                 android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
                 android:focusable="false"
                 android:hint="Doğum Tarihi"
-                android:inputType="text"
+                android:inputType="textFilter|text"
                 android:maxLines="1"
                 android:textSize="14dp" />
 
@@ -85,10 +85,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginBottom="10dp"
-                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
-                android:inputType="textFilter|textAutoComplete"
                 android:completionThreshold="1"
-                android:hint="Üniverite" />
+                android:hint="Üniverite"
+                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+                android:inputType="textFilter|textAutoComplete"/>
 
             <TextView
                 android:id="@+id/universite_uyarı"
@@ -107,9 +107,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:completionThreshold="1"
-                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
-                android:inputType="textFilter|textAutoComplete"
-                android:hint="Bölüm" />
+                android:hint="Bölüm"
+                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+                android:inputType="textFilter|textAutoComplete"/>
 
             <TextView
                 android:id="@+id/bolum_uyarı"
