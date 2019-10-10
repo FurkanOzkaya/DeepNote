@@ -16,6 +16,8 @@ import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.homesayfasi_paylasimlari_ayrintili;
 import com.abms.af.projeversion02.others_profil_sayfasi;
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -55,7 +57,7 @@ public class Paylasimtumverileradapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(context).inflate(R.layout.listview_goruntu_anasayfa_paylasimlari, viewGroup, false);
         TextView ad_soyad, universite, bolum, aciklama, ders;
-        ImageView gelendosya;
+        final ImageView gelendosya;
         CircularImageView profil_foto;
         ad_soyad = view.findViewById(R.id.listview_ad_soyad);
         universite = view.findViewById(R.id.listview_universite);
@@ -87,7 +89,7 @@ public class Paylasimtumverileradapter extends BaseAdapter {
         bolum.setText(tumverilerliste.get(position).getBolum());
         aciklama.setText(tumverilerliste.get(position).getAciklama());
 
-
+        final int  finalposition = position;
         if (tumverilerliste.get(position).getProfilfoto().equals("default")) {
             Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(profil_foto);
         } else {
@@ -99,7 +101,17 @@ public class Paylasimtumverileradapter extends BaseAdapter {
         if (dosyaturu_string.equals("pdf")) {
             gelendosya.setImageResource(R.drawable.flat_pdf2);
         } else {
-            Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getDosyayolu()).error(R.drawable.ic_launcher_background).into(gelendosya);
+            Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getDosyayolu()).networkPolicy(NetworkPolicy.OFFLINE).error(R.drawable.ic_launcher_background).into(gelendosya, new Callback() {
+                @Override
+                public void onSuccess() {
+
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(finalposition).getDosyayolu()).error(R.drawable.ic_launcher_background).into(gelendosya);
+                    }
+            });
         }
 
 
