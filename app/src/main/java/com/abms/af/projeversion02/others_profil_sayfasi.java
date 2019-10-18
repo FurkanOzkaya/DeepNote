@@ -17,8 +17,8 @@ import android.widget.Toast;
 import com.abms.af.projeversion02.Adapters.Profilkullanicipaylasimadapter;
 import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
-import com.bumptech.glide.Glide;
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -103,9 +103,9 @@ public class others_profil_sayfasi extends AppCompatActivity {
         others_profil_bolum.setText(others_bolum_string);
 
         if (others_profilfoto_string.equals("default")) {
-            Glide.with(getApplicationContext()).load(R.drawable.flat_ogrenci).into(others_profil_foto);
+            Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(others_profil_foto);
         } else {
-            Glide.with(getApplicationContext()).load(getString(R.string.site_adresi) + others_profilfoto_string).error(R.drawable.flat_ogrenci).into(others_profil_foto);
+            Picasso.get().load(getString(R.string.site_adresi) + others_profilfoto_string).resize(200, 200).error(R.drawable.flat_ogrenci).into(others_profil_foto);
         }
         int id = Integer.valueOf(others_id_kullanici_string);
 

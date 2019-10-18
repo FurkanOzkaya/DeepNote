@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bottom_gradient"
+        app:itemHorizontalTranslation="true"
         app:itemIconTint="@drawable/bottom_nav_item_background"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/ana_sayfa_alt_butonlar" />

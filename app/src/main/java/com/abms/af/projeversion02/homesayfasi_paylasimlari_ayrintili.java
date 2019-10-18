@@ -31,8 +31,8 @@ import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumyapmasonuc;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
-import com.bumptech.glide.Glide;
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -138,9 +138,9 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         ayrintili_aciklama.setText(aciklama_string);
 
         if (profilfoto_string.equals("default")) {
-            Glide.with(this).load(R.drawable.flat_ogrenci).into(profil_foto);
+            Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(profil_foto);
         } else {
-            Glide.with(this).load(getString(R.string.site_adresi) + profilfoto_string).error(R.drawable.flat_ogrenci).into(profil_foto);
+            Picasso.get().load(getString(R.string.site_adresi) + profilfoto_string).error(R.drawable.flat_ogrenci).into(profil_foto);
         }
     }
 
@@ -177,8 +177,8 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         } else {
             openpdf.setVisibility(View.GONE);
             ayrıntılı_resim.setVisibility(View.VISIBLE);
-           // Log.i("TAG", "islevver: "+dosyayolu_string);
-            Glide.with(this).load(getString(R.string.site_adresi)+dosyayolu_string).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
+            Log.i("TAG", "islevver: "+dosyayolu_string);
+            Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
         }
 
         ayrıntılı_sikayet_et.setOnClickListener(new View.OnClickListener() {
