@@ -19,8 +19,8 @@ import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumsilmesonuc;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
+import com.bumptech.glide.Glide;
 import com.mikhaellopez.circularimageview.CircularImageView;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -117,10 +117,10 @@ public class Yorumadapter extends BaseAdapter {
             yorum.setText(gelenyorumlar.get(position).getYorum().toString());
 
             if (gelenyorumlar.get(position).getProfilfoto().equals("default")) {
-                Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(yorumcufotosu);
+                Glide.with(activity).load(R.drawable.flat_ogrenci).into(yorumcufotosu);
             } else {
                 ///////////////////////////////////
-                Picasso.get().load(activity.getString(R.string.site_adresi) + gelenyorumlar.get(position).getProfilfoto()).error(R.drawable.flat_ogrenci).into(yorumcufotosu);
+                Glide.with(activity).load(activity.getString(R.string.site_adresi) + gelenyorumlar.get(position).getProfilfoto()).error(R.drawable.flat_ogrenci).into(yorumcufotosu);
                 /////////////////////////////////////
             }
         }

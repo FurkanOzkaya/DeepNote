@@ -14,11 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.abms.af.projeversion02.Models.AdSoyadProfilfoto;
-import com.abms.af.projeversion02.Models.Profilbilgilerigetir;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
-import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
+import com.bumptech.glide.Glide;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
@@ -66,12 +63,12 @@ public class PasswordRecovery2 extends AppCompatActivity {
 
                        if (response.body().getProfil_foto().equals("default"))
                        {
-                           Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
+                           Glide.with(getApplicationContext()).load(R.drawable.flat_ogrenci).into(profil_foto);
                        }
                        else
                        {
                            ///////////////////////////////////
-                           Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
+                           Glide.with(getApplicationContext()).load(getString(R.string.site_adresi)+response.body().getProfil_foto()).error(R.drawable.flat_ogrenci).into(profil_foto);
                            /////////////////////////////////////
                        }
 

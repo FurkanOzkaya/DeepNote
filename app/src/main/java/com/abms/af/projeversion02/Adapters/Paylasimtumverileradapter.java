@@ -15,10 +15,8 @@ import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.homesayfasi_paylasimlari_ayrintili;
 import com.abms.af.projeversion02.others_profil_sayfasi;
+import com.bumptech.glide.Glide;
 import com.mikhaellopez.circularimageview.CircularImageView;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.NetworkPolicy;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -91,27 +89,17 @@ public class Paylasimtumverileradapter extends BaseAdapter {
 
         final int  finalposition = position;
         if (tumverilerliste.get(position).getProfilfoto().equals("default")) {
-            Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(profil_foto);
+            Glide.with(activity).load(R.drawable.flat_ogrenci).into(profil_foto);
         } else {
             ///////////////////////////////////
-            Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getProfilfoto()).error(R.drawable.flat_ogrenci).into(profil_foto);
+            Glide.with(activity).load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getProfilfoto()).error(R.drawable.flat_ogrenci).into(profil_foto);
             /////////////////////////////////////
         }
 
         if (dosyaturu_string.equals("pdf")) {
             gelendosya.setImageResource(R.drawable.flat_pdf2);
         } else {
-            Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getDosyayolu()).networkPolicy(NetworkPolicy.OFFLINE).error(R.drawable.ic_launcher_background).into(gelendosya, new Callback() {
-                @Override
-                public void onSuccess() {
-
-                }
-
-                @Override
-                public void onError(Exception e) {
-                    Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(finalposition).getDosyayolu()).error(R.drawable.ic_launcher_background).into(gelendosya);
-                    }
-            });
+            Glide.with(activity).load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getDosyayolu()).error(R.drawable.ic_launcher_background).into(gelendosya);
         }
 
 

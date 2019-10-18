@@ -27,7 +27,7 @@ import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
 import com.abms.af.projeversion02.profil_resmi_pop_up;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -199,12 +199,12 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
 
                         if (response.body().getProfil_foto().equals("default"))
                         {
-                            Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
+                            Glide.with(getActivity()).load(R.drawable.flat_ogrenci).into(profil_foto);
                         }
                         else
                         {
                             ///////////////////////////////////
-                            Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
+                            Glide.with(getActivity()).load(getString(R.string.site_adresi)+response.body().getProfil_foto()).error(R.drawable.flat_ogrenci).into(profil_foto);
                             /////////////////////////////////////
                         }
 
