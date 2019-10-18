@@ -83,8 +83,11 @@ public class hesap_acmaActivity extends AppCompatActivity {
         buton_altı_bilgilendirme = (TextView) findViewById(R.id.buton_altı_bilgilendirme);
 
 
+
         universite_listesi = getResources().getStringArray(R.array.universite_listesi);
         bolum_listesi = getResources().getStringArray(R.array.Bolum_listesi);
+
+
 
         ArrayAdapter<String> a = new ArrayAdapter<String>(this, R.layout.okullar, R.id.okultextitem, universite_listesi);
         universite.setAdapter(a);

@@ -78,16 +78,9 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
         listView_homesayfasi=findViewById(R.id.listview_homesayfasi);
         progressBar=findViewById(R.id.anasayfa_progress_bar);
 
-        // Spinnerlara eleman ekleme
+
         universite_listesi = getResources().getStringArray(R.array.universite_listesi_arama_için);
-       // universite_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, universite_listesi);
-
-        //arama_universite.setAdapter(universite_adapter);
-
         bolum_listesi = getResources().getStringArray(R.array.Bolum_listesi);
-       // bolum_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, bolum_listesi);
-       // arama_bolum.setAdapter(bolum_adapter);
-        //Spinnerlara eleman ekleme sonu
     }
 
     public void islevver()
