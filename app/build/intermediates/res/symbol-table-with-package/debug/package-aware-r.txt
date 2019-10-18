@@ -12,6 +12,7 @@ anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
 anim bounce
+anim button_animation
 anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
@@ -738,11 +739,15 @@ color float_transparent
 color foreground_material_dark
 color foreground_material_light
 color girisStatus
+color gradient_end_color
+color gradient_start_color
 color gray_btn_bg_color
 color gray_btn_bg_pressed_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color homeStatus
+color intro_description_color
+color intro_title_color
 color main_blue_color
 color main_blue_stroke_color
 color main_cyan_color
@@ -829,6 +834,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color tab_indicator_gray
 color textColorPrimary
 color textColorSecondary
 color text_color
@@ -1201,6 +1207,7 @@ drawable blue_button_background
 drawable bottom_gradient
 drawable bottom_nav_item_background
 drawable bottom_shadow
+drawable btn_gradient_style
 drawable butonshape
 drawable buyutec_yirmi
 drawable cikisyaplo
@@ -1247,6 +1254,7 @@ drawable gonderiler_arka_plan
 drawable gray_button_background
 drawable green_button_background
 drawable homeyeni
+drawable ic_arrow_forward_black_24dp
 drawable ic_delete_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1257,6 +1265,12 @@ drawable ic_photo_black_48dp
 drawable ic_photo_camera_black_48dp
 drawable ic_send_black_24dp
 drawable image
+drawable img1
+drawable img2
+drawable img3
+drawable indicator_default
+drawable indicator_selected
+drawable indicator_selector
 drawable indir
 drawable indirr
 drawable indr
@@ -1372,8 +1386,6 @@ id arama_dersadi
 id arama_universite
 id async
 id auto
-id autookul
-id autotext
 id ayrıntı_homesayfasi_aciklama
 id ayrıntı_homesayfasi_ad_soyad
 id ayrıntı_homesayfasi_bolum
@@ -1407,6 +1419,8 @@ id bolum_adi
 id bolum_uyarı
 id bolumtextitem
 id bottom
+id btn_get_started
+id btn_next
 id buton_altı_bilgilendirme
 id buttonPanel
 id buttons_container
@@ -1487,6 +1501,7 @@ id giris_sifre
 id giris_sifre_uyarı
 id gone
 id group_divider
+id guideline
 id header
 id hesap_acma
 id home
@@ -1508,6 +1523,9 @@ id image_view_state_aspect_ratio
 id image_view_state_rotate
 id image_view_state_scale
 id info
+id intro_description
+id intro_img
+id intro_title
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1610,6 +1628,7 @@ id save_non_transition_alpha
 id save_scale_type
 id scale_scroll_wheel
 id screen
+id screen_viewpager
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -1664,6 +1683,7 @@ id submit_area
 id success_frame
 id success_tick
 id tabMode
+id tab_indicator
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -1692,6 +1712,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_skip
 id txt2
 id ucrop
 id ucrop_frame
@@ -1773,8 +1794,10 @@ layout activity_acilis_logo1__abms
 layout activity_acilis_logo2_deepnote
 layout activity_ana_sayfa
 layout activity_anasayfa_pop_up_arama
+layout activity_denemeact
 layout activity_hesap_acma
 layout activity_homesayfasi_paylasimlari_ayrintili
+layout activity_intro
 layout activity_main
 layout activity_others_profil_sayfasi
 layout activity_password_recovery_popup
@@ -1808,6 +1831,7 @@ layout dialog_main
 layout fragment_home_sayfasi
 layout fragment_profil_sayfasi
 layout fragment_share_sayfasi
+layout layout_screen
 layout listview_goruntu_anasayfa_paylasimlari
 layout listview_goruntu_profil_paylasimlari
 layout listview_goruntu_yorumlar

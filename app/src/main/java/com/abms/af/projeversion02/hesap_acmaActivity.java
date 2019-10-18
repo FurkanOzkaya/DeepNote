@@ -90,15 +90,11 @@ public class hesap_acmaActivity extends AppCompatActivity {
         buton_altı_bilgilendirme = (TextView) findViewById(R.id.buton_altı_bilgilendirme);
 
 
-        // Spinnerlara eleman ekleme
-        universite_listesi = getResources().getStringArray(R.array.universite_listesi);
-        universite_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, universite_listesi);
-        universite.setAdapter(universite_adapter);
 
+        universite_listesi = getResources().getStringArray(R.array.universite_listesi);
         bolum_listesi = getResources().getStringArray(R.array.Bolum_listesi);
-        bolum_adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, bolum_listesi);
-        bolum.setAdapter(bolum_adapter);
-        //Spinnerlara eleman ekleme sonu
+
+
 
 
     }

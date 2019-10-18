@@ -16,10 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".denemeact"></activity>
         <activity
             android:name=".PasswordRecoveryPopup_3"
             android:label="@string/title_activity_password_recovery_popup_3"
-            android:theme="@style/popupstyle"></activity>
+            android:theme="@style/popupstyle" />
         <activity
             android:name=".PasswordRecoveryPopup_2"
             android:label="@string/title_activity_password_recovery__popup_2"
