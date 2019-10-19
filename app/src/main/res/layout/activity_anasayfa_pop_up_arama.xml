@@ -21,9 +21,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:completionThreshold="1"
+            android:layout_marginBottom="10dp"
+            android:textSize="14dp"
             android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
             android:inputType="textFilter|textAutoComplete"
             android:hint="Üniversite"
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
             android:text="@string/universite_listesi__arama_hepsi" />
 
         <AutoCompleteTextView
@@ -31,6 +35,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:completionThreshold="1"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
+            android:textSize="14dp"
             android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
             android:inputType="textFilter|textAutoComplete"
             android:hint="Bölüm" />
@@ -54,12 +62,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ders Adı"
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
+            android:textSize="14dp"
             android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
             android:inputType="textFilter"/>
 
         <Button
             android:id="@+id/arama_buton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"

@@ -39,11 +39,13 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="#9029679c"
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
             android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
             android:hint="E-mail"
             android:inputType="textFilter|textEmailAddress"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:textCursorDrawable="@null"/>
 
         <EditText
             android:id="@+id/giris_sifre"
@@ -51,11 +53,13 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="#9029679c"
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
             android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
             android:hint="Şifre"
             android:inputType="textPassword"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:textCursorDrawable="@null"/>
 
         <Button
             android:id="@+id/giris_buton"

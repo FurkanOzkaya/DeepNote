@@ -101,7 +101,7 @@ public class Paylasimtumverileradapter extends BaseAdapter {
         if (dosyaturu_string.equals("pdf")) {
             gelendosya.setImageResource(R.drawable.flat_pdf2);
         } else {
-            Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getDosyayolu()).networkPolicy(NetworkPolicy.OFFLINE).error(R.drawable.ic_launcher_background).into(gelendosya, new Callback() {
+            Picasso.get().load(activity.getString(R.string.site_adresi) + tumverilerliste.get(position).getDosyayolu()).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.loading).error(R.drawable.ic_launcher_background).into(gelendosya, new Callback() {
                 @Override
                 public void onSuccess() {
 

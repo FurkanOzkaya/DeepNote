@@ -1230,6 +1230,7 @@ drawable dosyaresmi
 drawable dw
 drawable error_center_x
 drawable error_circle
+drawable et_custom
 drawable flat_download
 drawable flat_dw
 drawable flat_exit
@@ -1275,6 +1276,7 @@ drawable indir
 drawable indirr
 drawable indr
 drawable kitap
+drawable loading
 drawable logout
 drawable main_activity_profil
 drawable main_activty_sifre
@@ -1335,6 +1337,7 @@ drawable warning_circle
 drawable warning_sigh
 drawable xxxxx
 id ALT
+id AdSoyad
 id ButonSil
 id CTRL
 id Email
@@ -1344,7 +1347,9 @@ id META
 id SHIFT
 id SYM
 id Send
+id Send2
 id Sifre
+id SifreGonder
 id SifreTekrar
 id action0
 id action_bar
@@ -1592,15 +1597,16 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id paylasimlar_ayrinti_refesh
 id pdfsec
 id pdfviewer
 id percent
 id pin
-id place_layout_cardview
 id profil_adi
 id profil_ayrıntı_progressbar
 id profil_bilgileri_kısmı
 id profil_bolum
+id profil_foto
 id profil_icon1
 id profil_resmi
 id profil_resmi_silme
@@ -1691,12 +1697,14 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView
 id text_input_password_toggle
 id text_view_rotate
 id text_view_scale
 id textinput_counter
 id textinput_error
 id textinput_helper_text
+id textviewgizle
 id time
 id title
 id titleDividerNoCustom
@@ -1800,9 +1808,9 @@ layout activity_homesayfasi_paylasimlari_ayrintili
 layout activity_intro
 layout activity_main
 layout activity_others_profil_sayfasi
-layout activity_password_recovery_popup
-layout activity_password_recovery_popup_2
-layout activity_password_recovery_popup_3
+layout activity_password_recovery
+layout activity_password_recovery2
+layout activity_password_recovery3
 layout activity_pdf_viewer
 layout activity_profil_paylasimlari_ayrinti
 layout activity_profil_resmi_pop_up
@@ -1953,6 +1961,7 @@ string hide_bottom_view_on_scroll_behavior
 string home_sayfasi_listview_top_uyarı
 string image_picker_provider_authority_suffix
 string jsongüvenlikkod
+string key_for_protection_create_user
 string label_parent_dir
 string label_parent_directory
 string last_edit
