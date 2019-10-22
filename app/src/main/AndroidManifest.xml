@@ -17,18 +17,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".denemeact"></activity>
-        <activity
-            android:name=".PasswordRecoveryPopup_3"
-            android:label="@string/title_activity_password_recovery_popup_3"
-            android:theme="@style/popupstyle" />
-        <activity
-            android:name=".PasswordRecoveryPopup_2"
-            android:label="@string/title_activity_password_recovery__popup_2"
-            android:theme="@style/popupstyle" />
-        <activity
-            android:name=".PasswordRecoveryPopup"
-            android:label="@string/title_activity_password_recovery__popup"
-            android:theme="@style/popupstyle" />
         <activity android:name=".pdfViewer" />
         <activity android:name=".acilis_logo1_Abms">
             <intent-filter>
@@ -42,6 +30,9 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".acilis_logo2_deepnote" />
         <activity android:name=".homesayfasi_paylasimlari_ayrintili" />
+        <activity android:name=".PasswordRecovery"/>
+        <activity android:name=".PasswordRecovery2"/>
+        <activity android:name=".PasswordRecovery3"/>
         <activity
             android:name=".anasayfa_pop_up_arama"
             android:theme="@style/popupstyle" />
