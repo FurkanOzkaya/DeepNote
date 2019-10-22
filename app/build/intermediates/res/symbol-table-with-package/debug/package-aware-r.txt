@@ -1381,7 +1381,6 @@ id actions
 id activity_chooser_view_content
 id acıklama
 id ad_soyad
-id ad_soyad_uyarı
 id add
 id alertTitle
 id all
@@ -1429,12 +1428,10 @@ id beginning
 id blocking
 id bolum
 id bolum_adi
-id bolum_uyarı
 id bolumtextitem
 id bottom
 id btn_get_started
 id btn_next
-id buton_altı_bilgilendirme
 id buttonPanel
 id buttons_container
 id cancel
@@ -1476,11 +1473,9 @@ id direct
 id disableHome
 id dname
 id dogum_tarihi
-id dogum_tarihi_uyarı
 id dosyasecmekismi
 id dosyayollamakismi
 id e_posta
-id e_posta_uyarı
 id edit_query
 id ekle_icon1
 id end
@@ -1511,7 +1506,6 @@ id giris_buton
 id giris_genel_uyarı
 id giris_mail
 id giris_sifre
-id giris_sifre_uyarı
 id gone
 id group_divider
 id guideline
@@ -1670,7 +1664,6 @@ id showCustom
 id showHome
 id showTitle
 id sifre_dogrulama
-id sifre_dogrulama_uyarı
 id sifremi_unuttum
 id single_mode
 id smallLabel
@@ -1678,6 +1671,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id sozlesme
+id sozlesme_goster
 id spacer
 id split_action_bar
 id spread
@@ -1735,7 +1729,6 @@ id ucrop_frame
 id ucrop_photobox
 id uniform
 id universite
-id universite_uyarı
 id unlabeled
 id up
 id useLogo
@@ -1822,6 +1815,7 @@ layout activity_password_recovery3
 layout activity_pdf_viewer
 layout activity_profil_paylasimlari_ayrinti
 layout activity_profil_resmi_pop_up
+layout activity_sozlesme_pop_up
 layout alert_dialog
 layout bolumler
 layout design_bottom_navigation_item
@@ -1995,6 +1989,7 @@ string share_sayfası_ders_uyarı
 string sifre_unutma
 string site_adresi
 string sozlesme
+string sozlesme_metni
 string status_bar_notification_info_overflow
 string title_activity_ana_ekran
 string title_activity_denememenu

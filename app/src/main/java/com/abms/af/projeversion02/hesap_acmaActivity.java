@@ -32,7 +32,7 @@ import retrofit2.Response;
 
 public class hesap_acmaActivity extends AppCompatActivity {
 
-    TextView ad_soyad_uyarı, universite_uyarı, bolum_uyarı, dogum_tarihi_uyarı, e_posta_uyarı, sifre_uyarı, sifre_dogrulama_uyarı, buton_altı_bilgilendirme;
+    TextView sozlesme_goster;
     EditText ad_soyad, dogum_Tarihi, e_posta, sifre, sifre_dogrulama;
     Button kayıt_ol_butonu;
     CheckBox sozlesme;
@@ -72,21 +72,11 @@ public class hesap_acmaActivity extends AppCompatActivity {
         sifre = (EditText) findViewById(R.id.giris_sifre);
         sifre_dogrulama = (EditText) findViewById(R.id.sifre_dogrulama);
         kayıt_ol_butonu = (Button) findViewById(R.id.kayıt_ol_buton);
-        ad_soyad_uyarı = (TextView) findViewById(R.id.ad_soyad_uyarı);
-        universite_uyarı = (TextView) findViewById(R.id.universite_uyarı);
-        bolum_uyarı = (TextView) findViewById(R.id.bolum_uyarı);
-        dogum_tarihi_uyarı = (TextView) findViewById(R.id.dogum_tarihi_uyarı);
-        e_posta_uyarı = (TextView) findViewById(R.id.e_posta_uyarı);
-        sifre_uyarı = (TextView) findViewById(R.id.giris_sifre_uyarı);
-        sifre_dogrulama_uyarı = (TextView) findViewById(R.id.sifre_dogrulama_uyarı);
         sozlesme = (CheckBox) findViewById(R.id.sozlesme);
-        buton_altı_bilgilendirme = (TextView) findViewById(R.id.buton_altı_bilgilendirme);
-
-
+        sozlesme_goster = (TextView) findViewById(R.id.sozlesme_goster);
 
         universite_listesi = getResources().getStringArray(R.array.universite_listesi);
         bolum_listesi = getResources().getStringArray(R.array.Bolum_listesi);
-
 
 
         ArrayAdapter<String> a = new ArrayAdapter<String>(this, R.layout.okullar, R.id.okultextitem, universite_listesi);
@@ -97,6 +87,16 @@ public class hesap_acmaActivity extends AppCompatActivity {
     }
 
     private void islevver() {
+
+        sozlesme_goster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            Intent i = new Intent(getApplicationContext(), SozlesmePopUp.class);
+            startActivity(i);
+
+            }
+        });
 
         kayıt_ol_butonu.setOnClickListener(new View.OnClickListener() {
                                                @Override
@@ -112,48 +112,56 @@ public class hesap_acmaActivity extends AppCompatActivity {
 
                                                    if (ad_soyad_text.equals("") || dogum_tarihi_text.equals("") || universite_text.matches("") || universite_text.equals(getString(R.string.universite_listesi__arama_hepsi)) || bolum_text.matches("") || e_posta_text.equals("") || sifre_text.equals("") || sifre_dogrulama_text.equals("")) {
                                                        if (ad_soyad_text.equals("")) {
-                                                           ad_soyad_uyarı.setVisibility(View.VISIBLE);
-                                                           buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           //ad_soyad_uyarı.setVisibility(View.VISIBLE);
+                                                           //buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           ad_soyad.setError("Ad ve Soyad bilgisi gereklidir");
                                                        } else {
-                                                           ad_soyad_uyarı.setVisibility(View.INVISIBLE);
+                                                           //ad_soyad_uyarı.setVisibility(View.INVISIBLE);
                                                        }
                                                        if (dogum_tarihi_text.equals("")) {
-                                                           dogum_tarihi_uyarı.setVisibility(View.VISIBLE);
-                                                           buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           //dogum_tarihi_uyarı.setVisibility(View.VISIBLE);
+                                                           //buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           dogum_Tarihi.setError("Doğum Tarihi bilgisi gereklidir");
                                                        } else {
-                                                           dogum_tarihi_uyarı.setVisibility(View.INVISIBLE);
+                                                           //dogum_tarihi_uyarı.setVisibility(View.INVISIBLE);
                                                        }
                                                        if (universite_text.matches("")) {
-                                                           universite_uyarı.setVisibility(View.VISIBLE);
-                                                           buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           //universite_uyarı.setVisibility(View.VISIBLE);
+                                                           //buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           universite.setError("Üniversite bilgisi gereklidir");
                                                        } else {
-                                                           universite_uyarı.setVisibility(View.INVISIBLE);
+                                                           //universite_uyarı.setVisibility(View.INVISIBLE);
                                                        }
                                                        if (bolum_text.matches("")) {
-                                                           bolum_uyarı.setVisibility(View.VISIBLE);
-                                                           buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           //bolum_uyarı.setVisibility(View.VISIBLE);
+                                                           //buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           bolum.setError("Bölüm bilgisi gereklidir");
                                                        } else {
-                                                           bolum_uyarı.setVisibility(View.INVISIBLE);
+                                                           //bolum_uyarı.setVisibility(View.INVISIBLE);
                                                        }
                                                        if (e_posta_text.equals("")) {
-                                                           e_posta_uyarı.setVisibility(View.VISIBLE);
-                                                           buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           //e_posta_uyarı.setVisibility(View.VISIBLE);
+                                                           //buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           e_posta.setError("E-posta bilgisi gereklidir");
                                                        } else {
-                                                           e_posta_uyarı.setVisibility(View.INVISIBLE);
+                                                           //e_posta_uyarı.setVisibility(View.INVISIBLE);
                                                        }
                                                        if (sifre_text.equals("")) {
-                                                           sifre_uyarı.setVisibility(View.VISIBLE);
-                                                           buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           //sifre_uyarı.setVisibility(View.VISIBLE);
+                                                           //buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           sifre.setError("Şifre bilgisi gereklidir");
                                                        } else {
-                                                           sifre_uyarı.setVisibility(View.INVISIBLE);
+                                                           //sifre_uyarı.setVisibility(View.INVISIBLE);
                                                        }
                                                        if (sifre_dogrulama_text.equals("")) {
-                                                           sifre_dogrulama_uyarı.setVisibility(View.VISIBLE);
-                                                           buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           //sifre_dogrulama_uyarı.setVisibility(View.VISIBLE);
+                                                           //buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                                                           sifre_dogrulama.setError("Şifre doğrulama bilgisi gereklidir");
                                                        } else {
-                                                           sifre_dogrulama_uyarı.setVisibility(View.INVISIBLE);
+                                                           //sifre_dogrulama_uyarı.setVisibility(View.INVISIBLE);
                                                        }
                                                    } else {
+                                                       /*
                                                        ad_soyad_uyarı.setVisibility(View.INVISIBLE);
                                                        dogum_tarihi_uyarı.setVisibility(View.INVISIBLE);
                                                        universite_uyarı.setVisibility(View.INVISIBLE);
@@ -162,15 +170,17 @@ public class hesap_acmaActivity extends AppCompatActivity {
                                                        sifre_uyarı.setVisibility(View.INVISIBLE);
                                                        sifre_dogrulama_uyarı.setVisibility(View.INVISIBLE);
                                                        buton_altı_bilgilendirme.setVisibility(View.INVISIBLE);
+                                                       */
                                                        if (sifre_text.equals(sifre_dogrulama_text)) {
                                                            //Toast.makeText(getApplicationContext(),"sifreler dogrulandı",Toast.LENGTH_SHORT).show();
                                                            webservis_kullanicikayıt();
 
                                                        } else {
                                                            // Toast.makeText(getApplicationContext(),"sifreler yanlıs",Toast.LENGTH_SHORT).show();
-                                                           String uyarı = getResources().getString(R.string.hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı);
-                                                           sifre_dogrulama_uyarı.setText(uyarı);
-                                                           sifre_dogrulama_uyarı.setVisibility(View.VISIBLE);
+                                                           //String uyarı = getResources().getString(R.string.hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı);
+                                                           //sifre_dogrulama_uyarı.setText(uyarı);
+                                                           //sifre_dogrulama_uyarı.setVisibility(View.VISIBLE);
+                                                           sifre_dogrulama.setError("Girdiğiniz şifreler aynı değil");
                                                        }
                                                    }
                                                }
@@ -224,9 +234,10 @@ public class hesap_acmaActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), response.body().toString(), Toast.LENGTH_LONG).show();
 
                     if (response.body().getKullanicikayitsonuc().toString().equals("E_posta kullaniliyor")) {
-                        e_posta_uyarı.setVisibility(View.VISIBLE);
-                        e_posta_uyarı.setText(R.string.hesap_acma_sayfası_e_posta_kısmı_aynı_olması_durumu);
-                        buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                        //e_posta_uyarı.setVisibility(View.VISIBLE);
+                        //e_posta_uyarı.setText(R.string.hesap_acma_sayfası_e_posta_kısmı_aynı_olması_durumu);
+                        //buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                        e_posta.setError("E-posta kullanılıyor");
                     } else if (response.body().getKullanicikayitsonuc().toString().equals("Ekleme basarilidir")) {
                         //Toast.makeText(getApplicationContext(),"kayıt oldunuz",Toast.LENGTH_LONG).show();
                         sharedPreferences = getApplicationContext().getSharedPreferences("protection", 0);
@@ -248,9 +259,8 @@ public class hesap_acmaActivity extends AppCompatActivity {
                     sa.show();
                 }
             });
-        }catch (Exception e)
-        {
-            Log.e("TAG", "webservis_kullanicikayıt: ",e );
+        } catch (Exception e) {
+            Log.e("TAG", "webservis_kullanicikayıt: ", e);
         }
     }
 }

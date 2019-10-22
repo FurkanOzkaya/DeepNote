@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".denemeact"></activity>
+        <activity android:name=".SozlesmePopUp"></activity>
+        <activity android:name=".denemeact" />
         <activity android:name=".pdfViewer" />
         <activity android:name=".acilis_logo1_Abms">
             <intent-filter>
@@ -30,9 +31,9 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".acilis_logo2_deepnote" />
         <activity android:name=".homesayfasi_paylasimlari_ayrintili" />
-        <activity android:name=".PasswordRecovery"/>
-        <activity android:name=".PasswordRecovery2"/>
-        <activity android:name=".PasswordRecovery3"/>
+        <activity android:name=".PasswordRecovery" />
+        <activity android:name=".PasswordRecovery2" />
+        <activity android:name=".PasswordRecovery3" />
         <activity
             android:name=".anasayfa_pop_up_arama"
             android:theme="@style/popupstyle" />

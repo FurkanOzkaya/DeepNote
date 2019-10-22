@@ -7,26 +7,18 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/transparan"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="@string/hesap_acma_sayfası_bilgi"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/ad_soyad"
@@ -35,32 +27,21 @@
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/et_custom"
-                android:padding="10dp"
-                android:hint="Ad Soyad"
-                android:maxLines="1"
-                android:textSize="14dp"
                 android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
-                android:inputType="textFilter|text" />
+                android:hint="Ad Soyad"
+                android:inputType="textFilter|text"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textSize="14dp" />
 
-            <TextView
-                android:id="@+id/ad_soyad_uyarı"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/hesap_acma_sayfası_ad_soyad_kısmı_uyarı"
-                android:textColor="#fd4545"
-                android:textStyle="bold"
-                android:visibility="invisible" />
 
             <EditText
                 android:id="@+id/dogum_tarihi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/et_custom"
-                android:padding="10dp"
                 android:clickable="true"
                 android:cursorVisible="false"
                 android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
@@ -68,163 +49,98 @@
                 android:hint="Doğum Tarihi"
                 android:inputType="textFilter|text"
                 android:maxLines="1"
+                android:padding="10dp"
                 android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/dogum_tarihi_uyarı"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/hesap_acma_sayfası_dogum_tarihi_kısmı"
-                android:textColor="#fd4545"
-                android:textStyle="bold"
-                android:visibility="invisible" />
 
             <AutoCompleteTextView
                 android:id="@+id/universite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginBottom="10dp"
-                android:completionThreshold="1"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/et_custom"
-                android:padding="10dp"
-                android:hint="Üniverite"
-                android:textSize="14dp"
+                android:completionThreshold="1"
                 android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
-                android:inputType="textFilter|textAutoComplete"/>
-
-            <TextView
-                android:id="@+id/universite_uyarı"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/hesap_acma_sayfası_üniversite_kısmı_uyarı"
-                android:textColor="#fd4545"
-                android:textStyle="bold"
-                android:visibility="invisible" />
+                android:hint="Üniverite"
+                android:inputType="textFilter|textAutoComplete"
+                android:padding="10dp"
+                android:textSize="14dp" />
 
             <AutoCompleteTextView
                 android:id="@+id/bolum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:completionThreshold="1"
-                android:background="@drawable/et_custom"
-                android:padding="10dp"
-                android:hint="Bölüm"
-                android:textSize="14dp"
-                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
-                android:inputType="textFilter|textAutoComplete"/>
+                android:layout_marginTop="30dp"
 
-            <TextView
-                android:id="@+id/bolum_uyarı"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/hesap_acma_sayfası_bölüm_kısmı_uyarı"
-                android:textColor="#fd4545"
-                android:textStyle="bold"
-                android:visibility="invisible" />
+                android:background="@drawable/et_custom"
+                android:completionThreshold="1"
+                android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+                android:hint="Bölüm"
+                android:inputType="textFilter|textAutoComplete"
+                android:padding="10dp"
+                android:textSize="14dp" />
 
             <EditText
                 android:id="@+id/e_posta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/et_custom"
-                android:padding="10dp"
                 android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
                 android:hint="E-posta"
                 android:inputType="textFilter|textEmailAddress"
                 android:maxLines="1"
+                android:padding="10dp"
                 android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/e_posta_uyarı"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/hesap_acma_sayfası_e_posta_kısmı"
-                android:textColor="#fd4545"
-                android:textStyle="bold"
-                android:visibility="invisible" />
 
             <EditText
                 android:id="@+id/giris_sifre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/et_custom"
-                android:padding="10dp"
                 android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
                 android:hint="Şifre"
                 android:inputType="textPassword"
                 android:maxLines="1"
+                android:padding="10dp"
                 android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/giris_sifre_uyarı"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/hesap_acma_sayfası_Sifre_kısmı_uyarı"
-                android:textColor="#fd4545"
-                android:textStyle="bold"
-                android:visibility="invisible" />
 
             <EditText
                 android:id="@+id/sifre_dogrulama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/et_custom"
-                android:padding="10dp"
                 android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
                 android:hint="Şifre Doğrulama"
                 android:inputType="textPassword"
                 android:maxLines="1"
+                android:padding="10dp"
                 android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/sifre_dogrulama_uyarı"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı1"
-                android:textColor="#fd4545"
-                android:textStyle="bold"
-                android:visibility="invisible" />
 
             <CheckBox
                 android:id="@+id/sozlesme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="10dp"
                 android:text="@string/sozlesme"
                 android:textColor="@color/colorPrimary" />
 
             <TextView
-                android:id="@+id/buton_altı_bilgilendirme"
+                android:id="@+id/sozlesme_goster"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/buton_altı_bilgilendirme"
-                android:textColor="#fd4545"
-                android:textStyle="bold"
-                android:visibility="invisible" />
+                android:layout_marginTop="-5dp"
+                android:text="Sözleşmeyi okumak için tıklayınız..."
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/kayıt_ol_buton"
@@ -232,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/qwqw"
@@ -240,6 +156,9 @@
                 android:text="@string/hesap_olustur"
                 android:textColor="@color/white" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
