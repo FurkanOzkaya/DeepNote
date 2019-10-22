@@ -38,7 +38,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:clickable="true"
-                android:src="@drawable/cikisyaplo" />
+                android:src="@drawable/powerr" />
 
         </RelativeLayout>
 

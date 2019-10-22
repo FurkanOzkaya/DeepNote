@@ -1203,6 +1203,7 @@ drawable arama_ikonu
 drawable aramabutonustil
 drawable avd_hide_password
 drawable avd_show_password
+drawable basla
 drawable blue_button_background
 drawable bottom_gradient
 drawable bottom_nav_item_background
@@ -1231,6 +1232,7 @@ drawable dw
 drawable error_center_x
 drawable error_circle
 drawable et_custom
+drawable ev
 drawable flat_download
 drawable flat_dw
 drawable flat_exit
@@ -1297,13 +1299,19 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable okul_logo
+drawable onboard1
+drawable onboard2
 drawable paylas_butonu2
 drawable paylasimlar
 drawable paylasimlar_arka_plan
+drawable paylasss
 drawable pdf
 drawable pdf_ikonu
 drawable pop_tasarim
+drawable power
+drawable powerr
 drawable profil_ust_arkaplan
+drawable profill
 drawable profilsayfasi_bilgiler_arkaplan
 drawable qwqw
 drawable qwqw2

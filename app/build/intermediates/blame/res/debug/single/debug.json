@@ -28,12 +28,12 @@
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -52,12 +52,12 @@
         "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\drawable\\indr.png"
     },
     {
-        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_btn_unelevated_state_list_anim.xml.flat",
-        "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\0899f322e62a90716da5a8734b218bfb\\res\\animator\\mtrl_btn_unelevated_state_list_anim.xml"
-    },
-    {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home_sayfasi.xml.flat",
         "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\layout\\fragment_home_sayfasi.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_btn_unelevated_state_list_anim.xml.flat",
+        "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\0899f322e62a90716da5a8734b218bfb\\res\\animator\\mtrl_btn_unelevated_state_list_anim.xml"
     },
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -144,12 +144,12 @@
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\635c0a9dff4d6eb96363c4057feee224\\res\\drawable\\ucrop_vector_ic_crop.xml"
     },
     {
-        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
-        "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
-    },
-    {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_spinner.xml.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -248,6 +248,10 @@
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\b49c3e6d68bb73cf9e7e6e69ccf3adad\\res\\drawable-hdpi-v4\\ic_photo_camera_black_48dp.png"
     },
     {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_onboard2.png.flat",
+        "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\drawable\\onboard2.png"
+    },
+    {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
@@ -294,6 +298,10 @@
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blue_button_background.xml.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\2eeb713309ce278a9e4551ad62ba4886\\res\\drawable\\blue_button_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_paylasss.png.flat",
+        "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\drawable\\paylasss.png"
     },
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",
@@ -768,6 +776,10 @@
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_basla.png.flat",
+        "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\drawable\\basla.png"
+    },
+    {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\72a3e576fb1328758fa3c66be589d84d\\res\\layout-v21\\notification_template_custom_big.xml"
     },
@@ -810,6 +822,10 @@
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout_ucrop_activity_photobox.xml.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\635c0a9dff4d6eb96363c4057feee224\\res\\layout\\ucrop_activity_photobox.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_power.png.flat",
+        "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\drawable\\power.png"
     },
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_default_scroll_handle_left.xml.flat",
@@ -940,6 +956,10 @@
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\419c1b9526db29e612eb4c2965002102\\res\\layout\\notification_template_big_media.xml"
     },
     {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ev.png.flat",
+        "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\drawable\\ev.png"
+    },
+    {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\c17d15f81e4856d3412f438a72ba0664\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
     },
@@ -1054,6 +1074,10 @@
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\72a3e576fb1328758fa3c66be589d84d\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_powerr.png.flat",
+        "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\drawable\\powerr.png"
     },
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_studentgirl.jpg.flat",
@@ -1376,6 +1400,10 @@
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\635c0a9dff4d6eb96363c4057feee224\\res\\layout\\ucrop_controls.xml"
     },
     {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_onboard1.png.flat",
+        "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\drawable\\onboard1.png"
+    },
+    {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
@@ -1530,6 +1558,10 @@
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Sinan\\.gradle\\caches\\transforms-2\\files-2.1\\bb006b452f487560dd50708ae2fbc894\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profill.png.flat",
+        "source": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\src\\main\\res\\drawable\\profill.png"
     },
     {
         "merged": "C:\\Users\\Sinan\\AndroidStudioProjects\\DeepNote\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
