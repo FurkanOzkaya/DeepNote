@@ -207,7 +207,7 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
                     ayrintili.putExtra("dosyaturu", dosyaturu_string);
                     ayrintili.putExtra("profilfoto", profilfoto_string);
                     ayrintili.putExtra("gosterme", gosterme);
-                    activity.finish();
+                    //activity.finish();
                     activity.startActivity(ayrintili);
                 }
             }
