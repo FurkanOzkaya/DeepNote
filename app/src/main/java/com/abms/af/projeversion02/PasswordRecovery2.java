@@ -32,6 +32,7 @@ public class PasswordRecovery2 extends AppCompatActivity {
     TextView textView, AdSoyad;
     ImageView profil_foto;
     SharedPreferences sharedPref;
+    int DenemeSayisi = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +108,7 @@ public class PasswordRecovery2 extends AppCompatActivity {
            });
        }catch (Exception e)
        {
-           Log.e("TAG", "onCreate: ",e );
+           //Log.e("TAG", "onCreate: ",e );
        }
 
         textView.setOnClickListener(new View.OnClickListener() {
@@ -127,17 +128,57 @@ public class PasswordRecovery2 extends AppCompatActivity {
 
                 if (SharedKod.equals(kod))
                 {
-                    Intent intent = new Intent(PasswordRecovery2.this, PasswordRecovery3.class);
-                    startActivity(intent);
+                    if (DenemeSayisi <= 0)
+                    {
+                        final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this,SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat!");
+                        sa.setContentText("E-posta adresini doğru olduğuna emin misin? E-posta adresini doğru yazdığına emin ol");
+                        sa.setConfirmText("Tekrar Dene");
+                        sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
 
+                                Intent i = new Intent(PasswordRecovery2.this, PasswordRecovery.class);
+                                startActivity(i);
+
+                            }
+                        });
+                        sa.show();
+                    }
+                    else
+                    {
+                        Intent intent = new Intent(PasswordRecovery2.this, PasswordRecovery3.class);
+                        startActivity(intent);
+                    }
                 }
                 else
                 {
-                    final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this,SweetAlertDialog.ERROR_TYPE);
-                    sa.setTitleText("Hata");
-                    sa.setContentText("Gridiğin kod yanlış,e-posta adresine gönderdiğimiz kodu kontrol ederek tekrar dene");
-                    sa.setConfirmText("Tamam");
-                    sa.show();
+                    if (DenemeSayisi <= 0)
+                    {
+                        final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this,SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat!");
+                        sa.setContentText("E-posta adresini doğru olduğuna emin misin? E-posta adresini doğru yazdığına emin ol ve tekrar dene");
+                        sa.setConfirmText("Tamam");
+                        sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+
+                                Intent i = new Intent(PasswordRecovery2.this, PasswordRecovery.class);
+                                startActivity(i);
+
+                            }
+                        });
+                        sa.show();
+                    }
+                    else
+                    {
+                        DenemeSayisi--;
+                        final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this,SweetAlertDialog.ERROR_TYPE);
+                        sa.setTitleText("Hata");
+                        sa.setContentText("Girdiğin kod yanlış,e-posta adresine gönderdiğimiz kodu kontrol ederek tekrar dene");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
+                    }
                 }
             }
         });

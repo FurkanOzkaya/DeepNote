@@ -1391,7 +1391,6 @@ id anasayfa_listview_kullanici_profil_sayfasi
 id anasayfa_listview_layout
 id anasayfa_progress_bar
 id arama_bolum
-id arama_bolum_altı_bilgilendirme
 id arama_buton
 id arama_butonu
 id arama_dersadi

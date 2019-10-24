@@ -33,7 +33,6 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
     EditText arama_dersadi;
     Button arama_buton;
     String universite,bolum,dersadi;
-    TextView bolum_altı_bilgilendirme,dersadi_alti_bilgilendirme;
     ArrayAdapter universite_adapter, bolum_adapter;
     String[] universite_listesi, bolum_listesi;
     Activity activity;
@@ -74,7 +73,6 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
         arama_bolum=findViewById(R.id.arama_bolum);
         arama_buton=findViewById(R.id.arama_buton);
         arama_dersadi=findViewById(R.id.arama_dersadi);
-        bolum_altı_bilgilendirme=findViewById(R.id.arama_bolum_altı_bilgilendirme);
         listView_homesayfasi=findViewById(R.id.listview_homesayfasi);
         progressBar=findViewById(R.id.anasayfa_progress_bar);
 
@@ -106,8 +104,8 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
 
                 if(bolum.matches(""))
                 {
-                        bolum_altı_bilgilendirme.setVisibility(View.VISIBLE);
-
+                    arama_bolum.setError("Bölüm bilgisi gereklidir");
+                    arama_bolum.requestFocus();
                 }
                 else
                 {
@@ -115,7 +113,6 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
                         dersadi="UyarıBos";
                     }
                     //Toast.makeText(getApplicationContext(), "dersadi"+dersadi, Toast.LENGTH_SHORT).show();
-                    bolum_altı_bilgilendirme.setVisibility(View.GONE);
                     Intent i = new Intent();
                     i.putExtra("universite", universite);
                     i.putExtra("bolum", bolum);
