@@ -156,7 +156,7 @@ public class home_sayfasi extends Fragment {
                     pageCount = 0;
                     tum_versiler_arama_liste=null;
                     tum_veriler_liste=null;
-                    Toast.makeText(getActivity().getApplicationContext(),"Bütün gönderiler görüldü. Başa Dönülüyor.",Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getActivity().getApplicationContext(),"Bütün gönderiler görüldü. Başa Dönülüyor.",Toast.LENGTH_LONG).show();
                 }
                 loadList(pageCount);
             }
@@ -347,6 +347,10 @@ public class home_sayfasi extends Fragment {
 
     void loadSearchPage(final int pageCount) {
 
+        if (pageCount==0)
+        {
+            tum_versiler_arama_liste = null;
+        }
         if (universite.equals(getString(R.string.universite_listesi__arama_hepsi))) {
             universite = "Hepsi";
         }
