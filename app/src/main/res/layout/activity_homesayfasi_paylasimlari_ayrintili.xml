@@ -52,13 +52,30 @@
                                 android:src="@drawable/flat_ogrenci"
                                 app:civ_border="false" />
 
-                            <TextView
-                                android:id="@+id/ayrıntı_homesayfasi_ad_soyad"
-                                android:layout_width="match_parent"
+                            <LinearLayout
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="5dp"
-                                android:text="isim" />
+                                android:orientation="vertical"
+                                android:layout_marginTop="14dp"
+                                android:layout_marginLeft="2dp">
+
+                                <TextView
+                                    android:id="@+id/ayrıntı_homesayfasi_ad_soyad"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:textColor="#000000"
+                                    android:textSize="15dp" />
+
+                                <TextView
+                                    android:id="@+id/listview_universite_adi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:textColor="#6a6d72"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -305,10 +322,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:background="@android:color/transparent"
-                        android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
+                        android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+                        android:inputType="textFilter|text"
                         android:hint="Yorum yap..."
                         android:textSize="15dp" />
-                    />
 
                     <ImageButton
                         android:id="@+id/ayrıntı_homesayfasi_yorum_buton"

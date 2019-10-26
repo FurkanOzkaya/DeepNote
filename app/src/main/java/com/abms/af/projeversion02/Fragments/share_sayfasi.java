@@ -12,6 +12,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
@@ -70,7 +71,7 @@ public class share_sayfasi extends Fragment {
     Map<String, RequestBody> mappdf, mapresim;
     Button yukleme_butonu;
     EditText ders_adi, acıklama;
-    TextView ders_adi_uyarı, bolum_uyarı, acıklama_uyarı;
+    TextView ders_adi_uyarı, bolum_uyarı, acıklama_uyarı, DeepNoteBaslik;
     AutoCompleteTextView bolum_adi;
     String ders_string, acıklama_string, email = "";
     int bolum_string_int;
@@ -83,6 +84,7 @@ public class share_sayfasi extends Fragment {
     SharedPreferences sharedPreferences;
     ProgressBar progressBar;
     FilePickerDialog dialog;
+    Typeface tf1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -130,9 +132,15 @@ public class share_sayfasi extends Fragment {
         bolum_adi.setAdapter(a2);
 
         progressBar = view.findViewById(R.id.share_sayafası_progress_bar);
+
+        DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
     }
 
     public void islevver() {
+
+        tf1 = Typeface.createFromAsset(getActivity().getAssets(),"fonts/DamionRegular.ttf");
+        DeepNoteBaslik.setTypeface(tf1);
+
         sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("giris", 0);
         if (sharedPreferences.getInt("uye_id", 0) != 0) {
             email = sharedPreferences.getString("email", "");

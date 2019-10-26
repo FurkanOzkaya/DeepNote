@@ -40,14 +40,14 @@
                         android:background="@drawable/bottom_gradient">
 
                         <TextView
+                            android:id="@+id/DeepNoteBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
                             android:text="DeepNote"
-                            android:textColor="#3b5998"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
+                            android:textColor="#000000"
+                            android:textSize="25dp" />
 
                     </RelativeLayout>
 

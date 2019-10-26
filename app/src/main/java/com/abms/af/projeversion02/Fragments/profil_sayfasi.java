@@ -3,6 +3,7 @@ package com.abms.af.projeversion02.Fragments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -43,7 +44,7 @@ import retrofit2.Response;
 public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     SwipeRefreshLayout yenileme_nesnesi;
-    TextView profil_adi, profil_universite, profil_bolum;
+    TextView profil_adi, profil_universite, profil_bolum, DeepNoteBaslik;
     int id;
     View view;
     LinearLayout profil_bilgiler_layout;
@@ -56,6 +57,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
     ProgressBar paylasımlar_progresbar,bilgiler_progress_bar;
     ImageView ayarlarbutonu;
     String email="";
+    Typeface tf1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -93,10 +95,14 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         ayarlarbutonu=view.findViewById(R.id.profil_sayfası_ayarlar_butonu);
         yenileme_nesnesi = (SwipeRefreshLayout) view.findViewById(R.id.profil_sayfasi_refesh); // nesnemizi tanıttık
         yenileme_nesnesi.setOnRefreshListener(this);
+        DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
     }
 
 
     void islev_ver() {
+
+        tf1 = Typeface.createFromAsset(getActivity().getAssets(),"fonts/DamionRegular.ttf");
+        DeepNoteBaslik.setTypeface(tf1);
 
         sharedPreferences =getActivity().getApplicationContext().getSharedPreferences("giris",0);
         if(sharedPreferences.getInt("uye_id",0) != 0)

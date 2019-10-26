@@ -13,7 +13,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     Button giris_buton;
     SharedPreferences sharedPreferences;
     int Kullanici_id;
+    int sayac = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +106,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void islevver() {
+
+
+
+        giris_sifre.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                final int DRAWABLE_RIGHT = 2;
+
+                if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    if(motionEvent.getRawX() >= (giris_sifre.getRight() - giris_sifre.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+
+                        sayac++;
+
+                        if (sayac % 2 == 1)
+                            giris_sifre.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        else
+                            giris_sifre.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
         uyelik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

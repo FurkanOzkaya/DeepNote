@@ -38,35 +38,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/yorumlar_ad"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="asfasfasfasf"
-                        android:textColor="#000"
-                        android:textSize="13dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:visibility="gone">
+                        android:textColor="#000000"
+                        android:textSize="14dp" />
 
                     <TextView
                         android:id="@+id/yorumlar_tarih"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="asfasfasfasf"
-                        android:textColor="#000"
+                        android:textColor="#6a6d72"
                         android:textSize="10dp" />
 
                 </LinearLayout>
@@ -93,8 +79,7 @@
                 android:id="@+id/yorumlar_yorum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="#000"
+                android:textColor="#6a6d72"
                 android:textSize="13dp" />
 
         </LinearLayout>

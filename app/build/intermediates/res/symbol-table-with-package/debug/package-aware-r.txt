@@ -1301,6 +1301,7 @@ drawable notify_panel_notification_icon_bg
 drawable okul_logo
 drawable onboard1
 drawable onboard2
+drawable password_visible
 drawable paylas_butonu2
 drawable paylasimlar
 drawable paylasimlar_arka_plan
@@ -1348,6 +1349,7 @@ id ALT
 id AdSoyad
 id ButonSil
 id CTRL
+id DeepNoteBaslik
 id Email
 id FUNCTION
 id Kod
@@ -1557,6 +1559,7 @@ id listview_profil_bolum
 id listview_profil_ders
 id listview_profil_fotosu
 id listview_universite
+id listview_universite_adi
 id loadPage
 id loading
 id loadprevpage

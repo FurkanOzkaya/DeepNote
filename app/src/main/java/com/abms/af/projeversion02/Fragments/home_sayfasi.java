@@ -4,8 +4,10 @@ package com.abms.af.projeversion02.Fragments;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -53,7 +55,7 @@ public class home_sayfasi extends Fragment {
     ListView listView_homesayfasi;
     ImageView arama;
     ProgressBar progressBar;
-    TextView home_sayfası_listview_uyarı;
+    TextView home_sayfası_listview_uyarı, DeepNoteBaslik;
     SwipeRefreshLayout refesh_home;
     LinearLayout loadnextpage, loadprevpage;
     LinearLayout home_listview_layout;
@@ -66,6 +68,7 @@ public class home_sayfasi extends Fragment {
     String bolum;
     String dersadi;
     boolean searchActive = false;
+    Typeface tf1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -97,10 +100,14 @@ public class home_sayfasi extends Fragment {
         refesh_home = view.findViewById(R.id.home_sayfasi_refesh);
         loadnextpage = view.findViewById(R.id.loadPage);
         loadprevpage = view.findViewById(R.id.loadprevpage);
+        DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
     }
 
 
     private void islevver() {
+
+        tf1 = Typeface.createFromAsset(getActivity().getAssets(),"fonts/DamionRegular.ttf");
+        DeepNoteBaslik.setTypeface(tf1);
 
         // H O M E    S A Y F A S I    V E R İ    C E K M E
         loadListForHome(pageCount);
