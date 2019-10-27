@@ -57,7 +57,7 @@ public class home_sayfasi extends Fragment {
     ProgressBar progressBar;
     TextView home_sayfası_listview_uyarı, DeepNoteBaslik;
     SwipeRefreshLayout refesh_home;
-    LinearLayout loadnextpage, loadprevpage;
+    LinearLayout loadnextpage;
     LinearLayout home_listview_layout;
     int pageCount = 0;
     int pageListSize = 0;
@@ -99,7 +99,7 @@ public class home_sayfasi extends Fragment {
         home_sayfası_listview_uyarı = view.findViewById(R.id.home_sayfası_lisview_uyarı_mesajı);
         refesh_home = view.findViewById(R.id.home_sayfasi_refesh);
         loadnextpage = view.findViewById(R.id.loadPage);
-        loadprevpage = view.findViewById(R.id.loadprevpage);
+
         DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
     }
 
@@ -136,11 +136,7 @@ public class home_sayfasi extends Fragment {
                     loadnextpage.setVisibility(View.GONE);
                 }
 
-                if (firstvisibleitem == 0 && pageCount != 0) {
-                   // loadprevpage.setVisibility(View.VISIBLE);
-                } else {
-                    loadprevpage.setVisibility(View.GONE);
-                }
+
 
             }
         });
@@ -162,15 +158,7 @@ public class home_sayfasi extends Fragment {
             }
         });
 
-        loadprevpage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (pageCount > 0) {
-                    pageCount--;
-                }
-                loadList(pageCount);
-            }
-        });
+
 
 
         //P O P   U P    F O N K S İ Y O N U N U
@@ -218,8 +206,7 @@ public class home_sayfasi extends Fragment {
 
     void loadList(int pageCount) {
         loadnextpage.setVisibility(View.GONE);
-        loadprevpage.setVisibility(View.GONE);
-        if (searchActive) {
+         if (searchActive) {
             loadSearchPage(pageCount);
         } else {
             loadListForHome(pageCount);

@@ -12,7 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="4"
-        android:background="#456">
+        android:background="#fff"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/loginbaslik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DeepNote"
+            android:textColor="#29679c"
+            android:gravity="center"
+            android:textSize="35dp"/>
 
     </LinearLayout>
 
@@ -62,6 +72,17 @@
             android:textSize="14dp"
             android:drawableRight="@drawable/password_visible"/>
 
+        <TextView
+            android:id="@+id/sifremi_unuttum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="end"
+            android:text="@string/sifre_unutma" />
+
+
+
         <Button
             android:id="@+id/giris_buton"
             android:layout_width="match_parent"
@@ -70,15 +91,10 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/qwqw"
             android:text="giriş yap"
+            android:elevation="0dp"
             android:textColor="#fff" />
 
-        <TextView
-            android:id="@+id/sifremi_unuttum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:text="@string/sifre_unutma" />
+
 
         <TextView
             android:id="@+id/hesap_acma"

@@ -123,24 +123,55 @@
                 android:padding="10dp"
                 android:textSize="14dp" />
 
-            <CheckBox
-                android:id="@+id/sozlesme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="10dp"
-                android:text="@string/sozlesme"
-                android:textColor="@color/colorPrimary" />
 
-            <TextView
-                android:id="@+id/sozlesme_goster"
+
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:text="Sözleşmeyi okumak için tıklayınız..."
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary" />
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6">
+
+                    <CheckBox
+                        android:id="@+id/sozlesme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|start">
+
+                    <TextView
+                        android:id="@+id/sozlesme_goster"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sozlesme"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="start"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:text="okudum, onaylıyorum."/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
 
             <Button
                 android:id="@+id/kayıt_ol_buton"

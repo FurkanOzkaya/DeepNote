@@ -20,23 +20,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/bottom_gradient">
 
-            <LinearLayout
-                android:id="@+id/loadprevpage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/dahafazla"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:visibility="gone">
 
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@drawable/ustsayfayagit" />
-
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/DeepNoteBaslik"

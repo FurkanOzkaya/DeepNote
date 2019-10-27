@@ -4,7 +4,7 @@
 
 
     <string name="app_name">DeepNote</string>
-    <string name="sifre_unutma">Şifremi unuttum !!</string>
+    <string name="sifre_unutma">Şifreni mi unuttun?</string>
     <string name="giris_uyarı">E-posta veya  Sifre Yanlıs Lütfen Kontrol Ediniz</string>
     <string name="uye_olmak">Hesap Açmak için Tıklayınız</string>
     <string name="hesap_acma_sayfası_bilgi">Yazacağınız bilgilerin doğru olmasına özen gösteriniz</string>
@@ -19,7 +19,7 @@
     <string name="hesap_acma_sayfası_Sifre_kısmı_uyarı">Şifre bilgisi gereklidir</string>
     <string name="hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı1">Şifre dogrulaması gereklidir</string>
     <string name="hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı">Şifreler birbiri ile uyuşmuyor</string>
-    <string name="sozlesme">DeepNote Sözleşmesini Kabul Ediyor ve Onaylıyorum</string>
+    <string name="sozlesme">DeepNote Sözleşmesini</string>
     <string name="buton_altı_bilgilendirme">Lütfen Bilgilerinizi Kontrol Ediniz</string>
     <string name="share_sayfası_ders_uyarı">Ders bilgisi gereklidir</string>
     <string name="share_sayfası_bolum_uyarı">Bolum bilgisi gereklidir</string>

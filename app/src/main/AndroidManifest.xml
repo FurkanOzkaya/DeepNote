@@ -19,17 +19,16 @@
         <activity android:name=".SozlesmePopUp"></activity>
         <activity android:name=".denemeact" />
         <activity android:name=".pdfViewer" />
-        <activity android:name=".acilis_logo1_Abms">
+        <activity android:name=".hesap_acmaActivity" />
+        <activity android:name=".ana_sayfa" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".acilis_logo2_deepnote" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".hesap_acmaActivity" />
-        <activity android:name=".ana_sayfa" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".acilis_logo2_deepnote" />
         <activity android:name=".homesayfasi_paylasimlari_ayrintili" />
         <activity android:name=".PasswordRecovery" />
         <activity android:name=".PasswordRecovery2" />

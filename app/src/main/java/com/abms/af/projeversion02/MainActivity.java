@@ -7,12 +7,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -34,12 +37,15 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView uyelik, genel_uyarı, sifremi_unutttum;
+    TextView uyelik, genel_uyarı, sifremi_unutttum,baslik;
     EditText giris_mail, giris_sifre;
     Button giris_buton;
     SharedPreferences sharedPreferences;
     int Kullanici_id;
     int sayac = 0;
+    Typeface tf1;
+
+    int inputsayac = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void tanimla() {
+        baslik = findViewById(R.id.loginbaslik);
         uyelik = (TextView) findViewById(R.id.hesap_acma);
         giris_mail = (EditText) findViewById(R.id.giris_mail);
         giris_sifre = (EditText) findViewById(R.id.giris_sifre);
@@ -107,6 +114,59 @@ public class MainActivity extends AppCompatActivity {
 
     private void islevver() {
 
+
+        giris_buton.setEnabled(false);
+        giris_buton.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
+
+
+        giris_sifre.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+
+                if (giris_sifre.length() > 0 && giris_mail.length() >0 ){
+                    giris_buton.setEnabled(true);
+                    giris_buton.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
+                }
+                else{
+                    giris_buton.setEnabled(false);
+                    giris_buton.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
+                }
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+        });
+
+        giris_mail.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+
+                if (giris_sifre.length() > 0 && giris_mail.length() >0 ){
+                    giris_buton.setEnabled(true);
+                    giris_buton.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
+                }
+                else{
+                    giris_buton.setEnabled(false);
+                    giris_buton.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
+                }
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+            }
+        });
+
+
+        tf1 = Typeface.createFromAsset(getApplicationContext().getAssets(),"fonts/DamionRegular.ttf");
+        baslik.setTypeface(tf1);
 
 
         giris_sifre.setOnTouchListener(new View.OnTouchListener() {

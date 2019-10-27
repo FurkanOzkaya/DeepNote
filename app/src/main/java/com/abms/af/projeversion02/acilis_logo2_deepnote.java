@@ -36,7 +36,7 @@ public class acilis_logo2_deepnote extends AppCompatActivity {
         Animation animasyon = AnimationUtils.loadAnimation(this,R.anim.transition);
         textView.startAnimation(animasyon);
         imageview.startAnimation(animasyon);
-        final Intent i = new Intent(this,denemeact.class);
+        final Intent i = new Intent(this,MainActivity.class);
 
         Thread timer = new Thread(){
 
