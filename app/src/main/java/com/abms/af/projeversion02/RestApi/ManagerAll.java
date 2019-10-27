@@ -1,5 +1,7 @@
 package com.abms.af.projeversion02.RestApi;
 
+import android.content.Intent;
+
 import com.abms.af.projeversion02.Models.AdSoyadProfilfoto;
 import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
@@ -12,6 +14,7 @@ import com.abms.af.projeversion02.Models.Profilfotosilmesonuc;
 import com.abms.af.projeversion02.Models.Profilfotoyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.Models.Resimyuklemesonuc;
+import com.abms.af.projeversion02.Models.SikayetEt;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
 import com.abms.af.projeversion02.Models.Yenisifrebelirleme;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
@@ -133,6 +136,12 @@ public class ManagerAll extends BaseManager {
     public Call<AdSoyadProfilfoto> AdSoyadProfilfoto(String email)
     {
         Call<AdSoyadProfilfoto> x = getRestApiClient().RestAdSoyadProfilfoto(email);
+        return x;
+    }
+
+    public Call<SikayetEt> SikayetEt(Integer id_kullanici, Integer paylasim_id)
+    {
+        Call<SikayetEt> x = getRestApiClient().RestSikayetEt(id_kullanici,paylasim_id);
         return x;
     }
 

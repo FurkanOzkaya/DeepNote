@@ -12,6 +12,7 @@ import com.abms.af.projeversion02.Models.Profilfotoyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.Models.Resimyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilbilgilerigetir;
+import com.abms.af.projeversion02.Models.SikayetEt;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
 import com.abms.af.projeversion02.Models.Yenisifrebelirleme;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
@@ -112,5 +113,9 @@ public interface RestApi {
     @FormUrlEncoded
     @POST("/AdSoyadProfilfoto.php")
     Call<AdSoyadProfilfoto> RestAdSoyadProfilfoto(@Field("email") String email);
+
+    @FormUrlEncoded
+    @POST("/SikayetEt.php")
+    Call<SikayetEt> RestSikayetEt(@Field("id_kullanici") Integer id_kullanici, @Field("paylasim_id") Integer paylasim_id);
 
 }

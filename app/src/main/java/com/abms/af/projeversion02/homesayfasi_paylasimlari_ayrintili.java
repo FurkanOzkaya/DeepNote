@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abms.af.projeversion02.Adapters.Yorumadapter;
+import com.abms.af.projeversion02.Models.SikayetEt;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumyapmasonuc;
@@ -179,8 +180,8 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         } else {
             openpdf.setVisibility(View.GONE);
             ayrıntılı_resim.setVisibility(View.VISIBLE);
-            Log.i("TAG", "islevver: "+dosyayolu_string);
-            Picasso.get().load(getString(R.string.site_adresi)+dosyayolu_string).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
+            Log.i("TAG", "islevver: " + dosyayolu_string);
+            Picasso.get().load(getString(R.string.site_adresi) + dosyayolu_string).error(R.drawable.ic_launcher_background).into(ayrıntılı_resim);
         }
 
         ayrıntılı_sikayet_et.setOnClickListener(new View.OnClickListener() {
@@ -191,23 +192,72 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                         .setPositiveButton("Evet", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Integer paylasımid = Integer.parseInt(paylasim_id_string);
 
-                                Call<Sikayetetmesonuc> s = ManagerAll.webyonet().sikayetet(email, paylasımid);
-                                s.enqueue(new Callback<Sikayetetmesonuc>() {
+                                sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
+
+                                final Integer paylasımid = Integer.parseInt(paylasim_id_string);
+                                int kullanici_id = sharedPreferences.getInt("uye_id", 0);
+
+                                Call<SikayetEt> request = ManagerAll.webyonet().SikayetEt(kullanici_id, paylasımid);
+                                request.enqueue(new Callback<SikayetEt>() {
                                     @Override
-                                    public void onResponse(Call<Sikayetetmesonuc> call, Response<Sikayetetmesonuc> response) {
+                                    public void onResponse(Call<SikayetEt> call, Response<SikayetEt> response) {
 
-                                        Toast.makeText(getApplicationContext(), response.body().getSikayetetmesonuc(), Toast.LENGTH_LONG).show();
+                                        if (response.body().getResult().equals("Basarili")) {
 
-                                        ayrıntılı_sikayet_et.setVisibility(View.GONE);
+                                            //Bu kod paylasim tablosundaki sikayet sayısını arttırır, admin panelinin işleyişini bozmamak için geçici süre çalışacaktır
+                                            /////////////////////////////////////////////////////////////////////////////////
+                                            /*
+                                            Call<Sikayetetmesonuc> s = ManagerAll.webyonet().sikayetet(email, paylasımid);
+                                            s.enqueue(new Callback<Sikayetetmesonuc>() {
+                                                @Override
+                                                public void onResponse(Call<Sikayetetmesonuc> call, Response<Sikayetetmesonuc> response) {
+
+                                                    Toast.makeText(getApplicationContext(), response.body().getSikayetetmesonuc(), Toast.LENGTH_LONG).show();
+
+                                                    ayrıntılı_sikayet_et.setVisibility(View.GONE);
+                                                }
+
+                                                @Override
+                                                public void onFailure(Call<Sikayetetmesonuc> call, Throwable t) {
+                                                    Toast.makeText(getApplicationContext(), "Şikayet edilemedi", Toast.LENGTH_LONG).show();
+                                                }
+                                            });
+                                            */
+                                            //////////////////////////////////////////////////////////////////////////////////
+
+                                            final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE);
+                                            sa.setTitleText("Başarılı");
+                                            sa.setContentText("Uygunsuz olabileceğini düşündüğün bu gönderi hakkında bizi bilgilendirdiğin için teşekkür ederiz");
+                                            sa.setConfirmText("Tamam");
+                                            sa.show();
+                                        } else if (response.body().getResult().equals("Basarisiz")) {
+                                            final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                                            sa.setTitleText("Dikkat");
+                                            sa.setContentText("Bu gönderiyi daha önce şikayet etmiş bulunmaktasın");
+                                            sa.setConfirmText("Tamam");
+                                            sa.show();
+                                        } else {
+                                            final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                                            sa.setTitleText("Dikkat");
+                                            sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                                            sa.setConfirmText("Tamam");
+                                            sa.show();
+                                        }
                                     }
 
                                     @Override
-                                    public void onFailure(Call<Sikayetetmesonuc> call, Throwable t) {
-                                        Toast.makeText(getApplicationContext(), "Şikayet edilemedi", Toast.LENGTH_LONG).show();
+                                    public void onFailure(Call<SikayetEt> call, Throwable t) {
+
+                                        final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                                        sa.setTitleText("Dikkat");
+                                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                                        sa.setConfirmText("Tamam");
+                                        sa.show();
+
                                     }
                                 });
+
 
                             }
                         }).setNegativeButton("Hayır", null).show();
@@ -219,9 +269,8 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String yorum = ayrıntı_yorum.getText().toString();
-               ayrıntı_yorum.setText("");
-                if (!yorum.equals(""))
-                {
+                ayrıntı_yorum.setText("");
+                if (!yorum.equals("")) {
                     int id = 0;
                     SharedPreferences sharedPreferences;
                     sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
@@ -233,73 +282,72 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }
-                   try {
-                       ////////// Y O R U M   Y A P M A   K I S M I
-                       Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
-                       x.enqueue(new Callback<Yorumyapmasonuc>() {
-                           @Override
-                           public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
+                    try {
+                        ////////// Y O R U M   Y A P M A   K I S M I
+                        Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
+                        x.enqueue(new Callback<Yorumyapmasonuc>() {
+                            @Override
+                            public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
 
-                               if (response.isSuccessful()) {
-                                   //Toast.makeText(getApplicationContext(),"Yorum yapıldı",Toast.LENGTH_LONG).show();
-                                   //////////// Y O R U M  G E T İ R M E   Y O R U M   Y A P T I K T A N  S O N R A
+                                if (response.isSuccessful()) {
+                                    //Toast.makeText(getApplicationContext(),"Yorum yapıldı",Toast.LENGTH_LONG).show();
+                                    //////////// Y O R U M  G E T İ R M E   Y O R U M   Y A P T I K T A N  S O N R A
 
-                                   final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
-                                   //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-                                   progressBar.setVisibility(View.VISIBLE);
-                                   ////////////////////////////////////////////////////////////////////////////////////
-                                   yorumgetir.enqueue(new Callback<List<Yorumlarigetirsonuc>>() {
-                                       @Override
-                                       public void onResponse(Call<List<Yorumlarigetirsonuc>> call, Response<List<Yorumlarigetirsonuc>> response) {
-                                           if (response.isSuccessful()) {
-                                               listview_yorumlar.setVisibility(View.VISIBLE);
-                                               listview_yorumlar_uyarı.setVisibility(View.GONE);
-                                               //Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
-                                               gelenyorumlar = response.body();
-                                               yorumadapter = new Yorumadapter(gelenyorumlar, homesayfasi_paylasimlari_ayrintili.this, getApplicationContext());
-                                               listview_yorumlar.setAdapter(yorumadapter);
-                                               setListViewHeightBasedOnItems(listview_yorumlar);
+                                    final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
+                                    //////////////////////////////// P R O G R E S S   B A R    //////////////////////
+                                    progressBar.setVisibility(View.VISIBLE);
+                                    ////////////////////////////////////////////////////////////////////////////////////
+                                    yorumgetir.enqueue(new Callback<List<Yorumlarigetirsonuc>>() {
+                                        @Override
+                                        public void onResponse(Call<List<Yorumlarigetirsonuc>> call, Response<List<Yorumlarigetirsonuc>> response) {
+                                            if (response.isSuccessful()) {
+                                                listview_yorumlar.setVisibility(View.VISIBLE);
+                                                listview_yorumlar_uyarı.setVisibility(View.GONE);
+                                                //Toast.makeText(getApplicationContext(),"Yorumalar geldi"+response.body(),Toast.LENGTH_LONG).show();
+                                                gelenyorumlar = response.body();
+                                                yorumadapter = new Yorumadapter(gelenyorumlar, homesayfasi_paylasimlari_ayrintili.this, getApplicationContext());
+                                                listview_yorumlar.setAdapter(yorumadapter);
+                                                setListViewHeightBasedOnItems(listview_yorumlar);
 
-                                               /////////////////////////////////////
-                                               progressBar.setVisibility(View.GONE);
-                                               ///////////////////////////   P R O G R E S S   B A R   /////////
-                                           }
+                                                /////////////////////////////////////
+                                                progressBar.setVisibility(View.GONE);
+                                                ///////////////////////////   P R O G R E S S   B A R   /////////
+                                            }
 
-                                       }
+                                        }
 
-                                       @Override
-                                       public void onFailure(Call<List<Yorumlarigetirsonuc>> call, Throwable t) {
-                                           // Toast.makeText(getApplicationContext(),"Yorumalar gelmedi"+t.getMessage(),Toast.LENGTH_LONG).show();
-                                           listview_yorumlar.setVisibility(View.GONE);
-                                           listview_yorumlar_uyarı.setVisibility(View.VISIBLE);
-                                           /////////////////////////////////////
-                                           progressBar.setVisibility(View.GONE);
-                                           ///////////////////////////   P R O G R E S S   B A R   /////////
-                                       }
-                                   });
-                               } else {
+                                        @Override
+                                        public void onFailure(Call<List<Yorumlarigetirsonuc>> call, Throwable t) {
+                                            // Toast.makeText(getApplicationContext(),"Yorumalar gelmedi"+t.getMessage(),Toast.LENGTH_LONG).show();
+                                            listview_yorumlar.setVisibility(View.GONE);
+                                            listview_yorumlar_uyarı.setVisibility(View.VISIBLE);
+                                            /////////////////////////////////////
+                                            progressBar.setVisibility(View.GONE);
+                                            ///////////////////////////   P R O G R E S S   B A R   /////////
+                                        }
+                                    });
+                                } else {
 
-                                   new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
-                                           .setTitleText("Dikkat!")
-                                           .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
-                                           .show();
-                               }
-                           }
+                                    new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
+                                            .setTitleText("Dikkat!")
+                                            .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                            .show();
+                                }
+                            }
 
-                           @Override
-                           public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
+                            @Override
+                            public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
 
-                               final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
-                               sa.setTitleText("Dikkat");
-                               sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                               sa.setConfirmText("Tamam");
-                               sa.show();
-                           }
-                       });
-                   }catch (Exception e)
-                   {
-                       Log.e("TAG", "onClick: ",e );
-                   }
+                                final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                                sa.setTitleText("Dikkat");
+                                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                                sa.setConfirmText("Tamam");
+                                sa.show();
+                            }
+                        });
+                    } catch (Exception e) {
+                        Log.e("TAG", "onClick: ", e);
+                    }
                 }
             }
         });
@@ -339,9 +387,8 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                     ///////////////////////////   P R O G R E S S   B A R   /////////
                 }
             });
-        }catch (Exception e)
-        {
-            Log.e("TAG", "islevver: ",e );
+        } catch (Exception e) {
+            Log.e("TAG", "islevver: ", e);
         }
 
         other_profil_kullanici.setOnClickListener(new View.OnClickListener() {
@@ -370,15 +417,14 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
 
                 try {
-                    Call<ResponseBody> down=ManagerAll.webyonet().indirr(dosyayolu_string);
+                    Call<ResponseBody> down = ManagerAll.webyonet().indirr(dosyayolu_string);
                     down.enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                             Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Dosya İndiriliyor Dosya Yöneticisinden Bulabilirsiniz", Toast.LENGTH_SHORT).show();
 
-                            Boolean dosya=dosyayıdiskeyaz(response.body());
-                            if (dosya==true)
-                            {
+                            Boolean dosya = dosyayıdiskeyaz(response.body());
+                            if (dosya == true) {
 
                                 new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE)
                                         .setTitleText("İndirme Başarılı!")
@@ -403,9 +449,8 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                             sa.show();
                         }
                     });
-                }catch (Exception e)
-                {
-                    Log.e("TAG", "onClick: ",e );
+                } catch (Exception e) {
+                    Log.e("TAG", "onClick: ", e);
                 }
 
             }
@@ -420,8 +465,6 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             }
         });
     }
-
-
 
 
     public static boolean setListViewHeightBasedOnItems(ListView listView) {
