@@ -38,6 +38,7 @@ import java.sql.SQLTransactionRollbackException;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import io.supercharge.shimmerlayout.ShimmerLayout;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -69,6 +70,7 @@ public class home_sayfasi extends Fragment {
     String dersadi;
     boolean searchActive = false;
     Typeface tf1;
+    ShimmerLayout shimmerLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -99,7 +101,7 @@ public class home_sayfasi extends Fragment {
         home_sayfası_listview_uyarı = view.findViewById(R.id.home_sayfası_lisview_uyarı_mesajı);
         refesh_home = view.findViewById(R.id.home_sayfasi_refesh);
         loadnextpage = view.findViewById(R.id.loadPage);
-
+        shimmerLayout=view.findViewById(R.id.shimmer_layout);
         DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
     }
 
@@ -211,17 +213,6 @@ public class home_sayfasi extends Fragment {
         } else {
             loadListForHome(pageCount);
         }
-        /*int page= rowcount / pageListSize;
-        if (page > pageCount)
-        {
-            pageCount++;
-        }
-        else if(page <= pageCount)
-        {
-            pageCount=0;
-        }
-        //Toast.makeText(getActivity().getApplicationContext(),"page: "+page+" pagecount: "+pageCount+" rowcount: "+rowcount + " pagelistsize: "+pageListSize,Toast.LENGTH_LONG).show();
-       loadListForHome(pageCount);*/
 
     }
 
@@ -242,17 +233,23 @@ public class home_sayfasi extends Fragment {
         try {
             retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> tumveriler = ManagerAll.webyonet().paylasimlartumugetir(email, getString(R.string.jsongüvenlikkod), page);
             //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-            progressBar.setVisibility(View.VISIBLE);
-
-
-            getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            shimmerLayout.setVisibility(View.VISIBLE);
+            shimmerLayout.startShimmerAnimation();
+            listView_homesayfasi.setVisibility(View.GONE);
             ////////////////////////////////////////////////////////////////////////////////////
             tumveriler.enqueue(new Callback<List<Homesayfasitumpaylasimveritabani>>() {
                 @Override
                 public void onResponse(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Response<List<Homesayfasitumpaylasimveritabani>> response) {
                     //Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi"+response.body(),Toast.LENGTH_SHORT).show();
                     if (response.isSuccessful()) {
+
+                        //////////////////////////////
+                        shimmerLayout.setVisibility(View.GONE);
+                        shimmerLayout.stopShimmerAnimation();
+                        listView_homesayfasi.setVisibility(View.VISIBLE);
+                        refesh_home.setRefreshing(false);
+                        //////////////////////////////////////////////
+
                         if (response.body() != null) {
                             if (response.body().size() > 0) {
                                 rowcount = response.body().get(0).getRowCount();
@@ -274,7 +271,6 @@ public class home_sayfasi extends Fragment {
                                     }
                                 }
 
-
                                 if ( rowcount >= 0) {
                                     paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
                                     listView_homesayfasi.setAdapter(paylasimtumverileradapter);
@@ -286,12 +282,6 @@ public class home_sayfasi extends Fragment {
                                 int a=pageCount*pageListSize;
                                 listView_homesayfasi.setSelection(a);
                             }
-
-                            /////////////////////////////////////
-                            progressBar.setVisibility(View.GONE);
-                            refesh_home.setRefreshing(false);
-                            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                            ///////////////////////////   P R O G R E S S   B A R   /////////
                         } else {
 
                             final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
@@ -300,11 +290,6 @@ public class home_sayfasi extends Fragment {
                             sa.setConfirmText("Tamam");
                             sa.show();
 
-                            //////////////////////////////////////////////////////////////
-                            progressBar.setVisibility(View.GONE);
-                            refesh_home.setRefreshing(false);
-                            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                            /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
                         }
                     }
                 }
@@ -317,11 +302,12 @@ public class home_sayfasi extends Fragment {
                     sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                     sa.setConfirmText("Tamam");
                     sa.show();
-
-                    //////////////////////////////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
+                    //////////////////////////////
+                    //shimmerLayout.setVisibility(View.GONE);
+                    //shimmerLayout.stopShimmerAnimation();
                     refesh_home.setRefreshing(false);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                   // listView_homesayfasi.setVisibility(View.VISIBLE);
+                    //////////////////////////////////////////////
                     /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
                 }
             });

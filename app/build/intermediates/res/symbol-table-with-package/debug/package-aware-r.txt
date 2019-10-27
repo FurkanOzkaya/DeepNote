@@ -175,9 +175,7 @@ attr chipStyle
 attr chipText
 attr civ_border
 attr civ_border_color
-attr civ_border_overlay
 attr civ_border_width
-attr civ_fill_color
 attr civ_shadow
 attr civ_shadow_color
 attr civ_shadow_radius
@@ -509,6 +507,13 @@ attr selectableItemBackground
 attr selectableItemBackgroundBorderless
 attr selection_mode
 attr selection_type
+attr shimmer_angle
+attr shimmer_animation_duration
+attr shimmer_auto_start
+attr shimmer_color
+attr shimmer_gradient_center_color_width
+attr shimmer_mask_width
+attr shimmer_reverse_animation
 attr showAsAction
 attr showDividers
 attr showMotionSpec
@@ -809,6 +814,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color placeholderBG
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -826,6 +832,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color shimmer_color
 color success_stroke_color
 color sweet_dialog_bg_color
 color sweet_dialog_bg_color_dark
@@ -1368,6 +1375,7 @@ id all
 id alt_butonlar
 id always
 id ana_sayfa_fragment
+id anasayfa_listview
 id anasayfa_listview_kullanici_profil_sayfasi
 id anasayfa_listview_layout
 id anasayfa_progress_bar
@@ -1576,6 +1584,9 @@ id others_profil_universite
 id others_profilsayfası_listview
 id outline
 id packed
+id palace_holder_aciklama
+id palace_holder_resim
+id palace_holder_universite
 id parallax
 id parent
 id parentPanel
@@ -1585,6 +1596,9 @@ id pdfsec
 id pdfviewer
 id percent
 id pin
+id placeholder_ad
+id placeholder_ders
+id placeholder_profile_image
 id profil_adi
 id profil_ayrıntı_progressbar
 id profil_bilgileri_kısmı
@@ -1640,6 +1654,7 @@ id share_sayafası_progress_bar
 id share_sayfası_acıklama_uyarı
 id share_sayfası_bolum_uyarı
 id share_sayfası_ders_uyarı
+id shimmer_layout
 id shortcut
 id showCustom
 id showHome
@@ -1797,6 +1812,7 @@ layout activity_profil_paylasimlari_ayrinti
 layout activity_profil_resmi_pop_up
 layout activity_sozlesme_pop_up
 layout alert_dialog
+layout ana_sayfa_place_holder_item
 layout bolumler
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2500,7 +2516,6 @@ styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable ChipDrawable android_textAppearance android_checkable checkedIcon checkedIconEnabled chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipMinHeight chipStartPadding chipStrokeColor chipStrokeWidth chipText closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint hideMotionSpec iconEndPadding iconStartPadding rippleColor showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical singleLine singleSelection
-styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_fill_color
 styleable CircularImageView civ_border civ_border_color civ_border_width civ_shadow civ_shadow_color civ_shadow_radius
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
@@ -2543,6 +2558,7 @@ styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollBar sb_handlerColor sb_horizontal sb_indicatorColor sb_indicatorTextColor
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
+styleable ShimmerLayout shimmer_angle shimmer_animation_duration shimmer_auto_start shimmer_color shimmer_gradient_center_color_width shimmer_mask_width shimmer_reverse_animation
 styleable SnackbarLayout android_maxWidth elevation maxActionInlineWidth
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
