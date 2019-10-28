@@ -1260,9 +1260,6 @@ drawable ic_photo_black_48dp
 drawable ic_photo_camera_black_48dp
 drawable ic_send_black_24dp
 drawable image
-drawable img1
-drawable img2
-drawable img3
 drawable indicator_default
 drawable indicator_selected
 drawable indicator_selector
@@ -1800,7 +1797,6 @@ layout abc_tooltip
 layout activity_acilis_logo2_deepnote
 layout activity_ana_sayfa
 layout activity_anasayfa_pop_up_arama
-layout activity_denemeact
 layout activity_hesap_acma
 layout activity_homesayfasi_paylasimlari_ayrintili
 layout activity_intro

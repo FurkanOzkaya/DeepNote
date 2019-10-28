@@ -2,6 +2,7 @@ package com.abms.af.projeversion02;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -28,19 +29,12 @@ public class IntroActivity extends AppCompatActivity {
     Animation btnAnim ;
     TextView tvSkip;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // make the activity on full screen
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-        // when this activity is about to be launch we need to check if its openened before or not
 
         if (restorePrefData()) {
 
@@ -51,11 +45,18 @@ public class IntroActivity extends AppCompatActivity {
 
         }
 
+
+
         setContentView(R.layout.activity_intro);
+        Window window = this.getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            window.setStatusBarColor(this.getResources().getColor(R.color.white));
+        }
 
-        // hide the action bar
 
-        getSupportActionBar().hide();
 
         // ini views
         btnNext = findViewById(R.id.btn_next);
@@ -67,9 +68,9 @@ public class IntroActivity extends AppCompatActivity {
         // fill list screen
 
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Hoşgeldin!","Sınavların yaklaştı ve not mu arıyorsun? yada notlarını arakdaşlarınla paylaşmak mı istiyorsun?",R.drawable.img1));
-        mList.add(new ScreenItem("Doğru Yerdesin","Notlarını paylaşabileceğin ve ihtiyacın olan notları hızlıca elde edebileceğin bir ortam",R.drawable.img2));
-        mList.add(new ScreenItem("Kağıt Kalem Hazır mı?","Şaka şaka gerek yok notlar bizde",R.drawable.img3));
+        mList.add(new ScreenItem("Hoşgeldin!","Sınavların yaklaştı ve not mu arıyorsun? yada notlarını arakdaşlarınla paylaşmak mı istiyorsun?",R.drawable.onboard1));
+        mList.add(new ScreenItem("Doğru Yerdesin","Notlarını paylaşabileceğin ve ihtiyacın olan notları hızlıca elde edebileceğin bir ortam",R.drawable.onboard2));
+        mList.add(new ScreenItem("Kağıt Kalem Hazır mı?","Şaka şaka gerek yok notlar bizde",R.drawable.basla));
 
         // setup viewpager
         screenPager =findViewById(R.id.screen_viewpager);
@@ -189,10 +190,8 @@ public class IntroActivity extends AppCompatActivity {
                 screenPager.setCurrentItem(mList.size());
             }
         });
-
-
-
     }
+
 
     private boolean restorePrefData() {
 

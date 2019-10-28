@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".SozlesmePopUp"></activity>
-        <activity android:name=".denemeact" />
+        <activity android:name=".IntroActivity" />
         <activity android:name=".pdfViewer" />
         <activity android:name=".hesap_acmaActivity" />
         <activity android:name=".ana_sayfa" />
