@@ -4,20 +4,20 @@
     <item
         android:id="@+id/home_icon1"
         android:enabled="true"
-        android:icon="@drawable/flaticonhome"
+        android:icon="@drawable/ev"
         app:showAsAction="ifRoom"
         android:title="Ana Sayfa"/>
 
     <item
         android:id="@+id/ekle_icon1"
         android:enabled="true"
-        android:icon="@drawable/flaticonyukle"
+        android:icon="@drawable/paylasss"
         app:showAsAction="ifRoom"
         android:title="Paylas"/>
     <item
         android:id="@+id/profil_icon1"
         android:enabled="true"
-        android:icon="@drawable/flaticonprofile"
+        android:icon="@drawable/profill"
         app:showAsAction="ifRoom"
         android:title="Profil" />
 </menu>

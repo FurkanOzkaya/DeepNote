@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <View
+        android:id="@+id/placeholder_profile_image"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@color/placeholderBG"
+        android:layout_marginRight="8dp"/>
+
+    <View
+        android:id="@+id/placeholder_ad"
+        android:layout_width="200dp"
+        android:layout_height="15dp"
+        android:background="@color/placeholderBG"
+        android:layout_toRightOf="@+id/placeholder_profile_image"
+        android:layout_marginRight="8dp"/>
+    <View
+        android:id="@+id/palace_holder_universite"
+        android:layout_width="100dp"
+        android:layout_height="15dp"
+        android:gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/placeholder_profile_image"
+        android:layout_below="@+id/placeholder_ad"
+        android:background="@color/placeholderBG"
+        />
+    <View
+        android:id="@+id/placeholder_ders"
+        android:layout_width="100dp"
+        android:layout_height="15dp"
+        android:gravity="end"
+        android:layout_toRightOf="@+id/placeholder_ad"
+        android:background="@color/placeholderBG"
+        />
+
+    <View
+        android:id="@+id/palace_holder_aciklama"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/placeholder_profile_image"
+        android:background="@color/placeholderBG"
+        />
+    <View
+        android:id="@+id/palace_holder_resim"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/palace_holder_aciklama"
+        android:background="@color/placeholderBG"
+        />
+
+</RelativeLayout>

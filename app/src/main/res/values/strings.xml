@@ -1,10 +1,10 @@
 <resources>
-    <string name="site_adresi">"https://sandystreamtr.com/"</string>
+    <string name="site_adresi">"https://deepnote.furkanozkaya.com/"</string>
     <string name="jsongüvenlikkod">"Abms"</string>
 
 
-    <string name="app_name">My Application</string>
-    <string name="sifre_unutma">Şifremi unuttum !!</string>
+    <string name="app_name">DeepNote</string>
+    <string name="sifre_unutma">Şifreni mi unuttun?</string>
     <string name="giris_uyarı">E-posta veya  Sifre Yanlıs Lütfen Kontrol Ediniz</string>
     <string name="uye_olmak">Hesap Açmak için Tıklayınız</string>
     <string name="hesap_acma_sayfası_bilgi">Yazacağınız bilgilerin doğru olmasına özen gösteriniz</string>
@@ -19,7 +19,7 @@
     <string name="hesap_acma_sayfası_Sifre_kısmı_uyarı">Şifre bilgisi gereklidir</string>
     <string name="hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı1">Şifre dogrulaması gereklidir</string>
     <string name="hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı">Şifreler birbiri ile uyuşmuyor</string>
-    <string name="sozlesme">DeepNote Sözleşmesini Kabul Ediyor ve Onaylıyorum</string>
+    <string name="sozlesme">DeepNote Sözleşmesini</string>
     <string name="buton_altı_bilgilendirme">Lütfen Bilgilerinizi Kontrol Ediniz</string>
     <string name="share_sayfası_ders_uyarı">Ders bilgisi gereklidir</string>
     <string name="share_sayfası_bolum_uyarı">Bolum bilgisi gereklidir</string>
@@ -27,24 +27,1797 @@
     <string name="arama_pop_up_bolum_uyarı">Bölüm bilgisi gereklidir</string>
     <string name="arama_pop_up_dersadi_uyarı">Ders bilgisi gereklidir</string>
     <string name="home_sayfasi_listview_top_uyarı">Bu alanda bilgi bulunmamaktadır!!</string>
-    <string name="ayrıntısayfalari_yorum_listview_uyarı">Henüz bir yorum yok!!!</string>
+    <string name="ayrıntısayfalari_yorum_listview_uyarı">İlk yorumu sen yap</string>
+    <string name="key_for_protection_create_user">A84qwe468WDQW45AS)-+1KeY94815we1623qw742</string>
+
+    <string name="sozlesme_metni">
+        DeepNote Kullanım Sözleşmesi\n\n
+
+        Lütfen uygulamayı/siteyi kullanmadan evvel bu ‘uygulama/site kullanım şartları’nı dikkatlice okuyunuz. 
+        Bu alışveriş uygulamasını/sitesini kullanan ve alışveriş yapan müşterilerimiz aşağıdaki şartları kabul etmiş varsayılmaktadır:
+        Uygulamadaki/Sitedeki web sayfaları ve ona bağlı tüm sayfalar (‘site,uygulama’) ……………………… adresindeki ……………………………….firmasının (Firma) malıdır ve onun tarafından işletilir. Sizler (‘Kullanıcı’) sitede sunulan tüm hizmetleri kullanırken aşağıdaki şartlara tabi olduğunuzu, sitedeki hizmetten yararlanmakla ve kullanmaya devam etmekle; Bağlı olduğunuz yasalara göre sözleşme imzalama hakkına, yetkisine ve hukuki ehliyetine sahip ve 18 yaşın üzerinde olduğunuzu, bu sözleşmeyi okuduğunuzu, anladığınızı ve sözleşmede yazan şartlarla bağlı olduğunuzu kabul etmiş sayılırsınız. 
+        İşbu sözleşme taraflara sözleşme konusu uygulama/site ile ilgili hak ve yükümlülükler yükler ve taraflar işbu sözleşmeyi kabul ettiklerinde bahsi geçen hak ve yükümlülükleri eksiksiz, doğru, zamanında, işbu sözleşmede talep edilen şartlar dâhilinde yerine getireceklerini beyan ederler.\n
+
+        \n\n
+
+        1. SORUMLULUKLAR\n
+        a.Firma, fiyatlar ve sunulan ürün ve hizmetler üzerinde değişiklik yapma hakkını her zaman saklı tutar. \n
+        b.Firma, üyenin sözleşme konusu hizmetlerden, teknik arızalar dışında yararlandırılacağını kabul ve taahhüt eder.\n
+        c.Kullanıcı, sitenin kullanımında tersine mühendislik yapmayacağını ya da bunların kaynak kodunu bulmak veya elde etmek amacına yönelik herhangi bir başka işlemde bulunmayacağını aksi halde ve 3. Kişiler nezdinde doğacak zararlardan sorumlu olacağını, hakkında hukuki ve cezai işlem yapılacağını peşinen kabul eder. \n
+        d.Kullanıcı, site içindeki faaliyetlerinde, sitenin herhangi bir bölümünde veya iletişimlerinde genel ahlaka ve adaba aykırı, kanuna aykırı, 3. Kişilerin haklarını zedeleyen, yanıltıcı, saldırgan, müstehcen, pornografik, kişilik haklarını zedeleyen, telif haklarına aykırı, yasa dışı faaliyetleri teşvik eden içerikler üretmeyeceğini, paylaşmayacağını kabul eder. Aksi halde oluşacak zarardan tamamen kendisi sorumludur ve bu durumda ‘Site’ yetkilileri, bu tür hesapları askıya alabilir, sona erdirebilir, yasal süreç başlatma hakkını saklı tutar. Bu sebeple yargı mercilerinden etkinlik veya kullanıcı hesapları ile ilgili bilgi talepleri gelirse paylaşma hakkını saklı tutar.\n
+        e.Sitenin üyelerinin birbirleri veya üçüncü şahıslarla olan ilişkileri kendi sorumluluğundadır. \n
+
+        \n\n
+
+        2.  Fikri Mülkiyet Hakları\n
+        2.1. İşbu Site’de yer alan ünvan, işletme adı, marka, patent, logo, tasarım, bilgi ve yöntem gibi tescilli veya tescilsiz tüm fikri mülkiyet hakları site işleteni ve sahibi firmaya veya belirtilen ilgilisine ait olup, ulusal ve uluslararası hukukun koruması altındadır. İşbu Site’nin ziyaret edilmesi veya bu Site’deki hizmetlerden yararlanılması söz konusu fikri mülkiyet hakları konusunda hiçbir hak vermez.\n
+        2.2. Site’de yer alan bilgiler hiçbir şekilde çoğaltılamaz, yayınlanamaz, kopyalanamaz, sunulamaz ve/veya aktarılamaz. Site’nin bütünü veya bir kısmı diğer bir internet sitesinde izinsiz olarak kullanılamaz. \n
+
+        \n\n
+
+        3. Gizli Bilgi\n
+        3.1. Firma, site üzerinden kullanıcıların ilettiği kişisel bilgileri 3. Kişilere açıklamayacaktır. Bu kişisel bilgiler; kişi adı-soyadı, adresi, telefon numarası, cep telefonu, e-posta adresi gibi Kullanıcı’yı tanımlamaya yönelik her türlü diğer bilgiyi içermekte olup, kısaca ‘Gizli Bilgiler’ olarak anılacaktır.\n
+        3.2. Kullanıcı, sadece tanıtım, reklam, kampanya, promosyon, duyuru vb. pazarlama faaliyetleri kapsamında kullanılması ile sınırlı olmak üzere, Site’nin sahibi olan firmanın kendisine ait iletişim, portföy durumu ve demografik bilgilerini iştirakleri ya da bağlı bulunduğu grup şirketleri ile paylaşmasına muvafakat ettiğini kabul ve beyan eder. Bu kişisel bilgiler firma bünyesinde müşteri profili belirlemek, müşteri profiline uygun promosyon ve kampanyalar sunmak ve istatistiksel çalışmalar yapmak amacıyla kullanılabilecektir.\n
+        3.3. Gizli Bilgiler, ancak resmi makamlarca usulü dairesinde bu bilgilerin talep edilmesi halinde ve yürürlükteki emredici mevzuat hükümleri gereğince resmi makamlara açıklama yapılmasının zorunlu olduğu durumlarda resmi makamlara açıklanabilecektir
+        3.4   Hizmet kapsamında işlenen verilerin tutulduğu veri merkezileri değişik bölgelerde
+        bulunmaktadır., Türkiye, İrlanda, Hollanda, Amerika Birleşik Devletleri bölgelerinde yer
+        alan barındırma hizmetleri kullanılarak sağlanmaktadır. Bununla birlikte, işlenen Kişisel
+        Veriler, bu ülkeler ve bölgeler dışında bir ülkede bulunan muhafaza sunucularına
+        aktarılabilir ve depolanabilir. Kişisel Verilerinizin güvenli bir şekilde ve bu gizlilik
+        politikasına uygun şekilde kullanılmasını sağlamak için makul ölçüde gerekli tüm adımları
+        atacağız.\n
+        3.5. Hizmetimiz üçüncü taraflar tarafından sunulan hizmetler ve ürünler ve / veya ortakların,
+        reklamverenlerin ve diğer üçüncü tarafların web sitelerine veya hizmetlerine köprüler
+        içerebilir.
+        Tarafların, bu üçüncü tarafların içeriği, web siteleri veya hizmetleri üzerinde herhangi bir
+        kontrolü veya etkisi yoktur. Üçüncü kişi web sitelerinin ve hizmetlerinin kullanımı için
+        farklı gizlilik politikaları uygulanabilir. Bu Gizlilik Beyanı, yalnızca taraflar tarafından
+        Hizmeti kendi amaçları doğrultusunda kullanmanız yoluyla elde edilen Kişisel Verilerle
+        ilgilidir. Taraflar, üçüncü taraf web sitelerinin ve hizmetlerin içeriği, uygulamaları veya
+        işletilmesi ile ilgili herhangi bir sorumluluk kabul etmez.\n
+
+        \n\n
+
+        4. Garanti Vermeme\n
+        İŞBU SÖZLEŞME MADDESİ UYGULANABİLİR KANUNUN İZİN VERDİĞİ AZAMİ ÖLÇÜDE GEÇERLİ OLACAKTIR. FİRMA TARAFINDAN SUNULAN HİZMETLER "OLDUĞU GİBİ” VE "MÜMKÜN OLDUĞU” TEMELDE SUNULMAKTA VE PAZARLANABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VEYA İHLAL ETMEME KONUSUNDA TÜM ZIMNİ GARANTİLER DE DÂHİL OLMAK ÜZERE HİZMETLER VEYA UYGULAMA İLE İLGİLİ OLARAK (BUNLARDA YER ALAN TÜM BİLGİLER DÂHİL) SARİH VEYA ZIMNİ, KANUNİ VEYA BAŞKA BİR NİTELİKTE HİÇBİR GARANTİDE BULUNMAMAKTADIR. \n
+
+        \n\n
+
+        5. Kayıt ve Güvenlik \n
+        Kullanıcı, doğru, eksiksiz ve güncel kayıt bilgilerini vermek zorundadır. Aksi halde bu Sözleşme ihlal edilmiş sayılacak ve Kullanıcı bilgilendirilmeksizin hesap kapatılabilecektir.
+        Kullanıcı, site ve üçüncü taraf sitelerdeki şifre ve hesap güvenliğinden kendisi sorumludur. Aksi halde oluşacak veri kayıplarından ve güvenlik ihlallerinden veya donanım ve cihazların zarar görmesinden Firma sorumlu tutulamaz.
+        Uygulamayı kullanarak toplanan kişisel bilgilere e-posta yoluyla bizimle iletişime geçmek veya silmek için bir istek gönderebilirsiniz. Kimliğinizi doğrulamak için ek bilgi sağlamanız
+        istenebilir.\n
+
+        \n\n
+
+        6. Mücbir Sebep\n
+        Tarafların kontrolünde olmayan; tabii afetler, yangın, patlamalar, iç savaşlar, savaşlar, ayaklanmalar, halk hareketleri, seferberlik ilanı, grev, lokavt ve salgın hastalıklar, altyapı ve internet arızaları, elektrik kesintisi gibi sebeplerden (aşağıda birlikte "Mücbir Sebep” olarak anılacaktır.) dolayı sözleşmeden doğan yükümlülükler taraflarca ifa edilemez hale gelirse, taraflar bundan sorumlu değildir. Bu sürede Taraflar’ın işbu Sözleşme’den doğan hak ve yükümlülükleri askıya alınır. \n
+
+        7. Sözleşmenin Bütünlüğü ve Uygulanabilirlik
+        İşbu sözleşme şartlarından biri, kısmen veya tamamen geçersiz hale gelirse, sözleşmenin geri kalanı geçerliliğini korumaya devam eder.\n
+
+        8. Sözleşmede Yapılacak Değişiklikler
+        Firma, dilediği zaman sitede sunulan hizmetleri ve işbu sözleşme şartlarını kısmen veya tamamen değiştirebilir. Değişiklikler sitede yayınlandığı tarihten itibaren geçerli olacaktır. Değişiklikleri takip etmek Kullanıcı’nın sorumluluğundadır. Kullanıcı, sunulan hizmetlerden yararlanmaya devam etmekle bu değişiklikleri de kabul etmiş sayılır.\n
+
+        9. Tebligat
+        İşbu Sözleşme ile ilgili taraflara gönderilecek olan tüm bildirimler, Firma’nın bilinen e.posta adresi ve kullanıcının üyelik formunda belirttiği e.posta adresi vasıtasıyla yapılacaktır. Kullanıcı, üye olurken belirttiği adresin geçerli tebligat adresi olduğunu, değişmesi durumunda 5 gün içinde yazılı olarak diğer tarafa bildireceğini, aksi halde bu adrese yapılacak tebligatların geçerli sayılacağını kabul eder.\n
+
+        10. Delil Sözleşmesi
+        Taraflar arasında işbu sözleşme ile ilgili işlemler için çıkabilecek her türlü uyuşmazlıklarda Taraflar’ın defter, kayıt ve belgeleri ile ve bilgisayar kayıtları ve faks kayıtları 6100 sayılı Hukuk Muhakemeleri Kanunu uyarınca delil olarak kabul edilecek olup, kullanıcı bu kayıtlara itiraz etmeyeceğini kabul eder.\n
+
+        11. Uyuşmazlıkların Çözümü
+        İşbu Sözleşme’nin uygulanmasından veya yorumlanmasından doğacak her türlü uyuşmazlığın çözümünde İstanbul (Merkez) Adliyesi Mahkemeleri ve İcra Daireleri yetkilidir.
+
+    </string>
 
     <array name="universite_listesi">
         <item>Üniversite Seçiniz</item>
-        <item>Selcuk Universty</item>
-        <item>Balıkesir Universty</item>
-        <item>Celal Bayar Universty</item>
-        <item>momomomomo</item>
+
+        <item>Abdullah Gül Üniversitesi</item>
+
+        <item>Acıbadem Mehmet Ali Aydınlar Üniversitesi</item>
+
+        <item>Adana Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Adıyaman Üniversitesi</item>
+
+        <item>Afyon Kocatepe Üniversitesi</item>
+
+        <item>Afyonkarahisar Sağlık Bilimleri Üniversitesi</item>
+
+        <item>Ağrı İbrahim Çeçen Üniversitesi</item>
+
+        <item>Akdeniz Üniversitesi</item>
+
+        <item>Aksaray Üniversitesi</item>
+
+        <item>Alanya Alaaddin Keykubat Üniversitesi</item>
+
+        <item>Alanya Hamdullah Emin Paşa Üniversitesi</item>
+
+        <item>Altınbaş Üniversitesi</item>
+
+        <item>Amasya Üniversitesi</item>
+
+        <item>Anadolu Üniversitesi</item>
+
+        <item>Anka Teknoloji Üniversitesi</item>
+
+        <item>Ankara Hacı Bayram Veli Üniversitesi</item>
+
+        <item>Ankara Medipol Üniversitesi</item>
+
+        <item>Ankara Müzik Ve Güzel Sanatlar Üniversitesi</item>
+
+        <item>Ankara Sosyal Bilimler Üniversitesi</item>
+
+        <item>Ankara Üniversitesi</item>
+
+        <item>Ankara Yıldırım Beyazıt Üniversitesi</item>
+
+        <item>Antalya Akev Üniversitesi</item>
+
+        <item>Antalya Bilim Üniversitesi</item>
+
+        <item>Ardahan Üniversitesi</item>
+
+        <item>Artvin Çoruh Üniversitesi</item>
+
+        <item>Ataşehir Adıgüzel Meslek Yüksekokulu</item>
+
+        <item>Atatürk Üniversitesi</item>
+
+        <item>Atılım Üniversitesi</item>
+
+        <item>Avrasya Üniversitesi</item>
+
+        <item>Avrupa Meslek Yüksekokulu</item>
+
+        <item>Aydın Adnan Menderes Üniversitesi</item>
+
+        <item>Bahçeşehir Üniversitesi</item>
+
+        <item>Balıkesir Üniversitesi</item>
+
+        <item>Bandırma Onyedi Eylül Üniversitesi</item>
+
+        <item>Bartın Üniversitesi</item>
+
+        <item>Başkent Üniversitesi</item>
+
+        <item>Batman Üniversitesi</item>
+
+        <item>Bayburt Üniversitesi</item>
+
+        <item>Beykent Üniversitesi</item>
+
+        <item>Beykoz Üniversitesi</item>
+
+        <item>Bezm-İ Âlem Vakıf Üniversitesi</item>
+
+        <item>Bilecik Şeyh Edebali Üniversitesi</item>
+
+        <item>Bingöl Üniversitesi</item>
+
+        <item>Biruni Üniversitesi</item>
+
+        <item>Bitlis Eren Üniversitesi</item>
+
+        <item>Boğaziçi Üniversitesi</item>
+
+        <item>Bolu Abant İzzet Baysal Üniversitesi</item>
+
+        <item>Burdur Mehmet Akif Ersoy Üniversitesi</item>
+
+        <item>Bursa Teknik Üniversitesi</item>
+
+        <item>Bursa Uludağ Üniversitesi</item>
+
+        <item>Çağ Üniversitesi</item>
+
+        <item>Çanakkale Onsekiz Mart Üniversitesi</item>
+
+        <item>Çankaya Üniversitesi</item>
+
+        <item>Çankırı Karatekin Üniversitesi</item>
+
+        <item>Çukurova Üniversitesi</item>
+
+        <item>Dicle Üniversitesi</item>
+
+        <item>Doğuş Üniversitesi</item>
+
+        <item>Dokuz Eylül Üniversitesi</item>
+
+        <item>Düzce Üniversitesi</item>
+
+        <item>Ege Üniversitesi</item>
+
+        <item>Erciyes Üniversitesi</item>
+
+        <item>Erzincan Binali Yıldırım Üniversitesi</item>
+
+        <item>Erzurum Teknik Üniversitesi</item>
+
+        <item>Eskişehir Osmangazi Üniversitesi</item>
+
+        <item>Eskişehir Teknik Üniversitesi</item>
+
+        <item>Faruk Saraç Tasarım Meslek Yüksekokulu</item>
+
+        <item>Fatih Sultan Mehmet Vakıf Üniversitesi</item>
+
+        <item>Fenerbahçe Üniversitesi</item>
+
+        <item>Fırat Üniversitesi</item>
+
+        <item>Galatasaray Üniversitesi</item>
+
+        <item>Gazi Üniversitesi</item>
+
+        <item>Gaziantep Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Gaziantep Üniversitesi</item>
+
+        <item>Gebze Teknik Üniversitesi</item>
+
+        <item>Giresun Üniversitesi</item>
+
+        <item>Gümüşhane Üniversitesi</item>
+
+        <item>Hacettepe Üniversitesi</item>
+
+        <item>Hakkari Üniversitesi</item>
+
+        <item>Haliç Üniversitesi</item>
+
+        <item>Harran Üniversitesi</item>
+
+        <item>Hasan Kalyoncu Üniversitesi</item>
+
+        <item>Hatay Mustafa Kemal Üniversitesi</item>
+
+        <item>Hitit Üniversitesi</item>
+
+        <item>Iğdır Üniversitesi</item>
+
+        <item>Isparta Uygulamalı Bilimler Üniversitesi</item>
+
+        <item>Işık Üniversitesi</item>
+
+        <item>İbn Haldun Üniversitesi</item>
+
+        <item>İhsan Doğramacı Bilkent Üniversitesi</item>
+
+        <item>İnönü Üniversitesi</item>
+
+        <item>İskenderun Teknik Üniversitesi</item>
+
+        <item>İstanbul Arel Üniversitesi</item>
+
+        <item>İstanbul Atlas Üniversitesi</item>
+
+        <item>İstanbul Aydın Üniversitesi</item>
+
+        <item>İstanbul Ayvansaray Üniversitesi</item>
+
+        <item>İstanbul Bilgi Üniversitesi</item>
+
+        <item>İstanbul Bilim Üniversitesi</item>
+
+        <item>İstanbul Esenyurt Üniversitesi</item>
+
+        <item>İstanbul Gedik Üniversitesi</item>
+
+        <item>İstanbul Gelişim Üniversitesi</item>
+
+        <item>İstanbul Kent Üniversitesi</item>
+
+        <item>İstanbul Kültür Üniversitesi</item>
+
+        <item>İstanbul Medeniyet Üniversitesi</item>
+
+        <item>İstanbul Medipol Üniversitesi</item>
+
+        <item>İstanbul Okan Üniversitesi</item>
+
+        <item>İstanbul Rumeli Üniversitesi</item>
+
+        <item>İstanbul Sabahattin Zaim Üniversitesi</item>
+
+        <item>İstanbul Şehir Üniversitesi</item>
+
+        <item>İstanbul Şişli Meslek Yüksekokulu</item>
+
+        <item>İstanbul Teknik Üniversitesi</item>
+
+        <item>İstanbul Ticaret Üniversitesi</item>
+
+        <item>İstanbul Üniversitesi</item>
+
+        <item>İstanbul Üniversitesi-Cerrahpaşa</item>
+
+        <item>İstanbul Yeni Yüzyıl Üniversitesi</item>
+
+        <item>İstanbul 29 Mayıs Üniversitesi</item>
+
+        <item>İstinye Üniversitesi</item>
+
+        <item>İzmir Bakırçay Üniversitesi</item>
+
+        <item>İzmir Demokrasi Üniversitesi</item>
+
+        <item>İzmir Ekonomi Üniversitesi</item>
+
+        <item>İzmir Katip Çelebi Üniversitesi</item>
+
+        <item>İzmir Kavram Meslek Yüksekokulu</item>
+
+        <item>İzmir Tınaztepe Üniversitesi</item>
+
+        <item>İzmir Yüksek Teknoloji Enstitüsü</item>
+
+        <item>Kadir Has Üniversitesi</item>
+
+        <item>Kafkas Üniversitesi</item>
+
+        <item>Kahramanmaraş İstiklal Üniversitesi</item>
+
+        <item>Kahramanmaraş Sütçü İmam Üniversitesi</item>
+
+        <item>Kapadokya Üniversitesi</item>
+
+        <item>Karabük Üniversitesi</item>
+
+        <item>Karadeniz Teknik Üniversitesi</item>
+
+        <item>Karamanoğlu Mehmetbey Üniversitesi</item>
+
+        <item>Kastamonu Üniversitesi</item>
+
+        <item>Kayseri Üniversitesi</item>
+
+        <item>Kırıkkale Üniversitesi</item>
+
+        <item>Kırklareli Üniversitesi</item>
+
+        <item>Kırşehir Ahi Evran Üniversitesi</item>
+
+        <item>Kilis 7 Aralık Üniversitesi</item>
+
+        <item>Kocaeli Üniversitesi</item>
+
+        <item>Koç Üniversitesi</item>
+
+        <item>Konya Gıda Ve Tarım Üniversitesi</item>
+
+        <item>Konya Teknik Üniversitesi</item>
+
+        <item>Kto Karatay Üniversitesi</item>
+
+        <item>Kütahya Dumlupınar Üniversitesi</item>
+
+        <item>Kütahya Sağlık Bilimleri Üniversitesi</item>
+
+        <item>Lokman Hekim Üniversitesi</item>
+
+        <item>Malatya Turgut Özal Üniversitesi</item>
+
+        <item>Maltepe Üniversitesi</item>
+
+        <item>Manisa Celâl Bayar Üniversitesi</item>
+
+        <item>Mardin Artuklu Üniversitesi</item>
+
+        <item>Marmara Üniversitesi</item>
+
+        <item>Mef Üniversitesi</item>
+
+        <item>Mersin Üniversitesi</item>
+
+        <item>Mimar Sinan Güzel Sanatlar Üniversitesi</item>
+
+        <item>Muğla Sıtkı Koçman Üniversitesi</item>
+
+        <item>Munzur Üniversitesi</item>
+
+        <item>Muş Alparslan Üniversitesi</item>
+
+        <item>Necmettin Erbakan Üniversitesi</item>
+
+        <item>Nevşehir Hacı Bektaş Veli Üniversitesi</item>
+
+        <item>Niğde Ömer Halisdemir Üniversitesi</item>
+
+        <item>Nişantaşı Üniversitesi</item>
+
+        <item>Nuh Naci Yazgan Üniversitesi</item>
+
+        <item>Ondokuz Mayıs Üniversitesi</item>
+
+        <item>Ordu Üniversitesi</item>
+
+        <item>Orta Doğu Teknik Üniversitesi</item>
+
+        <item>Osmaniye Korkut Ata Üniversitesi</item>
+
+        <item>Ostim Teknik Üniversitesi</item>
+
+        <item>Özyeğin Üniversitesi</item>
+
+        <item>Pamukkale Üniversitesi</item>
+
+        <item>Piri Reis Üniversitesi</item>
+
+        <item>Recep Tayyip Erdoğan Üniversitesi</item>
+
+        <item>Sabancı Üniversitesi</item>
+
+        <item>Sağlık Bilimleri Üniversitesi</item>
+
+        <item>Sakarya Uygulamalı Bilimler Üniversitesi</item>
+
+        <item>Sakarya Üniversitesi</item>
+
+        <item>Samsun Üniversitesi</item>
+
+        <item>Sanko Üniversitesi</item>
+
+        <item>Selçuk Üniversitesi</item>
+
+        <item>Semerkand Bilim Ve Medeniyet Üniversitesi</item>
+
+        <item>Siirt Üniversitesi</item>
+
+        <item>Sinop Üniversitesi</item>
+
+        <item>Sivas Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Sivas Cumhuriyet Üniversitesi</item>
+
+        <item>Süleyman Demirel Üniversitesi</item>
+
+        <item>Şırnak Üniversitesi</item>
+
+        <item>Tarsus Üniversitesi</item>
+
+        <item>Ted Üniversitesi</item>
+
+        <item>Ekirdağ Namık Kemal Üniversitesi</item>
+
+        <item>Tobb Ekonomi Ve Teknoloji Üniversitesi</item>
+
+        <item>Tokat Gaziosmanpaşa Üniversitesi</item>
+
+        <item>Toros Üniversitesi</item>
+
+        <item>Trabzon Üniversitesi</item>
+
+        <item>Trakya Üniversitesi</item>
+
+        <item>Türk Hava Kurumu Üniversitesi</item>
+
+        <item>Türk-Alman Üniversitesi</item>
+
+        <item>Türkiye Uluslararası İslam, Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Türk-Japon Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Ufuk Üniversitesi</item>
+
+        <item>Uşak Üniversitesi</item>
+
+        <item>Üsküdar Üniversitesi</item>
+
+        <item>Van Yüzüncü Yıl Üniversitesi</item>
+
+        <item>Yalova Üniversitesi</item>
+
+        <item>Yaşar Üniversitesi</item>
+
+        <item>Yeditepe Üniversitesi</item>
+
+        <item>Yıldız Teknik Üniversitesi</item>
+
+        <item>Yozgat Bozok Üniversitesi</item>
+
+        <item>Yüksek İhtisas Üniversitesi</item>
+
+        <item>Zonguldak Bülent Ecevit Üniversitesi</item>
     </array>
     <array name="Bolum_listesi">
         <item>Bölüm Seçiniz</item>
+
+        <item>Acil Yardım Ve Afet Yönetimi</item>
+
+        <item>Adli Bilimler</item>
+
+        <item>Adli Bilişim Mühendisliği</item>
+
+        <item>Ağaç İşleri Endüstri Mühendisliği</item>
+
+        <item>Aile Ve Tüketici Bilimleri</item>
+
+        <item>Aktüerya</item>
+
+        <item>Aktüerya Bilimleri</item>
+
+        <item>Aktüerya Ve Risk Yönetimi</item>
+
+        <item>Alman Dili Ve Edebiyatı</item>
+
+        <item>Almanca Öğretmenliği</item>
+
+        <item>Amerikan Kültürü Ve Edebiyatı</item>
+
+        <item>Animasyon Ve Oyun Tasarımı</item>
+
+        <item>Antrenörlük Eğitimi</item>
+
+        <item>Antropoloji</item>
+
+        <item>Arap Dili Ve Edebiyatı</item>
+
+        <item>Arapça Öğretmenliği</item>
+
+        <item>Arkeoloji</item>
+
+        <item>Arkeoloji Ve Sanat Tarih</item>
+
+        <item>Arnavut Dili Ve Edebiyatı</item>
+
+        <item>Astronomi Ve Uzay Bilimleri</item>
+
+        <item>Avrupa Birliği İlişkileri</item>
+
+        <item>Azerbaycan Dili Öğretmenliği</item>
+
+        <item>Azerbaycan Dili Ve Edebiyatı</item>
+
+        <item>Azerbaycan Dili Ve Edebiyatı Öğretmenliği</item>
+
+        <item>Azerbaycan Türkçesi Ve Edebiyatı</item>
+
+        <item>Bahçe Bitkileri</item>
+
+        <item>Bahçe Bitkileri Üretimi Ve Pazarlaması</item>
+
+        <item>Bahçe Ve Tarla Bitkileri</item>
+
+        <item>Balıkçılık Teknolojisi</item>
+
+        <item>Balıkçılık Teknolojisi Mühendisliği</item>
+
+        <item>Bankacılık</item>
+
+        <item>Bankacılık Ve Finans</item>
+
+        <item>Bankacılık Ve Sigortacılık</item>
+
+        <item>Basım Teknolojileri</item>
+
+        <item>Basım Yayın Ve Redakte</item>
+
+        <item>Basın Ve Yayın</item>
+
+        <item>Batı Dilleri</item>
+
+        <item>Beden Eğitimi Ve Spor Öğretmenliği</item>
+
+        <item>Beslenme Ve Diyetetik</item>
+
+        <item>Bilgi Ve Belge Yönetimi</item>
+
+        <item>Bilgisayar Bilimleri</item>
+
         <item>Bilgisayar Mühendisliği</item>
+
+        <item>Bilgisayar Teknolojisi Ve Bilişim Sistemleri</item>
+
+        <item>Bilgisayar Ve Öğretim Teknolojileri Öğretmenliği</item>
+
+        <item>Bilgisayar Ve Yazılım Mühendisliği</item>
+
+        <item>Bilgisayar-Enformatik</item>
+
+        <item>Bilim Tarihi</item>
+
+        <item>Bilişim Sistemleri Mühendisliği</item>
+
+        <item>Bilişim Sistemleri Ve Teknolojileri</item>
+
+        <item>Bitki Koruma</item>
+
+        <item>Bitkisel Üretim Ve Teknolojileri</item>
+
+        <item>Biyoenformatik Ve Genetik</item>
+
+        <item>Biyokimya</item>
+
+        <item>Biyoloji</item>
+
+        <item>Biyoloji Öğretmenliği</item>
+
+        <item>Biyomedikal Mühendisliği</item>
+
+        <item>Biyomedikal Mühendisliği</item>
+
+        <item>Biyomühendislik</item>
+
+        <item>Biyosistem Mühendisliği</item>
+
+        <item>Biyoteknoloji</item>
+
+        <item>Biyoteknoloji Ve Moleküler Biyoloji</item>
+
+        <item>Boşnak Dili Ve Edebiyatı</item>
+
+        <item>Bulgar Dili Ve Edebiyatı</item>
+
+        <item>Çağdaş Türk Lehçeleri Ve Edebiyatları</item>
+
+        <item>Çağdaş Yunan Dili Ve Edebiyatı</item>
+
+        <item>Çalışma Ekonomisi Ve Endüstri İlişkileri</item>
+
+        <item>Canlandırma Filmi Tasarım Ve Yönetimi</item>
+
+        <item>Çerkez Dili Ve Edebiyatı</item>
+
+        <item>Cevher Hazırlama Mühendisliği</item>
+
+        <item>Çeviribilim</item>
+
+        <item>Çevre Mühendisliği</item>
+
+        <item>Çin Dili Ve Edebiyatı</item>
+
+        <item>Çizgi Film Ve Animasyon</item>
+
+        <item>Çocuk Gelişimi</item>
+
+        <item>Coğrafya</item>
+
+        <item>Coğrafya Öğretmenliği</item>
+
+        <item>Deniz İşletmeciliği Ve Yönetimi</item>
+
+        <item>Deniz Ulaştırma İşletme Mühendisliği</item>
+
+        <item>Denizcilik İşletmeleri Yönetimi</item>
+
+        <item>Deri Mühendisliği</item>
+
+        <item>Dijital Oyun Tasarımı</item>
+
+        <item>Dil Ve Konuşma Terapisi</item>
+
+        <item>Dilbilim</item>
+
+        <item>Dilbilimi</item>
+
+        <item>Diş Hekimliği</item>
+
+        <item>Doğu Dilleri</item>
+
+        <item>Ebelik</item>
+
+        <item>Eczacılık</item>
+
+        <item>Ekonometri</item>
+
+        <item>Ekonomi</item>
+
+        <item>Ekonomi Ve Finans</item>
+
+        <item>El Sanatları</item>
+
+        <item>El Sanatları Tasarımı Ve Üretimi</item>
+
+        <item>Elektrik Mühendisliği</item>
+
+        <item>Elektrik-Elektronik Mühendisliği</item>
+
+        <item>Elektronik Mühendisliği</item>
+
+        <item>Elektronik Ticaret Ve Teknoloji Yönetimi</item>
+
+        <item>Elektronik Ve Haberleşme Mühendisliği</item>
+
+        <item>Endüstri Mühendisliği</item>
+
+        <item>Endüstri Mühendisliği Programları</item>
+
+        <item>Endüstri Tasarımı</item>
+
+        <item>Endüstri Ürünleri Tasarımı</item>
+
+        <item>Endüstri Ve Sistem Mühendisliği</item>
+
+        <item>Endüstriyel Tasarım</item>
+
+        <item>Endüstriyel Tasarım Mühendisliği</item>
+
+        <item>Enerji Mühendisliği</item>
+
+        <item>Enerji Sistemleri Mühendisliği</item>
+
+        <item>Enerji Ve Malzeme Mühendisliği</item>
+
+        <item>Enerji Yönetimi</item>
+
+        <item>Ergoterapi</item>
+
+        <item>Ermeni Dili Ve Edebiyatı</item>
+
+        <item>Eşit Ağırlıklı Programlar</item>
+
+        <item>Eski Yunan Dili Ve Edebiyatı</item>
+
+        <item>Fars Dili Ve Edebiyatı</item>
+
+        <item>Felsefe</item>
+
+        <item>Felsefe Grubu Öğretmenliği</item>
+
+        <item>Fen Bilgisi Öğretmenliği</item>
+
+        <item>Film Tasarım Ve Yazarlık</item>
+
+        <item>Film Tasarım Ve Yönetmenliği</item>
+
+        <item>Film Tasarımı</item>
+
+        <item>Finans Ve Bankacılık</item>
+
+        <item>Finansal Ekonometri</item>
+
+        <item>Fizik</item>
+
+        <item>Fizik Mühendisliği</item>
+
+        <item>Fizik Öğretmenliği</item>
+
+        <item>Fizyoterapi Ve Rehabilitasyon</item>
+
+        <item>Fotoğraf</item>
+
+        <item>Fotoğraf Ve Video</item>
+
+        <item>Fransız Dili Ve Edebiyatı</item>
+
+        <item>Fransızca Öğretmenliği</item>
+
+        <item>Gastronomi</item>
+
+        <item>Gastronomi Ve Mutfak Sanatları</item>
+
+        <item>Gayrimenkul Geliştirme Ve Yönetimi</item>
+
+        <item>Gayrimenkul Ve Varlık Değerleme</item>
+
+        <item>Gazetecilik</item>
+
+        <item>Gazetecilik Ve Kitle İletişim</item>
+
+        <item>Geleneksel Türk Sanatları</item>
+
+        <item>Gemi İnşaatı Ve Gemi Makineleri Mühendisliği</item>
+
+        <item>Gemi Makineleri İşletme Mühendisliği</item>
+
+        <item>Gemi Ve Deniz Teknolojisi Mühendisliği</item>
+
+        <item>Gemi Ve Yat Tasarımı</item>
+
+        <item>Genetik Ve Biyomühendislik</item>
+
+        <item>Genetik Ve Yaşam Bilimleri Programları</item>
+
+        <item>Geomatik Mühendisliği</item>
+
+        <item>Gerontoloji</item>
+
+        <item>Gıda Mühendisliği</item>
+
+        <item>Gıda Teknolojisi</item>
+
+        <item>Girişimcilik</item>
+
+        <item>Görsel İletişim</item>
+
+        <item>Görsel İletişim Tasarımı</item>
+
+        <item>Görsel Sanatlar</item>
+
+        <item>Görsel Sanatlar Ve Görsel İletişim Tasarımı</item>
+
+        <item>Görsel Sanatlar Ve İletişim Tasarımı</item>
+
+        <item>Görsel Sanatlar Ve Medya</item>
+
+        <item>Grafik Tasarım</item>
+
+        <item>Grafik Tasarımı</item>
+
+        <item>Gümrük İşletme</item>
+
+        <item>Gürcü Dili Ve Edebiyatı</item>
+
+        <item>Güverte</item>
+
+        <item>Halkbilim</item>
+
+        <item>Halkla İlişkiler</item>
+
+        <item>Halkla İlişkiler Ve Reklamcılık</item>
+
+        <item>Halkla İlişkiler Ve Tanıtım</item>
+
+        <item>Harita Mühendisliği</item>
+
+        <item>Hava Trafik Kontrol</item>
+
+        <item>Havacılık Elektrik Ve Elektroniği</item>
+
+        <item>Havacılık Ve Uzay Mühendisliği</item>
+
+        <item>Havacılık Yönetimi</item>
+
+        <item>Hayvansal Üretim</item>
+
+        <item>Hayvansal Üretim Ve Teknolojileri</item>
+
+        <item>Hemşirelik</item>
+
+        <item>Hemşirelik Ve Sağlık Hizmetleri</item>
+
+        <item>Hidrojeoloji Mühendisliği</item>
+
+        <item>Hindoloji</item>
+
+        <item>Hititoloji</item>
+
+        <item>Hukuk</item>
+
+        <item>Hungaroloji</item>
+
+        <item>İbrani Dili Ve Edebiyatı</item>
+
+        <item>İç Mimarlık</item>
+
+        <item>İç Mimarlık Ve Çevre Tasarımı</item>
+
+        <item>İktisadi Ve İdari Bilimler Programları</item>
+
+        <item>İktisadi Ve İdari Programları</item>
+
+        <item>İktisat</item>
+
+        <item>İlahiyat</item>
+
+        <item>İletişim</item>
+
+        <item>İletişim Bilimleri</item>
+
+        <item>İletişim Sanatları</item>
+
+        <item>İletişim Tasarımı</item>
+
+        <item>İletişim Tasarımı Ve Medya</item>
+
+        <item>İletişim Tasarımı Ve Yönetimi</item>
+
+        <item>İletişim Ve Tasarım</item>
+
+        <item>İlköğretim Matematik Öğretmenliği</item>
+
+        <item>İmalat Mühendisliği</item>
+
+        <item>İngiliz Dil Bilimi</item>
+
+        <item>İngiliz Dili Ve Edebiyatı</item>
+
+        <item>İngiliz Dili Ve Karşılaştırmalı Edebiyat</item>
+
+        <item>İngiliz Ve Rus Dilleri Ve Edebiyatları</item>
+
+        <item>İngilizce Öğretmenliği</item>
+
+        <item>İnşaat Mühendisliği</item>
+
+        <item>İnsan Kaynakları Yönetimi</item>
+
+        <item>İnsan Ve Toplum Bilimleri</item>
+
+        <item>İş Sağlığı Ve Güvenliği</item>
+
+        <item>İslam Bilimleri</item>
+
+        <item>İslam Ekonomisi Ve Finans</item>
+
+        <item>İslam Ve Din Bilimleri</item>
+
+        <item>İslami İlimler</item>
+
+        <item>İşletme</item>
+
+        <item>İşletme Bilgi Yönetimi</item>
+
+        <item>İşletme Enformatiği</item>
+
+        <item>İşletme Mühendisliği</item>
+
+        <item>İşletme Yönetimi</item>
+
+        <item>İşletme-Ekonomi</item>
+
+        <item>İspanyol Dili Ve Edebiyatı</item>
+
+        <item>İstatistik</item>
+
+        <item>İstatistik Ve Bilgisayar Bilimleri</item>
+
+        <item>İtalyan Dili Ve Edebiyatı</item>
+
+        <item>Japon Dili Ve Edebiyatı</item>
+
+        <item>Japonca Öğretmenliği</item>
+
+        <item>Jeofizik Mühendisliği</item>
+
+        <item>Jeoloji Mühendisliği</item>
+
+        <item>Kamu Yönetimi</item>
+
+        <item>Kanatlı Hayvan Yetiştiriciliği</item>
+
+        <item>Karşılaştırmalı Edebiyat</item>
+
+        <item>Kazak Dili Ve Edebiyatı</item>
+
+        <item>Kentsel Tasarım Ve Peyzaj Mimarisi</item>
+
+        <item>Kimya</item>
+
+        <item>Kimya Mühendisliği</item>
+
+        <item>Kimya Mühendisliği Ve Uygulamalı Kimya</item>
+
+        <item>Kimya Öğretmenliği</item>
+
+        <item>Kimya Ve Süreç Mühendisliği</item>
+
+        <item>Kimya-Biyoloji Mühendisliği</item>
+
+        <item>Klasik Arkeoloji</item>
+
+        <item>Konaklama İşletmeciliği</item>
+
+        <item>Konaklama Ve Turizm İşletmeciliği</item>
+
+        <item>Kontrol Ve Otomasyon Mühendisliği</item>
+
+        <item>Kore Dili Ve Edebiyatı</item>
+
+        <item>Kültür Varlıklarını Koruma Ve Onarım</item>
+
+        <item>Kültür Ve İletişim Bilimleri</item>
+
+        <item>Küresel Siyaset Ve Uluslararası İlişkiler</item>
+
+        <item>Kurgu-Ses Ve Görüntü Yönetimi</item>
+
+        <item>Kürt Dili Ve Edebiyatı</item>
+
+        <item>Kuyumculuk Ve Mücevher Tasarımı</item>
+
+        <item>Latin Dili Ve Edebiyatı</item>
+
+        <item>Leh Dili Ve Edebiyatı</item>
+
+        <item>Lif Ve Polimer Mühendisliği</item>
+
+        <item>Lojistik</item>
+
+        <item>Lojistik Ve Taşımacılık</item>
+
+        <item>Lojistik Yönetimi</item>
+
+        <item>Maden Mühendisliği</item>
+
+        <item>Makine Mühendisliği</item>
+
+        <item>Makine Ve İmalat Mühendisliği</item>
+
+        <item>Maliye</item>
+
+        <item>Malzeme Bilimi Ve Mühendisliği</item>
+
+        <item>Malzeme Bilimi Ve Nanoteknoloji Mühendisliği</item>
+
+        <item>Malzeme Bilimi Ve Teknolojileri</item>
+
+        <item>Malzeme Mühendisliği</item>
+
+        <item>Matematik</item>
+
+        <item>Matematik Mühendisliği</item>
+
+        <item>Matematik Öğretmenliği</item>
+
+        <item>Matematik Ve Bilgisayar Bilimleri</item>
+
+        <item>Matematik-Bilgisayar</item>
+
+        <item>Medya Ve Görsel Sanatlar</item>
+
+        <item>Medya Ve İletişim</item>
+
+        <item>Medya Ve İletişim Sistemleri</item>
+
+        <item>Mekatronik Mühendisliği</item>
+
+        <item>Mekatronik Sistemler Mühendisliği</item>
+
+        <item>Metalurji Ve Malzeme Mühendisliği</item>
+
+        <item>Meteoroloji Mühendisliği</item>
+
+        <item>Mimarlık</item>
+
+        <item>Moda Tasarımı</item>
+
+        <item>Moda Ve Tekstil Tasarımı</item>
+
+        <item>Moleküler Biyoloji Ve Genetik</item>
+
+        <item>Moleküler Biyoteknoloji</item>
+
+        <item>Muhasebe</item>
+
+        <item>Muhasebe Bilgi Sistemleri</item>
+
+        <item>Muhasebe Ve Denetim</item>
+
+        <item>Muhasebe Ve Finans Yönetimi</item>
+
+        <item>Muhasebe Ve Finansal Yönetim</item>
+
+        <item>Mühendislik Programları</item>
+
+        <item>Mühendislik Ve Doğa Bilimleri Programları</item>
+
+        <item>Mütercim-Tercümanlık</item>
+
+        <item>Müzecilik</item>
+
+        <item>Müzikoloji</item>
+
+        <item>Nanobilim Ve Nanoteknoloji</item>
+
+        <item>Nanoteknoloji Mühendisliği</item>
+
+        <item>Nükleer Enerji Mühendisliği</item>
+
+        <item>Odyoloji</item>
+
+        <item>Öğretmenlik Programları</item>
+
+        <item>Okul Öncesi Öğretmenliği</item>
+
+        <item>Optik Ve Akustik Mühendisliği</item>
+
+        <item>Organik Tarım İşletmeciliği</item>
+
+        <item>Orman Endüstrisi Mühendisliği</item>
+
+        <item>Orman Mühendisliği</item>
+
+        <item>Ortez-Protez</item>
+
+        <item>Otel Yöneticiliği</item>
+
+        <item>Otomotiv Mühendisliği</item>
+
+        <item>Özel Eğitim Öğretmenliği</item>
+
+        <item>Pazarlama</item>
+
+        <item>Perfüzyon</item>
+
+        <item>Petrol Ve Doğalgaz Mühendisliği</item>
+
+        <item>Peyzaj Mimarlığı</item>
+
+        <item>Pilot Eğitimi</item>
+
+        <item>Pilotaj</item>
+
+        <item>Polimer Mühendisliği</item>
+
+        <item>Polonya Dili Ve Kültürü</item>
+
+        <item>Protohistorya Ve Ön Asya Arkeolojisi</item>
+
+        <item>Psikoloji</item>
+
+        <item>Psikolojik Danışmanlık Ve Rehberlik</item>
+
+        <item>Psikolojik Danışmanlık Ve Rehberlik Öğretmenliği</item>
+
+        <item>Radyo Ve Televizyon</item>
+
+        <item>Radyo, Televizyon Ve Sinema</item>
+
+        <item>Raylı Sistemler Mühendisliği</item>
+
+        <item>Rehberlik Ve Psikolojik Danışmanlık</item>
+
+        <item>Reklam Tasarımı Ve İletişimi</item>
+
+        <item>Reklamcılık</item>
+
+        <item>Reklamcılık Ve Halkla İlişkiler</item>
+
+        <item>Rekreasyon</item>
+
+        <item>Rekreasyon Yönetimi</item>
+
+        <item>Restorasyon Ve Konservasyon</item>
+
+        <item>Rus Dili Öğretmenliği</item>
+
+        <item>Rus Dili Ve Edebiyatı</item>
+
+        <item>Rus Dili Ve Edebiyatı Öğretmenliği</item>
+
+        <item>Rus Ve İngiliz Dilleri Ve Edebiyatı</item>
+
+        <item>Sağlık İdaresi</item>
+
+        <item>Sağlık Yönetimi</item>
+
+        <item>Sanat Tarihi</item>
+
+        <item>Sanat Ve Kültür Yönetimi</item>
+
+        <item>Sanat Ve Sosyal Bilimler Programları</item>
+
+        <item>Sanat Yönetimi</item>
+
+        <item>Şehir Ve Bölge Planlama</item>
+
+        <item>Sermaye Piyasaları Ve Portföy Yönetimi</item>
+
+        <item>Sermaye Piyasası</item>
+
+        <item>Seyahat İşletmeciliği</item>
+
+        <item>Seyahat İşletmeciliği Ve Turizm Rehberliği</item>
+
+        <item>Sigortacılık</item>
+
+        <item>Sigortacılık Ve Aktüerya Bilimleri</item>
+
+        <item>Sigortacılık Ve Risk Yönetimi</item>
+
+        <item>Sigortacılık Ve Sosyal Güvenlik</item>
+
+        <item>Sinema Ve Dijital Medya</item>
+
+        <item>Sinema Ve Televizyon</item>
+
+        <item>Sınıf Öğretmenliği</item>
+
+        <item>Sinoloji</item>
+
+        <item>Siyasal Bilimler</item>
+
+        <item>Siyaset Bilimi</item>
+
+        <item>Siyaset Bilimi Ve Kamu Yönetimi</item>
+
+        <item>Siyaset Bilimi Ve Uluslararası İlişkiler</item>
+
+        <item>Sosyal Bilgiler Öğretmenliği</item>
+
+        <item>Sosyal Hizmet</item>
+
+        <item>Sosyal Ve Siyasal Bilimler</item>
+
+        <item>Sosyoloji</item>
+
+        <item>Spor Yöneticiliği</item>
+
+        <item>Su Bilimleri Mühendisliği</item>
+
+        <item>Su Ürünleri Mühendisliği</item>
+
+        <item>Sümeroloji</item>
+
+        <item>Süryani Dili Ve Edebiyatı</item>
+
+        <item>Süt Teknolojisi</item>
+
+        <item>Takı Tasarımı)</item>
+
+        <item>Tapu Kadastro</item>
+
+        <item>Tarih</item>
+
+        <item>Tarih Öğretmenliği</item>
+
+        <item>Tarih Öncesi Arkeolojisi</item>
+
+        <item>Tarım Ekonomisi</item>
+
+        <item>Tarım Makineleri Ve Teknolojileri Mühendisliği</item>
+
+        <item>Tarımsal Biyoteknoloji</item>
+
+        <item>Tarımsal Genetik Mühendisliği</item>
+
+        <item>Tarımsal Yapılar Ve Sulama</item>
+
+        <item>Tarla Bitkileri</item>
+
+        <item>Taşınabilir Kültür Varlıklarını Koruma Ve Onarım</item>
+
+        <item>Teknoloji Ve Bilgi Yönetimi</item>
+
+        <item>Tekstil Mühendisliği</item>
+
+        <item>Tekstil Tasarımı</item>
+
+        <item>Tekstil Ve Moda Tasarımı</item>
+
+        <item>Televizyon Haberciliği Ve Programcılığı</item>
+
+        <item>Tıp</item>
+
+        <item>Tıp Mühendisliği</item>
+
+        <item>Tiyatro Eleştirmenliği Ve Dramaturji</item>
+
+        <item>Toprak Bilimi Ve Bitki Besleme</item>
+
+        <item>Turizm İşletmeciliği</item>
+
+        <item>Turizm İşletmeciliği Ve Otelcilik</item>
+
+        <item>Turizm Rehberliği</item>
+
+        <item>Turizm Ve Otel İşletmeciliği</item>
+
+        <item>Turizm Ve Otel Yöneticiliği</item>
+
+        <item>Turizm Ve Otelcilik</item>
+
+        <item>Türk Dili Ve Edebiyatı</item>
+
+        <item>Türk Halkbilimi</item>
+
+        <item>Türk İslam Arkeolojisi</item>
+
+        <item>Türkçe Öğretmenliği</item>
+
+        <item>Türkoloji</item>
+
+        <item>Tütün Eksperliği</item>
+
+        <item>Uçak Elektrik-Elektronik</item>
+
+        <item>Uçak Gövde-Motor</item>
+
+        <item>Uçak Gövde-Motor Bakım</item>
+
+        <item>Uçak Mühendisliği</item>
+
+        <item>Uçak Ve Uzay Mühendisliği</item>
+
+        <item>Ukrayna Dili Ve Edebiyatı</item>
+
+        <item>Ulaştırma Mühendisliği</item>
+
+        <item>Ulaştırma Ve Lojistik</item>
+
+        <item>Ulaştırma Ve Lojistik Yönetimi</item>
+
+        <item>Uluslararası Ekonomik İlişkiler</item>
+
+        <item>Uluslararası Finans</item>
+
+        <item>Uluslararası Finans Ve Bankacılık</item>
+
+        <item>Uluslararası Girişimcilik</item>
+
+        <item>Uluslararası İlişkiler</item>
+
+        <item>Uluslararası İşletme</item>
+
+        <item>Uluslararası İşletme Yönetimi</item>
+
+        <item>Uluslararası İşletmecilik</item>
+
+        <item>Uluslararası İşletmecilik Ve Ticaret</item>
+
+        <item>Uluslararası Lojistik</item>
+
+        <item>Uluslararası Lojistik Ve Taşımacılık</item>
+
+        <item>Uluslararası Lojistik Yönetimi</item>
+
+        <item>Uluslararası Ticaret</item>
+
+        <item>Uluslararası Ticaret Ve Finans</item>
+
+        <item>Uluslararası Ticaret Ve Finansman</item>
+
+        <item>Uluslararası Ticaret Ve İşletmecilik</item>
+
+        <item>Uluslararası Ticaret Ve Lojistik</item>
+
+        <item>Uluslararası Ticaret Ve Lojistik Yönetimi</item>
+
+        <item>Uluslararası Ticaret, Lojistik Ve İşletmecilik</item>
+
+        <item>Urdu Dili Ve Edebiyatı</item>
+
+        <item>Uzay Bilimleri Ve Teknolojileri</item>
+
+        <item>Uzay Mühendisliği</item>
+
+        <item>Veterinerlik</item>
+
+        <item>Yaban Hayatı Ekolojisi Ve Yönetimi</item>
+
+        <item>Yazılım Mühendisliği</item>
+
+        <item>Yeni Medya</item>
+
+        <item>Yeni Medya Ve Gazetecilik</item>
+
+        <item>Yeni Medya Ve İletişim</item>
+
+        <item>Yeni Medya Ve İletişim Sistemleri</item>
+
+        <item>Yer Bilimleri Mühendisliği Programları</item>
+
+        <item>Yerel Yönetimler</item>
+
+        <item>Yiyecek-İçecek İşletmeciliği</item>
+
+        <item>Yönetim Bilimleri Programları</item>
+
+        <item>Yönetim Bilişim Sistemleri</item>
+
+        <item>Yunan Dili Ve Edebiyatı</item>
+
+        <item>Zaza Dili Ve Edebiyatı</item>
+
+        <item>Ziraat Mühendisliği Programları</item>
+
+        <item>Zootekni</item>
     </array>
+
+
+    <string name="universite_listesi__arama_hepsi">Tüm Okullarda Ara</string>
     <array name="universite_listesi_arama_için">
         <item>Tüm Okullarda Ara</item>
-        <item>Selcuk Universty</item>
-        <item>Balıkesir Universty</item>
-        <item>Celal Bayar Universty</item>
+
+        <item>Abdullah Gül Üniversitesi</item>
+
+        <item>Acıbadem Mehmet Ali Aydınlar Üniversitesi</item>
+
+        <item>Adana Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Adıyaman Üniversitesi</item>
+
+        <item>Afyon Kocatepe Üniversitesi</item>
+
+        <item>Afyonkarahisar Sağlık Bilimleri Üniversitesi</item>
+
+        <item>Ağrı İbrahim Çeçen Üniversitesi</item>
+
+        <item>Akdeniz Üniversitesi</item>
+
+        <item>Aksaray Üniversitesi</item>
+
+        <item>Alanya Alaaddin Keykubat Üniversitesi</item>
+
+        <item>Alanya Hamdullah Emin Paşa Üniversitesi</item>
+
+        <item>Altınbaş Üniversitesi</item>
+
+        <item>Amasya Üniversitesi</item>
+
+        <item>Anadolu Üniversitesi</item>
+
+        <item>Anka Teknoloji Üniversitesi</item>
+
+        <item>Ankara Hacı Bayram Veli Üniversitesi</item>
+
+        <item>Ankara Medipol Üniversitesi</item>
+
+        <item>Ankara Müzik Ve Güzel Sanatlar Üniversitesi</item>
+
+        <item>Ankara Sosyal Bilimler Üniversitesi</item>
+
+        <item>Ankara Üniversitesi</item>
+
+        <item>Ankara Yıldırım Beyazıt Üniversitesi</item>
+
+        <item>Antalya Akev Üniversitesi</item>
+
+        <item>Antalya Bilim Üniversitesi</item>
+
+        <item>Ardahan Üniversitesi</item>
+
+        <item>Artvin Çoruh Üniversitesi</item>
+
+        <item>Ataşehir Adıgüzel Meslek Yüksekokulu</item>
+
+        <item>Atatürk Üniversitesi</item>
+
+        <item>Atılım Üniversitesi</item>
+
+        <item>Avrasya Üniversitesi</item>
+
+        <item>Avrupa Meslek Yüksekokulu</item>
+
+        <item>Aydın Adnan Menderes Üniversitesi</item>
+
+        <item>Bahçeşehir Üniversitesi</item>
+
+        <item>Balıkesir Üniversitesi</item>
+
+        <item>Bandırma Onyedi Eylül Üniversitesi</item>
+
+        <item>Bartın Üniversitesi</item>
+
+        <item>Başkent Üniversitesi</item>
+
+        <item>Batman Üniversitesi</item>
+
+        <item>Bayburt Üniversitesi</item>
+
+        <item>Beykent Üniversitesi</item>
+
+        <item>Beykoz Üniversitesi</item>
+
+        <item>Bezm-İ Âlem Vakıf Üniversitesi</item>
+
+        <item>Bilecik Şeyh Edebali Üniversitesi</item>
+
+        <item>Bingöl Üniversitesi</item>
+
+        <item>Biruni Üniversitesi</item>
+
+        <item>Bitlis Eren Üniversitesi</item>
+
+        <item>Boğaziçi Üniversitesi</item>
+
+        <item>Bolu Abant İzzet Baysal Üniversitesi</item>
+
+        <item>Burdur Mehmet Akif Ersoy Üniversitesi</item>
+
+        <item>Bursa Teknik Üniversitesi</item>
+
+        <item>Bursa Uludağ Üniversitesi</item>
+
+        <item>Çağ Üniversitesi</item>
+
+        <item>Çanakkale Onsekiz Mart Üniversitesi</item>
+
+        <item>Çankaya Üniversitesi</item>
+
+        <item>Çankırı Karatekin Üniversitesi</item>
+
+        <item>Çukurova Üniversitesi</item>
+
+        <item>Dicle Üniversitesi</item>
+
+        <item>Doğuş Üniversitesi</item>
+
+        <item>Dokuz Eylül Üniversitesi</item>
+
+        <item>Düzce Üniversitesi</item>
+
+        <item>Ege Üniversitesi</item>
+
+        <item>Erciyes Üniversitesi</item>
+
+        <item>Erzincan Binali Yıldırım Üniversitesi</item>
+
+        <item>Erzurum Teknik Üniversitesi</item>
+
+        <item>Eskişehir Osmangazi Üniversitesi</item>
+
+        <item>Eskişehir Teknik Üniversitesi</item>
+
+        <item>Faruk Saraç Tasarım Meslek Yüksekokulu</item>
+
+        <item>Fatih Sultan Mehmet Vakıf Üniversitesi</item>
+
+        <item>Fenerbahçe Üniversitesi</item>
+
+        <item>Fırat Üniversitesi</item>
+
+        <item>Galatasaray Üniversitesi</item>
+
+        <item>Gazi Üniversitesi</item>
+
+        <item>Gaziantep Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Gaziantep Üniversitesi</item>
+
+        <item>Gebze Teknik Üniversitesi</item>
+
+        <item>Giresun Üniversitesi</item>
+
+        <item>Gümüşhane Üniversitesi</item>
+
+        <item>Hacettepe Üniversitesi</item>
+
+        <item>Hakkari Üniversitesi</item>
+
+        <item>Haliç Üniversitesi</item>
+
+        <item>Harran Üniversitesi</item>
+
+        <item>Hasan Kalyoncu Üniversitesi</item>
+
+        <item>Hatay Mustafa Kemal Üniversitesi</item>
+
+        <item>Hitit Üniversitesi</item>
+
+        <item>Iğdır Üniversitesi</item>
+
+        <item>Isparta Uygulamalı Bilimler Üniversitesi</item>
+
+        <item>Işık Üniversitesi</item>
+
+        <item>İbn Haldun Üniversitesi</item>
+
+        <item>İhsan Doğramacı Bilkent Üniversitesi</item>
+
+        <item>İnönü Üniversitesi</item>
+
+        <item>İskenderun Teknik Üniversitesi</item>
+
+        <item>İstanbul Arel Üniversitesi</item>
+
+        <item>İstanbul Atlas Üniversitesi</item>
+
+        <item>İstanbul Aydın Üniversitesi</item>
+
+        <item>İstanbul Ayvansaray Üniversitesi</item>
+
+        <item>İstanbul Bilgi Üniversitesi</item>
+
+        <item>İstanbul Bilim Üniversitesi</item>
+
+        <item>İstanbul Esenyurt Üniversitesi</item>
+
+        <item>İstanbul Gedik Üniversitesi</item>
+
+        <item>İstanbul Gelişim Üniversitesi</item>
+
+        <item>İstanbul Kent Üniversitesi</item>
+
+        <item>İstanbul Kültür Üniversitesi</item>
+
+        <item>İstanbul Medeniyet Üniversitesi</item>
+
+        <item>İstanbul Medipol Üniversitesi</item>
+
+        <item>İstanbul Okan Üniversitesi</item>
+
+        <item>İstanbul Rumeli Üniversitesi</item>
+
+        <item>İstanbul Sabahattin Zaim Üniversitesi</item>
+
+        <item>İstanbul Şehir Üniversitesi</item>
+
+        <item>İstanbul Şişli Meslek Yüksekokulu</item>
+
+        <item>İstanbul Teknik Üniversitesi</item>
+
+        <item>İstanbul Ticaret Üniversitesi</item>
+
+        <item>İstanbul Üniversitesi</item>
+
+        <item>İstanbul Üniversitesi-Cerrahpaşa</item>
+
+        <item>İstanbul Yeni Yüzyıl Üniversitesi</item>
+
+        <item>İstanbul 29 Mayıs Üniversitesi</item>
+
+        <item>İstinye Üniversitesi</item>
+
+        <item>İzmir Bakırçay Üniversitesi</item>
+
+        <item>İzmir Demokrasi Üniversitesi</item>
+
+        <item>İzmir Ekonomi Üniversitesi</item>
+
+        <item>İzmir Katip Çelebi Üniversitesi</item>
+
+        <item>İzmir Kavram Meslek Yüksekokulu</item>
+
+        <item>İzmir Tınaztepe Üniversitesi</item>
+
+        <item>İzmir Yüksek Teknoloji Enstitüsü</item>
+
+        <item>Kadir Has Üniversitesi</item>
+
+        <item>Kafkas Üniversitesi</item>
+
+        <item>Kahramanmaraş İstiklal Üniversitesi</item>
+
+        <item>Kahramanmaraş Sütçü İmam Üniversitesi</item>
+
+        <item>Kapadokya Üniversitesi</item>
+
+        <item>Karabük Üniversitesi</item>
+
+        <item>Karadeniz Teknik Üniversitesi</item>
+
+        <item>Karamanoğlu Mehmetbey Üniversitesi</item>
+
+        <item>Kastamonu Üniversitesi</item>
+
+        <item>Kayseri Üniversitesi</item>
+
+        <item>Kırıkkale Üniversitesi</item>
+
+        <item>Kırklareli Üniversitesi</item>
+
+        <item>Kırşehir Ahi Evran Üniversitesi</item>
+
+        <item>Kilis 7 Aralık Üniversitesi</item>
+
+        <item>Kocaeli Üniversitesi</item>
+
+        <item>Koç Üniversitesi</item>
+
+        <item>Konya Gıda Ve Tarım Üniversitesi</item>
+
+        <item>Konya Teknik Üniversitesi</item>
+
+        <item>Kto Karatay Üniversitesi</item>
+
+        <item>Kütahya Dumlupınar Üniversitesi</item>
+
+        <item>Kütahya Sağlık Bilimleri Üniversitesi</item>
+
+        <item>Lokman Hekim Üniversitesi</item>
+
+        <item>Malatya Turgut Özal Üniversitesi</item>
+
+        <item>Maltepe Üniversitesi</item>
+
+        <item>Manisa Celâl Bayar Üniversitesi</item>
+
+        <item>Mardin Artuklu Üniversitesi</item>
+
+        <item>Marmara Üniversitesi</item>
+
+        <item>Mef Üniversitesi</item>
+
+        <item>Mersin Üniversitesi</item>
+
+        <item>Mimar Sinan Güzel Sanatlar Üniversitesi</item>
+
+        <item>Muğla Sıtkı Koçman Üniversitesi</item>
+
+        <item>Munzur Üniversitesi</item>
+
+        <item>Muş Alparslan Üniversitesi</item>
+
+        <item>Necmettin Erbakan Üniversitesi</item>
+
+        <item>Nevşehir Hacı Bektaş Veli Üniversitesi</item>
+
+        <item>Niğde Ömer Halisdemir Üniversitesi</item>
+
+        <item>Nişantaşı Üniversitesi</item>
+
+        <item>Nuh Naci Yazgan Üniversitesi</item>
+
+        <item>Ondokuz Mayıs Üniversitesi</item>
+
+        <item>Ordu Üniversitesi</item>
+
+        <item>Orta Doğu Teknik Üniversitesi</item>
+
+        <item>Osmaniye Korkut Ata Üniversitesi</item>
+
+        <item>Ostim Teknik Üniversitesi</item>
+
+        <item>Özyeğin Üniversitesi</item>
+
+        <item>Pamukkale Üniversitesi</item>
+
+        <item>Piri Reis Üniversitesi</item>
+
+        <item>Recep Tayyip Erdoğan Üniversitesi</item>
+
+        <item>Sabancı Üniversitesi</item>
+
+        <item>Sağlık Bilimleri Üniversitesi</item>
+
+        <item>Sakarya Uygulamalı Bilimler Üniversitesi</item>
+
+        <item>Sakarya Üniversitesi</item>
+
+        <item>Samsun Üniversitesi</item>
+
+        <item>Sanko Üniversitesi</item>
+
+        <item>Selçuk Üniversitesi</item>
+
+        <item>Semerkand Bilim Ve Medeniyet Üniversitesi</item>
+
+        <item>Siirt Üniversitesi</item>
+
+        <item>Sinop Üniversitesi</item>
+
+        <item>Sivas Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Sivas Cumhuriyet Üniversitesi</item>
+
+        <item>Süleyman Demirel Üniversitesi</item>
+
+        <item>Şırnak Üniversitesi</item>
+
+        <item>Tarsus Üniversitesi</item>
+
+        <item>Ted Üniversitesi</item>
+
+        <item>Ekirdağ Namık Kemal Üniversitesi</item>
+
+        <item>Tobb Ekonomi Ve Teknoloji Üniversitesi</item>
+
+        <item>Tokat Gaziosmanpaşa Üniversitesi</item>
+
+        <item>Toros Üniversitesi</item>
+
+        <item>Trabzon Üniversitesi</item>
+
+        <item>Trakya Üniversitesi</item>
+
+        <item>Türk Hava Kurumu Üniversitesi</item>
+
+        <item>Türk-Alman Üniversitesi</item>
+
+        <item>Türkiye Uluslararası İslam, Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Türk-Japon Bilim Ve Teknoloji Üniversitesi</item>
+
+        <item>Ufuk Üniversitesi</item>
+
+        <item>Uşak Üniversitesi</item>
+
+        <item>Üsküdar Üniversitesi</item>
+
+        <item>Van Yüzüncü Yıl Üniversitesi</item>
+
+        <item>Yalova Üniversitesi</item>
+
+        <item>Yaşar Üniversitesi</item>
+
+        <item>Yeditepe Üniversitesi</item>
+
+        <item>Yıldız Teknik Üniversitesi</item>
+
+        <item>Yozgat Bozok Üniversitesi</item>
+
+        <item>Yüksek İhtisas Üniversitesi</item>
+
+        <item>Zonguldak Bülent Ecevit Üniversitesi</item>
     </array>
     <string name="title_activity_denememenu">denememenu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -57,4 +1830,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_password_recovery">activity_password_recovery</string>
+    <string name="title_activity_password_recovery__popup">PasswordRecovery_Popup</string>
+    <string name="title_activity_sifre_gonderme">sifre_gonderme</string>
+    <string name="title_activity_password_recovery__popup_2">PasswordRecovery_Popup_2</string>
+    <string name="title_activity_password_recovery_popup_3">PasswordRecoveryPopup_3</string>
 </resources>

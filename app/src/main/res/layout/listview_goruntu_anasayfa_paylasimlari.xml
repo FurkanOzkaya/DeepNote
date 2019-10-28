@@ -4,8 +4,8 @@
     android:layout_height="wrap_content"
     android:background="#fff">
 
-
     <LinearLayout
+        android:id="@+id/anasayfa_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fff"
@@ -41,14 +41,29 @@
                         android:clickable="true"
                         android:src="@drawable/flat_ogrenci" />
 
-                    <TextView
-                        android:id="@+id/listview_ad_soyad"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="5dp"
-                        android:textColor="#6a6d72"
-                        android:textSize="15dp" />
+                        android:orientation="vertical"
+                        android:layout_marginTop="14dp">
+
+                        <TextView
+                            android:id="@+id/listview_ad_soyad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="#000000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/listview__gonderi_bolum_adi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:textColor="#6a6d72"
+                            android:textSize="10dp" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -62,49 +77,47 @@
                         android:id="@+id/ders_adi_detaya_yonlendircek"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_gravity="end"
                         android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
                         android:background="@drawable/sikayet"
                         android:gravity="center_vertical"
-                        android:paddingHorizontal="10dp"
-                        android:layout_gravity="end">
+                        android:paddingHorizontal="10dp">
 
                         <TextView
                             android:id="@+id/listview_ders"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:gravity="center"
                             android:textColor="#6a6d72"
-                            android:textSize="10dp"
-                            android:gravity="center"/>
-
+                            android:textSize="10dp" />
 
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/listview_universite"
-                        android:visibility="gone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:drawableLeft="@drawable/okul_logo"
                         android:drawablePadding="4dp"
                         android:textColor="#6a6d72"
-                        android:textSize="10dp" />
+                        android:textSize="10dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/listview_bolum"
-                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableLeft="@drawable/kitap"
                         android:drawablePadding="2dp"
                         android:textColor="#6a6d72"
-                        android:textSize="10dp" />
+                        android:textSize="10dp"
+                        android:visibility="gone" />
 
                 </LinearLayout>
-
 
             </LinearLayout>
 
@@ -122,7 +135,6 @@
                     android:orientation="horizontal"
                     android:paddingLeft="19dp">
 
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -132,24 +144,22 @@
                     android:orientation="horizontal"
                     android:paddingLeft="3dp">
 
-
-
-                <!--
-                    <TextView
-                        android:id="@+id/listview_ders"
-                        android:layout_width="match_parent"
-                        android:visibility="gone"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableLeft="@drawable/dosyaresmi"
-                        android:drawablePadding="3dp"
-                        android:textColor="#6a6d72"
-                        android:textSize="10dp" /> -->
+                    <!--
+                        <TextView
+                            android:id="@+id/listview_ders"
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableLeft="@drawable/dosyaresmi"
+                            android:drawablePadding="3dp"
+                            android:textColor="#6a6d72"
+                            android:textSize="10dp" /> -->
 
                 </LinearLayout>
 
-
             </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -160,13 +170,12 @@
             android:clickable="true"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/listview_aciklama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:textColor="#6a6d72"
                 android:textSize="12dp" />
 
@@ -175,13 +184,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/ic_launcher_background" />
+                android:layout_marginTop="10dp" />
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>
 

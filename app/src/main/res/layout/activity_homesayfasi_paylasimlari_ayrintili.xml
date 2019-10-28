@@ -4,297 +4,317 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#fff"
+    android:orientation="vertical"
     tools:context=".homesayfasi_paylasimlari_ayrintili">
 
-    <ScrollView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/paylasimlar_ayrinti_refesh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/home_sayfası_profil_gonderme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/home_sayfası_profil_gonderme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <com.mikhaellopez.circularimageview.CircularImageView
-                            android:id="@+id/ayrıntı_homesayfası_profilfotosu"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="10dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <com.mikhaellopez.circularimageview.CircularImageView
+                                android:id="@+id/ayrıntı_homesayfası_profilfotosu"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:clickable="true"
+                                android:src="@drawable/flat_ogrenci"
+                                app:civ_border="false" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginTop="14dp"
+                                android:layout_marginLeft="2dp">
+
+                                <TextView
+                                    android:id="@+id/ayrıntı_homesayfasi_ad_soyad"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:textColor="#000000"
+                                    android:textSize="15dp" />
+
+                                <TextView
+                                    android:id="@+id/listview__gonderi_bolum_adi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:textColor="#6a6d72"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:id="@+id/ayrıntı_homesayfasi_universite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
-                            android:clickable="true"
-                            android:src="@drawable/main_activity_profil"
-                            app:civ_border="false" />
-
-                        <TextView
-                            android:id="@+id/ayrıntı_homesayfasi_ad_soyad"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="5dp"
-                            android:text="isim" />
+                            android:drawableLeft="@drawable/dosyaresmi"
+                            android:drawablePadding="3dp"
+                            android:textColor="#6a6d72"
+                            android:textSize="10dp"
+                            android:visibility="gone" />
 
                     </LinearLayout>
-                    <TextView
-
-                        android:id="@+id/ayrıntı_homesayfasi_universite"
-                        android:textColor="#6a6d72"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="15dp"
-                        android:drawableLeft="@drawable/dosyaresmi"
-                        android:visibility="gone"
-                        android:drawablePadding="3dp"
-                        android:textSize="10dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:paddingLeft="25dp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:id="@+id/ders_adi_detaya_yonlendircek"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/sikayet"
-                        android:gravity="center_vertical"
-                        android:paddingHorizontal="10dp"
-                        android:layout_gravity="end">
-
-                        <TextView
-                            android:id="@+id/ayrıntı_homesayfasi_ders"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="10dp" />
-
-
-                    </LinearLayout>
-
-
-
-                    <TextView
-                        android:id="@+id/ayrıntı_homesayfasi_bolum"
-                        android:textColor="#6a6d72"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/kitap"
-                        android:layout_marginTop="10dp"
-                        android:visibility="gone"
-                        android:textSize="10dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-            <android.support.v7.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp">
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingLeft="25dp">
+
+                        <LinearLayout
+                            android:id="@+id/ders_adi_detaya_yonlendircek"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="end"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/sikayet"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="10dp">
+
+                            <TextView
+                                android:id="@+id/ayrıntı_homesayfasi_ders"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
 
                         <TextView
-                            android:id="@+id/ayrıntı_homesayfasi_aciklama"
+                            android:id="@+id/ayrıntı_homesayfasi_bolum"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/kitap"
+                            android:textColor="#6a6d72"
+                            android:textSize="10dp"
+                            android:visibility="gone" />
 
                     </LinearLayout>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="bottom">
+                            android:padding="10dp">
 
-                            <!-- pdf  gelicek buraya -->
-                            <WebView
-                                android:id="@+id/ayrıntı_homesayfasi_pdf_webview"
+                            <TextView
+                                android:id="@+id/ayrıntı_homesayfasi_aciklama"
                                 android:layout_width="match_parent"
-                                android:layout_height="350dp"
-                                android:visibility="gone"></WebView>
+                                android:layout_height="wrap_content" />
 
-
-                            <ImageView
-                                android:id="@+id/ayrıntı_homesayfasi_resim"
-                                android:layout_width="match_parent"
-                                android:layout_height="350dp"
-                                android:visibility="gone"/>
-
-
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingVertical="15dp"
-                                android:paddingHorizontal="10dp"
-                                android:background="@drawable/detaysnack"
-                                android:orientation="horizontal"
-                                android:layout_alignParentBottom="true">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1">
-
-                                    <TextView
-                                        android:id="@+id/ayrıntı_homesayfasi_sikayet_et"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Şikayet Et"
-                                        android:textColor="#fff"/>
-
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1">
-
-                                    <TextView
-                                        android:id="@+id/ayrıntı_homesayfasi_indirme"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="İndir"
-                                        android:gravity="end"
-                                        android:textColor="#fff"/>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <LinearLayout
-                                android:layout_width="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="bottom"
-                                android:paddingBottom="10dp"
-                                android:paddingLeft="5dp"
-                                android:layout_weight="1">
+                                android:gravity="bottom">
+
+                                <!-- pdf  gelicek buraya -->
+                                <WebView
+                                    android:id="@+id/ayrıntı_homesayfasi_pdf_webview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="350dp"
+                                    android:visibility="gone"></WebView>
+
+                                <ImageView
+                                    android:id="@+id/ayrıntı_homesayfasi_resim"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginHorizontal="8dp"
+                                    android:background="@drawable/detaysnack"
+                                    android:orientation="horizontal"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/ayrıntı_homesayfasi_sikayet_et"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Şikayet Et"
+                                            android:textColor="#fff" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/ayrıntı_homesayfasi_indirme"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="end"
+                                            android:text="İndir"
+                                            android:textColor="#fff" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="bottom"
+                                    android:paddingLeft="5dp"
+                                    android:paddingBottom="10dp">
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="end">
+
+                                </LinearLayout>
 
                             </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="end">
 
-                            </LinearLayout>
                         </LinearLayout>
+
                     </LinearLayout>
-                </LinearLayout>
 
+                </android.support.v7.widget.LinearLayoutCompat>
 
-            </android.support.v7.widget.LinearLayoutCompat>
-
-
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/yorumlar_lisview_uyarı"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/openpdf"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ayrıntısayfalari_yorum_listview_uyarı"
-                    android:textSize="16dp"
-                    android:visibility="gone"
-                    android:textColor="@color/colorAccent"
-                    android:layout_gravity="center"
-                    android:gravity="center"/>
+                    android:layout_marginHorizontal="8dp"
+                    android:background="@drawable/qwqw"
+                    android:elevation="0dp"
+                    android:text="Pdf'i Uygulamada görüntüle"
+                    android:textColor="#fff" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
 
-                    <ProgressBar
-                        android:id="@+id/home_ayrıntı_progressbar"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/yorumlar_lisview_uyarı"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:visibility="gone"
-                        />
-
-                    <ListView
-                        android:id="@+id/ayrıntı_homesayfasi_yorum_listview"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:text="@string/ayrıntısayfalari_yorum_listview_uyarı"
+                        android:textColor="#456"
+                        android:textSize="14dp"
                         android:visibility="gone" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ProgressBar
+                            android:id="@+id/home_ayrıntı_progressbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <ListView
+                            android:id="@+id/ayrıntı_homesayfasi_yorum_listview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
-            </LinearLayout>
-            <Button
-                android:id="@+id/openpdf"
-                android:text="Pdf'i Uygulamada görüntüle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.2dp"
-                    android:background="#000"
-                    ></View>
+                    android:background="#000"></View>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
                     android:layout_marginBottom="30dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
 
                     <EditText
                         android:id="@+id/ayrıntı_homesayfasi_yorum"
@@ -302,21 +322,25 @@
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:background="@android:color/transparent"
+                        android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+                        android:inputType="textFilter|text"
                         android:hint="Yorum yap..."
-                        android:textSize="15dp"/>
+                        android:textSize="15dp" />
+
                     <ImageButton
                         android:id="@+id/ayrıntı_homesayfasi_yorum_buton"
-                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:backgroundTint="#fff"
-                        android:src="@drawable/ic_send_black_24dp"/>
+                        android:src="@drawable/ic_send_black_24dp" />
 
                 </LinearLayout>
 
+            </LinearLayout>
 
+        </ScrollView>
 
-        </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

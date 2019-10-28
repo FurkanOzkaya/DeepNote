@@ -11,14 +11,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="#000000">
+        android:background="#29679c">
 
         <ImageView
             android:id="@+id/resim2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <TextView
+        <!--<TextView
             android:id="@+id/txt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
             android:textSize="35sp"
             android:textColor="#C0C0C0"
             android:text="SandyStream"
-            android:textStyle="bold|italic"/>
+            android:textStyle="bold|italic"/>-->
         <TextView
             android:id="@+id/txt2"
             android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
             android:layout_marginTop="20dp"
             android:textSize="35sp"
             android:textColor="#C0C0C0"
-            android:text="DEEP NOTE"
+            android:text="DEEPNOTE"
             android:textStyle="bold|italic"/>
 
 

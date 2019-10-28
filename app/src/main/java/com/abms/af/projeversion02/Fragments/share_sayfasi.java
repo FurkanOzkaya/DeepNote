@@ -1,20 +1,18 @@
 package com.abms.af.projeversion02.Fragments;
 
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
@@ -22,25 +20,29 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.abms.af.projeversion02.MainActivity;
 import com.abms.af.projeversion02.Models.Pdfyuklemesonuc;
 import com.abms.af.projeversion02.Models.Resimyuklemesonuc;
+import com.abms.af.projeversion02.PasswordRecovery;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
 import com.developer.filepicker.controller.DialogSelectionListener;
@@ -57,42 +59,46 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class share_sayfasi extends Fragment {
 
-    Map<String, RequestBody> mappdf,mapresim;
+    Map<String, RequestBody> mappdf, mapresim;
     Button yukleme_butonu;
-    EditText ders_adi , acıklama;
-    TextView ders_adi_uyarı,bolum_uyarı,acıklama_uyarı;
-    Spinner bolum_adi;
-    String ders_string,acıklama_string;
+    EditText ders_adi, acıklama;
+    TextView ders_adi_uyarı, bolum_uyarı, acıklama_uyarı, DeepNoteBaslik;
+    AutoCompleteTextView bolum_adi;
+    String ders_string, acıklama_string, email = "";
     int bolum_string_int;
-    FloatingActionButton ekle_buton, pdf_buton, resim_buton;
-    Animation open, close, rotate, rotate_back;
-    boolean isopen = false;
+    //FloatingActionButton ekle_buton, pdf_buton, resim_buton;
+    LinearLayout resimleregit, dosyalaragit, secmekismi, yollamakismi;
+    Animation bounce, rtol;
     View view;
     Integer id;
-    String[]  bolum_listesi;
-    ArrayAdapter  bolum_adapter;
-    private FloatingActionButton boommenu_ana_buton;
+    String[] bolum_listesi;
     SharedPreferences sharedPreferences;
     ProgressBar progressBar;
     FilePickerDialog dialog;
+    Typeface tf1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_share_sayfasi, container, false);
+
+        Window window = this.getActivity().getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            window.setStatusBarColor(this.getResources().getColor(R.color.white));
+        }
 
         tanimla();
         islevver();
@@ -103,116 +109,95 @@ public class share_sayfasi extends Fragment {
 
     public void tanimla() {
 
-        boommenu_ana_buton = view.findViewById(R.id.ana_buton);
-        pdf_buton = view.findViewById(R.id.pdf_buton);
-        resim_buton = view.findViewById(R.id.resim_buton);
+        bounce = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+        rtol = AnimationUtils.loadAnimation(getContext(), R.anim.righttoleft);
+
+        secmekismi = view.findViewById(R.id.dosyasecmekismi);
+        yollamakismi = view.findViewById(R.id.dosyayollamakismi);
+        resimleregit = view.findViewById(R.id.resimsec);
+        dosyalaragit = view.findViewById(R.id.pdfsec);
         ders_adi = view.findViewById(R.id.ders_adi);
         bolum_adi = view.findViewById(R.id.bolum_adi);
         acıklama = view.findViewById(R.id.acıklama);
         yukleme_butonu = view.findViewById(R.id.yukleme_butonu);
-        ders_adi_uyarı=view.findViewById(R.id.share_sayfası_ders_uyarı);
-        bolum_uyarı=view.findViewById(R.id.share_sayfası_bolum_uyarı);
-        acıklama_uyarı=view.findViewById(R.id.share_sayfası_acıklama_uyarı);
+        ders_adi_uyarı = view.findViewById(R.id.share_sayfası_ders_uyarı);
+        bolum_uyarı = view.findViewById(R.id.share_sayfası_bolum_uyarı);
+        acıklama_uyarı = view.findViewById(R.id.share_sayfası_acıklama_uyarı);
 
         sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("giris", 0);
-        id  =sharedPreferences.getInt("uye_id",0);
-
+        id = sharedPreferences.getInt("uye_id", 0);
 
         bolum_listesi = getResources().getStringArray(R.array.Bolum_listesi);
-        bolum_adapter = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, bolum_listesi);
-        bolum_adi.setAdapter(bolum_adapter);
+        ArrayAdapter<String> a2 = new ArrayAdapter<String>(getActivity().getApplicationContext(), R.layout.bolumler, R.id.bolumtextitem, bolum_listesi);
+        bolum_adi.setAdapter(a2);
 
+        progressBar = view.findViewById(R.id.share_sayafası_progress_bar);
 
-        progressBar=view.findViewById(R.id.share_sayafası_progress_bar);
+        DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
     }
 
-    public void islevver()
-    {
-        animasyon_yükle_boommenu_ana_buton();
-        boommenu_ana_buton.setOnClickListener(new View.OnClickListener() {
+    public void islevver() {
+
+        tf1 = Typeface.createFromAsset(getActivity().getAssets(),"fonts/DamionRegular.ttf");
+        DeepNoteBaslik.setTypeface(tf1);
+
+        sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("giris", 0);
+        if (sharedPreferences.getInt("uye_id", 0) != 0) {
+            email = sharedPreferences.getString("email", "");
+
+        } else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+
+        resimleregit.startAnimation(bounce);
+        dosyalaragit.startAnimation(rtol);
+
+        resimleregit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                if (isopen) {
-                    resim_buton.startAnimation(close);
-                    pdf_buton.startAnimation(close);
-                    boommenu_ana_buton.startAnimation(rotate_back);
-                    pdf_buton.setClickable(false);
-                    resim_buton.setClickable(false);
-                    isopen = false;
-                    ders_adi.setVisibility(View.INVISIBLE);
-                    bolum_adi.setVisibility(View.INVISIBLE);
-                    acıklama.setVisibility(View.INVISIBLE);
-                    yukleme_butonu.setVisibility(View.INVISIBLE);
-                    // verileri sıfırlamak için kullanıldı suanlık spinner için yok
-                    ders_adi.setText("");
-                    acıklama.setText("");
-                } else {
-                    resim_buton.startAnimation(open);
-                    pdf_buton.startAnimation(open);
-                    boommenu_ana_buton.startAnimation(rotate);
-                    pdf_buton.setClickable(true);
-                    resim_buton.setClickable(true);
-                    isopen = true;
-
-                }
-
-
-            }
-        });
-        resim_buton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 yukleme_butonu.setText("Resim Yükle");
                 resimGoster();
             }
         });
-        pdf_buton.setOnClickListener(new View.OnClickListener() {
+
+        dosyalaragit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 yukleme_butonu.setText("Pdf Yükle");
                 pdf_goster();
             }
         });
 
-
         yukleme_butonu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ders_string=ders_adi.getText().toString();
-                bolum_string_int=bolum_adi.getSelectedItemPosition();
-                acıklama_string=acıklama.getText().toString();
-                if (ders_string.equals("") || bolum_string_int==0 || acıklama_string.equals(""))
-                {
-                    if (ders_string.equals(""))
-                    {
+                ders_string = ders_adi.getText().toString();
+                acıklama_string = acıklama.getText().toString();
+                if (ders_string.equals("") || bolum_adi.getText().toString().matches("") || acıklama_string.equals("")) {
+                    if (ders_string.equals("")) {
                         ders_adi_uyarı.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
+                    } else {
                         ders_adi_uyarı.setVisibility(View.INVISIBLE);
                     }
-                    if (bolum_adi.getSelectedItemPosition()==0)
-                    {
+                    if (bolum_adi.getText().toString().matches("")) {
                         bolum_uyarı.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
+                    } else {
                         bolum_uyarı.setVisibility(View.INVISIBLE);
                     }
-                    if (acıklama.getText().toString().equals(""))
-                    {
+                    if (acıklama.getText().toString().equals("")) {
                         acıklama_uyarı.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
+                    } else {
                         acıklama_uyarı.setVisibility(View.INVISIBLE);
                     }
 
-                }
-                else
-                {
+                } else {
                     dosya_yukle();
+                    secmekismi.setVisibility(View.VISIBLE);
+                    yollamakismi.setVisibility(View.INVISIBLE);
                     ders_adi.setVisibility(View.INVISIBLE);
                     bolum_adi.setVisibility(View.INVISIBLE);
                     acıklama.setVisibility(View.INVISIBLE);
@@ -220,27 +205,11 @@ public class share_sayfasi extends Fragment {
                     ders_adi_uyarı.setVisibility(View.INVISIBLE);
                     bolum_uyarı.setVisibility(View.INVISIBLE);
                     acıklama_uyarı.setVisibility(View.INVISIBLE);
-                    // verileri sıfırlamak için kullanıldı suanlık spinner için yok
                     ders_adi.setText("");
                     acıklama.setText("");
                 }
-
             }
         });
-
-
-
-
-    }
-
-
-
-
-    public void animasyon_yükle_boommenu_ana_buton() {
-        open = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fab_open);
-        close = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fab_close);
-        rotate = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.rotate);
-        rotate_back = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.rotate_ters);
     }
 
     /*
@@ -251,21 +220,15 @@ public class share_sayfasi extends Fragment {
 
         ImagePicker.Companion.with(this)
                 .galleryOnly()
-                //.crop(1f, 1f)	    		//Crop Square image(Optional)
-                .compress(1024)			//Final image size will be less than 1 MB(Optional)
-                .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                .compress(500)
+                .maxResultSize(1080, 1080)
                 .start();
-        /*Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, 1);*/
     }
 
-    private void pdf_goster()
-    {
+    private void pdf_goster() {
         DialogProperties properties = new DialogProperties();
 
-       // String [] extensions={"txt:pdf:"}; extensions doesnt work
+        // String [] extensions={"txt:pdf:"}; extensions doesnt work
         properties.selection_mode = DialogConfigs.SINGLE_MODE;
         properties.selection_type = DialogConfigs.FILE_SELECT;
         properties.root = new File(DialogConfigs.DEFAULT_DIR);
@@ -273,33 +236,27 @@ public class share_sayfasi extends Fragment {
         properties.offset = new File(DialogConfigs.DEFAULT_DIR);
         properties.extensions = null;
 
-        dialog = new FilePickerDialog(getActivity(),properties);
+        dialog = new FilePickerDialog(getActivity(), properties);
         dialog.setTitle("Pdf Seçiniz");
         dialog.show();
-
-
-
 
         dialog.setDialogSelectionListener(new DialogSelectionListener() {
             @Override
             public void onSelectedFilePaths(String[] files) {
-                Toast.makeText(getActivity().getApplicationContext(),"deneme: path. "+files[0],Toast.LENGTH_LONG).show();
 
                 ders_adi.setVisibility(View.VISIBLE);
                 bolum_adi.setVisibility(View.VISIBLE);
                 acıklama.setVisibility(View.VISIBLE);
                 yukleme_butonu.setVisibility(View.VISIBLE);
+                secmekismi.setVisibility(View.INVISIBLE);
+                yollamakismi.setVisibility(View.VISIBLE);
 
                 try {
-                    // use the FileUtils to get the actual file by uri
-                    String yol=files[0];
-
+                    String yol = files[0];
                     mappdf = new HashMap<>();
-
                     File file = new File(yol);
-                    RequestBody requestFile =RequestBody.create(MediaType.parse("application/pdf"),file);
+                    RequestBody requestFile = RequestBody.create(MediaType.parse("application/pdf"), file);
                     mappdf.put("file\"; filename=\"" + file.getName() + "\"", requestFile);
-                    //yuklenecekpdf = MultipartBody.Part.createFormData("pdf",file.getName(),requestFile);
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -307,19 +264,10 @@ public class share_sayfasi extends Fragment {
 
             }
         });
-
-       /* Intent intent = new Intent();
-        intent.setType("application/pdf");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, 2);
-*/
     }
 
-
-
-
     /*
-    * resimi sunucuya yüklemek için bilgilerin aldıgı ve yüklendiği kısım
+     * resimi sunucuya yüklemek için bilgilerin aldıgı ve yüklendiği kısım
      */
 
     public void dosya_yukle() {
@@ -330,79 +278,125 @@ public class share_sayfasi extends Fragment {
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         ////////////////////////////////////////////////////////////////////////////////////
 
-        if(yukleme_butonu.getText().equals("Resim Yükle"))
-        {
+        if (yukleme_butonu.getText().equals("Resim Yükle")) {
+
+            final SweetAlertDialog pDialog = new SweetAlertDialog(getContext(), SweetAlertDialog.PROGRESS_TYPE);
+            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+            pDialog.setTitleText("Yükleniyor");
+            pDialog.setCancelable(false);
+            pDialog.show();
 
             Integer id_kullanici = id;
             String ders = ders_adi.getText().toString();
-            String bolum = bolum_adi.getSelectedItem().toString();
+            String bolum = bolum_adi.getText().toString();
             String aciklama = acıklama.getText().toString();
-            Call<Resimyuklemesonuc> a = ManagerAll.webyonet().resim_yukle(id_kullanici, ders, aciklama, bolum, mapresim);
-            //Toast.makeText(getActivity().getApplicationContext(), (CharSequence) mapresim, Toast.LENGTH_LONG).show();
 
-            a.enqueue(new Callback<Resimyuklemesonuc>() {
-                @Override
-                public void onResponse(Call<Resimyuklemesonuc> call, Response<Resimyuklemesonuc> response) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Dosya Sonuç:"+response.body().getResimyuklemesonuc(), Toast.LENGTH_LONG).show();
+            try {
+                Call<Resimyuklemesonuc> a = ManagerAll.webyonet().resim_yukle(email, id_kullanici, ders, aciklama, bolum, mapresim);
+                //Toast.makeText(getActivity().getApplicationContext(), (CharSequence) mapresim, Toast.LENGTH_LONG).show();
 
-                    /////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
-                }
+                a.enqueue(new Callback<Resimyuklemesonuc>() {
+                    @Override
+                    public void onResponse(Call<Resimyuklemesonuc> call, Response<Resimyuklemesonuc> response) {
 
-                @Override
-                public void onFailure(Call<Resimyuklemesonuc> call, Throwable t) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Hata olustu tekrar deneyiniz", Toast.LENGTH_LONG).show();
+                        pDialog.cancel();
 
-                    /////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
-                }
-            });
+                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE);
+                        sa.setTitleText("Başarılı");
+                        sa.setContentText("Notunuz başarıyla paylaşıldı, teşekkür ederiz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
 
-        }
-       else if (yukleme_butonu.getText().equals("Pdf Yükle"))
-        {
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                        ////////////////////////////////////
+                    }
+
+                    @Override
+                    public void onFailure(Call<Resimyuklemesonuc> call, Throwable t) {
+
+                        pDialog.cancel();
+
+                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
+
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                        ////////////////////////////////////
+                    }
+                });
+            }catch (Exception e)
+            {
+                Log.e("TAG", "dosya_yukle: ",e );
+            }
+
+        } else if (yukleme_butonu.getText().equals("Pdf Yükle")) {
+
+            final SweetAlertDialog pDialog = new SweetAlertDialog(getContext(), SweetAlertDialog.PROGRESS_TYPE);
+            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+            pDialog.setTitleText("Yükleniyor");
+            pDialog.setCancelable(false);
+            pDialog.show();
 
             Integer id_kullanici = id;
             String ders = ders_adi.getText().toString();
-            String bolum = bolum_adi.getSelectedItem().toString();
+            String bolum = bolum_adi.getText().toString();
             String aciklama = acıklama.getText().toString();
-           // Toast.makeText(getActivity().getApplicationContext(),mappdf,Toast.LENGTH_LONG).show();
-            Call<Pdfyuklemesonuc> ee=ManagerAll.webyonet().pdf_yukle(id_kullanici, ders, aciklama, bolum,mappdf);
-            ee.enqueue(new Callback<Pdfyuklemesonuc>() {
-                @Override
-                public void onResponse(Call<Pdfyuklemesonuc> call, Response<Pdfyuklemesonuc> response) {
+            // Toast.makeText(getActivity().getApplicationContext(),mappdf,Toast.LENGTH_LONG).show();
 
-                    Toast.makeText(getActivity().getApplicationContext(), "Dosya Yuklendi"+response.body().getPdfyuklemesonuc(), Toast.LENGTH_LONG).show();
+            try {
+                Call<Pdfyuklemesonuc> ee = ManagerAll.webyonet().pdf_yukle(email, id_kullanici, ders, aciklama, bolum, mappdf);
+                ee.enqueue(new Callback<Pdfyuklemesonuc>() {
+                    @Override
+                    public void onResponse(Call<Pdfyuklemesonuc> call, Response<Pdfyuklemesonuc> response) {
 
-                    /////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
-                }
+                        pDialog.cancel();
 
-                @Override
-                public void onFailure(Call<Pdfyuklemesonuc> call, Throwable t) {
-                    Toast.makeText(getActivity().getApplicationContext(), "HATA CIKTI", Toast.LENGTH_LONG).show();
-                    Log.i("TAG", "onFailure: "+t.getMessage());
+                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE);
+                        sa.setTitleText("Başarılı");
+                        sa.setContentText("Notunuz başarıyla paylaşıldı, teşekkür ederiz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
 
-                    /////////////////////////////////////
-                    progressBar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
-                }
-            });
+                        //Toast.makeText(getActivity().getApplicationContext(), "Dosya Yuklendi"+response.body().getPdfyuklemesonuc(), Toast.LENGTH_LONG).show();
 
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                        ////////////////////////////////////
+                    }
+
+                    @Override
+                    public void onFailure(Call<Pdfyuklemesonuc> call, Throwable t) {
+
+                        pDialog.cancel();
+
+                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
+
+                        /////////////////////////////////////
+                        progressBar.setVisibility(View.GONE);
+                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                        ////////////////////////////////////
+                    }
+                });
+            }catch (Exception e)
+            {
+                Log.e("TAG", "dosya_yukle: ",e );
+            }
         }
-
     }
 
-
     /*
-    *resimin alındıgı ve alınacak bilgiler için edittextlerin gösterildiği bölüm
+     *resimin alındıgı ve alınacak bilgiler için edittextlerin gösterildiği bölüm
      */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -410,352 +404,28 @@ public class share_sayfasi extends Fragment {
 
         if (requestCode == ImagePicker.REQUEST_CODE && resultCode == getActivity().RESULT_OK && data != null) {
             Uri path = data.getData();
-            String uri=String.valueOf(path);
+            String uri = String.valueOf(path);
             ders_adi.setVisibility(View.VISIBLE);
             bolum_adi.setVisibility(View.VISIBLE);
             acıklama.setVisibility(View.VISIBLE);
             yukleme_butonu.setVisibility(View.VISIBLE);
+            secmekismi.setVisibility(View.INVISIBLE);
+            yollamakismi.setVisibility(View.VISIBLE);
 
             String denee = ImagePicker.Companion.getFilePath(data);
-            Toast.makeText(getActivity().getApplicationContext(),"deneme: "+ denee,Toast.LENGTH_LONG).show();
+
             try {
-                // use the FileUtils to get the actual file by uri
-                //String yol = getPath(getActivity().getApplicationContext(),path);
-
-                //Toast.makeText(getActivity().getApplicationContext(),"path: "+yol,Toast.LENGTH_LONG).show();
-                //Toast.makeText(getActivity().getApplicationContext(),"Uri: "+path.toString(),Toast.LENGTH_LONG).show();
-
-                String resim=ImagePicker.Companion.getFilePath(data);
-
-               // String resim=compressImage(uri);
+                String resim = ImagePicker.Companion.getFilePath(data);
 
                 mapresim = new HashMap<>();
 
                 File file = new File(resim);
-                RequestBody requestFile =RequestBody.create(MediaType.parse("image/*"),file);
+                RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
                 mapresim.put("file\"; filename=\"" + file.getName() + "\"", requestFile);
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-        }
-        /*
-            it's old version of select pdf new with dialog
-         */
-        /*if (requestCode == 2 && resultCode == getActivity().RESULT_OK && data != null) {
-            Uri path = data.getData();
-            Toast.makeText(getActivity().getApplicationContext(),"yol: "+path.toString(),Toast.LENGTH_LONG).show();
-            ders_adi.setVisibility(View.VISIBLE);
-            bolum_adi.setVisibility(View.VISIBLE);
-            acıklama.setVisibility(View.VISIBLE);
-            yukleme_butonu.setVisibility(View.VISIBLE);
-            try {
-                // use the FileUtils to get the actual file by uri
-                String yol=getPath(getActivity().getApplicationContext(),path);
-                Toast.makeText(getActivity().getApplicationContext(),"path: "+yol,Toast.LENGTH_LONG).show();
-
-                mappdf = new HashMap<>();
-
-                File file = new File(yol);
-                RequestBody requestFile =RequestBody.create(MediaType.parse("application/pdf"),file);
-                mappdf.put("file\"; filename=\"" + file.getName() + "\"", requestFile);
-                //yuklenecekpdf = MultipartBody.Part.createFormData("pdf",file.getName(),requestFile);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }*/
-
-        }
-
-
-
-
-
-    ////////
-    @SuppressLint("NewApi")
-    public static String getPath(final Context context, final Uri uri) {
-
-        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
-
-        // DocumentProvider
-        if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
-            // ExternalStorageProvider
-            if (isExternalStorageDocument(uri)) {
-                final String docId = DocumentsContract.getDocumentId(uri);
-                final String[] split = docId.split(":");
-                final String type = split[0];
-
-                if ("primary".equalsIgnoreCase(type)) {
-                    return Environment.getExternalStorageDirectory() + "/" + split[1];
-                }
-                // TODO handle non-primary volumes
-            }
-            // DownloadsProvider
-            else if (isDownloadsDocument(uri)) {
-
-                final String id = DocumentsContract.getDocumentId(uri);
-                final Uri contentUri = ContentUris.withAppendedId(
-                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
-
-                return getDataColumn(context, contentUri, null, null);
-            }
-            // MediaProvider
-            else if (isMediaDocument(uri)) {
-                final String docId = DocumentsContract.getDocumentId(uri);
-                final String[] split = docId.split(":");
-                final String type = split[0];
-
-                Uri contentUri = null;
-                if ("image".equals(type)) {
-                    contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-                } else if ("video".equals(type)) {
-                    contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
-                } else if ("audio".equals(type)) {
-                    contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-                }
-
-                final String selection = "_id=?";
-                final String[] selectionArgs = new String[] {
-                        split[1]
-                };
-
-                return getDataColumn(context, contentUri, selection, selectionArgs);
-            }
-        }
-        // MediaStore (and general)
-        else if ("content".equalsIgnoreCase(uri.getScheme())) {
-            Log.d("TAG", "getPath: THİS İS content"+getDataColumn(context, uri, null, null));
-            return getDataColumn(context, uri, null, null);
-        }
-        // File
-        else if ("file".equalsIgnoreCase(uri.getScheme())) {
-            Log.d("TAG", "getPath: THİS İS FİLE"+uri.getPath());
-            return uri.getPath();
-        }
-
-        return null;
-    }
-    /**
-     * Get the value of the data column for this Uri. This is useful for
-     * MediaStore Uris, and other file-based ContentProviders.
-     *
-     * @param context The context.
-     * @param uri The Uri to query.
-     * @param selection (Optional) Filter used in the query.
-     * @param selectionArgs (Optional) Selection arguments used in the query.
-     * @return The value of the _data column, which is typically a file path.
-     */
-    public static String getDataColumn(Context context, Uri uri, String selection,
-                                       String[] selectionArgs) {
-
-        Cursor cursor = null;
-        final String column = "_data";
-        final String[] projection = {
-                column
-        };
-
-        try {
-            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
-                    null);
-            if (cursor != null && cursor.moveToFirst()) {
-                final int column_index = cursor.getColumnIndexOrThrow(column);
-                return cursor.getString(column_index);
-            }
-        } finally {
-            if (cursor != null)
-                cursor.close();
-        }
-        return null;
-    }
-    /**
-     * @param uri The Uri to check.
-     * @return Whether the Uri authority is ExternalStorageProvider.
-     */
-    public static boolean isExternalStorageDocument(Uri uri) {
-        return "com.android.externalstorage.documents".equals(uri.getAuthority());
-    }
-
-    /**
-     * @param uri The Uri to check.
-     * @return Whether the Uri authority is DownloadsProvider.
-     */
-    public static boolean isDownloadsDocument(Uri uri) {
-        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
-    }
-
-    /**
-     * @param uri The Uri to check.
-     * @return Whether the Uri authority is MediaProvider.
-     */
-    public static boolean isMediaDocument(Uri uri) {
-        return "com.android.providers.media.documents".equals(uri.getAuthority());
-    }
-
-
-
-
-
-    public String compressImage(String imageUri) {
-
-        String filePath = getRealPathFromURI(imageUri);
-        Bitmap scaledBitmap = null;
-
-        BitmapFactory.Options options = new BitmapFactory.Options();
-
-//      by setting this field as true, the actual bitmap pixels are not loaded in the memory. Just the bounds are loaded. If
-//      you try the use the bitmap here, you will get null.
-        options.inJustDecodeBounds = true;
-        Bitmap bmp = BitmapFactory.decodeFile(filePath, options);
-
-        int actualHeight = options.outHeight;
-        int actualWidth = options.outWidth;
-
-//      max Height and width values of the compressed image is taken as 816x612
-
-        float maxHeight = 816.0f;
-        float maxWidth = 612.0f;
-        float imgRatio = actualWidth / actualHeight;
-        float maxRatio = maxWidth / maxHeight;
-
-//      width and height values are set maintaining the aspect ratio of the image
-
-        if (actualHeight > maxHeight || actualWidth > maxWidth) {
-            if (imgRatio < maxRatio) {
-                imgRatio = maxHeight / actualHeight;
-                actualWidth = (int) (imgRatio * actualWidth);
-                actualHeight = (int) maxHeight;
-            } else if (imgRatio > maxRatio) {
-                imgRatio = maxWidth / actualWidth;
-                actualHeight = (int) (imgRatio * actualHeight);
-                actualWidth = (int) maxWidth;
-            } else {
-                actualHeight = (int) maxHeight;
-                actualWidth = (int) maxWidth;
-
-            }
-        }
-
-//      setting inSampleSize value allows to load a scaled down version of the original image
-
-        options.inSampleSize = calculateInSampleSize(options, actualWidth, actualHeight);
-
-//      inJustDecodeBounds set to false to load the actual bitmap
-        options.inJustDecodeBounds = false;
-
-//      this options allow android to claim the bitmap memory if it runs low on memory
-        options.inPurgeable = true;
-        options.inInputShareable = true;
-        options.inTempStorage = new byte[16 * 1024];
-
-        try {
-//          load the bitmap from its path
-            bmp = BitmapFactory.decodeFile(filePath, options);
-        } catch (OutOfMemoryError exception) {
-            exception.printStackTrace();
-
-        }
-        try {
-            scaledBitmap = Bitmap.createBitmap(actualWidth, actualHeight, Bitmap.Config.ARGB_8888);
-        } catch (OutOfMemoryError exception) {
-            exception.printStackTrace();
-        }
-
-        float ratioX = actualWidth / (float) options.outWidth;
-        float ratioY = actualHeight / (float) options.outHeight;
-        float middleX = actualWidth / 2.0f;
-        float middleY = actualHeight / 2.0f;
-
-        Matrix scaleMatrix = new Matrix();
-        scaleMatrix.setScale(ratioX, ratioY, middleX, middleY);
-
-        Canvas canvas = new Canvas(scaledBitmap);
-        canvas.setMatrix(scaleMatrix);
-        canvas.drawBitmap(bmp, middleX - bmp.getWidth() / 2, middleY - bmp.getHeight() / 2, new Paint(Paint.FILTER_BITMAP_FLAG));
-
-//      check the rotation of the image and display it properly
-        ExifInterface exif;
-        try {
-            exif = new ExifInterface(filePath);
-
-            int orientation = exif.getAttributeInt(
-                    ExifInterface.TAG_ORIENTATION, 0);
-            Log.d("EXIF", "Exif: " + orientation);
-            Matrix matrix = new Matrix();
-            if (orientation == 6) {
-                matrix.postRotate(90);
-                Log.d("EXIF", "Exif: " + orientation);
-            } else if (orientation == 3) {
-                matrix.postRotate(180);
-                Log.d("EXIF", "Exif: " + orientation);
-            } else if (orientation == 8) {
-                matrix.postRotate(270);
-                Log.d("EXIF", "Exif: " + orientation);
-            }
-            scaledBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0,
-                    scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix,
-                    true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        FileOutputStream out = null;
-        String filename = getFilename();
-        try {
-            out = new FileOutputStream(filename);
-
-//          write the compressed bitmap at the destination specified by filename.
-            scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        return filename;
-
-    }
-
-    public String getFilename() {
-        File file = new File(Environment.getExternalStorageDirectory().getPath(), "MyFolder/Images");
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        String uriSting = (file.getAbsolutePath() + "/" + System.currentTimeMillis() + ".jpg");
-        return uriSting;
-
-    }
-
-    private String getRealPathFromURI(String contentURI) {
-        Uri contentUri = Uri.parse(contentURI);
-        Cursor cursor = getActivity().getContentResolver().query(contentUri, null, null, null, null);
-        if (cursor == null) {
-            return contentUri.getPath();
-        } else {
-            cursor.moveToFirst();
-            int index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
-            return cursor.getString(index);
         }
     }
-
-    public int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
-
-        if (height > reqHeight || width > reqWidth) {
-            final int heightRatio = Math.round((float) height / (float) reqHeight);
-            final int widthRatio = Math.round((float) width / (float) reqWidth);
-            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
-        }
-        final float totalPixels = width * height;
-        final float totalReqPixelsCap = reqWidth * reqHeight * 2;
-        while (totalPixels / (inSampleSize * inSampleSize) > totalReqPixelsCap) {
-            inSampleSize++;
-        }
-
-        return inSampleSize;
-    }
-
-
 }

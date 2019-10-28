@@ -4,65 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
-    tools:context=".anasayfa_pop_up_arama"
     android:background="@drawable/pop_tasarim"
-    android:gravity="center">
-
+    android:gravity="center"
+    android:padding="15dp"
+    tools:context=".anasayfa_pop_up_arama">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:background="@drawable/transparan"
+        android:orientation="vertical"
         android:padding="15dp">
 
-        <Spinner
+        <AutoCompleteTextView
             android:id="@+id/arama_universite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Okul Adı"
-            android:gravity="center"/>
+            android:completionThreshold="1"
+            android:layout_marginBottom="10dp"
+            android:textSize="14dp"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+            android:inputType="textFilter|textAutoComplete"
+            android:hint="Üniversite"
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
+            android:text="@string/universite_listesi__arama_hepsi" />
 
-
-        <Spinner
+        <AutoCompleteTextView
             android:id="@+id/arama_bolum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bölüm Adı"
-            android:gravity="center"/>
+            android:completionThreshold="1"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
+            android:textSize="14dp"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+            android:inputType="textFilter|textAutoComplete"
+            android:hint="Bölüm" />
 
-        <TextView
-            android:id="@+id/arama_bolum_altı_bilgilendirme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/arama_pop_up_bolum_uyarı"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            android:visibility="gone"
-            />
         <EditText
             android:id="@+id/arama_dersadi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ders Adı"
-            />
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
+            android:textSize="14dp"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+            android:inputType="textFilter"/>
+
         <Button
             android:id="@+id/arama_buton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/aramabutonustil"
             android:text="Ara"
-            android:textColor="#fff"
-            android:layout_gravity="center"/>
-
-
+            android:textColor="#fff" />
 
     </LinearLayout>
 

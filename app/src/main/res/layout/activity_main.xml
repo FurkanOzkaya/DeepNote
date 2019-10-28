@@ -4,116 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#29679c"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="25dp"
-    android:background="@drawable/mainbackground">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="4">
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="#fff"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/loginbaslik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DeepNote"
+            android:textColor="#29679c"
+            android:gravity="center"
+            android:textSize="35dp"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/transparan"
-        android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:id="@+id/girisPaneli">
-
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#fff"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/giris_genel_uyarı"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
             android:text="@string/giris_uyarı"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
+
         <EditText
             android:id="@+id/giris_mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-posta"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/sekil"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="15dp"
-            android:drawableLeft="@drawable/main_activity_profil"
-            android:drawablePadding="10dp"
-            android:paddingLeft="2dp"
-            android:layout_marginBottom="10dp"
-            android:textSize="14sp"
-            />
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
+            android:hint="E-mail"
+            android:inputType="textFilter|textEmailAddress"
+            android:textSize="14dp"
+            android:textCursorDrawable="@null"/>
 
         <EditText
             android:id="@+id/giris_sifre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/et_custom"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._-"
             android:hint="Şifre"
             android:inputType="textPassword"
-            android:background="@drawable/sekil"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:drawableLeft="@drawable/main_activty_sifre"
-            android:drawablePadding="10dp"
-            android:paddingLeft="2dp"
-            android:textSize="14sp"
-            />
+            android:padding="10dp"
+            android:textCursorDrawable="@null"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/sifremi_unuttum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="end"
+            android:text="@string/sifre_unutma" />
+
+
 
         <Button
             android:id="@+id/giris_buton"
-            android:text="Giriş Yap"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@drawable/butonshape"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/white"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="bottom">
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sifre_unutma"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="italic"/>
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/qwqw"
+            android:text="giriş yap"
+            android:elevation="0dp"
+            android:textColor="#fff" />
+
+
+
         <TextView
             android:id="@+id/hesap_acma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/uye_olmak"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            android:layout_marginBottom="10dp"
-            />
+            android:gravity="center"
+            android:text="Hesabın yok mu? Hemen oluştur!" />
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"></LinearLayout>
-
 
 </LinearLayout>
