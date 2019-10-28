@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abms.af.projeversion02.Adapters.Yorumadapter;
+import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.SikayetEt;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
@@ -187,11 +188,17 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         ayrıntılı_sikayet_et.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(homesayfasi_paylasimlari_ayrintili.this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("UYARI")
-                        .setMessage("Şikayet etmek istediğinize emin misiniz?")
-                        .setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+
+                final SweetAlertDialog p = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                        p.setTitleText("Dikkat!");
+                        p.setContentText("Şikayet etmek istediğinize emin misiniz?");
+                        p.setConfirmText("Evet");
+                        p.setCancelText("Hayır");
+                        p.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
+                            public void onClick(SweetAlertDialog sDialog) {
+
+                                p.cancel();
 
                                 sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
 
@@ -258,9 +265,10 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                                     }
                                 });
 
-
                             }
-                        }).setNegativeButton("Hayır", null).show();
+                        });
+                        p.show();
+
             }
         });
 
