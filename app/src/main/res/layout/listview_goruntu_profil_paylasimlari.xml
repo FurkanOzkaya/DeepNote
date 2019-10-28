@@ -49,21 +49,6 @@
                         android:textSize="15dp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" / "
-                        android:textColor="#969696" />
-
-                    <TextView
-                        android:id="@+id/listview_profil_bolum"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxLength="25"
-                        android:text="Bölüm"
-                        android:textColor="#6a6d72"
-                        android:textSize="15dp"
-                        android:textStyle="bold" />
 
                 </LinearLayout>
 

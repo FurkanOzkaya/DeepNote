@@ -38,7 +38,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:clickable="true"
-                android:src="@drawable/powerr" />
+                android:src="@drawable/exit" />
 
         </RelativeLayout>
 
@@ -101,14 +101,16 @@
                 android:id="@+id/profil_adi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:textStyle="italic|bold" />
+                android:textColor="#000000"
+                android:textSize="17dp"/>
 
             <TextView
                 android:id="@+id/profil_universite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="italic" />
+                android:textColor="#6a6d72"
+                android:textSize="12dp"
+                android:layout_marginLeft="1dp"/>
 
         </LinearLayout>
 

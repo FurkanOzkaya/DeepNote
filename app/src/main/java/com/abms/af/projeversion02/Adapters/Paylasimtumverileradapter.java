@@ -56,12 +56,12 @@ public class Paylasimtumverileradapter extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(context).inflate(R.layout.listview_goruntu_anasayfa_paylasimlari, viewGroup, false);
-        TextView ad_soyad, universite, bolum, aciklama, ders, universite_adi;
+        TextView ad_soyad, universite, bolum, aciklama, ders, listview__gonderi_bolum_adi;
         final ImageView gelendosya;
         CircularImageView profil_foto;
         ad_soyad = view.findViewById(R.id.listview_ad_soyad);
         universite = view.findViewById(R.id.listview_universite);
-        universite_adi = view.findViewById(R.id.listview_universite_adi);
+        listview__gonderi_bolum_adi = view.findViewById(R.id.listview__gonderi_bolum_adi);
         bolum = view.findViewById(R.id.listview_bolum);
         aciklama = view.findViewById(R.id.listview_aciklama);
         ders = view.findViewById(R.id.listview_ders);
@@ -86,7 +86,7 @@ public class Paylasimtumverileradapter extends BaseAdapter {
 
         ad_soyad.setText(tumverilerliste.get(position).getAdsoyad());
         universite.setText(tumverilerliste.get(position).getUniversite());
-        universite_adi.setText(tumverilerliste.get(position).getUniversite());
+        listview__gonderi_bolum_adi.setText(tumverilerliste.get(position).getBolum());
         ders.setText(tumverilerliste.get(position).getDers());
         bolum.setText(tumverilerliste.get(position).getBolum());
         aciklama.setText(tumverilerliste.get(position).getAciklama());

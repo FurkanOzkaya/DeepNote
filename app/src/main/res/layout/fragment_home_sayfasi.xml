@@ -40,7 +40,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:clickable="true"
-                android:src="@drawable/flaticonarama" />
+                android:src="@drawable/search" />
 
         </RelativeLayout>
 

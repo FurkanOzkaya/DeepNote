@@ -53,10 +53,10 @@ import retrofit2.Response;
 
 public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
-    TextView ayrıntili_indirme, ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama, listview_yorumlar_uyarı, ayrıntılı_sikayet_et, listview_universite_adi;
+    TextView ayrıntili_indirme, ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama, listview_yorumlar_uyarı, ayrıntılı_sikayet_et, listview__gonderi_bolum_adi;
     ImageView ayrıntılı_resim;
     ImageButton ayrıntı_yorum_yapmabutonu;
-    String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
+    String gonderi_bolum_string,id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
     WebView Pdfview;
     SwipeRefreshLayout swipeRefesh;
     CircularImageView profil_foto;
@@ -120,7 +120,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         listview_yorumlar = findViewById(R.id.ayrıntı_homesayfasi_yorum_listview);
         ayrıntili_indirme = findViewById(R.id.ayrıntı_homesayfasi_indirme);
         swipeRefesh = findViewById(R.id.paylasimlar_ayrinti_refesh);
-        listview_universite_adi = findViewById(R.id.listview_universite_adi);
+        listview__gonderi_bolum_adi = findViewById(R.id.listview__gonderi_bolum_adi);
 
 
         progressBar = findViewById(R.id.home_ayrıntı_progressbar);
@@ -138,7 +138,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         ayrintili_bolum.setText(bolum_string);
         ayrintili_ders.setText(ders_string);
         ayrintili_aciklama.setText(aciklama_string);
-        listview_universite_adi.setText(universite_string);
+        listview__gonderi_bolum_adi.setText(bolum_string);
 
         if (profilfoto_string.equals("default")) {
             Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(profil_foto);

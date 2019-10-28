@@ -59,17 +59,15 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(context).inflate(R.layout.listview_goruntu_profil_paylasimlari, viewGroup, false);
-        final TextView bolum, aciklama, ders;
+        final TextView aciklama, ders;
         String email = "";
 
-        bolum = view.findViewById(R.id.listview_profil_bolum);
+
         aciklama = view.findViewById(R.id.listview_profil_aciklama);
         ders = view.findViewById(R.id.listview_profil_ders);
         layoutlist = view.findViewById(R.id.profilsayfasi_listview_tıklama);
         ButonSil = view.findViewById(R.id.ButonSil);
-
         ders.setText(kullanicipaylasim.get(position).getDers());
-        bolum.setText(kullanicipaylasim.get(position).getBolum());
         aciklama.setText(kullanicipaylasim.get(position).getAciklama());
 
         final String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;

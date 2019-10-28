@@ -1236,6 +1236,7 @@ drawable error_center_x
 drawable error_circle
 drawable et_custom
 drawable ev
+drawable exit
 drawable flat_dw
 drawable flat_ogrenci
 drawable flat_pdf2
@@ -1310,6 +1311,7 @@ drawable qwqw2
 drawable qwqw3
 drawable red_button_background
 drawable resimleregit
+drawable search
 drawable sekil
 drawable sikayet
 drawable success_bow
@@ -1411,6 +1413,7 @@ id ayrıntı_profilsayfasi_profilfotosu
 id ayrıntı_profilsayfasi_resim
 id ayrıntı_profilsayfasi_universite
 id ayrıntı_profilsayfasi_yorum
+id aytinti_profilsayfasi_gonderi_bolum_adi
 id barrier
 id beginning
 id blocking
@@ -1536,17 +1539,16 @@ id line3
 id linearLayout
 id listMode
 id list_item
+id listview__gonderi_bolum_adi
 id listview_aciklama
 id listview_ad_soyad
 id listview_bolum
 id listview_ders
 id listview_homesayfasi
 id listview_profil_aciklama
-id listview_profil_bolum
 id listview_profil_ders
 id listview_profil_fotosu
 id listview_universite
-id listview_universite_adi
 id loadPage
 id loading
 id loginbaslik

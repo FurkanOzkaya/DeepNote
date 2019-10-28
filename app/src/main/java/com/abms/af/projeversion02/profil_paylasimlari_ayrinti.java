@@ -37,7 +37,7 @@ import retrofit2.Response;
 public class profil_paylasimlari_ayrinti extends AppCompatActivity {
 
 
-    TextView ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama;
+    TextView ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama, aytinti_profilsayfasi_gonderi_bolum_adi;
     ImageView ayrıntılı_resim;
     ImageButton ayrıntılı_sikayet_et, profil_ayrıntı_yorum_yapmabutonu;
     String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
@@ -103,6 +103,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
         profil_ayrıntı_yorum_yapmabutonu = findViewById(R.id.ayrıntı_profil_yorum_buton);
         profil_yorumlar_listview = findViewById(R.id.ayrıntı_profil_listview);
         profil_ayrıntı_yorumlar_uyari = findViewById(R.id.ayrıntı_profil_yorumlar_lisview_uyarı);
+        aytinti_profilsayfasi_gonderi_bolum_adi = findViewById(R.id.aytinti_profilsayfasi_gonderi_bolum_adi);
 
         progressBar = findViewById(R.id.profil_ayrıntı_progressbar);
 
@@ -111,6 +112,7 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
         ayrintili_bolum.setText(bolum_string);
         ayrintili_ders.setText(ders_string);
         ayrintili_aciklama.setText(aciklama_string);
+        aytinti_profilsayfasi_gonderi_bolum_adi.setText(bolum_string);
 
         if (profilfoto_string.equals("default")) {
             Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(profil_foto);
