@@ -18,7 +18,6 @@
         android:layout_height="15dp"
         android:background="@color/placeholderBG"
         android:layout_toRightOf="@+id/placeholder_profile_image"
-        app:boxBackgroundColor="@color/placeholderBG"
         android:layout_marginRight="8dp"/>
     <View
         android:id="@+id/palace_holder_universite"

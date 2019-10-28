@@ -75,7 +75,7 @@
 
         <io.supercharge.shimmerlayout.ShimmerLayout
             android:id="@+id/shimmer_layout"
-            app:shimmer_animation_duration="1000"
+            app:shimmer_animation_duration="500"
             app:shimmer_angle="20"
             app:shimmer_auto_start="true"
             android:layout_width="match_parent"
@@ -85,11 +85,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <include layout="@layout/ana_sayfa_place_holder_item"/>
-                <include layout="@layout/ana_sayfa_place_holder_item"/>
-                <include layout="@layout/ana_sayfa_place_holder_item"/>
-                <include layout="@layout/ana_sayfa_place_holder_item"/>
-                <include layout="@layout/ana_sayfa_place_holder_item"/>
                 <include layout="@layout/ana_sayfa_place_holder_item"/>
                 <include layout="@layout/ana_sayfa_place_holder_item"/>
                 <include layout="@layout/ana_sayfa_place_holder_item"/>

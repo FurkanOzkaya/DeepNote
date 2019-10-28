@@ -30,6 +30,7 @@ import com.abms.af.projeversion02.RestApi.ManagerAll;
 import com.abms.af.projeversion02.profil_resmi_pop_up;
 import com.squareup.picasso.Picasso;
 
+import java.security.spec.ECField;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -181,8 +182,6 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
             Call<Profilbilgilerigetir> a = ManagerAll.webyonet().profilgetir(email,id);
             //////////////////////////////// P R O G R E S S   B A R    //////////////////////
             bilgiler_progress_bar.setVisibility(View.VISIBLE);
-            getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             ////////////////////////////////////////////////////////////////////////////////////
             a.enqueue(new Callback<Profilbilgilerigetir>() {
                 @Override
@@ -195,7 +194,6 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
 
                         /////////////////////////////////////
                         bilgiler_progress_bar.setVisibility(View.GONE);
-                        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                         ///////////////////////////   P R O G R E S S   B A R   /////////
 
 
@@ -209,9 +207,14 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                         }
                         else
                         {
-                            ///////////////////////////////////
-                            Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
-                            /////////////////////////////////////
+                            try {
+                                ///////////////////////////////////
+                                Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
+                                /////////////////////////////////////
+                            }catch (Exception e)
+                            {
+                                Log.e("TAG", "Profilepicasso: ",e );
+                            }
                         }
 
 
@@ -227,12 +230,8 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                             .setTitleText("\"Beklenmedik bir hata oluştu, İnternet bağlatınızı kontrol ederek daha sonra tekrar deneyiniz\"")
                             .show();
 
-                    //Toast.makeText(getActivity().getApplicationContext(), "bilgiler gelirken  hata" + t.getMessage(), Toast.LENGTH_LONG).show();
-
-
                     /////////////////////////////////////
                     bilgiler_progress_bar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                     ///////////////////////////   P R O G R E S S   B A R   /////////
                 }
             });
@@ -244,8 +243,6 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
             Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(email,id);
             //////////////////////////////// P R O G R E S S   B A R    //////////////////////
             paylasımlar_progresbar.setVisibility(View.VISIBLE);
-            getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             ////////////////////////////////////////////////////////////////////////////////////
             kullanicipaylasım.enqueue(new Callback<List<Profilsayfasikullanicipaylasimlari>>() {
                 @Override
@@ -254,19 +251,22 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                     if (response.isSuccessful()) {
                         //Toast.makeText(getActivity().getApplicationContext(), "SONUCLAR GELDİ "+response.body(), Toast.LENGTH_LONG).show();
 
-                        kullanici_paylasimlari = response.body();
-                        profilkullaniciadapter = new Profilkullanicipaylasimadapter(kullanici_paylasimlari, getActivity().getApplicationContext(),getActivity());
-                        listview_profil.setAdapter(profilkullaniciadapter);
+                       try{
+                           kullanici_paylasimlari = response.body();
+                           profilkullaniciadapter = new Profilkullanicipaylasimadapter(kullanici_paylasimlari, getActivity().getApplicationContext(),getActivity());
+                           listview_profil.setAdapter(profilkullaniciadapter);
+                       }catch (Exception e)
+                       {
+                           Log.e("TAG", "profilepage: ",e );
+                       }
 
                     } else {
                         Toast.makeText(getActivity().getApplicationContext(), "herhangi bir paylasımınız bulunmamaktadır", Toast.LENGTH_LONG).show();
 
                     }
 
-                    /////////////////////////////////////
                     paylasımlar_progresbar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
+
                 }
 
                 @Override
@@ -276,12 +276,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                             .setTitleText("\"Beklenmedik bir hata oluştu, İnternet bağlatınızı kontrol ederek daha sonra tekrar deneyiniz\"")
                             .show();
 
-                    //Toast.makeText(getActivity().getApplicationContext(), "HATA OLUSTU " + t.getMessage(), Toast.LENGTH_LONG).show();
-
-                    /////////////////////////////////////
                     paylasımlar_progresbar.setVisibility(View.GONE);
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                    ////////////////////////////////////
 
                 }
             });

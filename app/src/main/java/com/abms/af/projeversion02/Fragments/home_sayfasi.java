@@ -272,8 +272,14 @@ public class home_sayfasi extends Fragment {
                                 }
 
                                 if ( rowcount >= 0) {
-                                    paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
-                                    listView_homesayfasi.setAdapter(paylasimtumverileradapter);
+                                    try {
+                                        paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
+                                        listView_homesayfasi.setAdapter(paylasimtumverileradapter);
+                                    }
+                                    catch (Exception e) {
+                                        Log.e("TAG", "loadSearchPage: "+e);
+                                    }
+
 
                                 }
                                 else {
