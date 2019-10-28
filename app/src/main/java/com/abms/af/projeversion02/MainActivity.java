@@ -168,29 +168,6 @@ public class MainActivity extends AppCompatActivity {
         tf1 = Typeface.createFromAsset(getApplicationContext().getAssets(),"fonts/DamionRegular.ttf");
         baslik.setTypeface(tf1);
 
-
-        giris_sifre.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                final int DRAWABLE_RIGHT = 2;
-
-                if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                    if(motionEvent.getRawX() >= (giris_sifre.getRight() - giris_sifre.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-
-                        sayac++;
-
-                        if (sayac % 2 == 1)
-                            giris_sifre.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                        else
-                            giris_sifre.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-
-                        return true;
-                    }
-                }
-                return false;
-            }
-        });
-
         uyelik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

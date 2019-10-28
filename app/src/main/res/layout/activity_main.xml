@@ -69,8 +69,7 @@
             android:inputType="textPassword"
             android:padding="10dp"
             android:textCursorDrawable="@null"
-            android:textSize="14dp"
-            android:drawableRight="@drawable/password_visible"/>
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/sifremi_unuttum"
