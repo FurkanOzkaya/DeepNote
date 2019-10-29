@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryDark">@color/white</item>
-        <item name="colorAccent">@color/white</item>
+        <item name="colorPrimary">@color/anarenk</item>
+        <item name="colorPrimaryDark">@color/anarenk</item>
+        <item name="colorAccent">@color/anarenk</item>
     </style>
 
     <style name="profil_bilgi_arkaplan">
