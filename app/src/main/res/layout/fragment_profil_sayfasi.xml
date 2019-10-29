@@ -51,11 +51,16 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ProgressBar
-            android:id="@+id/profil_sayfasi_bilgiler_progress_bar"
+        <io.supercharge.shimmerlayout.ShimmerLayout
+            android:id="@+id/profil_bilgi_placeholder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone" />
+            app:shimmer_auto_start="true"
+            app:shimmer_animation_duration="500"
+            app:shimmer_angle="20"
+            android:visibility="gone">
+            <include layout="@layout/profil_bilgi_placeholder"/>
+        </io.supercharge.shimmerlayout.ShimmerLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -143,18 +148,42 @@
 
     </android.support.v7.widget.CardView>
 
+    <io.supercharge.shimmerlayout.ShimmerLayout
+        android:id="@+id/profil_listview_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_auto_start="true"
+        app:shimmer_animation_duration="500"
+        android:visibility="gone"
+        app:shimmer_angle="20">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+            <include layout="@layout/profil_listview_placeholder"/>
+        </LinearLayout>
+    </io.supercharge.shimmerlayout.ShimmerLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff"
         android:orientation="vertical">
-
-        <ProgressBar
-            android:id="@+id/profil_sayfasi_paylasımlar_progress_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:visibility="gone" />
 
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/profil_sayfasi_refesh"

@@ -34,6 +34,7 @@ import java.security.spec.ECField;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import io.supercharge.shimmerlayout.ShimmerLayout;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -59,7 +60,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
     ImageView ayarlarbutonu;
     String email="";
     Typeface tf1;
-
+    ShimmerLayout profil_bilgi_placeholder,profil_listview_placeholder;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -91,12 +92,12 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         listview_profil = view.findViewById(R.id.profilsayfası_listview);
         profil_bilgiler_layout=view.findViewById(R.id.profil_bilgileri_kısmı);
         profil_foto=view.findViewById(R.id.profil_resmi);
-        paylasımlar_progresbar=view.findViewById(R.id.profil_sayfasi_paylasımlar_progress_bar);
-        bilgiler_progress_bar=view.findViewById(R.id.profil_sayfasi_bilgiler_progress_bar);
         ayarlarbutonu=view.findViewById(R.id.profil_sayfası_ayarlar_butonu);
         yenileme_nesnesi = (SwipeRefreshLayout) view.findViewById(R.id.profil_sayfasi_refesh); // nesnemizi tanıttık
         yenileme_nesnesi.setOnRefreshListener(this);
         DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
+        profil_bilgi_placeholder = view.findViewById(R.id.profil_bilgi_placeholder);
+        profil_listview_placeholder = view.findViewById(R.id.profil_listview_placeholder);
     }
 
 
@@ -180,26 +181,28 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
     {
         try {
             Call<Profilbilgilerigetir> a = ManagerAll.webyonet().profilgetir(email,id);
-            //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-            bilgiler_progress_bar.setVisibility(View.VISIBLE);
-            ////////////////////////////////////////////////////////////////////////////////////
+
+            profil_bilgiler_layout.setVisibility(View.GONE);
+            profil_bilgi_placeholder.setVisibility(View.VISIBLE);
+            profil_bilgi_placeholder.startShimmerAnimation();
+
             a.enqueue(new Callback<Profilbilgilerigetir>() {
                 @Override
                 public void onResponse(Call<Profilbilgilerigetir> call, Response<Profilbilgilerigetir> response) {
+
+                    profil_bilgiler_layout.setVisibility(View.VISIBLE);
+                    profil_bilgi_placeholder.setVisibility(View.GONE);
+                    profil_bilgi_placeholder.stopShimmerAnimation();
+
                     if (response.body().getSonuc() == 1) {
                         profil_ad_soyad_gelen = response.body().getAd_soyad().toString();
                         profil_bolum_gelen = response.body().getBolum().toString();
                         profil_universite_gelen = response.body().getUniversite().toString();
                         Profil_foto_gelen=response.body().getProfil_foto();
 
-                        /////////////////////////////////////
-                        bilgiler_progress_bar.setVisibility(View.GONE);
-                        ///////////////////////////   P R O G R E S S   B A R   /////////
-
 
                         profil_adi.setText(profil_ad_soyad_gelen);
                         profil_universite.setText(profil_universite_gelen);
-                        profil_bolum.setText(profil_bolum_gelen);
 
                         if (response.body().getProfil_foto().equals("default"))
                         {
@@ -230,9 +233,9 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                             .setTitleText("\"Beklenmedik bir hata oluştu, İnternet bağlatınızı kontrol ederek daha sonra tekrar deneyiniz\"")
                             .show();
 
-                    /////////////////////////////////////
-                    bilgiler_progress_bar.setVisibility(View.GONE);
-                    ///////////////////////////   P R O G R E S S   B A R   /////////
+                    profil_bilgiler_layout.setVisibility(View.VISIBLE);
+                    profil_bilgi_placeholder.setVisibility(View.GONE);
+                    profil_bilgi_placeholder.stopShimmerAnimation();
                 }
             });
         }catch (Exception e)
@@ -241,13 +244,19 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         }
         try {
             Call<List<Profilsayfasikullanicipaylasimlari>> kullanicipaylasım = ManagerAll.webyonet().kullancigönderigetir(email,id);
-            //////////////////////////////// P R O G R E S S   B A R    //////////////////////
-            paylasımlar_progresbar.setVisibility(View.VISIBLE);
-            ////////////////////////////////////////////////////////////////////////////////////
+
+            listview_profil.setVisibility(View.GONE);
+            profil_listview_placeholder.setVisibility(View.VISIBLE);
+            profil_listview_placeholder.startShimmerAnimation();
+
             kullanicipaylasım.enqueue(new Callback<List<Profilsayfasikullanicipaylasimlari>>() {
                 @Override
                 public void onResponse(Call<List<Profilsayfasikullanicipaylasimlari>> call, Response<List<Profilsayfasikullanicipaylasimlari>> response) {
                     //Toast.makeText(getActivity().getApplicationContext(), "SONUCLAR GELDİ "+response.body(), Toast.LENGTH_LONG).show();
+                    listview_profil.setVisibility(View.VISIBLE);
+                    profil_listview_placeholder.setVisibility(View.GONE);
+                    profil_listview_placeholder.stopShimmerAnimation();
+
                     if (response.isSuccessful()) {
                         //Toast.makeText(getActivity().getApplicationContext(), "SONUCLAR GELDİ "+response.body(), Toast.LENGTH_LONG).show();
 
@@ -265,8 +274,6 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
 
                     }
 
-                    paylasımlar_progresbar.setVisibility(View.GONE);
-
                 }
 
                 @Override
@@ -276,7 +283,9 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                             .setTitleText("\"Beklenmedik bir hata oluştu, İnternet bağlatınızı kontrol ederek daha sonra tekrar deneyiniz\"")
                             .show();
 
-                    paylasımlar_progresbar.setVisibility(View.GONE);
+                    listview_profil.setVisibility(View.VISIBLE);
+                    profil_listview_placeholder.setVisibility(View.GONE);
+                    profil_listview_placeholder.stopShimmerAnimation();
 
                 }
             });

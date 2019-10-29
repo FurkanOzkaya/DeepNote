@@ -1601,15 +1601,15 @@ id placeholder_ders
 id placeholder_profile_image
 id profil_adi
 id profil_ayrıntı_progressbar
+id profil_bilgi_placeholder
 id profil_bilgileri_kısmı
 id profil_bolum
 id profil_foto
 id profil_icon1
+id profil_listview_placeholder
 id profil_resmi
 id profil_resmi_silme
 id profil_resmi_yukleme
-id profil_sayfasi_bilgiler_progress_bar
-id profil_sayfasi_paylasımlar_progress_bar
 id profil_sayfasi_refesh
 id profil_sayfası_ayarlar_butonu
 id profil_universite
@@ -1856,6 +1856,8 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout okullar
+layout profil_bilgi_placeholder
+layout profil_listview_placeholder
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
