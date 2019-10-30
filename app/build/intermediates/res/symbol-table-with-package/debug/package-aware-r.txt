@@ -1981,6 +1981,8 @@ string path_password_strike_through
 string permission_camera_denied
 string permission_gallery_denied
 string search_menu_title
+string share_page_info
+string share_page_info_link
 string share_sayfası_acıklama_uyarı
 string share_sayfası_bolum_uyarı
 string share_sayfası_ders_uyarı

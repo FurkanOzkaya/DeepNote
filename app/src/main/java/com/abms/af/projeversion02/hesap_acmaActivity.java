@@ -274,7 +274,7 @@ public class hesap_acmaActivity extends AppCompatActivity {
                         editor.commit();
 
                         new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                                .setTitleText("Tebrikler")
+                                .setTitleText("Başarılı")
                                 .setContentText("Hesabınız oluşturuldu")
                                 .setConfirmText("Tamam")
                                 .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {

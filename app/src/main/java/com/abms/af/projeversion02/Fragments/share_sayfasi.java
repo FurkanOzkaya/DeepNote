@@ -145,7 +145,7 @@ public class share_sayfasi extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sandystreamtr.com/"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://lmgtfy.com/?q=jpg+to+pdf&s=g&t=w"));
                 startActivity(browserIntent);
             }
         });

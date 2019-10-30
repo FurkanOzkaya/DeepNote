@@ -57,6 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#fff"
+                    android:orientation="vertical"
                     android:gravity="center">
 
                     <TextView
@@ -66,6 +67,8 @@
                         android:gravity="center"
                         android:text="Paylaşmak istediğin dosyayı seç, bilgileri gir ve yolla, bu kadar basit!"
                         android:textSize="18dp" />
+
+
 
                 </LinearLayout>
 
@@ -144,18 +147,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="10dp"
                             android:gravity="center"
-                            android:text="Dikkat!"
-                            android:textSize="18dp"
-                            android:layout_marginTop="40dp"/>
-
+                            android:text="@string/share_page_info"
+                            android:textSize="15sp"/>
                         <TextView
                             android:id="@+id/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="10dp"
                             android:gravity="center"
-                            android:text="Birden fazla fotoğraf paylaşmak istiyorsanız lütfen fotoğraflarınızı pdf formatında tek bir dosya halinde paylaşabilirsiniz! nasıl yapılacağını ve daha fazlası için lütfen tıklayınız, anlayışınız için teşekkür ederiz"
-                            android:textSize="18dp"/>
+                            android:layout_marginTop="2dp"
+                            android:text="@string/share_page_info_link"
+                            android:textSize="15sp"/>
 
                     </LinearLayout>
 
