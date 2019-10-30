@@ -71,7 +71,7 @@ public class share_sayfasi extends Fragment {
     Map<String, RequestBody> mappdf, mapresim;
     Button yukleme_butonu;
     EditText ders_adi, acıklama;
-    TextView ders_adi_uyarı, bolum_uyarı, acıklama_uyarı, DeepNoteBaslik;
+    TextView ders_adi_uyarı, bolum_uyarı, acıklama_uyarı, DeepNoteBaslik, textView;
     AutoCompleteTextView bolum_adi;
     String ders_string, acıklama_string, email = "";
     int bolum_string_int;
@@ -123,6 +123,7 @@ public class share_sayfasi extends Fragment {
         ders_adi_uyarı = view.findViewById(R.id.share_sayfası_ders_uyarı);
         bolum_uyarı = view.findViewById(R.id.share_sayfası_bolum_uyarı);
         acıklama_uyarı = view.findViewById(R.id.share_sayfası_acıklama_uyarı);
+        textView = (TextView) view.findViewById(R.id.textView);
 
         sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("giris", 0);
         id = sharedPreferences.getInt("uye_id", 0);
@@ -140,6 +141,14 @@ public class share_sayfasi extends Fragment {
 
         tf1 = Typeface.createFromAsset(getActivity().getAssets(),"fonts/DamionRegular.ttf");
         DeepNoteBaslik.setTypeface(tf1);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sandystreamtr.com/"));
+                startActivity(browserIntent);
+            }
+        });
 
         sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("giris", 0);
         if (sharedPreferences.getInt("uye_id", 0) != 0) {
