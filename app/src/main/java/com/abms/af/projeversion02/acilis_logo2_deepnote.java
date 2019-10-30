@@ -1,6 +1,7 @@
 package com.abms.af.projeversion02;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class acilis_logo2_deepnote extends AppCompatActivity {
 
     private TextView textView;
     private ImageView imageview;
+    Typeface tf1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,9 @@ public class acilis_logo2_deepnote extends AppCompatActivity {
 
         textView = findViewById(R.id.txt2);
         imageview = findViewById(R.id.resim2);
+
+        tf1 = Typeface.createFromAsset(getApplicationContext().getAssets(),"fonts/DamionRegular.ttf");
+        textView.setTypeface(tf1);
 
         Animation animasyon = AnimationUtils.loadAnimation(this,R.anim.transition);
         textView.startAnimation(animasyon);

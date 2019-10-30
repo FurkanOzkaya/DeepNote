@@ -1218,6 +1218,7 @@ drawable bottom_shadow
 drawable btn_gradient_style
 drawable dahafazla
 drawable dahafazlayukle
+drawable deepnote_logo
 drawable default_scroll_handle_bottom
 drawable default_scroll_handle_left
 drawable default_scroll_handle_right
