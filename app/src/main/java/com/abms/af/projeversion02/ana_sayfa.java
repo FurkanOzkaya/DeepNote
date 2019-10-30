@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.abms.af.projeversion02.Fragments.home_sayfasi;
 import com.abms.af.projeversion02.Fragments.profil_sayfasi;
 import com.abms.af.projeversion02.Fragments.share_sayfasi;
+import com.abms.af.projeversion02.Fragments.takip_sayfasi;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -91,6 +92,9 @@ public class ana_sayfa extends AppCompatActivity implements BottomNavigationView
             case R.id.home_icon1:
                // Toast.makeText(getApplicationContext(), "Home sayfası", Toast.LENGTH_LONG).show();
                 fragment = new home_sayfasi();
+                break;
+            case R.id.takip_edilenler:
+                fragment = new takip_sayfasi();
                 break;
             case R.id.ekle_icon1:
                // Toast.makeText(getApplicationContext(), "Ekle sayfası", Toast.LENGTH_LONG).show();

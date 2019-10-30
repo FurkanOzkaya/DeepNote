@@ -1219,6 +1219,7 @@ drawable btn_gradient_style
 drawable dahafazla
 drawable dahafazlayukle
 drawable deepnote_logo
+drawable deepnotelogo
 drawable default_scroll_handle_bottom
 drawable default_scroll_handle_left
 drawable default_scroll_handle_right
@@ -1330,6 +1331,7 @@ drawable ucrop_shadow_upside
 drawable ucrop_vector_ic_crop
 drawable ucrop_vector_loader
 drawable ucrop_vector_loader_animated
+drawable users
 drawable warning_circle
 drawable warning_sigh
 id ALT
@@ -1511,6 +1513,7 @@ id home_sayfası_profil_gonderme
 id icon
 id icon_group
 id ifRoom
+id ilkparagraf
 id image
 id imageView
 id image_type
@@ -1576,6 +1579,7 @@ id notification_main_column
 id notification_main_column_container
 id okultextitem
 id openpdf
+id ortaparagraf
 id others_profil_adi
 id others_profil_bolum
 id others_profil_resmi
@@ -1692,6 +1696,7 @@ id tab_indicator
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id takip_edilenler
 id text
 id text2
 id textSpacerNoButtons
@@ -1837,6 +1842,7 @@ layout dialog_main
 layout fragment_home_sayfasi
 layout fragment_profil_sayfasi
 layout fragment_share_sayfasi
+layout fragment_takip_sayfasi
 layout layout_screen
 layout listview_goruntu_anasayfa_paylasimlari
 layout listview_goruntu_profil_paylasimlari

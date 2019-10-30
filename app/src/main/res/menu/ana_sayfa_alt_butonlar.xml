@@ -9,6 +9,13 @@
         android:title="Ana Sayfa"/>
 
     <item
+        android:id="@+id/takip_edilenler"
+        android:enabled="true"
+        android:icon="@drawable/users"
+        app:showAsAction="ifRoom"
+        android:title="Takip"/>
+
+    <item
         android:id="@+id/ekle_icon1"
         android:enabled="true"
         android:icon="@drawable/paylasss"

@@ -61,6 +61,7 @@
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/ilkparagraf"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
@@ -143,6 +144,7 @@
                         </LinearLayout>
 
                         <TextView
+                            android:id="@+id/ortaparagraf"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="10dp"

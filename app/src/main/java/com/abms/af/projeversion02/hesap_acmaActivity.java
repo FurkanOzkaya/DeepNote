@@ -91,6 +91,8 @@ public class hesap_acmaActivity extends AppCompatActivity {
 
     private void islevver() {
 
+        kayıt_ol_butonu.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
+
         sozlesme_goster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -210,8 +212,10 @@ public class hesap_acmaActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (sozlesme.isChecked()) {
                     kayıt_ol_butonu.setEnabled(true);
+                    kayıt_ol_butonu.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
                 } else {
                     kayıt_ol_butonu.setEnabled(false);
+                    kayıt_ol_butonu.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
                 }
             }
         });

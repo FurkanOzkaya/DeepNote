@@ -71,7 +71,7 @@ public class share_sayfasi extends Fragment {
     Map<String, RequestBody> mappdf, mapresim;
     Button yukleme_butonu;
     EditText ders_adi, acıklama;
-    TextView ders_adi_uyarı, bolum_uyarı, acıklama_uyarı, DeepNoteBaslik, textView;
+    TextView ders_adi_uyarı, bolum_uyarı, acıklama_uyarı, DeepNoteBaslik, textView,ilkp,sonp;
     AutoCompleteTextView bolum_adi;
     String ders_string, acıklama_string, email = "";
     int bolum_string_int;
@@ -124,6 +124,8 @@ public class share_sayfasi extends Fragment {
         bolum_uyarı = view.findViewById(R.id.share_sayfası_bolum_uyarı);
         acıklama_uyarı = view.findViewById(R.id.share_sayfası_acıklama_uyarı);
         textView = (TextView) view.findViewById(R.id.textView);
+        ilkp = view.findViewById(R.id.ilkparagraf);
+        sonp = view.findViewById(R.id.ortaparagraf);
 
         sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("giris", 0);
         id = sharedPreferences.getInt("uye_id", 0);
@@ -164,6 +166,9 @@ public class share_sayfasi extends Fragment {
 
         resimleregit.startAnimation(bounce);
         dosyalaragit.startAnimation(rtol);
+        ilkp.startAnimation(bounce);
+        sonp.startAnimation(rtol);
+        textView.startAnimation(rtol);
 
         resimleregit.setOnClickListener(new View.OnClickListener() {
             @Override
