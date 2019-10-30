@@ -1,4 +1,4 @@
-#Wed Oct 30 16:41:41 EET 2019
+#Wed Oct 30 19:48:10 EET 2019
 base.2=C\:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
 base.1=C\:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
 base.0=C\:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11

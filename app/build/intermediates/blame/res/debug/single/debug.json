@@ -16,12 +16,12 @@
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -40,12 +40,12 @@
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\56f3fb5165bb8894efc1e43e55f6efe1\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_text_btn_text_color_selector.xml.flat",
-        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\0c76dee456ba20868f9a59b6d2b94a56\\res\\color\\mtrl_text_btn_text_color_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_text_btn_text_color_selector.xml.flat",
+        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\0c76dee456ba20868f9a59b6d2b94a56\\res\\color\\mtrl_text_btn_text_color_selector.xml"
     },
     {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -160,12 +160,12 @@
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
-        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\f3fed5b5e255a4c0d6c661ced645fcd4\\res\\layout-v21\\notification_action.xml"
-    },
-    {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
+        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\f3fed5b5e255a4c0d6c661ced645fcd4\\res\\layout-v21\\notification_action.xml"
     },
     {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",

@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         giris_buton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
                 if (giris_mail.getText().toString().equals("") || giris_sifre.getText().toString().equals(""))
                 {
                     final SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
