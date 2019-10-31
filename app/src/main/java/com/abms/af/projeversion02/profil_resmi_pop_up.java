@@ -113,30 +113,29 @@ public class profil_resmi_pop_up extends AppCompatActivity {
             public void onClick(View view) {
 
                 profil_resmi_pop_up.this.finish();
-              try {
-                  Call<Profilfotosilmesonuc> fotosill = ManagerAll.webyonet().fotosil(email, id_kullanici);
-                  fotosill.enqueue(new Callback<Profilfotosilmesonuc>() {
-                      @Override
-                      public void onResponse(Call<Profilfotosilmesonuc> call, Response<Profilfotosilmesonuc> response) {
-                          if (response.isSuccessful()) {
-                              Toast.makeText(getApplicationContext(), "Profil Fotoğrafınız Silindi ", Toast.LENGTH_LONG).show();
-                          }
-                      }
+                try {
+                    Call<Profilfotosilmesonuc> fotosill = ManagerAll.webyonet().fotosil(email, id_kullanici);
+                    fotosill.enqueue(new Callback<Profilfotosilmesonuc>() {
+                        @Override
+                        public void onResponse(Call<Profilfotosilmesonuc> call, Response<Profilfotosilmesonuc> response) {
+                            if (response.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "Profil Fotoğrafınız Silindi ", Toast.LENGTH_LONG).show();
+                            }
+                        }
 
-                      @Override
-                      public void onFailure(Call<Profilfotosilmesonuc> call, Throwable t) {
+                        @Override
+                        public void onFailure(Call<Profilfotosilmesonuc> call, Throwable t) {
 
-                          final SweetAlertDialog sa = new SweetAlertDialog(profil_resmi_pop_up.this,SweetAlertDialog.WARNING_TYPE);
-                          sa.setTitleText("Dikkat");
-                          sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                          sa.setConfirmText("Tamam");
-                          sa.show();
-                      }
-                  });
-              }catch (Exception e)
-              {
-                  Log.e("TAG", "onClick: ",e );
-              }
+                            final SweetAlertDialog sa = new SweetAlertDialog(profil_resmi_pop_up.this, SweetAlertDialog.WARNING_TYPE);
+                            sa.setTitleText("Dikkat");
+                            sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                            sa.setConfirmText("Tamam");
+                            sa.show();
+                        }
+                    });
+                } catch (Exception e) {
+                    Log.e("TAG", "onClick: ", e);
+                }
             }
         });
     }
@@ -158,7 +157,7 @@ public class profil_resmi_pop_up extends AppCompatActivity {
 
         if (requestCode == ImagePicker.REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             try {
-                Toast.makeText(getApplicationContext(),"foto secildi ",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "foto secildi ", Toast.LENGTH_LONG).show();
 
                 String resim = ImagePicker.Companion.getFilePath(data);
                 profilfoto = new HashMap<>();
@@ -185,7 +184,7 @@ public class profil_resmi_pop_up extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<Profilfotoyuklemesonuc> call, Throwable t) {
 
-                        final SweetAlertDialog sa = new SweetAlertDialog(profil_resmi_pop_up.this,SweetAlertDialog.WARNING_TYPE);
+                        final SweetAlertDialog sa = new SweetAlertDialog(profil_resmi_pop_up.this, SweetAlertDialog.WARNING_TYPE);
                         sa.setTitleText("Dikkat");
                         sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                         sa.setConfirmText("Tamam");

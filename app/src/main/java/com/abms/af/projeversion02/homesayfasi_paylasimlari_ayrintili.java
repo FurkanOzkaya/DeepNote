@@ -55,10 +55,10 @@ import retrofit2.Response;
 
 public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
-    TextView DeepNoteBaslik,ayrıntili_indirme, ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama, listview_yorumlar_uyarı, ayrıntılı_sikayet_et, listview__gonderi_bolum_adi;
+    TextView DeepNoteBaslik, ayrıntili_indirme, ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama, listview_yorumlar_uyarı, ayrıntılı_sikayet_et, listview__gonderi_bolum_adi;
     ImageView ayrıntılı_resim;
     ImageButton ayrıntı_yorum_yapmabutonu;
-    String gonderi_bolum_string,id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
+    String gonderi_bolum_string, id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
     WebView Pdfview;
     SwipeRefreshLayout swipeRefesh;
     CircularImageView profil_foto;
@@ -154,7 +154,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
     public void islevver() {
 
-        tf1 = Typeface.createFromAsset(getAssets(),"fonts/DamionRegular.ttf");
+        tf1 = Typeface.createFromAsset(getAssets(), "fonts/DamionRegular.ttf");
         DeepNoteBaslik.setTypeface(tf1);
 
         sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
@@ -196,30 +196,30 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             public void onClick(View view) {
 
                 final SweetAlertDialog p = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
-                        p.setTitleText("Dikkat!");
-                        p.setContentText("Şikayet etmek istediğinize emin misiniz?");
-                        p.setConfirmText("Evet");
-                        p.setCancelText("Hayır");
-                        p.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                p.setTitleText("Dikkat!");
+                p.setContentText("Şikayet etmek istediğinize emin misiniz?");
+                p.setConfirmText("Evet");
+                p.setCancelText("Hayır");
+                p.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sDialog) {
+
+                        p.cancel();
+
+                        sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
+
+                        final Integer paylasımid = Integer.parseInt(paylasim_id_string);
+                        int kullanici_id = sharedPreferences.getInt("uye_id", 0);
+
+                        Call<SikayetEt> request = ManagerAll.webyonet().SikayetEt(kullanici_id, paylasımid);
+                        request.enqueue(new Callback<SikayetEt>() {
                             @Override
-                            public void onClick(SweetAlertDialog sDialog) {
+                            public void onResponse(Call<SikayetEt> call, Response<SikayetEt> response) {
 
-                                p.cancel();
+                                if (response.body().getResult().equals("Basarili")) {
 
-                                sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
-
-                                final Integer paylasımid = Integer.parseInt(paylasim_id_string);
-                                int kullanici_id = sharedPreferences.getInt("uye_id", 0);
-
-                                Call<SikayetEt> request = ManagerAll.webyonet().SikayetEt(kullanici_id, paylasımid);
-                                request.enqueue(new Callback<SikayetEt>() {
-                                    @Override
-                                    public void onResponse(Call<SikayetEt> call, Response<SikayetEt> response) {
-
-                                        if (response.body().getResult().equals("Basarili")) {
-
-                                            //Bu kod paylasim tablosundaki sikayet sayısını arttırır, admin panelinin işleyişini bozmamak için geçici süre çalışacaktır
-                                            /////////////////////////////////////////////////////////////////////////////////
+                                    //Bu kod paylasim tablosundaki sikayet sayısını arttırır, admin panelinin işleyişini bozmamak için geçici süre çalışacaktır
+                                    /////////////////////////////////////////////////////////////////////////////////
                                             /*
                                             Call<Sikayetetmesonuc> s = ManagerAll.webyonet().sikayetet(email, paylasımid);
                                             s.enqueue(new Callback<Sikayetetmesonuc>() {
@@ -237,43 +237,43 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                                                 }
                                             });
                                             */
-                                            //////////////////////////////////////////////////////////////////////////////////
+                                    //////////////////////////////////////////////////////////////////////////////////
 
-                                            final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE);
-                                            sa.setTitleText("Başarılı");
-                                            sa.setContentText("Uygunsuz olabileceğini düşündüğün bu gönderi hakkında bizi bilgilendirdiğin için teşekkür ederiz");
-                                            sa.setConfirmText("Tamam");
-                                            sa.show();
-                                        } else if (response.body().getResult().equals("Basarisiz")) {
-                                            final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
-                                            sa.setTitleText("Dikkat");
-                                            sa.setContentText("Bu gönderiyi daha önce şikayet etmiş bulunmaktasın");
-                                            sa.setConfirmText("Tamam");
-                                            sa.show();
-                                        } else {
-                                            final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
-                                            sa.setTitleText("Dikkat");
-                                            sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                                            sa.setConfirmText("Tamam");
-                                            sa.show();
-                                        }
-                                    }
+                                    final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE);
+                                    sa.setTitleText("Başarılı");
+                                    sa.setContentText("Uygunsuz olabileceğini düşündüğün bu gönderiyi bize bilgilendirdiğin için teşekkür ederiz");
+                                    sa.setConfirmText("Tamam");
+                                    sa.show();
+                                } else if (response.body().getResult().equals("Basarisiz")) {
+                                    final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                                    sa.setTitleText("Dikkat!");
+                                    sa.setContentText("Bu gönderiyi daha önce şikayet etmiş bulunmaktasın");
+                                    sa.setConfirmText("Tamam");
+                                    sa.show();
+                                } else {
+                                    final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                                    sa.setTitleText("Dikkat!");
+                                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                                    sa.setConfirmText("Tamam");
+                                    sa.show();
+                                }
+                            }
 
-                                    @Override
-                                    public void onFailure(Call<SikayetEt> call, Throwable t) {
+                            @Override
+                            public void onFailure(Call<SikayetEt> call, Throwable t) {
 
-                                        final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
-                                        sa.setTitleText("Dikkat");
-                                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                                        sa.setConfirmText("Tamam");
-                                        sa.show();
-
-                                    }
-                                });
+                                final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                                sa.setTitleText("Dikkat!");
+                                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                                sa.setConfirmText("Tamam");
+                                sa.show();
 
                             }
                         });
-                        p.show();
+
+                    }
+                });
+                p.show();
 
             }
         });
@@ -342,18 +342,19 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                                     });
                                 } else {
 
-                                    new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
-                                            .setTitleText("Dikkat!")
-                                            .setContentText("Beklenmedik bir hata oluştu, Lütfen daha sonra tekrar deneyiniz")
-                                            .show();
+                                    SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                                    sa.setTitleText("Dikkat!");
+                                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                                    sa.setConfirmText("Tamam");
+                                    sa.show();
                                 }
                             }
 
                             @Override
                             public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
 
-                                final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
-                                sa.setTitleText("Dikkat");
+                                SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                                sa.setTitleText("Dikkat!");
                                 sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                                 sa.setConfirmText("Tamam");
                                 sa.show();
@@ -456,8 +457,8 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-                            final SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
-                            sa.setTitleText("Dikkat");
+                            SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
+                            sa.setTitleText("Dikkat!");
                             sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                             sa.setConfirmText("Tamam");
                             sa.show();

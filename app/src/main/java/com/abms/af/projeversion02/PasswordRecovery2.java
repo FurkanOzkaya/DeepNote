@@ -51,65 +51,58 @@ public class PasswordRecovery2 extends AppCompatActivity {
         AdSoyad = (TextView) findViewById(R.id.AdSoyad);
         profil_foto = (ImageView) findViewById(R.id.profil_foto);
 
-        sharedPref = getApplicationContext().getSharedPreferences("sifre",0);
+        sharedPref = getApplicationContext().getSharedPreferences("sifre", 0);
         String SharedEmail = sharedPref.getString("Email", "Kayit Yok");
 
-       try {
-           Call<AdSoyadProfilfoto> request = ManagerAll.webyonet().AdSoyadProfilfoto(SharedEmail);
-           request.enqueue(new Callback<AdSoyadProfilfoto>() {
-               @Override
-               public void onResponse(Call<AdSoyadProfilfoto> call, Response<AdSoyadProfilfoto> response) {
+        try {
+            Call<AdSoyadProfilfoto> request = ManagerAll.webyonet().AdSoyadProfilfoto(SharedEmail);
+            request.enqueue(new Callback<AdSoyadProfilfoto>() {
+                @Override
+                public void onResponse(Call<AdSoyadProfilfoto> call, Response<AdSoyadProfilfoto> response) {
 
-                   if (response.isSuccessful())
-                   {
-                       AdSoyad.setText(response.body().getAd_soyad());
+                    if (response.isSuccessful()) {
+                        AdSoyad.setText(response.body().getAd_soyad());
 
 
-                       if (response.body().getProfil_foto().equals("default"))
-                       {
-                           Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
-                       }
-                       else
-                       {
-                           ///////////////////////////////////
-                           Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
-                           /////////////////////////////////////
-                       }
+                        if (response.body().getProfil_foto().equals("default")) {
+                            Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(profil_foto);
+                        } else {
+                            ///////////////////////////////////
+                            Picasso.get().load(getString(R.string.site_adresi) + response.body().getProfil_foto()).resize(200, 200).error(R.drawable.flat_ogrenci).into(profil_foto);
+                            /////////////////////////////////////
+                        }
 
-                       pDialog.cancel();
+                        pDialog.cancel();
 
-                   }
-                   else
-                   {
-                       pDialog.cancel();
+                    } else {
+                        pDialog.cancel();
 
-                       pDialog.cancel();
+                        pDialog.cancel();
 
-                       final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this,SweetAlertDialog.WARNING_TYPE);
-                       sa.setTitleText("Dikkat");
-                       sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                       sa.setConfirmText("Tamam");
-                       sa.show();
-                   }
-               }
+                        final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this, SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
+                    }
+                }
 
-               @Override
-               public void onFailure(Call<AdSoyadProfilfoto> call, Throwable t) {
+                @Override
+                public void onFailure(Call<AdSoyadProfilfoto> call, Throwable t) {
 
-                   pDialog.cancel();
+                    pDialog.cancel();
 
-                   final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this,SweetAlertDialog.WARNING_TYPE);
-                   sa.setTitleText("Dikkat");
-                   sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                   sa.setConfirmText("Tamam");
-                   sa.show();
+                    final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this, SweetAlertDialog.WARNING_TYPE);
+                    sa.setTitleText("Dikkat");
+                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                    sa.setConfirmText("Tamam");
+                    sa.show();
 
-               }
-           });
-       }catch (Exception e)
-       {
-           //Log.e("TAG", "onCreate: ",e );
-       }
+                }
+            });
+        } catch (Exception e) {
+            //Log.e("TAG", "onCreate: ",e );
+        }
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,15 +115,13 @@ public class PasswordRecovery2 extends AppCompatActivity {
         Send2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sharedPref = getApplicationContext().getSharedPreferences("sifre",0);
+                sharedPref = getApplicationContext().getSharedPreferences("sifre", 0);
                 String SharedKod = sharedPref.getString("Kod", "Kayit Yok");
                 String kod = Kod.getText().toString();
 
-                if (SharedKod.equals(kod))
-                {
-                    if (DenemeSayisi <= 0)
-                    {
-                        final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this,SweetAlertDialog.WARNING_TYPE);
+                if (SharedKod.equals(kod)) {
+                    if (DenemeSayisi <= 0) {
+                        SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this, SweetAlertDialog.WARNING_TYPE);
                         sa.setTitleText("Dikkat!");
                         sa.setContentText("E-posta adresini doğru olduğuna emin misin? E-posta adresini doğru yazdığına emin ol");
                         sa.setConfirmText("Tekrar Dene");
@@ -144,18 +135,13 @@ public class PasswordRecovery2 extends AppCompatActivity {
                             }
                         });
                         sa.show();
-                    }
-                    else
-                    {
+                    } else {
                         Intent intent = new Intent(PasswordRecovery2.this, PasswordRecovery3.class);
                         startActivity(intent);
                     }
-                }
-                else
-                {
-                    if (DenemeSayisi <= 0)
-                    {
-                        final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this,SweetAlertDialog.WARNING_TYPE);
+                } else {
+                    if (DenemeSayisi <= 0) {
+                        SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this, SweetAlertDialog.WARNING_TYPE);
                         sa.setTitleText("Dikkat!");
                         sa.setContentText("E-posta adresini doğru olduğuna emin misin? E-posta adresini doğru yazdığına emin ol ve tekrar dene");
                         sa.setConfirmText("Tamam");
@@ -169,12 +155,10 @@ public class PasswordRecovery2 extends AppCompatActivity {
                             }
                         });
                         sa.show();
-                    }
-                    else
-                    {
+                    } else {
                         DenemeSayisi--;
-                        final SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this,SweetAlertDialog.ERROR_TYPE);
-                        sa.setTitleText("Hata");
+                        SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this, SweetAlertDialog.ERROR_TYPE);
+                        sa.setTitleText("Hata!");
                         sa.setContentText("Girdiğin kod yanlış,e-posta adresine gönderdiğimiz kodu kontrol ederek tekrar dene");
                         sa.setConfirmText("Tamam");
                         sa.show();

@@ -332,8 +332,8 @@ public class share_sayfasi extends Fragment {
 
                         pDialog.cancel();
 
-                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                        sa.setTitleText("Dikkat");
+                        SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat!");
                         sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                         sa.setConfirmText("Tamam");
                         sa.show();
@@ -390,8 +390,8 @@ public class share_sayfasi extends Fragment {
 
                         pDialog.cancel();
 
-                        final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                        sa.setTitleText("Dikkat");
+                        SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat!");
                         sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                         sa.setConfirmText("Tamam");
                         sa.show();

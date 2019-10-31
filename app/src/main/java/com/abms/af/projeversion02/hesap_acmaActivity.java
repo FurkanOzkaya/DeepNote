@@ -192,7 +192,7 @@ public class hesap_acmaActivity extends AppCompatActivity {
                                                        }
 
                                                    } else {
-                                                       final SweetAlertDialog sa = new SweetAlertDialog(hesap_acmaActivity.this,SweetAlertDialog.WARNING_TYPE);
+                                                       final SweetAlertDialog sa = new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.WARNING_TYPE);
                                                        sa.setTitleText("Dikkat!");
                                                        sa.setContentText("Lütfen E-posta bilgilerinizi kontrol ederek tekrar deneyiniz");
                                                        sa.setConfirmText("Tamam");
@@ -298,8 +298,8 @@ public class hesap_acmaActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<Kullanicikayitsonuc> call, Throwable t) {
 
-                    final SweetAlertDialog sa = new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.WARNING_TYPE);
-                    sa.setTitleText("Dikkat");
+                    SweetAlertDialog sa = new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.WARNING_TYPE);
+                    sa.setTitleText("Dikkat!");
                     sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                     sa.setConfirmText("Tamam");
                     sa.show();

@@ -2,7 +2,7 @@ package com.abms.af.projeversion02;
 
 public class ScreenItem {
 
-    String Title,Description;
+    String Title, Description;
     int ScreenImg;
 
     public ScreenItem(String title, String description, int screenImg) {

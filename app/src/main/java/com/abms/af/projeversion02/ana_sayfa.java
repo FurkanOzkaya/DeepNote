@@ -47,7 +47,6 @@ public class ana_sayfa extends AppCompatActivity implements BottomNavigationView
         }
         tanımla();
         islevver();
-
     }
 
     public void tanımla() {
@@ -55,15 +54,15 @@ public class ana_sayfa extends AppCompatActivity implements BottomNavigationView
         alt_butonlar.setOnNavigationItemSelectedListener(this);
         loadFragment(new home_sayfasi());
         sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
-        if(sharedPreferences.getInt("uye_id",0) == 0)
-        {
-            Intent girisyapma=new Intent(getApplicationContext(),MainActivity.class);
+        if (sharedPreferences.getInt("uye_id", 0) == 0) {
+            Intent girisyapma = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(girisyapma);
         }
 
     }
 
-    public void islevver() { }
+    public void islevver() {
+    }
 
     /*
     fragmenti yüklemek için yazılan metod
@@ -90,18 +89,18 @@ public class ana_sayfa extends AppCompatActivity implements BottomNavigationView
         Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.home_icon1:
-               // Toast.makeText(getApplicationContext(), "Home sayfası", Toast.LENGTH_LONG).show();
+                // Toast.makeText(getApplicationContext(), "Home sayfası", Toast.LENGTH_LONG).show();
                 fragment = new home_sayfasi();
                 break;
             case R.id.takip_edilenler:
                 fragment = new takip_sayfasi();
                 break;
             case R.id.ekle_icon1:
-               // Toast.makeText(getApplicationContext(), "Ekle sayfası", Toast.LENGTH_LONG).show();
+                // Toast.makeText(getApplicationContext(), "Ekle sayfası", Toast.LENGTH_LONG).show();
                 fragment = new share_sayfasi();
                 break;
             case R.id.profil_icon1:
-              //  Toast.makeText(getApplicationContext(), "Profil sayfası", Toast.LENGTH_LONG).show();
+                //  Toast.makeText(getApplicationContext(), "Profil sayfası", Toast.LENGTH_LONG).show();
                 fragment = new profil_sayfasi();
                 break;
         }
@@ -112,7 +111,7 @@ public class ana_sayfa extends AppCompatActivity implements BottomNavigationView
     @Override
     public void onBackPressed() {
 
-        final SweetAlertDialog sa = new SweetAlertDialog(ana_sayfa.this,SweetAlertDialog.WARNING_TYPE);
+        final SweetAlertDialog sa = new SweetAlertDialog(ana_sayfa.this, SweetAlertDialog.WARNING_TYPE);
         sa.setTitleText("Dikkat!");
         sa.setContentText("Çıkmak istediğinize emin misiniz?");
         sa.setConfirmText("Evet");

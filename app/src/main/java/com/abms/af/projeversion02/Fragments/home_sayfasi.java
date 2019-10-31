@@ -290,8 +290,8 @@ public class home_sayfasi extends Fragment {
                             }
                         } else {
 
-                            final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                            sa.setTitleText("Dikkat");
+                            SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                            sa.setTitleText("Dikkat!");
                             sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                             sa.setConfirmText("Tamam");
                             sa.show();
@@ -303,8 +303,8 @@ public class home_sayfasi extends Fragment {
                 @Override
                 public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
 
-                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                    sa.setTitleText("Dikkat");
+                    SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                    sa.setTitleText("Dikkat!");
                     sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                     sa.setConfirmText("Tamam");
                     sa.show();
@@ -393,8 +393,8 @@ public class home_sayfasi extends Fragment {
                 @Override
                 public void onFailure(retrofit2.Call<List<Homesayfasitumpaylasimveritabani>> call, Throwable t) {
 
-                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                    sa.setTitleText("Dikkat");
+                    SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                    sa.setTitleText("Dikkat!");
                     sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                     sa.setConfirmText("Tamam");
                     sa.show();

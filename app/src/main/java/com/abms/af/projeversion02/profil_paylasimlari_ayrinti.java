@@ -170,47 +170,42 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }
-                try {
-                    Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
-                    x.enqueue(new Callback<Yorumyapmasonuc>() {
-                        @Override
-                        public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
+                    try {
+                        Call<Yorumyapmasonuc> x = ManagerAll.webyonet().yorumyap(email, id, paylasim_id, yorum);
+                        x.enqueue(new Callback<Yorumyapmasonuc>() {
+                            @Override
+                            public void onResponse(Call<Yorumyapmasonuc> call, Response<Yorumyapmasonuc> response) {
 
-                            if (response.isSuccessful()) {
-                                Toast.makeText(getApplicationContext(), "Yorum yapıldı", Toast.LENGTH_LONG).show();
-                                yorumGetir(paylasim_id);
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Yorum yapılamadı", Toast.LENGTH_LONG).show();
+                                if (response.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(), "Yorum yapıldı", Toast.LENGTH_LONG).show();
+                                    yorumGetir(paylasim_id);
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Yorum yapılamadı", Toast.LENGTH_LONG).show();
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
+                            @Override
+                            public void onFailure(Call<Yorumyapmasonuc> call, Throwable t) {
 
-                            final SweetAlertDialog sa = new SweetAlertDialog(profil_paylasimlari_ayrinti.this, SweetAlertDialog.WARNING_TYPE);
-                            sa.setTitleText("Dikkat");
-                            sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                            sa.setConfirmText("Tamam");
-                            sa.show();
-                        }
-                    });
-                }catch (Exception e)
-                {
-                    Log.e("TAG", "onClick: ",e );
-                }
+                                SweetAlertDialog sa = new SweetAlertDialog(profil_paylasimlari_ayrinti.this, SweetAlertDialog.WARNING_TYPE);
+                                sa.setTitleText("Dikkat!");
+                                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                                sa.setConfirmText("Tamam");
+                                sa.show();
+                            }
+                        });
+                    } catch (Exception e) {
+                        Log.e("TAG", "onClick: ", e);
+                    }
 
                 }
             }
         });
 
 
-
-
-
     }
 
-    public  void  yorumGetir(int paylasim_id)
-    {
+    public void yorumGetir(int paylasim_id) {
         try {
             //////////// Y O R U M  G E T İ R M E
             final Call<List<Yorumlarigetirsonuc>> yorumgetir = ManagerAll.webyonet().yorumgetir(email, paylasim_id);
@@ -246,9 +241,8 @@ public class profil_paylasimlari_ayrinti extends AppCompatActivity {
                     ///////////////////////////   P R O G R E S S   B A R   /////////
                 }
             });
-        }catch (Exception e)
-        {
-            Log.e("TAG", "yorumGetir: ",e );
+        } catch (Exception e) {
+            Log.e("TAG", "yorumGetir: ", e);
         }
     }
 

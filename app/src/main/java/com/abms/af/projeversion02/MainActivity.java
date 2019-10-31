@@ -181,8 +181,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (giris_mail.getText().toString().equals("") || giris_sifre.getText().toString().equals(""))
                 {
-                    final SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
-                    sa.setTitleText("Dikkat");
+                    SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                    sa.setTitleText("Dikkat!");
                     sa.setContentText("Bilgilerinizi eksiksiz ve doğru giriniz");
                     sa.setConfirmText("Tekrar Dene");
                     sa.show();
@@ -247,8 +247,8 @@ public class MainActivity extends AppCompatActivity {
 
                        pDialog.cancel();
 
-                       final SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
-                       sa.setTitleText("Dikkat");
+                       SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                       sa.setTitleText("Dikkat!");
                        sa.setContentText("Girdiğiniz e-posta veya şifre yanlış, Lütfen bilgilerinizi kontrol edip tekrar deneyiniz");
                        sa.setConfirmText("Tekrar Dene");
                        sa.show();
@@ -262,8 +262,8 @@ public class MainActivity extends AppCompatActivity {
 
                    pDialog.cancel();
 
-                   final SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
-                   sa.setTitleText("Dikkat");
+                   SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                   sa.setTitleText("Dikkat!");
                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                    sa.setConfirmText("Tamam");
                    sa.show();
