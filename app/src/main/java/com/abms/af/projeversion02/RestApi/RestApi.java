@@ -5,6 +5,7 @@ import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
 import com.abms.af.projeversion02.Models.Kullanicikayitsonuc;
+import com.abms.af.projeversion02.Models.NotTakipTakipciSayisi;
 import com.abms.af.projeversion02.Models.PHPMailersifregonderme;
 import com.abms.af.projeversion02.Models.Pdfyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilfotosilmesonuc;
@@ -14,6 +15,10 @@ import com.abms.af.projeversion02.Models.Resimyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilbilgilerigetir;
 import com.abms.af.projeversion02.Models.SikayetEt;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
+import com.abms.af.projeversion02.Models.Takibibırak;
+import com.abms.af.projeversion02.Models.TakipDurumu;
+import com.abms.af.projeversion02.Models.TakipedilenlerinVerileri;
+import com.abms.af.projeversion02.Models.Takipet;
 import com.abms.af.projeversion02.Models.Yenisifrebelirleme;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumsilmesonuc;
@@ -117,5 +122,25 @@ public interface RestApi {
     @FormUrlEncoded
     @POST("/SikayetEt.php")
     Call<SikayetEt> RestSikayetEt(@Field("id_kullanici") Integer id_kullanici, @Field("paylasim_id") Integer paylasim_id);
+
+    @FormUrlEncoded
+    @POST("/TakipedilenlerinVerileriniGetir.php")
+    Call<List<TakipedilenlerinVerileri>> RestTakipedilenlerinVerileriniGetir(@Field("email") String email,@Field("jsonguvenlik") String jsonguvenlik,@Field("page") int page, @Field("id_takipeden") int id_takipeden);
+
+    @FormUrlEncoded
+    @POST("/NotTakipTakipciSayisi.php")
+    Call<NotTakipTakipciSayisi> RestNotTakipTakipciSayisi(@Field("id_kullanici") int id_kullanici);
+
+    @FormUrlEncoded
+    @POST("/TakipDurumu.php")
+    Call<TakipDurumu> RestTakipDurumu(@Field("id_kullanici") int id_kullanici, @Field("id_other_kullanici") int id_other_kullanici);
+
+    @FormUrlEncoded
+    @POST("/Takipet.php")
+    Call<Takipet> RestTakipet(@Field("id_kullanici") int id_kullanici, @Field("id_other_kullanici") int id_other_kullanici);
+
+    @FormUrlEncoded
+    @POST("/Takibibırak.php")
+    Call<Takibibırak> RestTakibibırak(@Field("id_kullanici") int id_kullanici, @Field("id_other_kullanici") int id_other_kullanici);
 
 }

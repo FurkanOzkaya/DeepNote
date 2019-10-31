@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.abms.af.projeversion02.Adapters.Profilkullanicipaylasimadapter;
 import com.abms.af.projeversion02.MainActivity;
+import com.abms.af.projeversion02.Models.NotTakipTakipciSayisi;
 import com.abms.af.projeversion02.Models.Profilbilgilerigetir;
 import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.R;
@@ -46,7 +47,7 @@ import retrofit2.Response;
 public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     SwipeRefreshLayout yenileme_nesnesi;
-    TextView profil_adi, profil_universite, profil_bolum, DeepNoteBaslik;
+    TextView profil_adi, profil_universite, profil_bolum, DeepNoteBaslik, notSayisi, takipciSayisi, takipSayisi;
     int id;
     View view;
     LinearLayout profil_bilgiler_layout;
@@ -98,6 +99,9 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
         profil_bilgi_placeholder = view.findViewById(R.id.profil_bilgi_placeholder);
         profil_listview_placeholder = view.findViewById(R.id.profil_listview_placeholder);
+        notSayisi = view.findViewById(R.id.ProfilNotsayisi);
+        takipciSayisi = view.findViewById(R.id.ProfilTakipciSayisi);
+        takipSayisi = view.findViewById(R.id.ProfilTakipSayisi);
     }
 
 
@@ -107,6 +111,9 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         DeepNoteBaslik.setTypeface(tf1);
 
         sharedPreferences =getActivity().getApplicationContext().getSharedPreferences("giris",0);
+        int id_kullanici = sharedPreferences.getInt("uye_id", 0);
+        NotTakipTakipciSayisi(id_kullanici);
+
         if(sharedPreferences.getInt("uye_id",0) != 0)
         {
             email=sharedPreferences.getString("email","");
@@ -176,6 +183,31 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         yenileme_nesnesi.setRefreshing(false);
     }
 
+    public void NotTakipTakipciSayisi(int id_kullanici)
+    {
+        Call<NotTakipTakipciSayisi> request = ManagerAll.webyonet().NotTakipTakipciSayisi(id_kullanici);
+        request.enqueue(new Callback<NotTakipTakipciSayisi>() {
+            @Override
+            public void onResponse(Call<NotTakipTakipciSayisi> call, Response<NotTakipTakipciSayisi> response) {
+
+                String NotSayisi = String.valueOf(response.body().getNot());
+                String TakipSayisi = String.valueOf(response.body().getTakip());
+                String TakipciSayisi = String.valueOf(response.body().getTakipci());
+
+                Log.i("ppppp",TakipciSayisi);
+
+                notSayisi.setText(NotSayisi);
+                takipSayisi.setText(TakipSayisi);
+                takipciSayisi.setText(TakipciSayisi);
+
+            }
+
+            @Override
+            public void onFailure(Call<NotTakipTakipciSayisi> call, Throwable t) {
+
+            }
+        });
+    }
 
     public void CallProfilePage()
     {

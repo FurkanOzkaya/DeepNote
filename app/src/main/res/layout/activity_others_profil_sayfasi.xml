@@ -21,14 +21,15 @@
             android:background="@drawable/bottom_gradient">
 
             <TextView
+                android:id="@+id/DeepNoteBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:text="DeepNote"
-                android:textColor="#3b5998"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:textSize="25dp" />
+
 
         </RelativeLayout>
 
@@ -71,41 +72,129 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingLeft="10dp"
             android:paddingTop="30dp">
 
-            <TextView
-                android:id="@+id/others_profil_bolum"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:paddingLeft="5dp"
-                android:paddingTop="2dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="2dp"
-                android:textStyle="italic"
-                android:visibility="gone"
-                android:textColor="#000000"
-                android:textSize="15dp"/>
+                android:orientation="vertical"
+                android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/others_profil_adi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textColor="#000000"
-                android:textSize="17dp"/>
+                <TextView
+                    android:id="@+id/Notsayisi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="center"/>
 
-            <TextView
-                android:id="@+id/others_profil_universite"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Sayısı"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
-                android:textColor="#6a6d72"
-                android:textSize="13dp"/>
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/TakipciSayisi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Takipçi"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/TakipSayisi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Takip"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/others_profil_bolum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="2dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="2dp"
+            android:textStyle="italic"
+            android:visibility="gone"
+            android:textColor="#000000"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/others_profil_adi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="17dp"
+            android:text="Burak KARAHAN"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/others_profil_universite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:textColor="#6a6d72"
+            android:textSize="13dp"
+            android:text="Balıkesir Üniversitesi"/>
+
+        <Button
+            android:id="@+id/BtnTakipEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Takip Et"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/BtnTakipBırak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Takibi Bırak"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

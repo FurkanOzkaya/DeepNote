@@ -1210,6 +1210,7 @@ drawable abc_vector_test
 drawable aramabutonustil
 drawable avd_hide_password
 drawable avd_show_password
+drawable back
 drawable basla
 drawable blue_button_background
 drawable bottom_gradient
@@ -1336,6 +1337,8 @@ drawable warning_circle
 drawable warning_sigh
 id ALT
 id AdSoyad
+id BtnTakipBırak
+id BtnTakipEt
 id ButonSil
 id CTRL
 id DeepNoteBaslik
@@ -1343,6 +1346,10 @@ id Email
 id FUNCTION
 id Kod
 id META
+id Notsayisi
+id ProfilNotsayisi
+id ProfilTakipSayisi
+id ProfilTakipciSayisi
 id SHIFT
 id SYM
 id Send
@@ -1350,6 +1357,8 @@ id Send2
 id Sifre
 id SifreGonder
 id SifreTekrar
+id TakipSayisi
+id TakipciSayisi
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1550,6 +1559,7 @@ id listview_homesayfasi
 id listview_profil_aciklama
 id listview_profil_ders
 id listview_profil_fotosu
+id listview_takipsayfasi
 id listview_universite
 id loadPage
 id loading
@@ -1846,6 +1856,7 @@ layout fragment_takip_sayfasi
 layout layout_screen
 layout listview_goruntu_anasayfa_paylasimlari
 layout listview_goruntu_profil_paylasimlari
+layout listview_goruntu_takipsayfasi_paylasimlari
 layout listview_goruntu_yorumlar
 layout notification_action
 layout notification_action_tombstone

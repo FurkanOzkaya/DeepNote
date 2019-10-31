@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -54,7 +55,7 @@ import retrofit2.Response;
 
 public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
-    TextView ayrıntili_indirme, ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama, listview_yorumlar_uyarı, ayrıntılı_sikayet_et, listview__gonderi_bolum_adi;
+    TextView DeepNoteBaslik,ayrıntili_indirme, ayrintili_ad_soyad, ayrintili_universite, ayrintili_bolum, ayrintili_ders, ayrintili_aciklama, listview_yorumlar_uyarı, ayrıntılı_sikayet_et, listview__gonderi_bolum_adi;
     ImageView ayrıntılı_resim;
     ImageButton ayrıntı_yorum_yapmabutonu;
     String gonderi_bolum_string,id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
@@ -70,6 +71,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
     Button openpdf;
     SharedPreferences sharedPreferences;
     String email;
+    Typeface tf1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +124,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         ayrıntili_indirme = findViewById(R.id.ayrıntı_homesayfasi_indirme);
         swipeRefesh = findViewById(R.id.paylasimlar_ayrinti_refesh);
         listview__gonderi_bolum_adi = findViewById(R.id.listview__gonderi_bolum_adi);
+        DeepNoteBaslik = findViewById(R.id.DeepNoteBaslik);
 
 
         progressBar = findViewById(R.id.home_ayrıntı_progressbar);
@@ -150,6 +153,9 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
 
     public void islevver() {
+
+        tf1 = Typeface.createFromAsset(getAssets(),"fonts/DamionRegular.ttf");
+        DeepNoteBaslik.setTypeface(tf1);
 
         sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
         if (sharedPreferences.getInt("uye_id", 0) != 0) {

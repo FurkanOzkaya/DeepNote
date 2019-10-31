@@ -1,12 +1,11 @@
 package com.abms.af.projeversion02.RestApi;
 
-import android.content.Intent;
-
 import com.abms.af.projeversion02.Models.AdSoyadProfilfoto;
 import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
 import com.abms.af.projeversion02.Models.Kullanicikayitsonuc;
+import com.abms.af.projeversion02.Models.NotTakipTakipciSayisi;
 import com.abms.af.projeversion02.Models.PHPMailersifregonderme;
 import com.abms.af.projeversion02.Models.Pdfyuklemesonuc;
 import com.abms.af.projeversion02.Models.Profilbilgilerigetir;
@@ -16,6 +15,10 @@ import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
 import com.abms.af.projeversion02.Models.Resimyuklemesonuc;
 import com.abms.af.projeversion02.Models.SikayetEt;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
+import com.abms.af.projeversion02.Models.Takibibırak;
+import com.abms.af.projeversion02.Models.TakipDurumu;
+import com.abms.af.projeversion02.Models.TakipedilenlerinVerileri;
+import com.abms.af.projeversion02.Models.Takipet;
 import com.abms.af.projeversion02.Models.Yenisifrebelirleme;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumsilmesonuc;
@@ -142,6 +145,36 @@ public class ManagerAll extends BaseManager {
     public Call<SikayetEt> SikayetEt(Integer id_kullanici, Integer paylasim_id)
     {
         Call<SikayetEt> x = getRestApiClient().RestSikayetEt(id_kullanici,paylasim_id);
+        return x;
+    }
+
+    public  Call<List<TakipedilenlerinVerileri>> Takipedilenlerinverileri(String email,String jsonguvenlık,int page, int id_takipeden)
+    {
+        Call<List<TakipedilenlerinVerileri>> x = getRestApiClient().RestTakipedilenlerinVerileriniGetir(email,jsonguvenlık,page,id_takipeden);
+        return x;
+    }
+
+    public Call<NotTakipTakipciSayisi> NotTakipTakipciSayisi(int id_kullanici)
+    {
+        Call<NotTakipTakipciSayisi> x = getRestApiClient().RestNotTakipTakipciSayisi(id_kullanici);
+        return x;
+    }
+
+    public Call<TakipDurumu> TakipDurumu(int id_kullanici, int id_other_kullanici)
+    {
+        Call<TakipDurumu> x = getRestApiClient().RestTakipDurumu(id_kullanici,id_other_kullanici);
+        return x;
+    }
+
+    public Call<Takipet> Takipet(int id_kullanici, int id_other_kullanici)
+    {
+        Call<Takipet> x = getRestApiClient().RestTakipet(id_kullanici,id_other_kullanici);
+        return x;
+    }
+
+    public Call<Takibibırak> Takibibırak(int id_kullanici, int id_other_kullanici)
+    {
+        Call<Takibibırak> x = getRestApiClient().RestTakibibırak(id_kullanici,id_other_kullanici);
         return x;
     }
 
