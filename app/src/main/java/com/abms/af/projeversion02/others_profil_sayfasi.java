@@ -71,7 +71,6 @@ public class others_profil_sayfasi extends AppCompatActivity {
     }
 
     public void bilgilerial() {
-
         Bundle bundle = getIntent().getExtras();
         others_id_kullanici_string = bundle.getString("id_kullanici");
         others_paylasim_id_string = bundle.getString("paylasim_id");
@@ -86,7 +85,6 @@ public class others_profil_sayfasi extends AppCompatActivity {
     }
 
     void tanımla() {
-
         others_profil_adi = findViewById(R.id.others_profil_adi);
         others_profil_universite = findViewById(R.id.others_profil_universite);
         others_profil_bolum = findViewById(R.id.others_profil_bolum);
@@ -106,13 +104,31 @@ public class others_profil_sayfasi extends AppCompatActivity {
         tf1 = Typeface.createFromAsset(getAssets(),"fonts/DamionRegular.ttf");
         DeepNoteBaslik.setTypeface(tf1);
 
+
+        /// takip et takibi bırak buton gösterme kendi profili için
+
+        int id_kullanici = 0;
+        sharedPreferences = getSharedPreferences("giris", 0);
+        if (sharedPreferences.getInt("uye_id", 0) != 0) {
+            id_kullanici = sharedPreferences.getInt("uye_id", 0);
+        } else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear().commit();
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+        }
+
         final int ınteger_other_kullanici_id = Integer.valueOf(others_id_kullanici_string);
         NotTakipTakipciSayisi(ınteger_other_kullanici_id);
 
-        sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
-        final int id_kullanici = sharedPreferences.getInt("uye_id", 0);
+        if (id_kullanici == ınteger_other_kullanici_id) {
+            other_btnTakipet.setVisibility(View.GONE);
+            other_btnTakipbırak.setVisibility(View.GONE);
 
-        TakipDurumu(id_kullanici,ınteger_other_kullanici_id);
+        }
+        else {
+            TakipDurumu(id_kullanici,ınteger_other_kullanici_id);
+        }
 
         if (sharedPreferences.getInt("uye_id", 0) != 0) {
             email = sharedPreferences.getString("email", "");
@@ -185,10 +201,11 @@ public class others_profil_sayfasi extends AppCompatActivity {
           Log.e("TAG", "islev_ver: ",e );
       }
 
-      other_btnTakipet.setOnClickListener(new View.OnClickListener() {
+        final int finalId_kullanici = id_kullanici;
+        other_btnTakipet.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              Tabipet(id_kullanici,ınteger_other_kullanici_id);
+              Tabipet(finalId_kullanici,ınteger_other_kullanici_id);
               NotTakipTakipciSayisi(ınteger_other_kullanici_id);
           }
       });
@@ -197,7 +214,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
           @Override
           public void onClick(View view) {
 
-              Takibibırak(id_kullanici,ınteger_other_kullanici_id);
+              Takibibırak(finalId_kullanici,ınteger_other_kullanici_id);
               NotTakipTakipciSayisi(ınteger_other_kullanici_id);
           }
       });

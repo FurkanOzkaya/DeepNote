@@ -226,35 +226,38 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                     profil_bilgi_placeholder.setVisibility(View.GONE);
                     profil_bilgi_placeholder.stopShimmerAnimation();
 
-                    if (response.body().getSonuc() == 1) {
-                        profil_ad_soyad_gelen = response.body().getAd_soyad().toString();
-                        profil_bolum_gelen = response.body().getBolum().toString();
-                        profil_universite_gelen = response.body().getUniversite().toString();
-                        Profil_foto_gelen=response.body().getProfil_foto();
+                  if (response.isSuccessful())
+                  {
+                      if (response.body().getSonuc() == 1) {
+                          profil_ad_soyad_gelen = response.body().getAd_soyad().toString();
+                          profil_bolum_gelen = response.body().getBolum().toString();
+                          profil_universite_gelen = response.body().getUniversite().toString();
+                          Profil_foto_gelen=response.body().getProfil_foto();
 
 
-                        profil_adi.setText(profil_ad_soyad_gelen);
-                        profil_universite.setText(profil_universite_gelen);
+                          profil_adi.setText(profil_ad_soyad_gelen);
+                          profil_universite.setText(profil_universite_gelen);
 
-                        if (response.body().getProfil_foto().equals("default"))
-                        {
-                            Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
-                        }
-                        else
-                        {
-                            try {
-                                ///////////////////////////////////
-                                Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
-                                /////////////////////////////////////
-                            }catch (Exception e)
-                            {
-                                Log.e("TAG", "Profilepicasso: ",e );
-                            }
-                        }
+                          if (response.body().getProfil_foto().equals("default"))
+                          {
+                              Picasso.get().load(R.drawable.flat_ogrenci).resize(200,200).into(profil_foto);
+                          }
+                          else
+                          {
+                              try {
+                                  ///////////////////////////////////
+                                  Picasso.get().load(getString(R.string.site_adresi)+response.body().getProfil_foto()).resize(200,200).error(R.drawable.flat_ogrenci).into(profil_foto);
+                                  /////////////////////////////////////
+                              }catch (Exception e)
+                              {
+                                  Log.e("TAG", "Profilepicasso: ",e );
+                              }
+                          }
 
 
 
-                    }
+                      }
+                  }
 
                 }
 

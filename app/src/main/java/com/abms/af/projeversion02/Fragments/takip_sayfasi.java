@@ -60,7 +60,6 @@ public class takip_sayfasi extends Fragment {
     TextView home_sayfası_listview_uyarı, DeepNoteBaslik;
     SwipeRefreshLayout refesh_home;
     LinearLayout loadnextpage;
-    LinearLayout home_listview_layout;
     int pageCount = 0;
     int pageListSize = 0;
     int rowcount = 0;
