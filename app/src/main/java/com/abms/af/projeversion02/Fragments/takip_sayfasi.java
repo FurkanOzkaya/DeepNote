@@ -52,7 +52,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class takip_sayfasi extends Fragment {
 
-    List<TakipedilenlerinVerileri> tum_veriler_liste,tum_versiler_arama_liste;
+    List<TakipedilenlerinVerileri> tum_veriler_liste;
     Takipeilenlerinverileriadapter takipedilenlerinverileriadapter;
     View view;
     ListView listview_takipsayfasi;
@@ -66,10 +66,6 @@ public class takip_sayfasi extends Fragment {
     int id_takipeden = 0;
     SharedPreferences sharedPreferences;
     String email = "";
-    String universite;
-    String bolum;
-    String dersadi;
-    boolean searchActive = false;
     Typeface tf1;
     ShimmerLayout shimmerLayout;
 
@@ -101,14 +97,14 @@ public class takip_sayfasi extends Fragment {
         home_sayfası_listview_uyarı = view.findViewById(R.id.home_sayfası_lisview_uyarı_mesajı);
         refesh_home = view.findViewById(R.id.home_sayfasi_refesh);
         loadnextpage = view.findViewById(R.id.loadPage);
-        shimmerLayout=view.findViewById(R.id.shimmer_layout);
+        shimmerLayout = view.findViewById(R.id.shimmer_layout);
         DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
     }
 
 
     private void islevver() {
 
-        tf1 = Typeface.createFromAsset(getActivity().getAssets(),"fonts/DamionRegular.ttf");
+        tf1 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/DamionRegular.ttf");
         DeepNoteBaslik.setTypeface(tf1);
 
         // H O M E    S A Y F A S I    V E R İ    C E K M E
@@ -139,7 +135,6 @@ public class takip_sayfasi extends Fragment {
                 }
 
 
-
             }
         });
 
@@ -152,8 +147,7 @@ public class takip_sayfasi extends Fragment {
                     pageCount++;
                 } else if (page <= pageCount) {
                     pageCount = 0;
-                    tum_versiler_arama_liste=null;
-                    tum_veriler_liste=null;
+                    tum_veriler_liste = null;
                     // Toast.makeText(getActivity().getApplicationContext(),"Bütün gönderiler görüldü. Başa Dönülüyor.",Toast.LENGTH_LONG).show();
                 }
                 loadList(pageCount);
@@ -165,10 +159,8 @@ public class takip_sayfasi extends Fragment {
         refesh_home.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                searchActive = false;
                 pageCount = 0;
-                tum_veriler_liste=null;
-                tum_versiler_arama_liste=null;
+                tum_veriler_liste = null;
                 home_sayfası_listview_uyarı.setVisibility(View.GONE);
                 loadListForHome(pageCount);
             }
@@ -176,32 +168,9 @@ public class takip_sayfasi extends Fragment {
     }
 
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == 99 && resultCode == RESULT_OK && data != null) {
-
-            universite = data.getStringExtra("universite");
-            bolum = data.getStringExtra("bolum");
-            dersadi = data.getStringExtra("dersadi");
-
-            searchActive = true;
-            pageCount = 0;
-            loadSearchPage(pageCount);
-        }
-
-
-    }
-
     void loadList(int pageCount) {
         loadnextpage.setVisibility(View.GONE);
-        if (searchActive) {
-            loadSearchPage(pageCount);
-        } else {
-            loadListForHome(pageCount);
-        }
-
+        loadListForHome(pageCount);
     }
 
     void loadListForHome(int page) {
@@ -230,57 +199,49 @@ public class takip_sayfasi extends Fragment {
                 @Override
                 public void onResponse(retrofit2.Call<List<TakipedilenlerinVerileri>> call, Response<List<TakipedilenlerinVerileri>> response) {
                     //Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi"+response.body(),Toast.LENGTH_SHORT).show();
+                    //////////////////////////////
+                    shimmerLayout.setVisibility(View.GONE);
+                    shimmerLayout.stopShimmerAnimation();
+                    listview_takipsayfasi.setVisibility(View.VISIBLE);
+                    refesh_home.setRefreshing(false);
+                    //////////////////////////////////////////////
                     if (response.isSuccessful()) {
-
-                        //////////////////////////////
-                        shimmerLayout.setVisibility(View.GONE);
-                        shimmerLayout.stopShimmerAnimation();
-                        listview_takipsayfasi.setVisibility(View.VISIBLE);
-                        refesh_home.setRefreshing(false);
-                        //////////////////////////////////////////////
 
                         if (response.body() != null) {
                             if (response.body().size() > 0) {
                                 rowcount = response.body().get(0).getRowCount();
                                 pageListSize = response.body().get(0).getPageListSize();
                                 // Toast.makeText(getActivity().getApplicationContext(),"bilgiler geldi",Toast.LENGTH_SHORT).show();
-                                if (response.body().size()>0)
-                                {
-                                    if (tum_veriler_liste == null)
-                                    {
-                                        tum_veriler_liste= response.body();
-                                    }
-                                    else
-                                    {
+                                if (response.body().size() > 0) {
+                                    if (tum_veriler_liste == null) {
+                                        tum_veriler_liste = response.body();
+                                    } else {
 
-                                        for (int i=0; i<response.body().size();i++)
-                                        {
+                                        for (int i = 0; i < response.body().size(); i++) {
                                             tum_veriler_liste.add(response.body().get(i));
                                         }
                                     }
                                 }
 
-                                if ( rowcount >= 0) {
+                                if (rowcount >= 0) {
                                     try {
-                                        takipedilenlerinverileriadapter = new Takipeilenlerinverileriadapter(tum_veriler_liste,getActivity().getApplicationContext(), getActivity());
+                                        takipedilenlerinverileriadapter = new Takipeilenlerinverileriadapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
                                         //paylasimtumverileradapter = new Paylasimtumverileradapter(tum_veriler_liste, getActivity().getApplicationContext(), getActivity());
                                         listview_takipsayfasi.setAdapter(takipedilenlerinverileriadapter);
-                                    }
-                                    catch (Exception e) {
-                                        Log.e("TAG", "loadSearchPage: "+e);
+                                    } catch (Exception e) {
+                                        Log.e("TAG", "loadSearchPage: " + e);
                                     }
 
 
-                                }
-                                else {
+                                } else {
                                     home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
                                 }
-                                int a=pageCount*pageListSize;
+                                int a = pageCount * pageListSize;
                                 listview_takipsayfasi.setSelection(a);
                             }
                         } else {
 
-                            final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                            final SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE);
                             sa.setTitleText("Dikkat");
                             sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                             sa.setConfirmText("Tamam");
@@ -293,37 +254,23 @@ public class takip_sayfasi extends Fragment {
                 @Override
                 public void onFailure(retrofit2.Call<List<TakipedilenlerinVerileri>> call, Throwable t) {
 
-                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+                    final SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE);
                     sa.setTitleText("Dikkat");
                     sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                     sa.setConfirmText("Tamam");
                     sa.show();
                     //////////////////////////////
-                    //shimmerLayout.setVisibility(View.GONE);
-                    //shimmerLayout.stopShimmerAnimation();
+                    shimmerLayout.setVisibility(View.GONE);
+                    shimmerLayout.stopShimmerAnimation();
                     refesh_home.setRefreshing(false);
                     // listView_homesayfasi.setVisibility(View.VISIBLE);
                     //////////////////////////////////////////////
                     /////////////////////////////////////   P R O G R E S S   B A R    /////////////////////////////////
                 }
             });
-        }catch (Exception e)
-        {
-            Log.e("TAG", "loadSearchPage: "+e);
+        } catch (Exception e) {
+            Log.e("TAG", "loadSearchPage: " + e);
         }
-
-    }
-
-    void loadSearchPage(final int pageCount) {
-
-        if (pageCount==0)
-        {
-            tum_versiler_arama_liste = null;
-        }
-        if (universite.equals(getString(R.string.universite_listesi__arama_hepsi))) {
-            universite = "Hepsi";
-        }
-
 
     }
 }

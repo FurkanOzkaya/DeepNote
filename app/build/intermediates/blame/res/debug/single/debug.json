@@ -68,12 +68,12 @@
         "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\7f16cc8af0da68149e7be68b33ffb93a\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_kitap.png.flat",
         "source": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\src\\main\\res\\drawable\\kitap.png"
+    },
+    {
+        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_error_circle.xml.flat",
@@ -100,24 +100,24 @@
         "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\3566a6c1a1d41df3b774800e3e76625c\\res\\layout\\notification_template_lines_media.xml"
     },
     {
-        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_text_color_selector.xml.flat",
-        "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\57194a0578bc5185cd361400b396d9b4\\res\\color\\mtrl_btn_text_color_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_ripple_color.xml.flat",
         "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\f3f88ce306b52e02f2b4c4672bd3af33\\res\\color\\mtrl_chip_ripple_color.xml"
     },
     {
-        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_text_color_selector.xml.flat",
+        "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\57194a0578bc5185cd361400b396d9b4\\res\\color\\mtrl_btn_text_color_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_toolbar.xml.flat",
+        "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_acilis_logo2_deepnote.xml.flat",
         "source": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\src\\main\\res\\layout\\activity_acilis_logo2_deepnote.xml"
     },
     {
-        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_toolbar.xml.flat",
-        "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
