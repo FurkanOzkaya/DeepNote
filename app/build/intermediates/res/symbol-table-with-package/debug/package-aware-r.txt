@@ -1317,6 +1317,8 @@ drawable sekil
 drawable sikayet
 drawable success_bow
 drawable success_circle
+drawable takibibirak
+drawable takipetbutonu
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transparan

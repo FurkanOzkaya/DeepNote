@@ -19,7 +19,7 @@
 
         <ImageView
             android:layout_width="150dp"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:src="@drawable/deepnote_logo"/>
 
