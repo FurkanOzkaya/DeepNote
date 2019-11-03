@@ -1340,10 +1340,6 @@
         "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_onboard1.png.flat",
-        "source": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\src\\main\\res\\drawable\\onboard1.png"
-    },
-    {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_deepnotelogo.png.flat",
         "source": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\src\\main\\res\\drawable\\deepnotelogo.png"
     },
@@ -1506,10 +1502,6 @@
     {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profil_ust_arkaplan.xml.flat",
         "source": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\src\\main\\res\\drawable\\profil_ust_arkaplan.xml"
-    },
-    {
-        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_onboard2.png.flat",
-        "source": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\src\\main\\res\\drawable\\onboard2.png"
     },
     {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\menu_profil_sayafasi_ayarlarmenu.xml.flat",
@@ -2476,6 +2468,10 @@
         "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\56ea136921296c4f4274c7f46402032e\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
+        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_onboard2.jpg.flat",
+        "source": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\src\\main\\res\\drawable\\onboard2.jpg"
+    },
+    {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4_ucrop_ic_reset.png.flat",
         "source": "C:\\Users\\AF\\.gradle\\caches\\transforms-2\\files-2.1\\194b02609e0dee961c35f60254c8404a\\res\\drawable-ldpi-v4\\ucrop_ic_reset.png"
     },
@@ -2762,6 +2758,10 @@
     {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\menu_ana_sayfa_alt_butonlar.xml.flat",
         "source": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\src\\main\\res\\menu\\ana_sayfa_alt_butonlar.xml"
+    },
+    {
+        "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_onboard1.jpg.flat",
+        "source": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\src\\main\\res\\drawable\\onboard1.jpg"
     },
     {
         "merged": "C:\\Users\\AF\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_btn_checkable.xml.flat",
