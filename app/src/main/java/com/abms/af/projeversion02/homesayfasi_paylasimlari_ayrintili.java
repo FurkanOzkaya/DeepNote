@@ -34,6 +34,9 @@ import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
 import com.abms.af.projeversion02.Models.Yorumlarigetirsonuc;
 import com.abms.af.projeversion02.Models.Yorumyapmasonuc;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
@@ -72,6 +75,7 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     String email;
     Typeface tf1;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +92,14 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
         bilgilerial();
         tanımla();
+
+        /// id is ca-app-pub-4925490463007858/3573267940 when deploying use this id for money
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+
         islevver();
     }
 
@@ -172,6 +184,12 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
         openpdf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                }
                 Intent intent = new Intent(getApplicationContext(), pdfViewer.class);
                 intent.putExtra("url", getString(R.string.site_adresi) + dosyayolu_string);
                 startActivity(intent);
@@ -425,11 +443,27 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             }
         });
 
+
+
+        swipeRefesh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                islevver();
+                swipeRefesh.setRefreshing(false);
+            }
+        });
+
+
         ayrıntili_indirme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ayrıntili_indirme.setVisibility(View.GONE);
 
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                }
 
                 try {
                     Call<ResponseBody> down = ManagerAll.webyonet().indirr(dosyayolu_string);
@@ -441,16 +475,26 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                             Boolean dosya = dosyayıdiskeyaz(response.body());
                             if (dosya == true) {
 
-                                new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE)
-                                        .setTitleText("İndirme Başarılı!")
-                                        .setContentText("Dosya yöneticinizden indirdiklerinizi bulabilirsiniz")
-                                        .show();
+                                try {
+                                    new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE)
+                                            .setTitleText("İndirme Başarılı!")
+                                            .setContentText("Dosya yöneticinizden indirdiklerinizi bulabilirsiniz")
+                                            .show();
+                                }catch (Exception e)
+                                {
+                                    Log.e("TAG", "ondownload: ", e);
+                                }
 
                             } else {
-                                new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
-                                        .setTitleText("Dikkat!")
-                                        .setContentText("İndirme işlemi sırasında hata oluştu, Lütfen daha sonra tekrar deneyiniz")
-                                        .show();
+                                try {
+                                    new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
+                                            .setTitleText("Dikkat!")
+                                            .setContentText("İndirme işlemi sırasında hata oluştu, Lütfen daha sonra tekrar deneyiniz")
+                                            .show();
+                                }catch (Exception e)
+                                {
+                                    Log.e("TAG", "ondownload: ", e);
+                                }
                             }
                         }
 
@@ -471,14 +515,6 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             }
         });
 
-
-        swipeRefesh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                islevver();
-                swipeRefesh.setRefreshing(false);
-            }
-        });
     }
 
 

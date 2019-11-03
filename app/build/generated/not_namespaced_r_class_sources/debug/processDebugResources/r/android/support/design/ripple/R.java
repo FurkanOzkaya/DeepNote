@@ -12,17 +12,17 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int font = 0x7f0400fa;
-        public static final int fontProviderAuthority = 0x7f0400fc;
-        public static final int fontProviderCerts = 0x7f0400fd;
-        public static final int fontProviderFetchStrategy = 0x7f0400fe;
-        public static final int fontProviderFetchTimeout = 0x7f0400ff;
-        public static final int fontProviderPackage = 0x7f040100;
-        public static final int fontProviderQuery = 0x7f040101;
-        public static final int fontStyle = 0x7f040102;
-        public static final int fontVariationSettings = 0x7f040103;
-        public static final int fontWeight = 0x7f040104;
-        public static final int ttcIndex = 0x7f04024c;
+        public static final int font = 0x7f0400fd;
+        public static final int fontProviderAuthority = 0x7f0400ff;
+        public static final int fontProviderCerts = 0x7f040100;
+        public static final int fontProviderFetchStrategy = 0x7f040101;
+        public static final int fontProviderFetchTimeout = 0x7f040102;
+        public static final int fontProviderPackage = 0x7f040103;
+        public static final int fontProviderQuery = 0x7f040104;
+        public static final int fontStyle = 0x7f040105;
+        public static final int fontVariationSettings = 0x7f040106;
+        public static final int fontWeight = 0x7f040107;
+        public static final int ttcIndex = 0x7f04024f;
     }
     public static final class bool {
         private bool() {}
@@ -110,7 +110,7 @@ public final class R {
     public static final class integer {
         private integer() {}
 
-        public static final int status_bar_notification_info_maxnum = 0x7f0a000c;
+        public static final int status_bar_notification_info_maxnum = 0x7f0a000d;
     }
     public static final class layout {
         private layout() {}
@@ -125,7 +125,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int status_bar_notification_info_overflow = 0x7f0f0070;
+        public static final int status_bar_notification_info_overflow = 0x7f0f0078;
     }
     public static final class style {
         private style() {}
@@ -135,20 +135,20 @@ public final class R {
         public static final int TextAppearance_Compat_Notification_Line2 = 0x7f100110;
         public static final int TextAppearance_Compat_Notification_Time = 0x7f100113;
         public static final int TextAppearance_Compat_Notification_Title = 0x7f100115;
-        public static final int Widget_Compat_NotificationActionContainer = 0x7f1001ba;
-        public static final int Widget_Compat_NotificationActionText = 0x7f1001bb;
+        public static final int Widget_Compat_NotificationActionContainer = 0x7f1001bb;
+        public static final int Widget_Compat_NotificationActionText = 0x7f1001bc;
     }
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] FontFamily = { 0x7f0400fc, 0x7f0400fd, 0x7f0400fe, 0x7f0400ff, 0x7f040100, 0x7f040101 };
+        public static final int[] FontFamily = { 0x7f0400ff, 0x7f040100, 0x7f040101, 0x7f040102, 0x7f040103, 0x7f040104 };
         public static final int FontFamily_fontProviderAuthority = 0;
         public static final int FontFamily_fontProviderCerts = 1;
         public static final int FontFamily_fontProviderFetchStrategy = 2;
         public static final int FontFamily_fontProviderFetchTimeout = 3;
         public static final int FontFamily_fontProviderPackage = 4;
         public static final int FontFamily_fontProviderQuery = 5;
-        public static final int[] FontFamilyFont = { 0x1010532, 0x1010533, 0x101053f, 0x101056f, 0x1010570, 0x7f0400fa, 0x7f040102, 0x7f040103, 0x7f040104, 0x7f04024c };
+        public static final int[] FontFamilyFont = { 0x1010532, 0x1010533, 0x101053f, 0x101056f, 0x1010570, 0x7f0400fd, 0x7f040105, 0x7f040106, 0x7f040107, 0x7f04024f };
         public static final int FontFamilyFont_android_font = 0;
         public static final int FontFamilyFont_android_fontWeight = 1;
         public static final int FontFamilyFont_android_fontStyle = 2;

@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4925490463007858~9491314194"/>
         <activity android:name=".SozlesmePopUp"></activity>
         <activity android:name=".IntroActivity" />
         <activity android:name=".pdfViewer" />

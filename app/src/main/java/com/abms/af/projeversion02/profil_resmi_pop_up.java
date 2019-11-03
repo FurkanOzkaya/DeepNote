@@ -157,7 +157,6 @@ public class profil_resmi_pop_up extends AppCompatActivity {
 
         if (requestCode == ImagePicker.REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             try {
-                Toast.makeText(getApplicationContext(), "foto secildi ", Toast.LENGTH_LONG).show();
 
                 String resim = ImagePicker.Companion.getFilePath(data);
                 profilfoto = new HashMap<>();

@@ -12,10 +12,10 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int sb_handlerColor = 0x7f0401be;
-        public static final int sb_horizontal = 0x7f0401bf;
-        public static final int sb_indicatorColor = 0x7f0401c0;
-        public static final int sb_indicatorTextColor = 0x7f0401c1;
+        public static final int sb_handlerColor = 0x7f0401c1;
+        public static final int sb_horizontal = 0x7f0401c2;
+        public static final int sb_indicatorColor = 0x7f0401c3;
+        public static final int sb_indicatorTextColor = 0x7f0401c4;
     }
     public static final class drawable {
         private drawable() {}
@@ -28,7 +28,7 @@ public final class R {
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] ScrollBar = { 0x7f0401be, 0x7f0401bf, 0x7f0401c0, 0x7f0401c1 };
+        public static final int[] ScrollBar = { 0x7f0401c1, 0x7f0401c2, 0x7f0401c3, 0x7f0401c4 };
         public static final int ScrollBar_sb_handlerColor = 0;
         public static final int ScrollBar_sb_horizontal = 1;
         public static final int ScrollBar_sb_indicatorColor = 2;

@@ -19,7 +19,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.abms.af.projeversion02.Adapters.Profilkullanicipaylasimadapter;
 import com.abms.af.projeversion02.MainActivity;
@@ -31,7 +30,6 @@ import com.abms.af.projeversion02.RestApi.ManagerAll;
 import com.abms.af.projeversion02.profil_resmi_pop_up;
 import com.squareup.picasso.Picasso;
 
-import java.security.spec.ECField;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;

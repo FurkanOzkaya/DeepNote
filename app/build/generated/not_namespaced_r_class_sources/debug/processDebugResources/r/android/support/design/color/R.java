@@ -12,35 +12,35 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int colorPrimary100 = 0x7f040099;
-        public static final int colorPrimary200 = 0x7f04009a;
-        public static final int colorPrimary300 = 0x7f04009b;
-        public static final int colorPrimary400 = 0x7f04009c;
-        public static final int colorPrimary50 = 0x7f04009d;
-        public static final int colorPrimary500 = 0x7f04009e;
-        public static final int colorPrimary600 = 0x7f04009f;
-        public static final int colorPrimary700 = 0x7f0400a0;
-        public static final int colorPrimary800 = 0x7f0400a1;
-        public static final int colorPrimary900 = 0x7f0400a2;
-        public static final int colorPrimaryLight = 0x7f0400a4;
-        public static final int colorSecondary = 0x7f0400a5;
-        public static final int colorSecondary100 = 0x7f0400a6;
-        public static final int colorSecondary200 = 0x7f0400a7;
-        public static final int colorSecondary300 = 0x7f0400a8;
-        public static final int colorSecondary400 = 0x7f0400a9;
-        public static final int colorSecondary50 = 0x7f0400aa;
-        public static final int colorSecondary500 = 0x7f0400ab;
-        public static final int colorSecondary600 = 0x7f0400ac;
-        public static final int colorSecondary700 = 0x7f0400ad;
-        public static final int colorSecondary800 = 0x7f0400ae;
-        public static final int colorSecondary900 = 0x7f0400af;
-        public static final int colorSecondaryDark = 0x7f0400b0;
-        public static final int colorSecondaryLight = 0x7f0400b1;
-        public static final int floatingActionButtonStyle = 0x7f0400f9;
-        public static final int materialButtonStyle = 0x7f04018f;
-        public static final int materialSwitchStyle = 0x7f040191;
-        public static final int rippleColor = 0x7f0401bb;
-        public static final int scrimBackground = 0x7f0401c3;
+        public static final int colorPrimary100 = 0x7f04009c;
+        public static final int colorPrimary200 = 0x7f04009d;
+        public static final int colorPrimary300 = 0x7f04009e;
+        public static final int colorPrimary400 = 0x7f04009f;
+        public static final int colorPrimary50 = 0x7f0400a0;
+        public static final int colorPrimary500 = 0x7f0400a1;
+        public static final int colorPrimary600 = 0x7f0400a2;
+        public static final int colorPrimary700 = 0x7f0400a3;
+        public static final int colorPrimary800 = 0x7f0400a4;
+        public static final int colorPrimary900 = 0x7f0400a5;
+        public static final int colorPrimaryLight = 0x7f0400a7;
+        public static final int colorSecondary = 0x7f0400a8;
+        public static final int colorSecondary100 = 0x7f0400a9;
+        public static final int colorSecondary200 = 0x7f0400aa;
+        public static final int colorSecondary300 = 0x7f0400ab;
+        public static final int colorSecondary400 = 0x7f0400ac;
+        public static final int colorSecondary50 = 0x7f0400ad;
+        public static final int colorSecondary500 = 0x7f0400ae;
+        public static final int colorSecondary600 = 0x7f0400af;
+        public static final int colorSecondary700 = 0x7f0400b0;
+        public static final int colorSecondary800 = 0x7f0400b1;
+        public static final int colorSecondary900 = 0x7f0400b2;
+        public static final int colorSecondaryDark = 0x7f0400b3;
+        public static final int colorSecondaryLight = 0x7f0400b4;
+        public static final int floatingActionButtonStyle = 0x7f0400fc;
+        public static final int materialButtonStyle = 0x7f040192;
+        public static final int materialSwitchStyle = 0x7f040194;
+        public static final int rippleColor = 0x7f0401be;
+        public static final int scrimBackground = 0x7f0401c6;
     }
     public static final class color {
         private color() {}
