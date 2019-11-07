@@ -34,6 +34,8 @@ public class GelistirmeAsamasinda extends AppCompatActivity {
 
                 Picasso.get().load(getString(R.string.site_adresi) + response.body().getResim()).into(Resim);
                 Metin.setText(response.body().getMetin());
+
+                Log.i("ffff", getString(R.string.site_adresi) + response.body().getResim());
             }
 
             @Override

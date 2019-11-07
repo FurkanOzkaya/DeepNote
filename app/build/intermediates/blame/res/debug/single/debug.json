@@ -16,12 +16,12 @@
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -156,12 +156,12 @@
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_foreground.png"
-    },
-    {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\f3fed5b5e255a4c0d6c661ced645fcd4\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -192,12 +192,12 @@
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_snackbar_background.xml.flat",
-        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\411209226c1c240945477523ab581d41\\res\\drawable\\design_snackbar_background.xml"
-    },
-    {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_material.xml.flat",
         "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\075d7a9aa10ce377255d6c850a859fd2\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_snackbar_background.xml.flat",
+        "source": "C:\\Users\\BurakKARAHAN\\.gradle\\caches\\transforms-2\\files-2.1\\411209226c1c240945477523ab581d41\\res\\drawable\\design_snackbar_background.xml"
     },
     {
         "merged": "C:\\Users\\BurakKARAHAN\\AndroidStudioProjects\\DeepNote\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_abc_screen_toolbar.xml.flat",

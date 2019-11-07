@@ -61,7 +61,7 @@
             android:textColor="#000"
             android:textSize="16sp"
             android:textStyle="bold|italic"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/gonderi_yok"
@@ -69,8 +69,11 @@
             android:layout_height="500dp"
             android:src="@drawable/gonderi_yok"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
 
         <io.supercharge.shimmerlayout.ShimmerLayout
             android:id="@+id/shimmer_layout"
