@@ -13,6 +13,13 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.abms.af.projeversion02.Models.GelistirmeDurumu;
+import com.abms.af.projeversion02.RestApi.ManagerAll;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class acilis_logo2_deepnote extends AppCompatActivity {
 
     private TextView textView;
@@ -53,8 +60,30 @@ public class acilis_logo2_deepnote extends AppCompatActivity {
                 }
                 finally {
 
-                    startActivity(i);
-                    finish();
+                    Call<GelistirmeDurumu> request = ManagerAll.webyonet().GelistirmeDurumu(getString(R.string.jsongüvenlikkod));
+                    request.enqueue(new Callback<GelistirmeDurumu>() {
+                        @Override
+                        public void onResponse(Call<GelistirmeDurumu> call, Response<GelistirmeDurumu> response) {
+
+                            if (response.body().getDurum().equals("1"))
+                            {
+                                Intent i = new Intent(acilis_logo2_deepnote.this,GelistirmeAsamasinda.class);
+                                startActivity(i);
+                            }
+                            else
+                            {
+                                startActivity(i);
+                                finish();
+                            }
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<GelistirmeDurumu> call, Throwable t) {
+
+                        }
+                    });
+
                 }
             }
         };

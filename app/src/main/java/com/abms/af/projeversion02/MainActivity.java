@@ -27,6 +27,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.abms.af.projeversion02.Models.GelistirmeDurumu;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
 
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+
         sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
         if (sharedPreferences.getInt("uye_id", 0) != 0) {
             Kullanici_id = sharedPreferences.getInt("uye_id", 0);
@@ -97,8 +99,10 @@ public class MainActivity extends AppCompatActivity {
             anaekran.putExtra("Kullanici_id", Kullanici_id);
             startActivity(anaekran);
         }
+
         tanimla();
         islevver();
+
 
     }
 

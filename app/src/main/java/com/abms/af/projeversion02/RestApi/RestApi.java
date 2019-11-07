@@ -1,6 +1,7 @@
 package com.abms.af.projeversion02.RestApi;
 
 import com.abms.af.projeversion02.Models.AdSoyadProfilfoto;
+import com.abms.af.projeversion02.Models.GelistirmeDurumu;
 import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
@@ -37,6 +38,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.PartMap;
+import retrofit2.http.Query;
 import retrofit2.http.Url;
 
 public interface RestApi {
@@ -142,5 +144,9 @@ public interface RestApi {
     @FormUrlEncoded
     @POST("/Takibibırak.php")
     Call<Takibibırak> RestTakibibırak(@Field("id_kullanici") int id_kullanici, @Field("id_other_kullanici") int id_other_kullanici);
+
+    @FormUrlEncoded
+    @POST("/GelistirmeAsamasinda.php")
+    Call<GelistirmeDurumu>  RestGelistirmeDurumu(@Field("jsonguvenlik") String jsonguvenlik);
 
 }

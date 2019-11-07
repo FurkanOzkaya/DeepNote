@@ -56,8 +56,9 @@ public class takip_sayfasi extends Fragment {
     Takipeilenlerinverileriadapter takipedilenlerinverileriadapter;
     View view;
     ListView listview_takipsayfasi;
+    ImageView Gonderi_yok;
     ProgressBar progressBar;
-    TextView home_sayfası_listview_uyarı, DeepNoteBaslik;
+    TextView takip_sayfası_listview_uyarı, DeepNoteBaslik;
     SwipeRefreshLayout refesh_home;
     LinearLayout loadnextpage;
     int pageCount = 0;
@@ -94,11 +95,12 @@ public class takip_sayfasi extends Fragment {
     private void tanımla() {
         listview_takipsayfasi = view.findViewById(R.id.listview_takipsayfasi);
         progressBar = view.findViewById(R.id.anasayfa_progress_bar);
-        home_sayfası_listview_uyarı = view.findViewById(R.id.home_sayfası_lisview_uyarı_mesajı);
+        takip_sayfası_listview_uyarı = view.findViewById(R.id.takip_sayfası_lisview_uyarı_mesajı);
         refesh_home = view.findViewById(R.id.home_sayfasi_refesh);
         loadnextpage = view.findViewById(R.id.loadPage);
         shimmerLayout = view.findViewById(R.id.shimmer_layout);
         DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
+        Gonderi_yok = view.findViewById(R.id.gonderi_yok);
     }
 
 
@@ -161,7 +163,7 @@ public class takip_sayfasi extends Fragment {
             public void onRefresh() {
                 pageCount = 0;
                 tum_veriler_liste = null;
-                home_sayfası_listview_uyarı.setVisibility(View.GONE);
+                takip_sayfası_listview_uyarı.setVisibility(View.GONE);
                 loadListForHome(pageCount);
             }
         });
@@ -234,14 +236,20 @@ public class takip_sayfasi extends Fragment {
 
 
                                 } else {
-                                    home_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
+                                    takip_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
+                                    Gonderi_yok.setVisibility(View.VISIBLE);
                                 }
                                 int a = pageCount * pageListSize;
                                 listview_takipsayfasi.setSelection(a);
                             }
-                        } else {
+                            else {
+                                takip_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
+                                Gonderi_yok.setVisibility(View.VISIBLE);
+                            }
+                        }
+                        else {
 
-                            final SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE);
+                            SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE);
                             sa.setTitleText("Dikkat!");
                             sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
                             sa.setConfirmText("Tamam");

@@ -16,16 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".GelistirmeAsamasinda"></activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-4925490463007858~9491314194"/>
-        <activity android:name=".SozlesmePopUp"></activity>
+            android:value="ca-app-pub-4925490463007858~9491314194" />
+
+        <activity android:name=".SozlesmePopUp" />
         <activity android:name=".IntroActivity" />
         <activity android:name=".pdfViewer" />
         <activity android:name=".hesap_acmaActivity" />
         <activity android:name=".ana_sayfa" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".acilis_logo2_deepnote" >
+        <activity android:name=".acilis_logo2_deepnote">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

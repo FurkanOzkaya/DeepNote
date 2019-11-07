@@ -1,6 +1,7 @@
 package com.abms.af.projeversion02.RestApi;
 
 import com.abms.af.projeversion02.Models.AdSoyadProfilfoto;
+import com.abms.af.projeversion02.Models.GelistirmeDurumu;
 import com.abms.af.projeversion02.Models.GonderiSil;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
@@ -175,6 +176,12 @@ public class ManagerAll extends BaseManager {
     public Call<Takibibırak> Takibibırak(int id_kullanici, int id_other_kullanici)
     {
         Call<Takibibırak> x = getRestApiClient().RestTakibibırak(id_kullanici,id_other_kullanici);
+        return x;
+    }
+
+    public Call<GelistirmeDurumu> GelistirmeDurumu(String jsonguvenlik)
+    {
+        Call<GelistirmeDurumu> x = getRestApiClient().RestGelistirmeDurumu(jsonguvenlik);
         return x;
     }
 
