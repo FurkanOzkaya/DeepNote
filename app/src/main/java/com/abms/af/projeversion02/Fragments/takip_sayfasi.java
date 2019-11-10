@@ -58,7 +58,7 @@ public class takip_sayfasi extends Fragment {
     ListView listview_takipsayfasi;
     ImageView Gonderi_yok;
     ProgressBar progressBar;
-    TextView takip_sayfası_listview_uyarı, DeepNoteBaslik;
+    TextView takip_sayfası_listview_uyarı, DeepNoteBaslik, altsatıricin;
     SwipeRefreshLayout refesh_home;
     LinearLayout loadnextpage;
     int pageCount = 0;
@@ -101,6 +101,7 @@ public class takip_sayfasi extends Fragment {
         shimmerLayout = view.findViewById(R.id.shimmer_layout);
         DeepNoteBaslik = view.findViewById(R.id.DeepNoteBaslik);
         Gonderi_yok = view.findViewById(R.id.gonderi_yok);
+        altsatıricin = view.findViewById(R.id.altsatıricin);
     }
 
 
@@ -238,6 +239,7 @@ public class takip_sayfasi extends Fragment {
                                 } else {
                                     takip_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
                                     Gonderi_yok.setVisibility(View.VISIBLE);
+                                    altsatıricin.setVisibility(View.VISIBLE);
                                 }
                                 int a = pageCount * pageListSize;
                                 listview_takipsayfasi.setSelection(a);
@@ -245,6 +247,7 @@ public class takip_sayfasi extends Fragment {
                             else {
                                 takip_sayfası_listview_uyarı.setVisibility(View.VISIBLE);
                                 Gonderi_yok.setVisibility(View.VISIBLE);
+                                altsatıricin.setVisibility(View.VISIBLE);
                             }
                         }
                         else {

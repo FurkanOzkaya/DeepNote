@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GelistirmeAsamasinda"></activity>
+        <activity android:name=".Fragments.arama_sayfasi"></activity>
+        <activity android:name=".GelistirmeAsamasinda" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

@@ -1266,6 +1266,7 @@ drawable loading
 drawable menu
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable no_image
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1282,6 +1283,8 @@ drawable okul_logo
 drawable onboard1
 drawable onboard2
 drawable paylasss
+drawable pictures
+drawable plus
 drawable pop_tasarim
 drawable profill
 drawable qwqw
@@ -1364,6 +1367,7 @@ id add
 id alertTitle
 id all
 id alt_butonlar
+id altsatıricin
 id always
 id ana_sayfa_fragment
 id anasayfa_listview
@@ -1374,6 +1378,9 @@ id arama_bolum
 id arama_buton
 id arama_butonu
 id arama_dersadi
+id arama_icon
+id arama_sayfasi_gonderi_yok
+id arama_sayfası_lisview_uyarı_mesajı
 id arama_universite
 id async
 id auto
@@ -1600,6 +1607,7 @@ id profil_bilgi_placeholder
 id profil_bilgileri_kısmı
 id profil_bolum
 id profil_foto
+id profil_gonderi_turu
 id profil_icon1
 id profil_listview_placeholder
 id profil_resmi
@@ -1832,6 +1840,7 @@ layout dialog_file_list_item
 layout dialog_footer
 layout dialog_header
 layout dialog_main
+layout fragment_arama_sayfasi
 layout fragment_home_sayfasi
 layout fragment_profil_sayfasi
 layout fragment_share_sayfasi

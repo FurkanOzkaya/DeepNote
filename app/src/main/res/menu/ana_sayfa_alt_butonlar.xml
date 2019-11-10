@@ -18,9 +18,17 @@
     <item
         android:id="@+id/ekle_icon1"
         android:enabled="true"
-        android:icon="@drawable/paylasss"
+        android:icon="@drawable/plus"
         app:showAsAction="ifRoom"
         android:title="Paylas"/>
+
+    <item
+        android:id="@+id/arama_icon"
+        android:enabled="true"
+        android:icon="@drawable/search"
+        app:showAsAction="ifRoom"
+        android:title="Arama"/>
+
     <item
         android:id="@+id/profil_icon1"
         android:enabled="true"

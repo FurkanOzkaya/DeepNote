@@ -32,7 +32,7 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
     Context context;
     LinearLayout layoutlist;
     Activity activity;
-    ImageView ButonSil;
+    ImageView ButonSil, ProfilGonderiTuru;
 
     public Profilkullanicipaylasimadapter(List<Profilsayfasikullanicipaylasimlari> kullanicipaylasim, Context context, Activity activity) {
         this.kullanicipaylasim = kullanicipaylasim;
@@ -65,6 +65,7 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
 
         aciklama = view.findViewById(R.id.listview_profil_aciklama);
         ders = view.findViewById(R.id.listview_profil_ders);
+        ProfilGonderiTuru = view.findViewById(R.id.profil_gonderi_turu);
         layoutlist = view.findViewById(R.id.profilsayfasi_listview_tıklama);
         ButonSil = view.findViewById(R.id.ButonSil);
         ders.setText(kullanicipaylasim.get(position).getDers());
@@ -84,6 +85,18 @@ public class Profilkullanicipaylasimadapter extends BaseAdapter {
         profilfoto_string = kullanicipaylasim.get(position).getProfilfoto();
         gosterme = kullanicipaylasim.get(position).getGosterme();
 
+        if (dosyaturu_string.equals("resim"))
+        {
+            ProfilGonderiTuru.setImageResource(R.drawable.pictures);
+        }
+        else if (dosyaturu_string.equals("pdf"))
+        {
+            ProfilGonderiTuru.setImageResource(R.drawable.flat_pdf2);
+        }
+        else
+        {
+            ProfilGonderiTuru.setImageResource(R.drawable.no_image);
+        }
 
         int id_yorum = 0;
         SharedPreferences sharedPreferences;
