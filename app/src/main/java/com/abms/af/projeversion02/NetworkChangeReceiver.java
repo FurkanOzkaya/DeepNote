@@ -43,8 +43,8 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
                             //Toast.makeText(context, "internete Bağlandınız!", Toast.LENGTH_LONG).show();
 
                             //Activity nasıl başlatılacak?
-                            //Intent i = new Intent(acilis_logo2_deepnote.this,GelistirmeAsamasinda.class);
-                            //startActivity(i);
+                            Intent in = new Intent(context,acilis_logo2_deepnote.class);
+                            context.startActivity(in);
                         }
                         return true;
                     }
