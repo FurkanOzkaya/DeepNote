@@ -2,9 +2,11 @@ package com.abms.af.projeversion02;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -20,8 +22,15 @@ import android.widget.Toast;
 
 import com.abms.af.projeversion02.Adapters.Paylasimtumverileradapter;
 import com.abms.af.projeversion02.Models.Homesayfasitumpaylasimveritabani;
+import com.abms.af.projeversion02.Models.TakipKoduEmailGetir;
+import com.abms.af.projeversion02.RestApi.ManagerAll;
 
 import java.util.List;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class anasayfa_pop_up_arama extends AppCompatActivity {
@@ -30,8 +39,9 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
             "okul1","okul2","okul3"
     };
 
-    EditText arama_dersadi;
-    Button arama_buton;
+    SharedPreferences sharedPreferences;
+    EditText arama_dersadi, arama_kisiadi;
+    Button arama_buton, arama_buton_not, arama_buton_kisi, arama_buton2;
     String universite,bolum,dersadi;
     ArrayAdapter universite_adapter, bolum_adapter;
     String[] universite_listesi, bolum_listesi;
@@ -75,6 +85,10 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
         arama_dersadi=findViewById(R.id.arama_dersadi);
         listView_homesayfasi=findViewById(R.id.listview_homesayfasi);
         progressBar=findViewById(R.id.anasayfa_progress_bar);
+        arama_kisiadi = findViewById(R.id.arama_kisi);
+        arama_buton_not = findViewById(R.id.arama_buton_not);
+        arama_buton_kisi = findViewById(R.id.arama_buton_kisi);
+        arama_buton2 = findViewById(R.id.arama_buton2);
 
 
         universite_listesi = getResources().getStringArray(R.array.universite_listesi_arama_için);
@@ -83,6 +97,103 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
 
     public void islevver()
     {
+
+        arama_buton_not.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                arama_universite.setVisibility(View.VISIBLE);
+                arama_bolum.setVisibility(View.VISIBLE);
+                arama_dersadi.setVisibility(View.VISIBLE);
+                arama_buton.setVisibility(View.VISIBLE);
+
+                arama_kisiadi.setVisibility(View.GONE);
+                arama_buton_not.setVisibility(View.GONE);
+                arama_buton_kisi.setVisibility(View.GONE);
+                arama_buton2.setVisibility(View.GONE);
+
+            }
+        });
+
+        arama_buton_kisi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                arama_universite.setVisibility(View.GONE);
+                arama_bolum.setVisibility(View.GONE);
+                arama_dersadi.setVisibility(View.GONE);
+                arama_buton.setVisibility(View.GONE);
+
+                arama_kisiadi.setVisibility(View.VISIBLE);
+                arama_buton_not.setVisibility(View.GONE);
+                arama_buton_kisi.setVisibility(View.GONE);
+                arama_buton2.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        arama_buton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String TKod = arama_kisiadi.getText().toString();
+
+                Call<TakipKoduEmailGetir> request = ManagerAll.webyonet().TakipKoduEmailGetir(getString(R.string.jsongüvenlikkod),TKod);
+                request.enqueue(new Callback<TakipKoduEmailGetir>() {
+                    @Override
+                    public void onResponse(Call<TakipKoduEmailGetir> call, Response<TakipKoduEmailGetir> response) {
+
+                        sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
+                        int Kullanici_id = sharedPreferences.getInt("uye_id", 0);
+
+                        if (Kullanici_id != response.body().getId_kullanici())
+                        {
+                            if (response.body().getE_posta() != null)
+                            {
+                                Intent i = new Intent(anasayfa_pop_up_arama.this, KullaniciArama.class);
+                                i.putExtra("ka_id_kullanici", response.body().getId_kullanici());
+                                i.putExtra("ka_ad_soyad", response.body().getAd_soyad());
+                                i.putExtra("ka_universite", response.body().getUniversite());
+                                i.putExtra("ka_bolum", response.body().getBolum());
+                                i.putExtra("ka_profilfoto", response.body().getProfil_foto());
+                                startActivity(i);
+                                finish();
+                            }
+                            else
+                            {
+                                SweetAlertDialog sa = new SweetAlertDialog(anasayfa_pop_up_arama.this, SweetAlertDialog.WARNING_TYPE);
+                                sa.setTitleText("Dikkat!");
+                                sa.setContentText("Böyle bir kişi mevcut değildir");
+                                sa.setConfirmText("Tamam");
+                                sa.show();
+                            }
+                        }
+                        else
+                        {
+                            SweetAlertDialog sa = new SweetAlertDialog(anasayfa_pop_up_arama.this, SweetAlertDialog.WARNING_TYPE);
+                            sa.setTitleText("Dikkat!");
+                            sa.setContentText("Kullanıcı kodunuzdan farklı bir kullanıcı kodu girmeyi deneyin");
+                            sa.setConfirmText("Tamam");
+                            sa.show();
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<TakipKoduEmailGetir> call, Throwable t) {
+
+                        SweetAlertDialog sa = new SweetAlertDialog(anasayfa_pop_up_arama.this, SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat!");
+                        sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sa.setConfirmText("Tamam");
+                        sa.show();
+
+                    }
+                });
+
+            }
+        });
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.okullar,R.id.okultextitem,universite_listesi);
         arama_universite.setAdapter(adapter);

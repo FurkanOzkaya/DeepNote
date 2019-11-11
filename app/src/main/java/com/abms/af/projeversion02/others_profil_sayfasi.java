@@ -49,6 +49,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
     Button other_btnTakipet, other_btnTakipbırak;
     String email = "";
     Typeface tf1;
+    private SweetAlertDialog sa;
 
 
     @Override
@@ -282,6 +283,8 @@ public class others_profil_sayfasi extends AppCompatActivity {
                 if (response.body().getResult().equals("True")) {
                     other_btnTakipet.setVisibility(View.GONE);
                     other_btnTakipbırak.setVisibility(View.VISIBLE);
+                    int Takipci = Integer.valueOf((String) other_takipciSayisi.getText()) + 1;
+                    other_takipciSayisi.setText(String.valueOf(Takipci));
                 }
             }
 
@@ -297,25 +300,45 @@ public class others_profil_sayfasi extends AppCompatActivity {
     }
 
     public void Takibibırak(int id_kullanici, int id_other_kullanici) {
-        Call<Takibibırak> request = ManagerAll.webyonet().Takibibırak(id_kullanici, id_other_kullanici);
-        request.enqueue(new Callback<Takibibırak>() {
-            @Override
-            public void onResponse(Call<Takibibırak> call, Response<Takibibırak> response) {
 
-                if (response.body().getResult().equals("True")) {
-                    other_btnTakipet.setVisibility(View.VISIBLE);
-                    other_btnTakipbırak.setVisibility(View.GONE);
-                }
-            }
-
+        SweetAlertDialog sa = new SweetAlertDialog(others_profil_sayfasi.this, SweetAlertDialog.NORMAL_TYPE);
+        sa.setTitleText("Dikkat!");
+        sa.setContentText(others_profil_adi + " adlı kullanıcıyı takipten çıkmak istediğinize emin misiniz?");
+        sa.setConfirmText("Evet");
+        sa.setCancelClickListener(null);
+        sa.setCancelText("Hayır");
+        sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
             @Override
-            public void onFailure(Call<Takibibırak> call, Throwable t) {
-                SweetAlertDialog sa = new SweetAlertDialog(others_profil_sayfasi.this, SweetAlertDialog.WARNING_TYPE);
-                sa.setTitleText("Dikkat!");
-                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                sa.setConfirmText("Tamam");
-                sa.show();
+            public void onClick(SweetAlertDialog sweetAlertDialog) {
+
+                Call<Takibibırak> request = ManagerAll.webyonet().Takibibırak(id_kullanici, id_other_kullanici);
+                request.enqueue(new Callback<Takibibırak>() {
+                    @Override
+                    public void onResponse(Call<Takibibırak> call, Response<Takibibırak> response) {
+
+                        if (response.body().getResult().equals("True")) {
+                            other_btnTakipet.setVisibility(View.VISIBLE);
+                            other_btnTakipbırak.setVisibility(View.GONE);
+                            sa.cancel();
+                            int Takipci = Integer.valueOf((String) other_takipciSayisi.getText()) + 1;
+                            other_takipciSayisi.setText(String.valueOf(Takipci));
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Takibibırak> call, Throwable t) {
+                        sa.cancel();
+                        SweetAlertDialog sb = new SweetAlertDialog(others_profil_sayfasi.this, SweetAlertDialog.WARNING_TYPE);
+                        sb.setTitleText("Dikkat!");
+                        sb.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                        sb.setConfirmText("Tamam");
+                        sb.show();
+                    }
+                });
+
             }
         });
+        sa.show();
     }
 }

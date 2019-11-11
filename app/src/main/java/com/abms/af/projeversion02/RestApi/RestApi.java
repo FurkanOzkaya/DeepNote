@@ -18,6 +18,8 @@ import com.abms.af.projeversion02.Models.SikayetEt;
 import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
 import com.abms.af.projeversion02.Models.Takibibırak;
 import com.abms.af.projeversion02.Models.TakipDurumu;
+import com.abms.af.projeversion02.Models.TakipKoduEmailGetir;
+import com.abms.af.projeversion02.Models.TakipKoduGetir;
 import com.abms.af.projeversion02.Models.TakipedilenlerinVerileri;
 import com.abms.af.projeversion02.Models.Takipet;
 import com.abms.af.projeversion02.Models.Yenisifrebelirleme;
@@ -148,5 +150,13 @@ public interface RestApi {
     @FormUrlEncoded
     @POST("/GelistirmeAsamasinda.php")
     Call<GelistirmeDurumu>  RestGelistirmeDurumu(@Field("jsonguvenlik") String jsonguvenlik);
+
+    @FormUrlEncoded
+    @POST("/TakipKoduGetir.php")
+    Call<TakipKoduGetir>  RestTakipKoduGetir(@Field("jsonguvenlik") String jsonguvenlik,@Field("id_kullanici") int id_kullanici);
+
+    @FormUrlEncoded
+    @POST("/TakipKoduEmailGetir.php")
+    Call<TakipKoduEmailGetir>  RestTakipKoduEmailGetir(@Field("jsonguvenlik") String jsonguvenlik, @Field("takip_kodu") String takip_kodu);
 
 }

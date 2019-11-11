@@ -60,22 +60,19 @@
             android:text="@string/takip_sayfasi_listview_top_uyarı"
             android:textColor="#000"
             android:textSize="16sp"
-            android:textStyle="bold|italic"
-            android:visibility="gone" />
+            android:textStyle="bold|italic" />
 
         <ImageView
             android:id="@+id/gonderi_yok"
             android:layout_width="300dp"
             android:layout_height="500dp"
             android:src="@drawable/gonderi_yok"
-            android:layout_gravity="center"
-            android:visibility="gone"/>
+            android:layout_gravity="center" />
         
         <TextView
             android:id="@+id/altsatıricin"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:visibility="gone"/>
+            android:layout_height="300dp" />
 
         <io.supercharge.shimmerlayout.ShimmerLayout
             android:id="@+id/shimmer_layout"

@@ -16,6 +16,26 @@
         android:orientation="vertical"
         android:padding="15dp">
 
+        <Button
+            android:id="@+id/arama_buton_not"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/aramabutonustil"
+            android:text="Ders Notu Ara"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/arama_buton_kisi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/aramabutonustil"
+            android:text="Kişi Ara"
+            android:textColor="#fff" />
+
         <AutoCompleteTextView
             android:id="@+id/arama_universite"
             android:layout_width="match_parent"
@@ -28,7 +48,8 @@
             android:hint="Üniversite"
             android:background="@drawable/et_custom"
             android:padding="10dp"
-            android:text="@string/universite_listesi__arama_hepsi" />
+            android:text="@string/universite_listesi__arama_hepsi"
+            android:visibility="gone"/>
 
         <AutoCompleteTextView
             android:id="@+id/arama_bolum"
@@ -41,7 +62,8 @@
             android:textSize="14dp"
             android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
             android:inputType="textFilter|textAutoComplete"
-            android:hint="Bölüm" />
+            android:hint="Bölüm"
+            android:visibility="gone"/>
 
         <EditText
             android:id="@+id/arama_dersadi"
@@ -52,7 +74,8 @@
             android:padding="10dp"
             android:textSize="14dp"
             android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
-            android:inputType="textFilter"/>
+            android:inputType="textFilter"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/arama_buton"
@@ -62,7 +85,31 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/aramabutonustil"
             android:text="Ara"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/arama_kisi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kullanıcı Kodu"
+            android:background="@drawable/et_custom"
+            android:padding="10dp"
+            android:textSize="14dp"
+            android:digits="ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefgğhıijklmnoöpqrsştuüvwxyz1234567890@._- "
+            android:inputType="textFilter"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/arama_buton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/aramabutonustil"
+            android:text="Ara"
+            android:textColor="#fff"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

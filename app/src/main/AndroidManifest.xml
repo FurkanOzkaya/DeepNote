@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Fragments.arama_sayfasi"></activity>
+        <activity android:name=".KullaniciArama"></activity>
+        <activity android:name=".Fragments.arama_sayfasi" />
         <activity android:name=".GelistirmeAsamasinda" />
 
         <meta-data

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -459,6 +460,12 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
             public void onClick(View view) {
                 ayrıntili_indirme.setVisibility(View.GONE);
 
+                final SweetAlertDialog pDialog = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.PROGRESS_TYPE);
+                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+                pDialog.setTitleText("İndiriliyor");
+                pDialog.setCancelable(false);
+                pDialog.show();
+
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
                 } else {
@@ -470,10 +477,12 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                     down.enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                            Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Dosya İndiriliyor Dosya Yöneticisinden Bulabilirsiniz", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(homesayfasi_paylasimlari_ayrintili.this, "Dosya İndiriliyor Dosya Yöneticisinden Bulabilirsiniz", Toast.LENGTH_SHORT).show();
 
                             Boolean dosya = dosyayıdiskeyaz(response.body());
                             if (dosya == true) {
+
+                                pDialog.cancel();
 
                                 try {
                                     new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.SUCCESS_TYPE)
@@ -486,6 +495,9 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
                                 }
 
                             } else {
+
+                                pDialog.cancel();
+
                                 try {
                                     new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.ERROR_TYPE)
                                             .setTitleText("Dikkat!")
@@ -500,6 +512,8 @@ public class homesayfasi_paylasimlari_ayrintili extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                            pDialog.cancel();
 
                             SweetAlertDialog sa = new SweetAlertDialog(homesayfasi_paylasimlari_ayrintili.this, SweetAlertDialog.WARNING_TYPE);
                             sa.setTitleText("Dikkat!");

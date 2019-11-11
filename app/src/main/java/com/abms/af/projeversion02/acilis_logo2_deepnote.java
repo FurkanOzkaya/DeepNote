@@ -1,10 +1,13 @@
 package com.abms.af.projeversion02;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,6 +25,9 @@ import retrofit2.Response;
 
 public class acilis_logo2_deepnote extends AppCompatActivity {
 
+    private static final String LOG_TAG = "Otomatik internet Kontrol¸";
+    private NetworkChangeReceiver receiver;//Network dinleyen receiver objemizin referans˝
+
     private TextView textView;
     private ImageView imageview;
     Typeface tf1;
@@ -38,6 +44,10 @@ public class acilis_logo2_deepnote extends AppCompatActivity {
             window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
             window.setStatusBarColor(this.getResources().getColor(R.color.white));
         }
+
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        receiver = new NetworkChangeReceiver();
+        registerReceiver(receiver, filter);
 
         textView = findViewById(R.id.txt2);
         imageview = findViewById(R.id.resim2);
@@ -89,4 +99,14 @@ public class acilis_logo2_deepnote extends AppCompatActivity {
         };
         timer.start();
     }
+
+    @Override
+    protected void onDestroy() { //Activity Kapatıldığı zaman receiver durduralacak.Uygulama arka plana alındığı zamanda receiver çalışmaya devam eder
+        //Log.v(LOG_TAG, "onDestory");
+        super.onDestroy();
+
+        unregisterReceiver(receiver);//receiver durduruluyor
+
+    }
+
 }

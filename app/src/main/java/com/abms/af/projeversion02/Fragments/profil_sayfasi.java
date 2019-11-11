@@ -25,8 +25,10 @@ import com.abms.af.projeversion02.MainActivity;
 import com.abms.af.projeversion02.Models.NotTakipTakipciSayisi;
 import com.abms.af.projeversion02.Models.Profilbilgilerigetir;
 import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
+import com.abms.af.projeversion02.Models.TakipKoduGetir;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
+import com.abms.af.projeversion02.ana_sayfa;
 import com.abms.af.projeversion02.profil_resmi_pop_up;
 import com.squareup.picasso.Picasso;
 
@@ -54,7 +56,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
     List<Profilsayfasikullanicipaylasimlari> kullanici_paylasimlari;
     SharedPreferences sharedPreferences;
     String profil_ad_soyad_gelen, profil_bolum_gelen, profil_universite_gelen, Profil_foto_gelen;
-    ImageView profil_foto;
+    ImageView profil_foto, Takipkodu;
     ProgressBar paylasımlar_progresbar, bilgiler_progress_bar;
     ImageView ayarlarbutonu;
     String email = "";
@@ -100,6 +102,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         notSayisi = view.findViewById(R.id.ProfilNotsayisi);
         takipciSayisi = view.findViewById(R.id.ProfilTakipciSayisi);
         takipSayisi = view.findViewById(R.id.ProfilTakipSayisi);
+        Takipkodu = view.findViewById(R.id.TakipKodu);
     }
 
 
@@ -166,6 +169,52 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                 sa.show();
             }
         });
+
+
+        Takipkodu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sharedPreferences = getContext().getSharedPreferences("TakipciKodu", 0);
+                String TKodString = sharedPreferences.getString("TKod", "");
+                if (TKodString != "") {
+
+                    SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
+                    sa.setTitleText("Kullanıcı Kodu");
+                    sa.setContentText("Kullanıcı kodu diğer kişilerin sizi daha kolay bulmasını sağlar. Kullanıcı Kodu: " + TKodString);
+                    sa.setConfirmText("Kapat");
+                    sa.show();
+
+                } else {
+
+                    Call<TakipKoduGetir> request = ManagerAll.webyonet().TakipKoduGetir(getString(R.string.jsongüvenlikkod), id_kullanici);
+                    request.enqueue(new Callback<TakipKoduGetir>() {
+                        @Override
+                        public void onResponse(Call<TakipKoduGetir> call, Response<TakipKoduGetir> response) {
+
+                            sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("TakipciKodu", 0);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("TKod", response.body().getTakipKodu());
+                            editor.commit();
+
+                            SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
+                            sa.setTitleText("Kullanıcı Kodu");
+                            sa.setContentText("Kullanıcı kodu diğer kişilerin sizi daha kolay bulmasını sağlar. Kullanıcı Kodu: " + response.body().getTakipKodu());
+                            sa.setConfirmText("Kapat");
+                            sa.show();
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<TakipKoduGetir> call, Throwable t) {
+
+                        }
+                    });
+
+                }
+            }
+        });
+
     }
 
 
@@ -196,6 +245,12 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
 
             @Override
             public void onFailure(Call<NotTakipTakipciSayisi> call, Throwable t) {
+
+                SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE);
+                sa.setTitleText("Dikkat!");
+                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                sa.setConfirmText("Tamam");
+                sa.show();
 
             }
         });

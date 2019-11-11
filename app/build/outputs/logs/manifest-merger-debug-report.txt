@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-53:12
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\0de0a860cf80303169366f940d0e3d07\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.dhaval2404:imagepicker-support:1.3] C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\9b8baca694daac12850137bb32ac6163\AndroidManifest.xml:2:1-42:12
 MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\f3fae588bfb6eb949037b173d1c34b31\AndroidManifest.xml:17:1-24:12
@@ -88,20 +88,20 @@ MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\BurakKARAHA
 MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\bc412a9c51f0454402b79a900fdd3e6d\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-ads-base:17.1.1] C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\fc986f85f341e67cfc1dd689d5e5e8a4\AndroidManifest.xml:2:1-9:12
 MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\11d64371e7179f0ef5d6ae723c9fc4b9\AndroidManifest.xml:2:1-13:12
-INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
 	package
 		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-53:12
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
 		INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-53:12
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:1-54:12
 		INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:2:11-69
@@ -140,7 +140,7 @@ ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\And
 	android:name
 		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:9:22-75
 application
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:11:5-51:19
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:11:5-52:19
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\0de0a860cf80303169366f940d0e3d07\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\0de0a860cf80303169366f940d0e3d07\AndroidManifest.xml:22:5-20
 MERGED from [com.github.dhaval2404:imagepicker-support:1.3] C:\Users\BurakKARAHAN\.gradle\caches\transforms-2\files-2.1\9b8baca694daac12850137bb32ac6163\AndroidManifest.xml:21:5-40:19
@@ -255,94 +255,98 @@ MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\BurakKARAHAN\.gradl
 		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:17:9-40
 	android:usesCleartextTraffic
 		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:18:9-44
+activity#com.abms.af.projeversion02.KullaniciArama
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:19:9-61
+	android:name
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:19:19-49
 activity#com.abms.af.projeversion02.Fragments.arama_sayfasi
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:19:9-70
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:20:9-61
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:19:19-58
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:20:19-58
 activity#com.abms.af.projeversion02.GelistirmeAsamasinda
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:20:9-58
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:21:9-58
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:20:19-55
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:21:19-55
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:22:9-24:70
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:23:9-25:70
 	android:value
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:24:13-67
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:25:13-67
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:23:13-69
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:24:13-69
 activity#com.abms.af.projeversion02.SozlesmePopUp
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:26:9-51
-	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:26:19-48
-activity#com.abms.af.projeversion02.IntroActivity
 ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:27:9-51
 	android:name
 		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:27:19-48
+activity#com.abms.af.projeversion02.IntroActivity
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:28:9-51
+	android:name
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:28:19-48
 activity#com.abms.af.projeversion02.pdfViewer
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:28:9-47
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:29:9-47
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:28:19-44
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:29:19-44
 activity#com.abms.af.projeversion02.hesap_acmaActivity
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:29:9-56
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:30:9-56
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:29:19-53
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:30:19-53
 activity#com.abms.af.projeversion02.ana_sayfa
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:30:9-47
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:31:9-47
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:30:19-44
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:31:19-44
 activity#com.abms.af.projeversion02.MainActivity
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:31:9-50
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:32:9-50
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:31:19-47
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:32:19-47
 activity#com.abms.af.projeversion02.acilis_logo2_deepnote
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:32:9-38:20
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:33:9-39:20
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:32:19-56
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:33:19-56
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:33:13-37:29
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:34:13-38:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:34:17-69
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:34:25-66
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:36:17-77
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:37:17-77
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:36:27-74
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:37:27-74
 activity#com.abms.af.projeversion02.homesayfasi_paylasimlari_ayrintili
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:39:9-72
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:40:9-72
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:39:19-69
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:40:19-69
 activity#com.abms.af.projeversion02.PasswordRecovery
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:40:9-54
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:41:9-54
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:40:19-51
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:41:19-51
 activity#com.abms.af.projeversion02.PasswordRecovery2
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:41:9-55
-	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:41:19-52
-activity#com.abms.af.projeversion02.PasswordRecovery3
 ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:42:9-55
 	android:name
 		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:42:19-52
+activity#com.abms.af.projeversion02.PasswordRecovery3
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:43:9-55
+	android:name
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:43:19-52
 activity#com.abms.af.projeversion02.anasayfa_pop_up_arama
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:43:9-45:49
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:44:9-46:49
 	android:theme
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:45:13-46
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:46:13-46
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:44:13-50
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:45:13-50
 activity#com.abms.af.projeversion02.profil_resmi_pop_up
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:46:9-48:49
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:47:9-49:49
 	android:theme
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:48:13-46
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:49:13-46
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:47:13-48
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:48:13-48
 activity#com.abms.af.projeversion02.profil_paylasimlari_ayrinti
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:49:9-65
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:50:9-65
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:49:19-62
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:50:19-62
 activity#com.abms.af.projeversion02.others_profil_sayfasi
-ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:50:9-59
+ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:51:9-59
 	android:name
-		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:50:19-56
+		ADDED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml:51:19-56
 uses-sdk
 INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\BurakKARAHAN\AndroidStudioProjects\DeepNote\app\src\main\AndroidManifest.xml

@@ -1297,6 +1297,7 @@ drawable sikayet
 drawable success_bow
 drawable success_circle
 drawable takipetbutonu
+drawable takipkodu
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transparan
@@ -1327,6 +1328,11 @@ id FUNCTION
 id GelistirmeAsamasindaMetin
 id GelistirmeAsamasindaResim
 id Kod
+id KullaniciAramaBtnTakipBırak
+id KullaniciAramaBtnTakipEt
+id KullaniciAramaNotsayisi
+id KullaniciAramaProfilTakipSayisi
+id KullaniciAramaProfilTakipciSayisi
 id META
 id Notsayisi
 id ProfilNotsayisi
@@ -1339,6 +1345,7 @@ id Send2
 id Sifre
 id SifreGonder
 id SifreTekrar
+id TakipKodu
 id TakipSayisi
 id TakipciSayisi
 id action0
@@ -1376,9 +1383,13 @@ id anasayfa_listview_layout
 id anasayfa_progress_bar
 id arama_bolum
 id arama_buton
+id arama_buton2
+id arama_buton_kisi
+id arama_buton_not
 id arama_butonu
 id arama_dersadi
 id arama_icon
+id arama_kisi
 id arama_sayfasi_gonderi_yok
 id arama_sayfası_lisview_uyarı_mesajı
 id arama_universite
@@ -1526,6 +1537,10 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id kayıt_ol_buton
+id kullaniciArama_profil_adi
+id kullaniciArama_profil_bolum
+id kullaniciArama_profil_resmi
+id kullaniciArama_profil_universite
 id labeled
 id largeLabel
 id layout_aspect_ratio
@@ -1808,6 +1823,7 @@ layout activity_gelistirme_asamasinda
 layout activity_hesap_acma
 layout activity_homesayfasi_paylasimlari_ayrintili
 layout activity_intro
+layout activity_kullanici_arama
 layout activity_main
 layout activity_others_profil_sayfasi
 layout activity_password_recovery

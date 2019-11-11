@@ -58,7 +58,7 @@ public class IntroActivity extends AppCompatActivity {
         // fill list screen
 
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Hoşgeldin!", "Sınavların yaklaştı ve not mu arıyorsun? yada notlarını arakdaşlarınla paylaşmak mı istiyorsun?", R.drawable.onboard1));
+        mList.add(new ScreenItem("Hoşgeldin!", "Sınavların yaklaştı ve not mu arıyorsun? yada notlarını arkadaşlarınla paylaşmak mı istiyorsun?", R.drawable.onboard1));
         mList.add(new ScreenItem("Doğru Yerdesin", "Notlarını paylaşabileceğin ve ihtiyacın olan notları hızlıca elde edebileceğin bir ortam", R.drawable.onboard2));
         mList.add(new ScreenItem("Kağıt Kalem Hazır mı?", "Şaka şaka gerek yok notlar bizde", R.drawable.basla));
 
