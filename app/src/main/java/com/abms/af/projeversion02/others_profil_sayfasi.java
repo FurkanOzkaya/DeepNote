@@ -49,7 +49,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
     Button other_btnTakipet, other_btnTakipbırak;
     String email = "";
     Typeface tf1;
-    private SweetAlertDialog sa;
+    int ınteger_other_kullanici_id;
 
 
     @Override
@@ -72,17 +72,26 @@ public class others_profil_sayfasi extends AppCompatActivity {
     }
 
     public void bilgilerial() {
-        Bundle bundle = getIntent().getExtras();
-        others_id_kullanici_string = bundle.getString("id_kullanici");
-        others_paylasim_id_string = bundle.getString("paylasim_id");
-        others_ad_soyad_string = bundle.getString("ad_soyad");
-        others_universite_string = bundle.getString("universite");
-        others_bolum_string = bundle.getString("bolum");
-        others_ders_string = bundle.getString("ders");
-        others_aciklama_string = bundle.getString("aciklama");
-        others_dosyayolu_string = bundle.getString("dosyayolu");
-        others_dosyaturu_string = bundle.getString("dosyaturu");
-        others_profilfoto_string = bundle.getString("profilfoto");
+
+        try
+        {
+            Bundle bundle = getIntent().getExtras();
+            others_id_kullanici_string = bundle.getString("id_kullanici");
+            others_paylasim_id_string = bundle.getString("paylasim_id");
+            others_ad_soyad_string = bundle.getString("ad_soyad");
+            others_universite_string = bundle.getString("universite");
+            others_bolum_string = bundle.getString("bolum");
+            others_ders_string = bundle.getString("ders");
+            others_aciklama_string = bundle.getString("aciklama");
+            others_dosyayolu_string = bundle.getString("dosyayolu");
+            others_dosyaturu_string = bundle.getString("dosyaturu");
+            others_profilfoto_string = bundle.getString("profilfoto");
+        }
+
+        catch (Exception e)
+        {
+
+        }
     }
 
     void tanımla() {
@@ -119,7 +128,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
             startActivity(intent);
         }
 
-        final int ınteger_other_kullanici_id = Integer.valueOf(others_id_kullanici_string);
+        ınteger_other_kullanici_id = Integer.valueOf(others_id_kullanici_string);
         NotTakipTakipciSayisi(ınteger_other_kullanici_id);
 
         if (id_kullanici == ınteger_other_kullanici_id) {
@@ -283,8 +292,9 @@ public class others_profil_sayfasi extends AppCompatActivity {
                 if (response.body().getResult().equals("True")) {
                     other_btnTakipet.setVisibility(View.GONE);
                     other_btnTakipbırak.setVisibility(View.VISIBLE);
-                    int Takipci = Integer.valueOf((String) other_takipciSayisi.getText()) + 1;
-                    other_takipciSayisi.setText(String.valueOf(Takipci));
+                    //int Takipci = Integer.valueOf(other_takipciSayisi.getText().toString()) + 1;
+                    //other_takipciSayisi.setText(String.valueOf(Takipci));
+                    NotTakipTakipciSayisi(ınteger_other_kullanici_id);
                 }
             }
 
@@ -303,7 +313,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
 
         SweetAlertDialog sa = new SweetAlertDialog(others_profil_sayfasi.this, SweetAlertDialog.NORMAL_TYPE);
         sa.setTitleText("Dikkat!");
-        sa.setContentText(others_profil_adi + " adlı kullanıcıyı takipten çıkmak istediğinize emin misiniz?");
+        sa.setContentText(others_ad_soyad_string + " adlı kullanıcıyı takipten çıkmak istediğinize emin misiniz?");
         sa.setConfirmText("Evet");
         sa.setCancelClickListener(null);
         sa.setCancelText("Hayır");
@@ -320,8 +330,9 @@ public class others_profil_sayfasi extends AppCompatActivity {
                             other_btnTakipet.setVisibility(View.VISIBLE);
                             other_btnTakipbırak.setVisibility(View.GONE);
                             sa.cancel();
-                            int Takipci = Integer.valueOf((String) other_takipciSayisi.getText()) + 1;
-                            other_takipciSayisi.setText(String.valueOf(Takipci));
+                            //int Takipci = Integer.valueOf(other_takipciSayisi.getText().toString()) - 1;
+                            //other_takipciSayisi.setText(String.valueOf(Takipci));
+                            NotTakipTakipciSayisi(ınteger_other_kullanici_id);
                         }
 
                     }

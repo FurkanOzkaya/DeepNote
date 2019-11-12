@@ -150,12 +150,12 @@ public class anasayfa_pop_up_arama extends AppCompatActivity {
                         {
                             if (response.body().getE_posta() != null)
                             {
-                                Intent i = new Intent(anasayfa_pop_up_arama.this, KullaniciArama.class);
-                                i.putExtra("ka_id_kullanici", response.body().getId_kullanici());
-                                i.putExtra("ka_ad_soyad", response.body().getAd_soyad());
-                                i.putExtra("ka_universite", response.body().getUniversite());
-                                i.putExtra("ka_bolum", response.body().getBolum());
-                                i.putExtra("ka_profilfoto", response.body().getProfil_foto());
+                                Intent i = new Intent(anasayfa_pop_up_arama.this, others_profil_sayfasi.class);
+                                i.putExtra("id_kullanici", String.valueOf(response.body().getId_kullanici()));
+                                i.putExtra("ad_soyad", response.body().getAd_soyad());
+                                i.putExtra("universite", response.body().getUniversite());
+                                i.putExtra("bolum", response.body().getBolum());
+                                i.putExtra("profilfoto", response.body().getProfil_foto());
                                 startActivity(i);
                                 finish();
                             }
