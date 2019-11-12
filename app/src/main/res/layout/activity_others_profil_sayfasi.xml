@@ -177,20 +177,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/others_profil_bolum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="2dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="2dp"
-                    android:textStyle="italic"
-                    android:visibility="gone"
-                    android:textColor="#000000"
-                    android:textSize="15dp"/>
-
-                <TextView
                     android:id="@+id/others_profil_adi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -203,7 +189,14 @@
                     android:id="@+id/others_profil_universite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="11dp"
+                    android:textColor="#6a6d72"
+                    android:textSize="13dp"/>
+
+                <TextView
+                    android:id="@+id/others_profil_bolum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="11dp"
                     android:textColor="#6a6d72"
                     android:textSize="13dp"/>

@@ -181,7 +181,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
 
                     SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
                     sa.setTitleText("Kullanıcı Kodu");
-                    sa.setContentText("Kullanıcı kodu diğer kişilerin sizi daha kolay bulmasını sağlar. Kullanıcı Kodu: " + TKodString);
+                    sa.setContentText("Kullanıcı kodu diğer kullanıcıların sizi daha kolay bulmasını sağlar. Kullanıcı Kodunuz: " + TKodString);
                     sa.setConfirmText("Kapat");
                     sa.show();
 
@@ -199,7 +199,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
 
                             SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
                             sa.setTitleText("Kullanıcı Kodu");
-                            sa.setContentText("Kullanıcı kodu diğer kişilerin sizi daha kolay bulmasını sağlar. Kullanıcı Kodu: " + response.body().getTakipKodu());
+                            sa.setContentText("Kullanıcı kodu diğer kullanıcıların sizi daha kolay bulmasını sağlar. Kullanıcı Kodunuz: " + response.body().getTakipKodu());
                             sa.setConfirmText("Kapat");
                             sa.show();
 
@@ -282,6 +282,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
 
                             profil_adi.setText(profil_ad_soyad_gelen);
                             profil_universite.setText(profil_universite_gelen);
+                            profil_bolum.setText(profil_bolum_gelen);
 
                             if (response.body().getProfil_foto().equals("default")) {
                                 Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(profil_foto);
