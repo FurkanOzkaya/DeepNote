@@ -45,6 +45,8 @@ public class acilis_logo2_deepnote extends AppCompatActivity {
             window.setStatusBarColor(this.getResources().getColor(R.color.white));
         }
 
+        //Receiverımızı register ediyoruz
+        //Yani Çalıştırıyoruz
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         receiver = new NetworkChangeReceiver();
         registerReceiver(receiver, filter);

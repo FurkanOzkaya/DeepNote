@@ -10,6 +10,7 @@ public class Homesayfasitumpaylasimveritabani{
 	private String bolum;
 	private String paylasimid;
 	private String profilfoto;
+	private String bolumkullanici;
 	private String dosyaturu;
 	private int yorumsayisi;
 	private int gosterme;
@@ -130,19 +131,32 @@ public class Homesayfasitumpaylasimveritabani{
 		return paylasimid;
 	}
 
+	public String getBolumkullanici() {
+		return bolumkullanici;
+	}
+
+	public void setBolumkullanici(String bolumkullanici) {
+		this.bolumkullanici = bolumkullanici;
+	}
+
 	@Override
- 	public String toString(){
-		return 
-			"Homesayfasitumpaylasimveritabani{" + 
-			"universite = '" + universite + '\'' + 
-			",aciklama = '" + aciklama + '\'' + 
-			",adsoyad = '" + adsoyad + '\'' + 
-			",idkullanici = '" + idkullanici + '\'' + 
-			",dosyayolu = '" + dosyayolu + '\'' + 
-			",ders = '" + ders + '\'' + 
-			",bolum = '" + bolum + '\'' +
-			",dosyaturu = '" + dosyaturu + '\'' +
-			",paylasimid = '" + paylasimid + '\'' +
-			"}";
-		}
+	public String toString() {
+		return "Homesayfasitumpaylasimveritabani{" +
+				"universite='" + universite + '\'' +
+				", aciklama='" + aciklama + '\'' +
+				", adsoyad='" + adsoyad + '\'' +
+				", idkullanici='" + idkullanici + '\'' +
+				", dosyayolu='" + dosyayolu + '\'' +
+				", ders='" + ders + '\'' +
+				", bolum='" + bolum + '\'' +
+				", paylasimid='" + paylasimid + '\'' +
+				", profilfoto='" + profilfoto + '\'' +
+				", bolumkullanici='" + bolumkullanici + '\'' +
+				", dosyaturu='" + dosyaturu + '\'' +
+				", yorumsayisi=" + yorumsayisi +
+				", gosterme=" + gosterme +
+				", rowCount=" + rowCount +
+				", pageListSize=" + pageListSize +
+				'}';
+	}
 }

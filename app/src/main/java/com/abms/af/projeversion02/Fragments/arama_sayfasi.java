@@ -57,7 +57,6 @@ public class arama_sayfasi extends Fragment {
     ProgressBar progressBar;
     TextView arama_sayfası_listview_uyarı, DeepNoteBaslik, altsatıricin;
     LinearLayout loadnextpage;
-    LinearLayout home_listview_layout;
     int pageCount = 0;
     int pageListSize = 0;
     int rowcount = 0;

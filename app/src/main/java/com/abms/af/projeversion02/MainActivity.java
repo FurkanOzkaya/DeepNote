@@ -43,10 +43,7 @@ public class MainActivity extends AppCompatActivity {
     Button giris_buton;
     SharedPreferences sharedPreferences;
     int Kullanici_id;
-    int sayac = 0;
     Typeface tf1;
-
-    int inputsayac = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -71,7 +71,7 @@ public class Paylasimtumverileradapter extends BaseAdapter {
         other_profil_kullanici = view.findViewById(R.id.anasayfa_listview_kullanici_profil_sayfasi);
 
 
-        final String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string;
+        final String id_kullanici_string, paylasim_id_string, ad_soyad_string, universite_string, bolum_string, ders_string, aciklama_string, dosyayolu_string, dosyaturu_string, profilfoto_string, bolumkullanici_string;
         id_kullanici_string = tumverilerliste.get(position).getIdkullanici();
         paylasim_id_string = tumverilerliste.get(position).getPaylasimid();
         ad_soyad_string = tumverilerliste.get(position).getAdsoyad();
@@ -82,6 +82,7 @@ public class Paylasimtumverileradapter extends BaseAdapter {
         dosyayolu_string = tumverilerliste.get(position).getDosyayolu();
         dosyaturu_string = tumverilerliste.get(position).getDosyaturu();
         profilfoto_string = tumverilerliste.get(position).getProfilfoto();
+        bolumkullanici_string = tumverilerliste.get(position).getBolumkullanici();
 
 
         ad_soyad.setText(tumverilerliste.get(position).getAdsoyad());
@@ -151,6 +152,7 @@ public class Paylasimtumverileradapter extends BaseAdapter {
                 others.putExtra("dosyayolu", dosyayolu_string);
                 others.putExtra("dosyaturu", dosyaturu_string);
                 others.putExtra("profilfoto", profilfoto_string);
+                others.putExtra("bolumkullanici", bolumkullanici_string);
                 activity.startActivity(others);
             }
         });

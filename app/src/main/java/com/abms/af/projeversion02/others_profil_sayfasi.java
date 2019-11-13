@@ -44,7 +44,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
     List<Profilsayfasikullanicipaylasimlari> others_kullanici_paylasimlari;
     CircularImageView others_profil_foto;
     ProgressBar others_paylasımlar_progresbar;
-    String others_id_kullanici_string, others_paylasim_id_string, others_ad_soyad_string, others_universite_string, others_bolum_string, others_ders_string, others_aciklama_string, others_dosyayolu_string, others_dosyaturu_string, others_profilfoto_string;
+    String others_id_kullanici_string, others_paylasim_id_string, others_ad_soyad_string, others_universite_string, others_bolum_string, others_ders_string, others_aciklama_string, others_dosyayolu_string, others_dosyaturu_string, others_profilfoto_string, bolumkullanici_string;
     SharedPreferences sharedPreferences;
     Button other_btnTakipet, other_btnTakipbırak;
     String email = "";
@@ -86,6 +86,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
             others_dosyayolu_string = bundle.getString("dosyayolu");
             others_dosyaturu_string = bundle.getString("dosyaturu");
             others_profilfoto_string = bundle.getString("profilfoto");
+            bolumkullanici_string = bundle.getString("bolumkullanici");
         }
 
         catch (Exception e)
@@ -152,7 +153,7 @@ public class others_profil_sayfasi extends AppCompatActivity {
 
         others_profil_adi.setText(others_ad_soyad_string);
         others_profil_universite.setText(others_universite_string);
-        others_profil_bolum.setText(others_bolum_string);
+        others_profil_bolum.setText(bolumkullanici_string);
 
         if (others_profilfoto_string.equals("default")) {
             Picasso.get().load(R.drawable.flat_ogrenci).resize(200, 200).into(others_profil_foto);
