@@ -26,6 +26,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.abms.af.projeversion02.Models.GelistirmeDurumu;
 import com.abms.af.projeversion02.Models.Kullanicigirissonuc;
@@ -38,7 +39,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView uyelik, genel_uyarı, sifremi_unutttum,baslik;
+    TextView uyelik, sifremi_unutttum, baslik;
     EditText giris_mail, giris_sifre;
     Button giris_buton;
     SharedPreferences sharedPreferences;
@@ -109,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
         giris_mail = (EditText) findViewById(R.id.giris_mail);
         giris_sifre = (EditText) findViewById(R.id.giris_sifre);
         giris_buton = (Button) findViewById(R.id.giris_buton);
-        genel_uyarı = (TextView) findViewById(R.id.giris_genel_uyarı);
         sifremi_unutttum = (TextView) findViewById(R.id.sifremi_unuttum);
     }
 
@@ -124,18 +124,18 @@ public class MainActivity extends AppCompatActivity {
 
             public void afterTextChanged(Editable s) {
 
-                if (giris_sifre.length() > 0 && giris_mail.length() >0 ){
+                if (giris_sifre.length() > 0 && giris_mail.length() > 0) {
                     giris_buton.setEnabled(true);
                     giris_buton.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
-                }
-                else{
+                } else {
                     giris_buton.setEnabled(false);
                     giris_buton.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
                 }
 
             }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
@@ -146,18 +146,18 @@ public class MainActivity extends AppCompatActivity {
 
             public void afterTextChanged(Editable s) {
 
-                if (giris_sifre.length() > 0 && giris_mail.length() >0 ){
+                if (giris_sifre.length() > 0 && giris_mail.length() > 0) {
                     giris_buton.setEnabled(true);
                     giris_buton.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
-                }
-                else{
+                } else {
                     giris_buton.setEnabled(false);
                     giris_buton.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
                 }
 
             }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        tf1 = Typeface.createFromAsset(getApplicationContext().getAssets(),"fonts/DamionRegular.ttf");
+        tf1 = Typeface.createFromAsset(getApplicationContext().getAssets(), "fonts/DamionRegular.ttf");
         baslik.setTypeface(tf1);
 
         uyelik.setOnClickListener(new View.OnClickListener() {
@@ -180,16 +180,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (giris_mail.getText().toString().equals("") || giris_sifre.getText().toString().equals(""))
-                {
+                if (giris_mail.getText().toString().equals("") || giris_sifre.getText().toString().equals("")) {
                     SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
                     sa.setTitleText("Dikkat!");
                     sa.setContentText("Bilgilerinizi eksiksiz ve doğru giriniz");
                     sa.setConfirmText("Tekrar Dene");
                     sa.show();
-                }
-                else
-                {
+                } else {
                     webservis_kullanicigiris();
                 }
             }
@@ -216,64 +213,76 @@ public class MainActivity extends AppCompatActivity {
         pDialog.setCancelable(false);
         pDialog.show();
 
-       try {
-           Call<Kullanicigirissonuc> kontrol = ManagerAll.webyonet().kontrolet(giris_mail.getText().toString(), giris_sifre.getText().toString());
-           kontrol.enqueue(new Callback<Kullanicigirissonuc>() {
-               @Override
-               public void onResponse(Call<Kullanicigirissonuc> call, Response<Kullanicigirissonuc> response) {
+        try {
+            Call<Kullanicigirissonuc> kontrol = ManagerAll.webyonet().kontrolet(giris_mail.getText().toString(), giris_sifre.getText().toString());
+            kontrol.enqueue(new Callback<Kullanicigirissonuc>() {
+                @Override
+                public void onResponse(Call<Kullanicigirissonuc> call, Response<Kullanicigirissonuc> response) {
 
-                   if (response.body().getKullanicigirissonuc().toString().equals("Giris Basarili")) {
+                    if (response.body().getKullanicigirissonuc().toString().equals("Giris Basarili")) {
 
-                       Kullanici_id = Integer.parseInt(response.body().getKullaniciid().toString());
-                       if (Kullanici_id != 0) {
+                        Kullanici_id = Integer.parseInt(response.body().getKullaniciid().toString());
+                        if (Kullanici_id != 0) {
 
-                           sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
-                           SharedPreferences.Editor editor = sharedPreferences.edit();
-                           editor.putInt("uye_id", Integer.parseInt(response.body().getKullaniciid().toString()));
-                           editor.putString("email", response.body().getEmail().toString());
-                           editor.commit();
+                            sharedPreferences = getApplicationContext().getSharedPreferences("giris", 0);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putInt("uye_id", Integer.parseInt(response.body().getKullaniciid().toString()));
+                            editor.putString("email", response.body().getEmail().toString());
+                            editor.commit();
 
-                           pDialog.cancel();
+                            pDialog.cancel();
 
-                           Intent anaekran = new Intent(getApplicationContext(), ana_sayfa.class);
-                           anaekran.putExtra("Kullanici_id", Kullanici_id);
-                           startActivity(anaekran);
+                            Intent anaekran = new Intent(getApplicationContext(), ana_sayfa.class);
+                            anaekran.putExtra("Kullanici_id", Kullanici_id);
+                            startActivity(anaekran);
+                        }
 
-                           genel_uyarı.setVisibility(View.INVISIBLE);
-                       }
+                    } else if (response.body().getKullanicigirissonuc().toString().equals("Sifre Yanlis")) {
 
-                   } else if (response.body().getKullanicigirissonuc().toString().equals("Giris Basarisiz")) {
+                        pDialog.cancel();
 
-                       genel_uyarı.setVisibility(View.VISIBLE);
+                        SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat!");
+                        sa.setContentText("Girdiğiniz hesaba ait şifre yanlış, Şifrenizi hatırlamıyorsanız 'Şifreni mi unuttun?' dan yardım alabilirsiniz");
+                        sa.setConfirmText("Tekrar Dene");
+                        sa.show();
 
-                       pDialog.cancel();
+                        giris_sifre.setText("");
 
-                       SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
-                       sa.setTitleText("Dikkat!");
-                       sa.setContentText("Girdiğiniz e-posta veya şifre yanlış, Lütfen bilgilerinizi kontrol edip tekrar deneyiniz");
-                       sa.setConfirmText("Tekrar Dene");
-                       sa.show();
+                        //Toast.makeText(getApplicationContext(), "" + response.body().getKullanicigirissonuc(), Toast.LENGTH_LONG).show();
 
-                       giris_sifre.setText("");
-                   }
-               }
+                    } else {
+                        pDialog.cancel();
 
-               @Override
-               public void onFailure(Call<Kullanicigirissonuc> call, Throwable t) {
+                        SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                        sa.setTitleText("Dikkat!");
+                        sa.setContentText("Girdiğiniz e-posta'ya ait bir hesap bulunmamaktadır. Lütfen bilgilerinizi kontrol edip tekar deneyiniz");
+                        sa.setConfirmText("Tekrar Dene");
+                        sa.show();
 
-                   pDialog.cancel();
+                        giris_mail.setText("");
+                        giris_sifre.setText("");
 
-                   SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
-                   sa.setTitleText("Dikkat!");
-                   sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
-                   sa.setConfirmText("Tamam");
-                   sa.show();
-               }
-           });
-       }catch (Exception e)
-       {
-           Log.e("TAG", "webservis_kullanicigiris: ",e );
-       }
+                        //Toast.makeText(getApplicationContext(), "" + response.body().getKullanicigirissonuc(), Toast.LENGTH_LONG).show();
+
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Kullanicigirissonuc> call, Throwable t) {
+
+                    pDialog.cancel();
+
+                    SweetAlertDialog sa = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                    sa.setTitleText("Dikkat!");
+                    sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                    sa.setConfirmText("Tamam");
+                    sa.show();
+                }
+            });
+        } catch (Exception e) {
+            Log.e("TAG", "webservis_kullanicigiris: ", e);
+        }
     }
 
     @Override

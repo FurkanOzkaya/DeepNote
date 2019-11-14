@@ -5,7 +5,6 @@
 
     <string name="app_name">DeepNote</string>
     <string name="sifre_unutma">Şifreni mi unuttun?</string>
-    <string name="giris_uyarı">E-posta veya  Sifre Yanlıs Lütfen Kontrol Ediniz</string>
     <string name="uye_olmak">Hesap Açmak için Tıklayınız</string>
     <string name="hesap_acma_sayfası_bilgi">Yazacağınız bilgilerin doğru olmasına özen gösteriniz</string>
     <string name="hesap_olustur">Hesap oluştur</string>

@@ -1496,7 +1496,6 @@ id ftype
 id gelendosya
 id ghost_view
 id giris_buton
-id giris_genel_uyarı
 id giris_mail
 id giris_sifre
 id gonderi_yok
@@ -1959,7 +1958,6 @@ string error_failed_to_crop_image
 string error_task_cancelled
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
-string giris_uyarı
 string hello_blank_fragment
 string hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı
 string hesap_acma_sayfası_Sifre_dogrulama_kısmı_uyarı1
