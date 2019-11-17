@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -19,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.abms.af.projeversion02.Adapters.Profilkullanicipaylasimadapter;
 import com.abms.af.projeversion02.MainActivity;
@@ -57,7 +60,6 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
     SharedPreferences sharedPreferences;
     String profil_ad_soyad_gelen, profil_bolum_gelen, profil_universite_gelen, Profil_foto_gelen;
     ImageView profil_foto, Takipkodu;
-    ProgressBar paylasımlar_progresbar, bilgiler_progress_bar;
     ImageView ayarlarbutonu;
     String email = "";
     Typeface tf1;
@@ -89,7 +91,6 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
         profil_bolum = view.findViewById(R.id.profil_bolum);
         sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("giris", 0);
         id = sharedPreferences.getInt("uye_id", 0);
-        //Toast.makeText(getActivity().getApplicationContext(), "id = "+id, Toast.LENGTH_SHORT).show();
         listview_profil = view.findViewById(R.id.profilsayfası_listview);
         profil_bilgiler_layout = view.findViewById(R.id.profil_bilgileri_kısmı);
         profil_foto = view.findViewById(R.id.profil_resmi);
@@ -339,6 +340,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                             kullanici_paylasimlari = response.body();
                             profilkullaniciadapter = new Profilkullanicipaylasimadapter(kullanici_paylasimlari, getActivity().getApplicationContext(), getActivity());
                             listview_profil.setAdapter(profilkullaniciadapter);
+
                         } catch (Exception e) {
                             Log.e("TAG", "profilepage: ", e);
                         }
@@ -366,4 +368,5 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
             Log.e("TAG", "CallProfilePage: ", e);
         }
     }
+
 }

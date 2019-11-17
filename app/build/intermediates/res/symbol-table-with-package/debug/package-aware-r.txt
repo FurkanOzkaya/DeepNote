@@ -1343,6 +1343,7 @@ id SifreTekrar
 id TakipKodu
 id TakipSayisi
 id TakipciSayisi
+id a_item
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1416,6 +1417,7 @@ id ayrıntı_profilsayfasi_resim
 id ayrıntı_profilsayfasi_universite
 id ayrıntı_profilsayfasi_yorum
 id aytinti_profilsayfasi_gonderi_bolum_adi
+id b_item
 id barrier
 id beginning
 id blocking
@@ -1427,6 +1429,7 @@ id btn_get_started
 id btn_next
 id buttonPanel
 id buttons_container
+id c_item
 id cancel
 id cancel_action
 id cancel_button
@@ -1450,6 +1453,7 @@ id customPanel
 id custom_image
 id custom_view_container
 id cıkısyap
+id d_item
 id decor_content_parent
 id default_activity_button
 id ders_adi
@@ -1468,6 +1472,7 @@ id dname
 id dogum_tarihi
 id dosyasecmekismi
 id dosyayollamakismi
+id e_item
 id e_posta
 id edit_query
 id ekle_icon1
@@ -1477,9 +1482,11 @@ id enterAlways
 id enterAlwaysCollapsed
 id error_frame
 id error_x
+id excl_item
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id f_item
 id fileList
 id file_dir_select
 id file_mark
@@ -1493,6 +1500,7 @@ id fname
 id footer
 id forever
 id ftype
+id g_item
 id gelendosya
 id ghost_view
 id giris_buton
@@ -1502,6 +1510,7 @@ id gonderi_yok
 id gone
 id group_divider
 id guideline
+id h_item
 id header
 id hesap_acma
 id home
@@ -1528,6 +1537,7 @@ id intro_description
 id intro_img
 id intro_title
 id invisible
+id invisible_item
 id italic
 id item_touch_helper_previous_elevation
 id kayıt_ol_buton
@@ -1885,6 +1895,7 @@ layout ucrop_layout_rotate_wheel
 layout ucrop_layout_scale_wheel
 layout ucrop_view
 menu ana_sayfa_alt_butonlar
+menu main_menu
 menu profil_sayafasi_ayarlarmenu
 menu ucrop_menu_activity
 mipmap ic_directory_parent
