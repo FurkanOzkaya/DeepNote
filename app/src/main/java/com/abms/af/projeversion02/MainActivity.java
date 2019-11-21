@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
     private void webservis_kullanicigiris() {
         final SweetAlertDialog pDialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.PROGRESS_TYPE);
         pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-        pDialog.setTitleText("Hesabınız Oluşturuluyor...");
+        pDialog.setTitleText("Yükleniyor");
         pDialog.setCancelable(false);
         pDialog.show();
 
@@ -228,6 +228,7 @@ public class MainActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putInt("uye_id", Integer.parseInt(response.body().getKullaniciid().toString()));
                             editor.putString("email", response.body().getEmail().toString());
+                            editor.putString("takipkodu", response.body().getTakipkodu().toString());
                             editor.commit();
 
                             pDialog.cancel();

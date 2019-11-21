@@ -9,9 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -19,19 +17,15 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.abms.af.projeversion02.Adapters.Profilkullanicipaylasimadapter;
 import com.abms.af.projeversion02.MainActivity;
 import com.abms.af.projeversion02.Models.NotTakipTakipciSayisi;
 import com.abms.af.projeversion02.Models.Profilbilgilerigetir;
 import com.abms.af.projeversion02.Models.Profilsayfasikullanicipaylasimlari;
-import com.abms.af.projeversion02.Models.TakipKoduGetir;
 import com.abms.af.projeversion02.R;
 import com.abms.af.projeversion02.RestApi.ManagerAll;
-import com.abms.af.projeversion02.ana_sayfa;
 import com.abms.af.projeversion02.profil_resmi_pop_up;
 import com.squareup.picasso.Picasso;
 
@@ -176,24 +170,14 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
             @Override
             public void onClick(View view) {
 
-                Call<TakipKoduGetir> request = ManagerAll.webyonet().TakipKoduGetir(getString(R.string.jsongüvenlikkod), id_kullanici);
-                request.enqueue(new Callback<TakipKoduGetir>() {
-                    @Override
-                    public void onResponse(Call<TakipKoduGetir> call, Response<TakipKoduGetir> response) {
+                String TakipKodu = sharedPreferences.getString("takipkodu", "");
 
-                        SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
-                        sa.setTitleText("Kullanıcı Kodu");
-                        sa.setContentText("Kullanıcı kodu diğer kullanıcıların sizi daha kolay bulmasını sağlar. Kullanıcı Kodunuz: " + response.body().getTakipKodu());
-                        sa.setConfirmText("Kapat");
-                        sa.show();
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<TakipKoduGetir> call, Throwable t) {
-
-                    }
-                });
+                SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
+                sa.setTitleText("Kullanıcı Kodu");
+                sa.setContentText("Kullanıcı kodu diğer kullanıcıların sizi daha kolay bulmasını sağlar. Kullanıcı Kodunuz: " + TakipKodu);
+                sa.setConfirmText("Kapat");
+                sa.show();
+                
             }
         });
 

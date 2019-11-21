@@ -19,7 +19,6 @@ import com.abms.af.projeversion02.Models.Sikayetetmesonuc;
 import com.abms.af.projeversion02.Models.Takibibırak;
 import com.abms.af.projeversion02.Models.TakipDurumu;
 import com.abms.af.projeversion02.Models.TakipKoduEmailGetir;
-import com.abms.af.projeversion02.Models.TakipKoduGetir;
 import com.abms.af.projeversion02.Models.TakipedilenlerinVerileri;
 import com.abms.af.projeversion02.Models.Takipet;
 import com.abms.af.projeversion02.Models.Yenisifrebelirleme;
@@ -184,12 +183,6 @@ public class ManagerAll extends BaseManager {
     public Call<GelistirmeDurumu> GelistirmeDurumu(String jsonguvenlik)
     {
         Call<GelistirmeDurumu> x = getRestApiClient().RestGelistirmeDurumu(jsonguvenlik);
-        return x;
-    }
-
-    public Call<TakipKoduGetir> TakipKoduGetir(String jsonguvenlik, int id_kullanici)
-    {
-        Call<TakipKoduGetir> x = getRestApiClient().RestTakipKoduGetir(jsonguvenlik, id_kullanici);
         return x;
     }
 

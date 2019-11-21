@@ -261,7 +261,7 @@ public class hesap_acmaActivity extends AppCompatActivity {
 
             final SweetAlertDialog pDialog = new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.PROGRESS_TYPE);
             pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-            pDialog.setTitleText("Yükleniyor");
+            pDialog.setTitleText("Hesabınız Oluşturuluyor");
             pDialog.setCancelable(false);
             pDialog.show();
 
