@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
     private void webservis_kullanicigiris() {
         final SweetAlertDialog pDialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.PROGRESS_TYPE);
         pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-        pDialog.setTitleText("Yükleniyor");
+        pDialog.setTitleText("Hesabınız Oluşturuluyor...");
         pDialog.setCancelable(false);
         pDialog.show();
 

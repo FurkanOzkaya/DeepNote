@@ -176,43 +176,24 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
             @Override
             public void onClick(View view) {
 
-                sharedPreferences = getContext().getSharedPreferences("TakipciKodu", 0);
-                String TKodString = sharedPreferences.getString("TKod", "");
-                if (TKodString != "") {
+                Call<TakipKoduGetir> request = ManagerAll.webyonet().TakipKoduGetir(getString(R.string.jsongüvenlikkod), id_kullanici);
+                request.enqueue(new Callback<TakipKoduGetir>() {
+                    @Override
+                    public void onResponse(Call<TakipKoduGetir> call, Response<TakipKoduGetir> response) {
 
-                    SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
-                    sa.setTitleText("Kullanıcı Kodu");
-                    sa.setContentText("Kullanıcı kodu diğer kullanıcıların sizi daha kolay bulmasını sağlar. Kullanıcı Kodunuz: " + TKodString);
-                    sa.setConfirmText("Kapat");
-                    sa.show();
+                        SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
+                        sa.setTitleText("Kullanıcı Kodu");
+                        sa.setContentText("Kullanıcı kodu diğer kullanıcıların sizi daha kolay bulmasını sağlar. Kullanıcı Kodunuz: " + response.body().getTakipKodu());
+                        sa.setConfirmText("Kapat");
+                        sa.show();
 
-                } else {
+                    }
 
-                    Call<TakipKoduGetir> request = ManagerAll.webyonet().TakipKoduGetir(getString(R.string.jsongüvenlikkod), id_kullanici);
-                    request.enqueue(new Callback<TakipKoduGetir>() {
-                        @Override
-                        public void onResponse(Call<TakipKoduGetir> call, Response<TakipKoduGetir> response) {
+                    @Override
+                    public void onFailure(Call<TakipKoduGetir> call, Throwable t) {
 
-                            sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("TakipciKodu", 0);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("TKod", response.body().getTakipKodu());
-                            editor.commit();
-
-                            SweetAlertDialog sa = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
-                            sa.setTitleText("Kullanıcı Kodu");
-                            sa.setContentText("Kullanıcı kodu diğer kullanıcıların sizi daha kolay bulmasını sağlar. Kullanıcı Kodunuz: " + response.body().getTakipKodu());
-                            sa.setConfirmText("Kapat");
-                            sa.show();
-
-                        }
-
-                        @Override
-                        public void onFailure(Call<TakipKoduGetir> call, Throwable t) {
-
-                        }
-                    });
-
-                }
+                    }
+                });
             }
         });
 

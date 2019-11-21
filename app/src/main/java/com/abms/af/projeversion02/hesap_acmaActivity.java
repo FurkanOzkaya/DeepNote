@@ -3,6 +3,7 @@ package com.abms.af.projeversion02;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -258,6 +259,12 @@ public class hesap_acmaActivity extends AppCompatActivity {
     public void webservis_kullanicikayıt() {
         try {
 
+            final SweetAlertDialog pDialog = new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.PROGRESS_TYPE);
+            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+            pDialog.setTitleText("Yükleniyor");
+            pDialog.setCancelable(false);
+            pDialog.show();
+
             Call<Kullanicikayitsonuc> a = ManagerAll.webyonet().kullaniciekle(getString(R.string.key_for_protection_create_user), ad_soyad_text, dogum_tarihi_text, universite_text, bolum_text, e_posta_text, sifre_text);
             a.enqueue(new Callback<Kullanicikayitsonuc>() {
                 @Override
@@ -269,9 +276,11 @@ public class hesap_acmaActivity extends AppCompatActivity {
                         //e_posta_uyarı.setVisibility(View.VISIBLE);
                         //e_posta_uyarı.setText(R.string.hesap_acma_sayfası_e_posta_kısmı_aynı_olması_durumu);
                         //buton_altı_bilgilendirme.setVisibility(View.VISIBLE);
+                        pDialog.cancel();
                         e_posta.setError("E-posta kullanılıyor");
                     } else if (response.body().getKullanicikayitsonuc().toString().equals("Ekleme basarilidir")) {
                         //Toast.makeText(getApplicationContext(),"kayıt oldunuz",Toast.LENGTH_LONG).show();
+                        pDialog.cancel();
                         sharedPreferences = getApplicationContext().getSharedPreferences("protection", 0);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("token", response.body().getToken().toString());
@@ -297,7 +306,7 @@ public class hesap_acmaActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<Kullanicikayitsonuc> call, Throwable t) {
-
+                    pDialog.cancel();
                     SweetAlertDialog sa = new SweetAlertDialog(hesap_acmaActivity.this, SweetAlertDialog.WARNING_TYPE);
                     sa.setTitleText("Dikkat!");
                     sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
