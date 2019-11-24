@@ -177,7 +177,7 @@ public class profil_sayfasi extends Fragment implements SwipeRefreshLayout.OnRef
                 sa.setContentText("Kullanıcı kodu diğer kullanıcıların sizi daha kolay bulmasını sağlar. Kullanıcı Kodunuz: " + TakipKodu);
                 sa.setConfirmText("Kapat");
                 sa.show();
-                
+
             }
         });
 

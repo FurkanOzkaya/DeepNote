@@ -107,7 +107,7 @@ public class PasswordRecovery2 extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sandystreamtr.com/"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.destek)));
                 startActivity(browserIntent);
             }
         });

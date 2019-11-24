@@ -1947,6 +1947,7 @@ string choose_button_label
 string common_google_play_services_unknown_issue
 string default_dir
 string default_progressbar
+string destek
 string dialog_cancel
 string dialog_default_title
 string dialog_ok
