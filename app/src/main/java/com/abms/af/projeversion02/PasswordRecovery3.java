@@ -2,9 +2,12 @@ package com.abms.af.projeversion02;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -45,12 +48,66 @@ public class PasswordRecovery3 extends AppCompatActivity {
 
     public void islevver() {
 
+        Send.setEnabled(false);
+        Send.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
+
         sharedPref = getApplicationContext().getSharedPreferences("sifre", 0);
         final String email = sharedPref.getString("Email", "Kayit Yok");
+
+        Sifre.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+
+                if (Sifre.length() > 0 && SifreTekrar.length() > 0) {
+                    Send.setEnabled(true);
+                    Send.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
+                } else {
+                    Send.setEnabled(false);
+                    Send.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
+                }
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+        });
+
+        SifreTekrar.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+
+                if (Sifre.length() > 0 && SifreTekrar.length() > 0) {
+                    Send.setEnabled(true);
+                    Send.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
+                } else {
+                    Send.setEnabled(false);
+                    Send.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
+                }
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+            }
+        });
 
         Send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                final SweetAlertDialog pDialog = new SweetAlertDialog(PasswordRecovery3.this, SweetAlertDialog.PROGRESS_TYPE);
+                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+                pDialog.setTitleText("Yükleniyor");
+                pDialog.setCancelable(false);
+                pDialog.show();
 
                 String sifre = Sifre.getText().toString();
                 String sifreTekrar = SifreTekrar.getText().toString();
@@ -65,6 +122,8 @@ public class PasswordRecovery3 extends AppCompatActivity {
                                 if (response.isSuccessful()) {
                                     if (response.body().getResult().equals("Basarili")) {
                                         //Toast.makeText(getApplicationContext(), "Şifreniz Değiştirlmiştir", Toast.LENGTH_LONG).show();
+
+                                        pDialog.cancel();
 
                                         new SweetAlertDialog(PasswordRecovery3.this, SweetAlertDialog.SUCCESS_TYPE)
                                                 .setTitleText("Şifre Değiştirildi")
@@ -83,6 +142,8 @@ public class PasswordRecovery3 extends AppCompatActivity {
                                     } else {
                                         //Toast.makeText(getApplicationContext(), "Hata ile karşılaşıldı daha sonra tekrar deneyiniz" , Toast.LENGTH_LONG).show();
 
+                                        pDialog.cancel();
+
                                         SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery3.this, SweetAlertDialog.WARNING_TYPE);
                                         sa.setTitleText("Dikkat!");
                                         sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
@@ -92,6 +153,8 @@ public class PasswordRecovery3 extends AppCompatActivity {
                                     }
                                 } else {
                                     //Toast.makeText(getApplicationContext(), "Hata ile karşılaşıldı daha sonra tekrar deneyiniz" , Toast.LENGTH_LONG).show();
+
+                                    pDialog.cancel();
 
                                     SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery3.this, SweetAlertDialog.WARNING_TYPE);
                                     sa.setTitleText("Dikkat!");
@@ -104,14 +167,23 @@ public class PasswordRecovery3 extends AppCompatActivity {
 
                             @Override
                             public void onFailure(Call<Yenisifrebelirleme> call, Throwable t) {
+                                pDialog.cancel();
 
+                                SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery3.this, SweetAlertDialog.WARNING_TYPE);
+                                sa.setTitleText("Dikkat!");
+                                sa.setContentText("Bir şeyler yolunda gitmedi, internet bağlantınızı kontrol ederek tekrar deneyiniz");
+                                sa.setConfirmText("Tamam");
+                                sa.show();
                             }
                         });
                     } catch (Exception e) {
+                        pDialog.cancel();
                         Log.e("TAG", "onClick: ", e);
                     }
                 } else {
                     //Toast.makeText(getApplicationContext(), "Girdiğiniz Şifreler Aynı Değil" , Toast.LENGTH_LONG).show();
+
+                    pDialog.cancel();
 
                     Sifre.setText("");
                     SifreTekrar.setText("");

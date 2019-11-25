@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -51,8 +53,33 @@ public class PasswordRecovery2 extends AppCompatActivity {
         AdSoyad = (TextView) findViewById(R.id.AdSoyad);
         profil_foto = (ImageView) findViewById(R.id.profil_foto);
 
+        Send2.setEnabled(false);
+        Send2.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
+
         sharedPref = getApplicationContext().getSharedPreferences("sifre", 0);
         String SharedEmail = sharedPref.getString("Email", "Kayit Yok");
+
+        Kod.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+
+                if (Kod.length() > 0) {
+                    Send2.setEnabled(true);
+                    Send2.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
+                } else {
+                    Send2.setEnabled(false);
+                    Send2.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark_saydam));
+                }
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+        });
 
         try {
             Call<AdSoyadProfilfoto> request = ManagerAll.webyonet().AdSoyadProfilfoto(SharedEmail);
@@ -123,7 +150,7 @@ public class PasswordRecovery2 extends AppCompatActivity {
                     if (DenemeSayisi <= 0) {
                         SweetAlertDialog sa = new SweetAlertDialog(PasswordRecovery2.this, SweetAlertDialog.WARNING_TYPE);
                         sa.setTitleText("Dikkat!");
-                        sa.setContentText("E-posta adresini doğru olduğuna emin misin? E-posta adresini doğru yazdığına emin ol");
+                        sa.setContentText("E-posta adresinin doğru olduğuna emin misin? E-posta adresini doğru yazdığına emin ol");
                         sa.setConfirmText("Tekrar Dene");
                         sa.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
